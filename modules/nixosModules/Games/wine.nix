@@ -1,5 +1,7 @@
 {
-  flake.modules.nixos.wine =
+  enable = false;
+  hosts = [ "laptop" ];
+  config =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [

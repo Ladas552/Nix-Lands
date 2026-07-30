@@ -8,12 +8,10 @@ This is my multi host, modular Nix config. It declares configs for different pro
 - Excellent [Hjem](https://github.com/feel-co/hjem) linker with set of modules of [Hjem-rum](https://github.com/snugnug/hjem-rum)
 
 I also declare configuration as packages/wrappers that you can try with `nix run
-github:Ladas552/Flake-Ocean#app`, replace `app` with:
+github:Ladas552/Nix-Lands#app`, replace `app` with:
 
 - [nvf](https://github.com/NotAShelf/nvf) - Nix declared Neovim (current daily driver)
-- rofi-powermenu - power menu made of Rofi with a [nice theme](https://github.com/adi1090x/rofi)
-- all the other scripts in [pkgs directory](./pkgs/default.nix)
-- [wrappers directory](./modules/wrappers) for apps
+- all the other wrappers/scripts/packages in [pkgs directory](./pkgs/default.nix)
 
 # Overview of things to note
 
@@ -21,14 +19,13 @@ github:Ladas552/Flake-Ocean#app`, replace `app` with:
 
 - 2 NixOS hosts with Nvidia and Intel, and AMD APU on laptops. Both on ZFS and NixPort is using [Impermanence](https://github.com/nix-community/impermanence)
 - [NixOS-WSL](https://github.com/nix-community/NixOS-WSL) for Windows partition
-- NixVM for testing, you shouldn't use it unless testing breaking changes
 - NixIso for my portable NixOS image
 - NixWool is my Hetzner cloud that runs [Tangled.sh](https://tangled.org/) knot
-## Modular
-I adopted [Dendritic layout](https://github.com/mightyiam/dendritic) for my config. 
-Making all files their own modules that I can import, and if module isn't imported, it doesn't exist. This way most of my config is fairy atomic and you can pop in and out modules as you wish.
 
-Also I made `custom.meta` options on every host, and depending on host, different variables are used. Options defined in `modules/flake-parts/options`. And host variables are defined at `imports.nix` of every host. Even for nvf config.
+## Modular
+My config modules are imported automatically, but only merges if the host variant is matching to the host I am building. This is accomplished by [nosh](https://codeberg.org/poacher/nosh), a simple lib to make modular configs without `mkIf` option hell. I [forked it](https://tangled.org/ladas552.me/nosh) to better suit my use case.
+
+Depending on a host, I pass `meta` special arg that carry specific to this host information
 
 ## Docs
 I write comments on things, that might explain certain ways of doing things, or leave not working options in comments for people to find. This is to not look up one thing twice, and just look at the nix file itself.
@@ -64,9 +61,10 @@ Instead of using flake.nix to fetch files, I use [tack](https://github.com/manic
 Yes, it is a [JoJo's reference](https://github.com/user-attachments/assets/7c467d52-a430-4bb3-9493-a5ffa0d69dd4)
 ## Mirrors
 Code is hosted in two repositories for your and my convenience:
-- Main Tangled: https://tangled.org/ladas552.me/Flake-ocean
-- Read-only GitHub: https://github.com/Ladas552/Flake-Ocean
-- My older archived config: https://github.com/Ladas552/Nix-Is-Unbreakable
+- Main Tangled: https://tangled.org/ladas552.me/Nix-Lands
+- Read-only GitHub: https://github.com/Ladas552/Nix-Lands
+- My older archived config: https://github.com/Ladas552/Flake-Ocean
+- My even older archived config: https://github.com/Ladas552/Nix-Is-Unbreakable
 
 # Credits
 I take a lot of things from the internet and different configs too. So I credit people in comments to snippets that I stole.
@@ -74,7 +72,5 @@ I take a lot of things from the internet and different configs too. So I credit 
 If you want to check every person that I stole things from, go to my [List of configs](https://github.com/stars/Ladas552/lists/nix-flakes)
 
 Also for that [one guy](https://codeberg.org/Dich0tomy/snowstorm) who switched to codeberg
-
-Also [this post from drupol](https://not-a-number.io/2025/refactoring-my-infrastructure-as-code-configurations/) was huge help in migrating my config to dendritic
 
 Also, thanks to everyone in Nix community for being so awesome, wouldn't be there without ya

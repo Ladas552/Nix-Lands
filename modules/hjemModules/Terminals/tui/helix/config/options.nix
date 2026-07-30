@@ -1,8 +1,13 @@
 {
-  flake.modules.hjem.helix =
+  enable = false;
+  hosts = [
+    "laptop"
+    "server"
+  ];
+  config =
     { config, ... }:
     {
-      rum.programs.helix.settings = {
+      hj.rum.programs.helix.settings = {
         theme = config.custom.style.colors.helix-theme;
         editor = {
           # LSP

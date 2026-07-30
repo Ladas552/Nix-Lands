@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.emulators =
+  hosts = [ "laptop" ];
+  config =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [

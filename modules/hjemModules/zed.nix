@@ -1,6 +1,8 @@
 {
-  flake.modules.hjem.zed = {
-    rum.programs.zed = {
+  enable = false;
+  hosts = [ "laptop" ];
+  config = {
+    hj.rum.programs.zed = {
       enable = true;
       settings = {
         auto_install_extensions = {

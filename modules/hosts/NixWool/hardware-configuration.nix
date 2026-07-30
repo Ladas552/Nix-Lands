@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.NixWool =
+  hosts = [ "vps" ];
+  config =
     {
       lib,
       modulesPath,

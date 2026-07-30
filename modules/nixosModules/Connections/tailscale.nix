@@ -1,5 +1,10 @@
 {
-  flake.modules.nixos.tailscale =
+  hosts = [
+    "laptop"
+    "server"
+    "vps"
+  ];
+  config =
     { config, ... }:
     {
       # secrets

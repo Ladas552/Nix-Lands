@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.dashboard =
+  hosts = [ "server" ];
+  config =
     { config, ... }:
     {
       # secrets

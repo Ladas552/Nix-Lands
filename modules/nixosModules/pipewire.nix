@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.pipewire =
+  hosts = [ "laptop" ];
+  config =
     { pkgs, ... }:
     {
       environment.systemPackages = [ pkgs.sbc ];
@@ -15,7 +16,7 @@
         #jack.enable = true;
       };
 
-      # Thanks #bananad3v
+      # Thanks @bananad3v
       services.pipewire.extraConfig = {
         pipewire = {
           "10-defaults" = {

@@ -1,35 +1,34 @@
 {
-  flake.modules = {
-    nixos.thunar =
-      { pkgs, ... }:
-      {
-        programs.thunar = {
-          enable = true;
-          plugins = with pkgs; [
-            thunar-volman
-            thunar-archive-plugin
-            thunar-media-tags-plugin
-          ];
-        };
-        services = {
-          gvfs.enable = true;
-          tumbler.enable = true;
-        };
-        environment.systemPackages = [
-          pkgs.ffmpegthumbnailer
-          pkgs.bign-handheld-thumbnailer
+  hosts = [ "laptop" ];
+  config =
+    { pkgs, ... }:
+    {
+      programs.thunar = {
+        enable = true;
+        plugins = with pkgs; [
+          thunar-volman
+          thunar-archive-plugin
+          thunar-media-tags-plugin
         ];
-
-        # fix opening terminal for nemo / thunar by using xdg-terminal-exec spec
-        # xdg.terminal-exec = {
-        #   enable = true;
-        #   settings = {
-        #     default = [ "${pkgs.ghostty}/share/applicatons/com.mitchellh.ghostty.desktop" ];
-        #   };
-        # };
       };
-    homeManager.thunar = {
-      home.file.".config/Thunar/uca.xml".text = # xml
+      services = {
+        gvfs.enable = true;
+        tumbler.enable = true;
+      };
+      environment.systemPackages = [
+        pkgs.ffmpegthumbnailer
+        pkgs.bign-handheld-thumbnailer
+      ];
+
+      # fix opening terminal for nemo / thunar by using xdg-terminal-exec spec
+      # xdg.terminal-exec = {
+      #   enable = true;
+      #   settings = {
+      #     default = [ "${pkgs.ghostty}/share/applicatons/com.mitchellh.ghostty.desktop" ];
+      #   };
+      # };
+
+      hj.xdg.config.files.".config/Thunar/uca.xml".text = # xml
         ''
           <?xml version="1.0" encoding="UTF-8"?>
           <actions>
@@ -54,5 +53,4 @@
         ".cache/thumbnails"
       ];
     };
-  };
 }

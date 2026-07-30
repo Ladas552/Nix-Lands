@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.firewall = {
+  config = {
     # Open ports in the firewall.
     networking.firewall.allowedTCPPorts = [
       3030

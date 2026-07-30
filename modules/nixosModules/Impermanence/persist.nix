@@ -1,6 +1,6 @@
 # This file exists to not clutter other nixos module files with generic persists, like network manager. I will move all options below somewhere else before I finish impermanence setup
 {
-  flake.modules.nixos.imp = {
+  config = {
     custom.imp = {
       root = {
         directories = [

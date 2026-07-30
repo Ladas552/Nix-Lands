@@ -1,11 +1,12 @@
 {
-  flake.modules.hjem.mpv =
+  hosts = [ "laptop" ];
+  config =
     { pkgs, ... }:
     {
-      packages = [
+      environment.systemPackages = [
         pkgs.ff2mpv
       ];
-      rum.programs.mpv = {
+      hj.rum.programs.mpv = {
         enable = true;
         config = {
           profile = "gpu-hq";

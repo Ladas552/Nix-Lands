@@ -1,11 +1,11 @@
 {
-  flake.modules.hjem.dosbox =
+  hosts = [ "laptop" ];
+  config =
     { pkgs, ... }:
     {
-      packages = [ pkgs.dosbox ];
-      files.".dosbox/dosbox-0.74-3.conf" = {
+      environment.systemPackages = [ pkgs.dosbox ];
+      hj.files.".dosbox/dosbox-0.74-3.conf" = {
         enable = true;
-        recursive = true;
         text = ''
           [sdl]
           fullscreen=true

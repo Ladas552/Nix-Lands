@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.libinput = {
+  hosts = [ "laptop" ];
+  config = {
     services.libinput = {
       enable = true;
       touchpad = {

@@ -1,5 +1,10 @@
 {
-  flake.modules.hjem.helix = {
-    rum.programs.helix.enable = true;
+  enable = false;
+  hosts = [
+    "laptop"
+    "server"
+  ];
+  config = {
+    hj.rum.programs.helix.enable = true;
   };
 }

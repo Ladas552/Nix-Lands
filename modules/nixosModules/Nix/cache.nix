@@ -1,12 +1,12 @@
 {
-  flake.modules.nixos.cache =
-    { config, ... }:
+  config =
+    { meta, ... }:
     {
       # Cache
       nix.settings = {
         trusted-users = [
           "root"
-          "${config.custom.meta.user}"
+          "${meta.user}"
           "@wheel"
         ];
         substituters = [

@@ -1,5 +1,11 @@
 {
-  flake.modules.nixos.zerotier =
+  enable = false;
+  hosts = [
+    "laptop"
+    "server"
+    "vps"
+  ];
+  config =
     { config, ... }:
     {
       # secrets

@@ -1,6 +1,6 @@
 {
   # Makes nh promt password twice on rebuilds
-  flake.modules.nixos.run0 = {
+  config = {
     # Stolen from @Gerg
     # https://github.com/Gerg-L/nixos/blob/96b7bbdb20bdfbeb9d7d733cee47eaac39cf5ec0/nixosModules/security.nix
     environment.shellAliases = {

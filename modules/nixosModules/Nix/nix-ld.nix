@@ -1,7 +1,8 @@
 # Dynamically linked libraries, they generate paths for some programms to work properly, like app images. If you add new programm to create paths for, need to reboot
 
 {
-  flake.modules.nixos.nix-ld =
+  enable = false;
+  config =
     { pkgs, ... }:
     {
       programs.nix-ld.enable = true;

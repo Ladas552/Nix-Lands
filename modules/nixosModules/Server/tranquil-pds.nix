@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.tranquil-pds = { config, ... }: {
+  hosts = [ "vps" ];
+  config = { config, ... }: {
     # secrets
     sops.secrets."mystuff/trJWT" = { };
     sops.secrets."mystuff/trDROP" = { };

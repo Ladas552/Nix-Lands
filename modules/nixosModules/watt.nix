@@ -1,5 +1,9 @@
 {
-  flake.modules.nixos.watt = {
+  hosts = [
+    "laptop"
+    "server"
+  ];
+  config = {
     powerManagement.enable = true;
     services.watt = {
       enable = true;

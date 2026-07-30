@@ -1,13 +1,20 @@
-{ self, ... }:
 {
-  flake.modules.nixos.NixToks =
+  hosts = [ "server" ];
+  config =
     {
       config,
       pkgs,
+      self,
       ...
     }:
     {
-
+      _module.args = {
+        meta = {
+          hostname = "NixToks";
+          configPath = "/persist/home/ladas552/Nix-Lands";
+          user = "ladas552";
+        };
+      };
       # Standalone Packages
       environment.systemPackages = with pkgs; [
         imagemagick

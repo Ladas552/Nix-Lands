@@ -1,5 +1,9 @@
 {
-  flake.modules.nixos.plymouth = {
+  hosts = [
+    "laptop"
+    "iso"
+  ];
+  config = {
     boot = {
       kernelParams = [
         "quiet"

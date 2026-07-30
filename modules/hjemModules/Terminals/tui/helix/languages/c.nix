@@ -1,7 +1,12 @@
 {
-  flake.modules.hjem.helix-clang =
+  enable = false;
+  hosts = [
+    "laptop"
+    "server"
+  ];
+  config =
     { pkgs, ... }:
     {
-      packages = [ pkgs.clang-tools ];
+      environment.systemPackages = [ pkgs.clang-tools ];
     };
 }

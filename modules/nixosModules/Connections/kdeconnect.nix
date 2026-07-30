@@ -1,1 +1,7 @@
-{ flake.modules.nixos.kdeconnect.programs.kdeconnect.enable = true; }
+{
+  enable = false;
+  hosts = [ "laptop" ];
+  config = {
+    programs.kdeconnect.enable = true;
+  };
+}

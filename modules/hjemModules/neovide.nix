@@ -1,13 +1,18 @@
 {
-  flake.modules.hjem.neovide =
-    { config, lib, ... }:
+  hosts = [ "laptop" ];
+  config =
+    { lib, meta, ... }:
     {
-      rum.programs.neovide = {
+      hj.rum.programs.neovide = {
         enable = true;
         settings = {
           vsync = false;
           srgb = true;
-          wsl = lib.mkIf (config.custom.meta.hostname == "NixwsL") true;
+          wsl = lib.mkIf (meta.hostname == "NixwsL") true;
+          font = {
+            size = 13;
+            normal = "JetBrainsMono Nerd Font Mono";
+          };
         };
       };
     };

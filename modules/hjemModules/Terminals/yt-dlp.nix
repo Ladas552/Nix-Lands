@@ -1,5 +1,7 @@
 {
-  flake.modules =
+  hosts = [ "laptop" ];
+  config =
+    { pkgs, ... }:
     let
       videos = "~/Videos";
       music = "~/Music";
@@ -13,41 +15,9 @@
       };
     in
     {
-      hjem.yt-dlp =
-        { pkgs, ... }:
-        {
-          packages = [ pkgs.yt-dlp ];
-          rum.programs.fish.aliases = { } // aliases;
-        };
-      nixos.yt-dlp =
-        { pkgs, ... }:
-        {
-          environment = {
-            systemPackages = [ pkgs.yt-dlp ];
-            shellAliases = { } // aliases;
-          };
-        };
-      # my server got music in /srv, not in /home
-      nixos.yt-dlp-NixToks =
-        { pkgs, ... }:
-        let
-          videos-nixtoks = "/srv/media/Videos";
-          music-nixtoks = "/srv/media/Music";
-
-          aliases-nixtoks = {
-            dl-video = "yt-dlp --embed-thumbnail -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4 --output '%(title)s.%(ext)s'";
-            dl-clips = "yt-dlp --embed-thumbnail -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4 --ignore-errors --output '${videos-nixtoks}/clips/%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s' --yes-playlist";
-            dl-vocaloid = "yt-dlp --add-metadata --parse-metadata 'playlist_title:%(album)s' --embed-thumbnail --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 0 --output '${music-nixtoks}/vocaloid/%(playlist_uploader)s/%(playlist)s/%(title)s.%(ext)s' --download-archive '${music-nixtoks}/vocaloid/archive-file' --yes-playlist --max-filesize '20.0M'";
-            dl-jpop = "yt-dlp --add-metadata --parse-metadata 'playlist_title:%(album)s' --embed-thumbnail --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 0 --output '${music-nixtoks}/jpop/%(playlist_uploader)s/%(playlist)s/%(title)s.%(ext)s' --download-archive '${music-nixtoks}/jpop/archive-file' --yes-playlist --max-filesize '20.0M'";
-            dl-vocaloid-batch = "yt-dlp --add-metadata --parse-metadata 'playlist_title:%(album)s' --embed-thumbnail --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 0 --output '${music-nixtoks}/vocaloid/%(playlist_uploader)s/%(playlist)s/%(title)s.%(ext)s' --download-archive '${music-nixtoks}/vocaloid/archive-file' --yes-playlist --max-filesize '20.0M' --batch-file '${music-nixtoks}/vocaloid/batch-file'";
-            dl-vocaloid-batch-utau-covers = "yt-dlp --add-metadata --parse-metadata 'playlist_title:%(album)s' --embed-thumbnail --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 0 --output '${music-nixtoks}/vocaloid/UTAU_covers/%(playlist_uploader)s/%(playlist)s/%(title)s.%(ext)s' --download-archive '${music-nixtoks}/vocaloid/archive-file' --yes-playlist --max-filesize '20.0M' --batch-file '${music-nixtoks}/vocaloid/batch-file-utau'";
-          };
-        in
-        {
-          environment = {
-            systemPackages = [ pkgs.yt-dlp ];
-            shellAliases = { } // aliases-nixtoks;
-          };
-        };
+      environment = {
+        systemPackages = [ pkgs.yt-dlp ];
+        shellAliases = { } // aliases;
+      };
     };
 }

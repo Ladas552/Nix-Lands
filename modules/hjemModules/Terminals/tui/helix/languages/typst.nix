@@ -1,12 +1,17 @@
 {
-  flake.modules.hjem.helix-tinymist =
+  enable = false;
+  hosts = [
+    "laptop"
+    "server"
+  ];
+  config =
     { pkgs, ... }:
     {
-      packages = [
+      environment.systemPackages = [
         pkgs.tinymist
         pkgs.typstyle
       ];
-      rum.programs.helix = {
+      hj.rum.programs.helix = {
         languages = {
           language-server.tinymist = {
             command = "tinymist";

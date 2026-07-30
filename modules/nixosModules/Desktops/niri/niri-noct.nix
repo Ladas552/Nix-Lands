@@ -1,51 +1,39 @@
-{ config, ... }:
 {
-  flake.modules = {
-    nixos.niri-noct = {
-      imports = [
-        config.flake.modules.nixos.noct
-        config.flake.modules.nixos.niri-flake
+  hosts = [ "laptop" ];
+  config = {
+    hj.niri.settings = {
+      # autostart noctalia-shell
+      spawn-at-startup = [
+        [ "noctalia" ]
       ];
-    };
-    hjem.niri-noct = {
-      imports = [
-        config.flake.modules.hjem.noct
-        config.flake.modules.hjem.niri-flake
+      # overview wallpaper
+      layer-rule = [
+        {
+          # Noctalia wallpaper in overview
+          _children = [ { match._props.namespace = "^noctalia-backdrop"; } ];
+          place-within-backdrop = true;
+        }
       ];
-      niri.settings = {
-        # autostart noctalia-shell
-        spawn-at-startup = [
-          [ "noctalia" ]
+      # noctalia tools
+      binds = {
+        # Noctalia
+        "Super+Space".spawn = [
+          "noctalia"
+          "msg"
+          "panel-toggle"
+          "launcher"
         ];
-        # overview wallpaper
-        layer-rule = [
-          {
-            # Noctalia wallpaper in overview
-            _children = [ { match._props.namespace = "^noctalia-backdrop"; } ];
-            place-within-backdrop = true;
-          }
+        "Super+V".spawn = [
+          "noctalia"
+          "msg"
+          "panel-toggle"
+          "session"
         ];
-        # noctalia tools
-        binds = {
-          # Noctalia
-          "Super+Space".spawn = [
-            "noctalia"
-            "msg"
-            "panel-toggle"
-            "launcher"
-          ];
-          "Super+V".spawn = [
-            "noctalia"
-            "msg"
-            "panel-toggle"
-            "session"
-          ];
-          "Super+D".spawn = [
-            "noctalia"
-            "msg"
-            "bar-toggle"
-          ];
-        };
+        "Super+D".spawn = [
+          "noctalia"
+          "msg"
+          "bar-toggle"
+        ];
       };
     };
   };

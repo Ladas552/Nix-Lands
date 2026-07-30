@@ -1,5 +1,7 @@
 {
-  flake.modules.nixos.waydroid = {
+  enable = false;
+  hosts = [ "laptop" ];
+  config = {
     virtualisation.waydroid.enable = true;
 
     # persist for Impermanence

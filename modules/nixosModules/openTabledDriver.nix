@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.otd = {
+  hosts = [ "laptop" ];
+  config = {
     # Configure tablet
     hardware.opentabletdriver = {
       enable = true;

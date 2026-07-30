@@ -1,8 +1,8 @@
 {
-  flake.modules.hjem.fastfetch =
+  config =
     { pkgs, ... }:
     {
-      rum.programs.fastfetch = {
+      hj.rum.programs.fastfetch = {
         enable = true;
         package = pkgs.fastfetch-unwrapped;
         # modified 21st example from fastfetch in nix code

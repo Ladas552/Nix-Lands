@@ -1,7 +1,9 @@
 # bluesky social federation
 # stolen from @SapphoSys https://github.com/SapphoSys/flake/blob/1d8ef92b389c467a83403cbaf7681352d7a53434/services/bluesky-pds/default.nix
 {
-  flake.modules.nixos.bluesky-pds =
+  enable = false;
+  hosts = [ "vps" ];
+  config =
     { lib, config, ... }:
     {
       # secrets

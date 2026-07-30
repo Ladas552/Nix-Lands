@@ -1,13 +1,21 @@
-{ self, ... }:
 {
-  flake.modules.nixos.NixWool =
+  hosts = [ "vps" ];
+  config =
     {
       pkgs,
       lib,
       config,
+      self,
       ...
     }:
     {
+      _module.args = {
+        meta = {
+          hostname = "NixIso";
+          configPath = "git+https://tangled.org/ladas552.me/Flake-ocean?rev=";
+          user = "ladas552";
+        };
+      };
       nix = {
         distributedBuilds = true;
         buildMachines = [

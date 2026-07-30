@@ -53,6 +53,10 @@ url = "gh:notashelf/nvf"
 [inputs.niri]
 url = "cb:BANanaD3V/niri-nix"
 
+# custom mkSystem
+[inputs.nosh]
+url = "td:ladas552.me/nosh"
+
 # Tanled, git hosting
 [inputs.tangled]
 url = "td:tangled.org/core"

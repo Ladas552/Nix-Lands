@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.searxng = {
+  hosts = [ "server" ];
+  config = {
     services.searx = {
       enable = true;
       settings = {

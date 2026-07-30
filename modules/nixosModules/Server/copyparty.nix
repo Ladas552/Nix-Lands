@@ -1,7 +1,7 @@
-{ inputs, ... }:
 {
-  flake.modules.nixos.copyparty =
-    { config, ... }:
+  hosts = [ "server" ];
+  config =
+    { config, inputs, ... }:
     {
       # secrets
       sops.secrets."mystuff/copypartyl" = {

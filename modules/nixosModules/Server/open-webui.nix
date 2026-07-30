@@ -1,5 +1,7 @@
 {
-  flake.modules.nixos.open-webui = {
+  enable = false;
+  hosts = [ "server" ];
+  config = {
     services.open-webui = {
       enable = true;
       port = 1212;

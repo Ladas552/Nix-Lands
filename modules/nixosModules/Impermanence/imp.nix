@@ -1,14 +1,18 @@
-{ inputs, ... }:
 {
-  flake.modules.nixos.imp =
+  hosts = [
+    "laptop"
+    "vps"
+  ];
+  config =
     {
       config,
       lib,
+      meta,
+      inputs,
       ...
     }:
     let
       cfg = config.custom.imp;
-      cfghj = config.hjem.users."${config.custom.meta.user}".custom.imp;
     in
 
     {
@@ -62,18 +66,18 @@
             ]
             ++ cfg.root.directories
           );
-          users."${config.custom.meta.user}" = {
-            files = lib.unique (cfghj.home.files);
-            directories = lib.unique (cfg.home.directories ++ cfghj.home.directories);
+          users."${meta.user}" = {
+            files = lib.unique cfg.home.files;
+            directories = lib.unique cfg.home.directories;
           };
         };
         "/cache" = {
           hideMounts = true;
           files = lib.unique cfg.root.cache.files;
           directories = lib.unique cfg.root.cache.directories;
-          users."${config.custom.meta.user}" = {
-            files = lib.unique (cfg.home.cache.files ++ cfghj.home.cache.files);
-            directories = lib.unique (cfg.home.cache.directories ++ cfghj.home.cache.directories);
+          users."${meta.user}" = {
+            files = lib.unique cfg.home.cache.files;
+            directories = lib.unique cfg.home.cache.directories;
           };
         };
       };

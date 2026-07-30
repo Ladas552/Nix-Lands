@@ -1,7 +1,9 @@
 {
   # This module suppousetly works, but my nvidia gpu doesn't work with it. The Software rendering works tho
-  flake.modules.nixos.sunshine =
-    { config, ... }:
+  enable = false;
+  hosts = [ "server" ];
+  config =
+    { meta, ... }:
     {
       services.sunshine = {
         enable = true;
@@ -26,7 +28,7 @@
         KERNEL=="uinput", MODE="0660", GROUP="input", SYMLINK+="uinput"
       '';
 
-      users.users.${config.custom.meta.user}.extraGroups = [
+      users.users.${meta.user}.extraGroups = [
         "input"
         "video"
         "render"

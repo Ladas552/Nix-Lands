@@ -1,8 +1,10 @@
 # Enable CUPS to print documents.
 # Enable sane for scanner.
 {
-  flake.modules.nixos.printer =
-    { config, pkgs, ... }:
+  enable = false;
+  hosts = [ "laptop" ];
+  config =
+    { meta, pkgs, ... }:
     {
       services.printing = {
         enable = true;
@@ -14,7 +16,7 @@
       };
       hardware.sane.enable = true;
 
-      users.users."${config.custom.meta.user}".extraGroups = [
+      users.users."${meta.user}".extraGroups = [
         "scanner"
         "lp"
       ];

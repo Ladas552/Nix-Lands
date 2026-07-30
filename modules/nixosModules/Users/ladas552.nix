@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.ladas552 =
+  config =
     { config, ... }:
     {
       users.users.ladas552 = {

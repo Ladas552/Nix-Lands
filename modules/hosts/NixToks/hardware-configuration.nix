@@ -2,7 +2,8 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 {
-  flake.modules.nixos.NixToks =
+  hosts = [ "server" ];
+  config =
     {
       lib,
       modulesPath,

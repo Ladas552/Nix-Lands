@@ -1,8 +1,8 @@
 {
-  flake.modules.hjem.direnv =
-    { config, ... }:
+  config =
+    { meta, ... }:
     {
-      rum.programs.direnv = {
+      hj.rum.programs.direnv = {
         enable = true;
         integrations.nix-direnv.enable = true;
         settings = {
@@ -15,8 +15,8 @@
             hide_env_diff = true;
           };
           whitelist.prefix = [
-            "/persist/home/${config.custom.meta.user}/Projects"
-            "/home/${config.custom.meta.user}/Projects"
+            "/persist/home/${meta.user}/Projects"
+            "/home/${meta.user}/Projects"
           ];
         };
       };

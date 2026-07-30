@@ -1,1 +1,8 @@
-{ flake.modules.nixos.budgie.services.desktopManager.budgie.enable = true; }
+{
+
+  enable = false;
+  hosts = [ "laptop" ];
+  config = {
+    services.desktopManager.budgie.enable = true;
+  };
+}

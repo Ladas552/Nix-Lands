@@ -1,5 +1,7 @@
 {
-  flake.modules.nixos.xfce =
+  enable = false;
+  hosts = [ "laptop" ];
+  config =
     { pkgs, lib, ... }:
     {
       services.xserver = {

@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.jellyfin = {
+  hosts = [ "server" ];
+  config = {
     services.jellyfin = {
       enable = true;
       group = "media";

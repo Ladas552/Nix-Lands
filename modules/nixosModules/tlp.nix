@@ -1,5 +1,10 @@
 {
-  flake.modules.nixos.tlp = {
+  enable = false;
+  hosts = [
+    "laptop"
+    "server"
+  ];
+  config = {
     powerManagement.enable = true;
     services.tlp = {
       pd.enable = true;

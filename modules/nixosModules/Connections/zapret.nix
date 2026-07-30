@@ -1,6 +1,8 @@
 # because fuck my country ig
 {
-  flake.modules.nixos.zapret = {
+  enable = false;
+  hosts = [ "laptop" ];
+  config = {
     services.zapret = {
       enable = true;
       whitelist = [

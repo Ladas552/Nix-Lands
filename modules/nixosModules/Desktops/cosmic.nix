@@ -1,5 +1,7 @@
 {
-  flake.modules.nixos.cosmic = {
+  enable = false;
+  hosts = [ "laptop" ];
+  config = {
     services.desktopManager.cosmic.enable = true;
     services.displayManager.cosmic-greeter.enable = true;
 

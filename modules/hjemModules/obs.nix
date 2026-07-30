@@ -1,8 +1,9 @@
 {
-  flake.modules.hjem.obs =
+  hosts = [ "laptop" ];
+  config =
     { pkgs, ... }:
     {
-      rum.programs.obs-studio = {
+      hj.rum.programs.obs-studio = {
         enable = true;
         package = pkgs.wrapOBS.override { obs-studio = pkgs.obs-studio; } {
           plugins = with pkgs.obs-studio-plugins; [

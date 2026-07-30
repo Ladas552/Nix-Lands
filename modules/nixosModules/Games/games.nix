@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.games =
+  hosts = [ "laptop" ];
+  config =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [

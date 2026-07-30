@@ -1,7 +1,7 @@
-{ inputs, ... }:
 {
-  flake.modules.nixos.tangled =
-    { config, ... }:
+  hosts = [ "vps" ];
+  config =
+    { config, inputs, ... }:
     let
       cfg = config.services.tangled.knot;
     in

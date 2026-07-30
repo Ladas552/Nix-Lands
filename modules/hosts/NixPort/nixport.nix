@@ -1,8 +1,21 @@
-{ self, inputs, ... }:
 {
-  flake.modules.nixos.NixPort =
-    { pkgs, config, ... }:
+  hosts = [ "laptop" ];
+  config =
     {
+      pkgs,
+      config,
+      self,
+      inputs,
+      ...
+    }:
+    {
+      _module.args = {
+        meta = {
+          hostname = "NixPort";
+          configPath = "/persist/home/ladas552/Projects/my_repos/Nix-Lands";
+          user = "ladas552";
+        };
+      };
       # Standalone Packages
       environment.systemPackages = with pkgs; [
         # blender
@@ -33,6 +46,7 @@
 
       environment.shellAliases = {
         kssh = "kitten ssh"; # for kitty terminal
+        game-osu = "env XKB_DEFAULT_LAYOUT=canary gamescope --backend drm -g --force-grab-cursor -W 1920 -H 1200 osu!";
         scan = "scanimage -d pixma:04A92759_0149U0000342 --resolution 600 --format=pdf -o";
       };
 

@@ -197,6 +197,7 @@ position = "top_right"
     dnd = false
     keyboard_layout = false
     lock_keys = false
+    media = false
     volume_input = false
 
 [plugin_settings."noctalia/screen_recorder"]

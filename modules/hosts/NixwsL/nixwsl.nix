@@ -1,16 +1,25 @@
-{ inputs, self, ... }:
 {
-  flake.modules.nixos.NixwsL =
+  hosts = [ "wsl" ];
+  config =
     {
       config,
       pkgs,
       lib,
+      inputs,
+      self,
       ...
     }:
     {
       imports = [
         inputs.nixos-wsl.nixosModules.wsl
       ];
+      _module.args = {
+        meta = {
+          hostname = "NixwsL";
+          configPath = "/home/ladas552/Projects/Nix-Lands";
+          user = "ladas552";
+        };
+      };
 
       # Standalone Packages
       environment.systemPackages = with pkgs; [
@@ -27,15 +36,15 @@
 
       # WSL isn't good with switch for some reason
       environment.shellAliases = { } // {
-        yy = lib.mkForce "nh os boot ${config.custom.meta.self}";
-        yyy = lib.mkForce "nh os boot -u ${config.custom.meta.self}";
+        yy = lib.mkForce "nh os boot ${config.custom.meta.configPath}";
+        yyy = lib.mkForce "nh os boot -u ${config.custom.meta.configPath}";
       };
 
       wsl = {
         enable = true;
         defaultUser = "${config.custom.meta.user}";
         startMenuLaunchers = true;
-        tarball.configPath = "${config.custom.meta.self}";
+        tarball.configPath = "${config.custom.meta.configPath}";
         usbip.enable = true;
         useWindowsDriver = true;
       };

@@ -8,22 +8,66 @@
       inputs = (import ./.tack) {
         overrides = args.tackOverrides or { };
       };
-
-      # Function to stop using `import-tree` by Vic.
-      # Just to lighten the config a bit, written by @llakala https://github.com/llakala/synaptic-standard/blob/main/demo/recursivelyImport.nix
-      import-tree = import ./lib/recursivelyImport.nix { lib = inputs.nixpkgs.lib; };
-    in
-    inputs.flake-parts.lib.mkFlake
-      {
-        inherit inputs self;
-      }
-      {
-        imports = import-tree [
-          ./modules
-          inputs.flake-parts.flakeModules.modules
-        ];
-        flake.templates = import ./templates;
-        # aarch64 and x86_64 Linux systems
-        systems = import inputs.systems;
+      pkgs = import inputs.nixpkgs {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
       };
+      mkSystem = inputs.nosh.lib.mkSystem inputs.nixpkgs;
+
+      systems = inputs.nixpkgs.lib.systems.flakeExposed;
+
+      # Provide simple per-system abstraction
+      # giving you the system and
+      # the package set for that system directly.
+      eachSystem =
+        f:
+        inputs.nixpkgs.lib.genAttrs systems (
+          system:
+          f system (
+            import inputs.nixpkgs {
+              inherit system;
+              config.allowUnfree = true;
+            }
+          )
+        );
+    in
+    {
+      nixosConfigurations =
+        let
+          inherit (inputs.nosh.lib.conditions) hasHost;
+          specialArgs = { inherit inputs self; };
+          paths = [ ./modules ];
+          modules = [ ./options ];
+        in
+        {
+          NixPort = mkSystem {
+            inherit paths modules specialArgs;
+            conditions = hasHost "laptop";
+            system = "x86_64-linux";
+          };
+          NixToks = mkSystem {
+            inherit paths specialArgs;
+            conditions = hasHost "server";
+            system = "x86_64-linux";
+          };
+          NixWool = mkSystem {
+            inherit paths specialArgs;
+            conditions = hasHost "vps";
+            system = "aarch64-linux";
+          };
+          NixwsL = mkSystem {
+            inherit paths specialArgs;
+            conditions = hasHost "wsl";
+            system = "x86_64-linux";
+          };
+          NixIso = mkSystem {
+            inherit paths specialArgs;
+            conditions = hasHost "iso";
+            system = "x86_64-linux";
+          };
+        };
+      packages = eachSystem (_: system: import ./pkgs { inherit inputs pkgs self; });
+      formatter = eachSystem (_: pkgs: pkgs.nixfmt-tree);
+      templates = ./templates;
+    };
 }

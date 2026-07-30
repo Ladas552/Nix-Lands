@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.miniflux =
+  hosts = [ "server" ];
+  config =
     { config, ... }:
     {
       # secrets

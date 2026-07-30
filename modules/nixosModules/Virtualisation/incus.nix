@@ -3,8 +3,10 @@
 # And my nvidia GPU passtrouh doesn't work
 # So it will stay here, not used
 {
-  flake.modules.nixos.incus =
-    { pkgs, config, ... }:
+  enable = false;
+  hosts = [ "laptop" ];
+  config =
+    { pkgs, meta, ... }:
     {
       # outputs error without this
       networking.nftables.enable = true;
@@ -18,7 +20,7 @@
         ui.enable = true;
       };
       # Stolen from @saygo and @Michael-C-Buckley
-      users.users."${config.custom.meta.user}".extraGroups = [ "incus-admin" ];
+      users.users."${meta.user}".extraGroups = [ "incus-admin" ];
       environment.systemPackages = [ pkgs.virtiofsd ];
       # Incus is bested used with these modules available
       boot.kernelModules = [

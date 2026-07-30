@@ -1,10 +1,10 @@
-{ inputs, ... }:
-
 {
-  flake.modules.nixos.NixPort =
+  hosts = [ "laptop" ];
+  config =
     {
       lib,
       modulesPath,
+      inputs,
       ...
     }:
     {

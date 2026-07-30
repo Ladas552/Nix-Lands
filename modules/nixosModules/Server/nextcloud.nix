@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.nextcloud =
+  hosts = [ "server" ];
+  config =
     { config, pkgs, ... }:
     {
       # secrets

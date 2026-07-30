@@ -1,8 +1,10 @@
 {
-  flake.modules.hjem.flameshot =
+  enable = false;
+  hosts = [ "laptop" ];
+  config =
     { pkgs, ... }:
     {
-      packages = with pkgs; [
+      environment.systemPackages = with pkgs; [
         flameshot
         # stolen from @saygo
         # https://github.com/saygo-png/nixos/blob/e79fee2df375ef29bfabd98434c61efe6407a84a/modules/flameshot.nix#L21C1-L33C7
@@ -24,7 +26,7 @@
         })
 
       ];
-      rum.programs.flameshot = {
+      hj.rum.programs.flameshot = {
         enable = true;
         settings = {
           General = {

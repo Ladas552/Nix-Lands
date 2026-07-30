@@ -1,6 +1,7 @@
 {
-  flake.modules.hjem.imv = {
-    rum.programs.imv = {
+  hosts = [ "laptop" ];
+  config = {
+    hj.rum.programs.imv = {
       enable = true;
       settings = {
         options.suppress_default_binds = true;

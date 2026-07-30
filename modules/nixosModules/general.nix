@@ -1,14 +1,14 @@
 {
-  flake.modules.nixos.general =
+  config =
     {
       pkgs,
-      config,
+      meta,
       lib,
       ...
     }:
     {
       # Define hostname.
-      networking.hostName = "${config.custom.meta.hostname}";
+      networking.hostName = "${meta.hostname}";
       # Set kernel
       boot.kernelPackages = lib.mkDefault pkgs.linuxKernel.packages.linux_xanmod;
       # boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;

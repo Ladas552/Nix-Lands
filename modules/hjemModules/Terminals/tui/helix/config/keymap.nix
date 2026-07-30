@@ -1,6 +1,11 @@
 {
-  flake.modules.hjem.helix = {
-    rum.programs.helix.settings.keys = {
+  enable = false;
+  hosts = [
+    "laptop"
+    "server"
+  ];
+  config = {
+    hj.rum.programs.helix.settings.keys = {
       select = {
         "C-c" = "toggle_block_comments";
         G = "goto_last_line";

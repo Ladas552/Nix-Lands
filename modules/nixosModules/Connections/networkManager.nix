@@ -1,1 +1,9 @@
-{ flake.modules.nixos.network-manager.networking.networkmanager.enable = true; }
+{
+  hosts = [
+    "laptop"
+    "iso"
+  ];
+  config = {
+    networking.networkmanager.enable = true;
+  };
+}

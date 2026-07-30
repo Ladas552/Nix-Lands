@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.steam =
+  hosts = [ "laptop" ];
+  config =
     { pkgs, ... }:
     {
       # Steam
@@ -14,13 +15,11 @@
       programs.gamemode.enable = true; # huge battery drains on my laptop
       environment.systemPackages = [ pkgs.gamescope ];
       # persist steam
-      custom.imp.home = {
-        cache.directories = [
-          ".local/share/Steam"
-          ".cache/mesa_shader_cache"
-          ".cache/mesa_shader_cache_db"
-          ".cache/radv_builtin_shaders"
-        ];
-      };
+      custom.imp.home.cache.directories = [
+        ".local/share/Steam"
+        ".cache/mesa_shader_cache"
+        ".cache/mesa_shader_cache_db"
+        ".cache/radv_builtin_shaders"
+      ];
     };
 }

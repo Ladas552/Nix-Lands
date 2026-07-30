@@ -1,5 +1,7 @@
 {
-  flake.modules.nixos.gnome =
+  enable = false;
+  hosts = [ "laptop" ];
+  config =
     { pkgs }:
     {
       # enable DE and most of gnome services

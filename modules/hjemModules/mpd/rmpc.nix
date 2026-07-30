@@ -1,14 +1,15 @@
 {
   # Store inline rmpc configs
-  flake.modules.hjem.mpd =
+  hosts = [ "laptop" ];
+  config =
     { pkgs, ... }:
     {
-      packages = [
+      environment.systemPackages = [
         pkgs.rmpc
       ];
 
       # TODO. add keybinds for skiping to next album with `[` & `]` when it's added to rmpc
-      xdg.config.files."rmpc/config.ron".text = # ron
+      hj.xdg.config.files."rmpc/config.ron".text = # ron
         ''
           #![enable(implicit_some)]
           #![enable(unwrap_newtypes)]
@@ -88,7 +89,7 @@
           )
         '';
       # TODO get rid of lyrics and rounded corners for tab content pane
-      xdg.config.files."rmpc/themes/bash.ron".text = # ron
+      hj.xdg.config.files."rmpc/themes/bash.ron".text = # ron
         ''
           #![enable(implicit_some)]
           #![enable(unwrap_newtypes)]

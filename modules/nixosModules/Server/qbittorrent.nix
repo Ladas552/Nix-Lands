@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.qbittorrent =
+  hosts = [ "server" ];
+  config =
     { pkgs, ... }:
     {
       # module

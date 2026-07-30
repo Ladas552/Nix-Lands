@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.karakeep =
+  hosts = [ "server" ];
+  config =
     { lib, pkgs, ... }:
     {
       services.karakeep = {

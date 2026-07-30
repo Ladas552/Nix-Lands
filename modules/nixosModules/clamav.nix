@@ -1,5 +1,7 @@
 {
-  flake.modules.nixos.clamav = {
+  enable = false;
+  hosts = [ ];
+  config = {
     # antivirus? Idk sounds cool. Don't need it on desktop tho
     services.clamav = {
       scanner = {

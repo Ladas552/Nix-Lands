@@ -1,12 +1,17 @@
 {
-  flake.modules.hjem.helix-nixd =
+  enable = false;
+  hosts = [
+    "laptop"
+    "server"
+  ];
+  config =
     { pkgs, ... }:
     {
-      packages = [
+      environment.systemPackages = [
         pkgs.nixd
         pkgs.nixfmt
       ];
-      rum.programs.helix = {
+      hj.rum.programs.helix = {
         languages = {
           language-server.nixd = {
             command = "nixd";

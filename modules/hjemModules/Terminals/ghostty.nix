@@ -1,8 +1,10 @@
 {
-  flake.modules.hjem.ghostty =
-    { config, ... }:
+  enable = false;
+  hosts = [ "laptop" ];
+  config =
+    { config, meta, ... }:
     {
-      rum.programs.ghostty = {
+      hj.rum.programs.ghostty = {
         enable = true;
         # Use ghostty master branch from Flake
         ## It started to build instead of downloading quite often
@@ -54,11 +56,14 @@
           window-inherit-font-size = false;
           window-theme = "dark";
           resize-overlay = "never";
-          gtk-titlebar = if config.custom.meta.hostname == "NixwsL" then true else false;
+          gtk-titlebar = if meta.hostname == "NixwsL" then true else false;
           window-decoration = "server";
           confirm-close-surface = false;
           gtk-tabs-location = "bottom";
           gtk-single-instance = true;
+          theme = "dracata";
+          font-size = 13;
+          font-family = "JetBrainsMono NFM";
           # Shaders
           # custom-shader = "${inputs.ghostty-shaders}/glitchy.glsl";
           # custom-shader = "${inputs.ghostty-cursor}/shaders/debug_cursor_animated.glsl";

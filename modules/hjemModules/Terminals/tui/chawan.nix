@@ -1,6 +1,7 @@
 {
-  flake.modules.hjem.chawan = {
-    rum.programs.chawan = {
+  hosts = [ "laptop" ];
+  config = {
+    hj.rum.programs.chawan = {
       enable = true;
       settings = {
         buffer = {

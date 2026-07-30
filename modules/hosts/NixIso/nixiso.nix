@@ -1,12 +1,14 @@
-{ self, config, ... }:
 # build the image with
 # nixos-rebuild build-image --image-variant iso --flake "github:Ladas552/Flake-Ocean#NixIso"
 {
-  flake.modules.nixos.NixIso =
+  hosts = [ "iso" ];
+  config =
     {
       modulesPath,
       lib,
       pkgs,
+      self,
+      config,
       ...
     }:
     let
@@ -18,6 +20,13 @@
         # base for iso
         (modulesPath + "/installer/cd-dvd/installation-cd-base.nix")
       ];
+      _module.args = {
+        meta = {
+          hostname = "NixIso";
+          configPath = "~/Flake-Ocean";
+          user = "ladas552";
+        };
+      };
       # Standalone Packages
       environment.systemPackages = with pkgs; [
         ungoogled-chromium

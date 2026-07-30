@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.xkb = {
+  hosts = [ "laptop" ];
+  config = {
     # Configure keymap in X11
     services.xserver = {
       xkb.layout = "canary,kz";

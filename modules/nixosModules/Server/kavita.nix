@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.kavita =
+  hosts = [ "server" ];
+  config =
     { config, ... }:
     {
       # secrets

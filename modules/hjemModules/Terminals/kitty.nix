@@ -1,6 +1,6 @@
 {
-  flake.modules.hjem.kitty = {
-    rum.programs.kitty = {
+  config = {
+    hj.rum.programs.kitty = {
       enable = true;
       settings = {
         #kitty.conf
@@ -13,6 +13,9 @@
         cursor_trail = 0; # uses 10% of my GPU
         scrollbar = "scrolled-and-hovered";
         window_padding_width = 0;
+        font_family = "JetBrainsMono NFM";
+        font_size = 13;
+
         # Colors
         background = "#181B28";
         foreground = "#F8F8F2";

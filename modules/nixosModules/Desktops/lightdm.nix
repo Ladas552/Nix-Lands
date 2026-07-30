@@ -1,5 +1,7 @@
 {
-  flake.modules.nixos.lightdm =
+  enable = false;
+  hosts = [ "laptop" ];
+  config =
     { pkgs, ... }:
     {
       services = {

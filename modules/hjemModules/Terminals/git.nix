@@ -1,6 +1,6 @@
 {
-  flake.modules.hjem.git = {
-    rum.programs.git = {
+  config = {
+    hj.rum.programs.git = {
       enable = true;
       # TODO no gh and openpgp integration like home-manager does, for now
       settings = {

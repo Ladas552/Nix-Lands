@@ -1,5 +1,7 @@
 {
-  flake.modules.nixos.ollama =
+  enable = false;
+  hosts = [ "server" ];
+  config =
     { pkgs, ... }:
     {
       services.ollama = {
