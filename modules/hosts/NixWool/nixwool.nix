@@ -4,7 +4,7 @@
     {
       pkgs,
       lib,
-      config,
+      meta,
       self,
       ...
     }:
@@ -52,7 +52,7 @@
 
       services.sshguard.enable = true;
       # I chowned this directories `sudo chown -R ladas552:caddy /var/www`
-      users.users."${config.custom.meta.user}".extraGroups = [ "caddy" ];
+      users.users."${meta.user}".extraGroups = [ "caddy" ];
       services.caddy = {
         enable = true;
         globalConfig = ''
