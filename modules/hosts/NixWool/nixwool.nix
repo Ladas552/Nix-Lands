@@ -11,7 +11,7 @@
     {
       _module.args = {
         meta = {
-          hostname = "NixIso";
+          hostname = "NixWool";
           configPath = "git+https://tangled.org/ladas552.me/Flake-ocean?rev=";
           user = "ladas552";
         };
