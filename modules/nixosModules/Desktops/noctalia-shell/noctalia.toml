@@ -4,44 +4,23 @@ sound_volume = 0.0
 [backdrop]
 enabled = true
 
-[bar]
-order = [ "Main" ]
+[bar.default]
+background_opacity = 0.58999998681247234
+center = [ "taskbar", "audio_visualizer" ]
+concave_edge_corners = false
+end = [ "tray", "notifications", "keyboard_layout", "battery", "network", "bluetooth", "volume", "clock" ]
+font_family = "JetBrainsMono NFM"
+margin_ends = 0
+position = "left"
+radius = 0
+scale = 1.2500000111758709
+shadow = false
+start = [ "control-center", "session", "launcher", "recorder", "bar", "media" ]
+thickness = 36
+widget_spacing = 8
 
-    [bar.Main]
-    background_opacity = 0.74999998323619366
-    capsule_radius = 0
-    center = [ "taskbar", "audio_visualizer" ]
-    end = [ "tray", "notifications", "network", "bluetooth", "volume", "battery", "keyboard_layout", "clock" ]
-    margin_edge = 0
-    margin_ends = 0
-    panel_overlap = 0
-    position = "left"
-    radius = 0
-    shadow = false
-    start = [ "control-center", "session", "launcher", "recorder", "media" ]
-    thickness = 42
-    widget_spacing = 12
-
-[calendar]
-refresh_minutes = 120
-
-[[control_center.shortcuts]]
-type = "wifi"
-
-[[control_center.shortcuts]]
-type = "bluetooth"
-
-[[control_center.shortcuts]]
-type = "caffeine"
-
-[[control_center.shortcuts]]
-type = "power_profile"
-
-[[control_center.shortcuts]]
-type = "mic_mute"
-
-[[control_center.shortcuts]]
-type = "screen_time"
+[control_center.calendar]
+show_week_numbers = true
 
 [desktop_widgets]
 enabled = false
@@ -62,20 +41,20 @@ pre_action_fade_seconds = 4
     [idle.behavior.lock]
     action = "lock"
     enabled = true
-    timeout = 600
+    timeout = 600.0
 
     [idle.behavior.lock-and-suspend]
     action = "lock_and_suspend"
     enabled = true
-    timeout = 1600
+    timeout = 900.0
 
     [idle.behavior.screen-off]
     action = "screen_off"
     enabled = true
-    timeout = 660
+    timeout = 300.0
 
 [location]
-auto_locate = true
+address = "Astana"
 
 [lockscreen]
 fingerprint = false
@@ -83,14 +62,7 @@ fingerprint = false
 [lockscreen_widgets]
 enabled = true
 schema_version = 2
-widget_order = [
-    "lockscreen-login-box@eDP-1",
-    "lockscreen-widget-0000000000000001",
-    "lockscreen-widget-0000000000000002",
-    "lockscreen-widget-0000000000000003",
-    "lockscreen-widget-0000000000000004",
-    "lockscreen-widget-0000000000000005"
-]
+widget_order = [ "lockscreen-login-box@eDP-1" ]
 
     [lockscreen_widgets.grid]
     cell_size = 16
@@ -98,151 +70,76 @@ widget_order = [
     visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 70.0
-    box_width = 400.0
-    cx = 984.0
-    cy = 891.0
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 1018.0
     output = "eDP-1"
     rotation = 0.0
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
         center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
-        show_password_hint = true
-
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
-    box_height = 160.0
-    box_width = 528.0
-    cx = 1504.0
-    cy = 904.0
-    output = "eDP-1"
-    rotation = 0.0
-    type = "weather"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
-        shadow = true
-
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
-    box_height = 160.0
-    box_width = 480.0
-    cx = 416.0
-    cy = 904.0
-    output = "eDP-1"
-    rotation = 0.0
-    type = "media_player"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
-        hide_when_no_media = true
-        layout = "horizontal"
-
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
-    box_height = 160.0
-    box_width = 704.0
-    cx = 944.0
-    cy = 328.0
-    output = "eDP-1"
-    rotation = 0.0
-    type = "clock"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
-        clock_style = "digital"
-        color = "on_surface_variant"
-        format = "{:%H:%M}"
-
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
-    box_height = 0.0
-    box_width = 0.0
-    cx = 960.0
-    cy = 811.0
-    output = "eDP-1"
-    rotation = 0.0
-    type = "button"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
-        background = true
-        command = "systemctl poweroff"
-        glyph = "power"
-        label = "Power Off"
-        stat2 = "cpu_temp"
-        variant = "default"
-
-    [lockscreen_widgets.widget.lockscreen-widget-0000000000000005]
-    box_height = 160.0
-    box_width = 704.0
-    cx = 960.0
-    cy = 648.0
-    output = "eDP-1"
-    rotation = 0.0
-    type = "clock"
-
-        [lockscreen_widgets.widget.lockscreen-widget-0000000000000005.settings]
-        clock_style = "digital"
-        color = "error"
-        format = "{:%D}"
-
-[notification]
-allowed_urgencies = [ "normal", "critical" ]
-background_opacity = 0.69999998435378075
-layer = "top"
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
 
 [osd]
-background_opacity = 0.74999998323619366
 position = "top_right"
+position_vertical = "top_right"
 
     [osd.kinds]
+    bluetooth = false
     caffeine = false
     dnd = false
+    keyboard_backlight = false
     keyboard_layout = false
     lock_keys = false
     media = false
+    nightlight = false
+    power_profile = false
     volume_input = false
-
-[plugin_settings."noctalia/screen_recorder"]
-copy_to_clipboard = true
-frame_rate = 30
-quality = "medium"
-resolution = "1280x720"
+    wifi = false
 
 [plugins]
-enabled = [ "noctalia/screen_recorder" ]
-
-    [[plugins.source]]
-    auto_update = true
-    kind = "git"
-    location = "https://github.com/noctalia-dev/official-plugins"
-    name = "official"
-
-    [[plugins.source]]
-    auto_update = true
-    kind = "git"
-    location = "https://github.com/noctalia-dev/community-plugins"
-    name = "community"
+enabled = [ "noctalia/screen_recorder", "noctalia/timer" ]
 
 [shell]
 clipboard_enabled = false
+clipboard_keep_from_closed_apps = false
 corner_radius_scale = 0.0
-font_family = "JetBrainsMono Nerd Font"
+font_family = "JetBrainsMono NFM"
 lang = "en"
 launch_apps_as_systemd_services = true
 password_style = "random"
 polkit_agent = true
+popup_shadows = false
 screen_time_enabled = true
-settings_show_advanced = true
+show_location = false
 telemetry_enabled = true
 
     [shell.animation]
     speed = 1.5000000223517418
 
+    [shell.launcher]
+    auto_paste = "off"
+
     [shell.mpris]
     blacklist = [ "Mozilla firefox" ]
 
     [shell.panel]
-    borders = false
+    list_item_background = true
     open_near_click_control_center = true
-    open_near_click_wallpaper = true
     session_placement = "floating"
     session_position = "center"
     shadow = false
@@ -254,30 +151,35 @@ telemetry_enabled = true
 
     [[shell.session.actions]]
     action = "lock"
+    countdown_seconds = 0.0
     enabled = true
     shortcut = "1"
     variant = "default"
 
     [[shell.session.actions]]
     action = "logout"
+    countdown_seconds = 0.0
     enabled = false
     shortcut = "2"
     variant = "default"
 
     [[shell.session.actions]]
     action = "lock_and_suspend"
+    countdown_seconds = 0.0
     enabled = true
     shortcut = "2"
     variant = "default"
 
     [[shell.session.actions]]
     action = "reboot"
+    countdown_seconds = 0.0
     enabled = true
     shortcut = "3"
     variant = "default"
 
     [[shell.session.actions]]
     action = "shutdown"
+    countdown_seconds = 0.0
     enabled = true
     shortcut = "4"
     variant = "destructive"
@@ -290,10 +192,6 @@ enabled = false
 
 [theme]
 builtin = "Catppuccin"
-community_palette = "Catppuccin Lavender"
-mode = "dark"
-source = "builtin"
-wallpaper_scheme = "faithful"
 
     [theme.templates]
     enable_builtin_templates = false
@@ -301,80 +199,75 @@ wallpaper_scheme = "faithful"
 
 [wallpaper]
 directory = "/home/ladas552/Pictures/backgrounds"
-transition = [ "disc", "fade", "honeycomb", "stripes", "wipe", "zoom" ]
 
     [wallpaper.automation]
     enabled = true
 
     [wallpaper.default]
-    path = "/home/ladas552/Pictures/backgrounds/blackhole-dots-banana.png"
+    path = "/home/ladas552/Pictures/backgrounds/Welcome.jpg"
 
     [wallpaper.last]
-    path = "/home/ladas552/Pictures/backgrounds/blackhole-dots-banana.png"
-
-    [wallpaper.monitors.HDMI-A-1]
-    path = "/home/ladas552/Pictures/backgrounds/Sacrifice.jpg"
+    path = "/home/ladas552/Pictures/backgrounds/Welcome.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/ladas552/Pictures/backgrounds/blackhole-dots-banana.png"
+    path = "/home/ladas552/Pictures/backgrounds/Welcome.jpg"
 
 [widget.audio_visualizer]
-bands = 79
-width = 228.0
+bands = 30
+width = 243
+
+[widget.bar]
+type = "noctalia/timer:bar"
 
 [widget.battery]
 hide_when_full = true
-hide_when_plugged = true
 
 [widget.clock]
 color = "primary"
-format = "{:%H:%M --- :%d :%b}"
+format = "{:%H --- :%M}"
+icon_color = "error"
 
 [widget.control-center]
 color = "primary"
-scale = 1.2
 
 [widget.keyboard_layout]
+color = "secondary"
 show_icon = false
 
     [widget.keyboard_layout.custom_labels]
     Canary = "CNR"
-    "English (Canary)" = "CNR"
     Kazakh = "KZ"
 
 [widget.launcher]
 color = "tertiary"
 glyph = "rocket"
-scale = 1.25
 
 [widget.media]
-art_size = 96.0
+art_size = 96
 hide_when_no_media = true
-scale = 1.2
+max_length = 242
+
+[widget.network]
+show_label = false
+
+[widget.notifications]
+hide_when_no_unread = true
 
 [widget.recorder]
-scale = 1.2
 type = "noctalia/screen_recorder:recorder"
 
 [widget.session]
-color = "error"
-scale = 1.2
+icon_color = "error"
 
 [widget.taskbar]
-capsule_radius = "auto"
 group_by_workspace = true
 hide_empty_workspaces = true
-inactive_opacity = 0.75
-scale = 1.3500000000000001
-show_active_indicator = false
+inactive_opacity = 0.69999999999999996
 workspace_group_capsule = false
 
 [widget.tray]
 drawer = true
 
 [widget.volume]
+mute_color = "primary"
 show_label = false
-
-[widget.workspaces]
-capsule_radius = 0
-hide_when_empty = true

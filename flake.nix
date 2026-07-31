@@ -8,10 +8,6 @@
       inputs = (import ./.tack) {
         overrides = args.tackOverrides or { };
       };
-      pkgs = import inputs.nixpkgs {
-        system = "x86_64-linux";
-        config.allowUnfree = true;
-      };
       mkSystem = inputs.nosh.lib.mkSystem inputs.nixpkgs;
 
       systems = inputs.nixpkgs.lib.systems.flakeExposed;
@@ -23,7 +19,7 @@
         f:
         inputs.nixpkgs.lib.genAttrs systems (
           system:
-          f system (
+          f (
             import inputs.nixpkgs {
               inherit system;
               config.allowUnfree = true;
@@ -66,8 +62,8 @@
             system = "x86_64-linux";
           };
         };
-      packages = eachSystem (_: system: import ./pkgs { inherit inputs pkgs self; });
-      formatter = eachSystem (_: pkgs: pkgs.nixfmt-tree);
+      packages = eachSystem (pkgs: import ./pkgs { inherit inputs pkgs self; });
+      formatter = eachSystem (pkgs: pkgs.nixfmt-tree);
       templates = ./templates;
     };
 }

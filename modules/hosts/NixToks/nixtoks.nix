@@ -5,6 +5,7 @@
       config,
       pkgs,
       self,
+      meta,
       ...
     }:
     {
@@ -95,7 +96,7 @@
       hardware.nvidia-container-toolkit.enable = config.virtualisation.podman.enable;
 
       # Define a user account. Check Impermanence Module for user password
-      users.users."${config.custom.meta.user}".extraGroups = [ "media" ];
+      users.users."${meta.user}".extraGroups = [ "media" ];
 
       # This value determines the NixOS release from which the default
       # settings for stateful data, like file locations and database versions
