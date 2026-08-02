@@ -1,5 +1,4 @@
 {
-
   enable = false;
   hosts = [ "laptop" ];
   config = {

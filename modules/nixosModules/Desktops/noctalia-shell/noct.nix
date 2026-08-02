@@ -20,13 +20,12 @@
           "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
         ];
       };
+      hj.xdg.config.files."noctalia/noctalia.toml".source = ./noctalia.toml;
+
+      # persist for Impermanence
+      custom.imp.home.cache.directories = [
+        ".cache/noctalia"
+        ".local/state/noctalia"
+      ];
     };
-
-  hj.xdg.config.files."noctalia/noctalia.toml".source = ./noctalia.toml;
-
-  # persist for Impermanence
-  custom.imp.home.cache.directories = [
-    ".cache/noctalia"
-    ".local/state/noctalia"
-  ];
 }
