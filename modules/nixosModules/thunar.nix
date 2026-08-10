@@ -28,7 +28,7 @@
       #   };
       # };
 
-      hj.xdg.config.files.".config/Thunar/uca.xml".text = # xml
+      hj.xdg.config.files."Thunar/uca.xml".text = # xml
         ''
           <?xml version="1.0" encoding="UTF-8"?>
           <actions>

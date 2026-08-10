@@ -23,7 +23,7 @@ github:Ladas552/Nix-Lands#app`, replace `app` with:
 - NixWool is my Hetzner cloud that runs [Tangled.sh](https://tangled.org/) knot
 
 ## Modular
-My config modules are imported automatically, but only merges if the host variant is matching to the host I am building. This is accomplished by [nosh](https://codeberg.org/poacher/nosh), a simple lib to make modular configs without `mkIf` option hell. I [forked it](https://tangled.org/ladas552.me/nosh) to better suit my use case.
+My config modules are imported automatically, but only merges if the host variant is matching to the host I am building. This is accomplished by [nosh](https://codeberg.org/poacher/nosh), a simple lib to make modular configs without `mkIf` option hell. I [forked it](https://tangled.org/ladas552.me/nosh) to better suit my use case. The repo is also vendored in `/lib`
 
 Depending on a host, I pass `meta` special arg that carry specific to this host information
 

@@ -1,6 +1,6 @@
 {
   enable = false;
-  hosts = [ "laptot" ];
+  hosts = [ "laptop" ];
   config =
     { pkgs, ... }:
     {

@@ -8,7 +8,8 @@
       inputs = (import ./.tack) {
         overrides = args.tackOverrides or { };
       };
-      mkSystem = inputs.nosh.lib.mkSystem inputs.nixpkgs;
+      nosh = import ./lib { nixpkgs = inputs.nixpkgs; };
+      mkSystem = nosh.mkSystem inputs.nixpkgs;
 
       systems = inputs.nixpkgs.lib.systems.flakeExposed;
 
@@ -30,7 +31,7 @@
     {
       nixosConfigurations =
         let
-          inherit (inputs.nosh.lib.conditions) hasHost;
+          inherit (nosh.conditions) hasHost;
           specialArgs = { inherit inputs self; };
           paths = [ ./modules ];
           modules = [ ./options ];

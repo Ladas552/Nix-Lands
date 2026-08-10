@@ -2,7 +2,7 @@
   hosts = [ "wsl" ];
   config =
     {
-      config,
+      meta,
       pkgs,
       lib,
       inputs,
@@ -36,15 +36,15 @@
 
       # WSL isn't good with switch for some reason
       environment.shellAliases = { } // {
-        yy = lib.mkForce "nh os boot ${config.custom.meta.configPath}";
-        yyy = lib.mkForce "nh os boot -u ${config.custom.meta.configPath}";
+        yy = lib.mkForce "nh os boot ${meta.configPath}";
+        yyy = lib.mkForce "nh os boot -u ${meta.configPath}";
       };
 
       wsl = {
         enable = true;
-        defaultUser = "${config.custom.meta.user}";
+        defaultUser = "${meta.user}";
         startMenuLaunchers = true;
-        tarball.configPath = "${config.custom.meta.configPath}";
+        tarball.configPath = "${meta.configPath}";
         usbip.enable = true;
         useWindowsDriver = true;
       };

@@ -1,5 +1,5 @@
 # build the image with
-# nixos-rebuild build-image --image-variant iso --flake "github:Ladas552/Flake-Ocean#NixIso"
+# nixos-rebuild build-image --image-variant iso --flake "github:Ladas552/Nix-Lands#NixIso"
 {
   hosts = [ "iso" ];
   config =
@@ -8,11 +8,10 @@
       lib,
       pkgs,
       self,
-      config,
+      meta,
       ...
     }:
     let
-      restore = self.packages.${pkgs.stdenv.hostPlatform.system}.restore;
       qalc = self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate;
     in
     {
@@ -37,16 +36,15 @@
         telegram-desktop
         xarchiver
         gparted
-        restore
         # Get list of locales
         glibcLocales
       ];
 
       environment = {
         shellAliases = {
-          wget-install = "${lib.getExe' pkgs.wget "wget"} https://raw.githubusercontent.com/Ladas552/Flake-Ocean/refs/heads/master/docs/zfs.norg";
-          wget-impermanence = "${lib.getExe' pkgs.wget "wget"} https://raw.githubusercontent.com/Ladas552/Flake-Ocean/refs/heads/master/docs/impermanence.norg";
-          git-install = "${lib.getExe' pkgs.git "git"} clone https://github.com/Ladas552/Flake-Ocean.git";
+          wget-install = "${lib.getExe' pkgs.wget "wget"} https://raw.githubusercontent.com/Ladas552/Nix-Lands/refs/heads/master/docs/zfs.norg";
+          wget-impermanence = "${lib.getExe' pkgs.wget "wget"} https://raw.githubusercontent.com/Ladas552/Nix-Lands/refs/heads/master/docs/impermanence.norg";
+          git-install = "${lib.getExe' pkgs.git "git"} clone https://github.com/Ladas552/Nix-Lands.git";
         };
       };
 
@@ -75,8 +73,8 @@
         enable32Bit = true;
       };
 
-      services.getty.autologinUser = lib.mkForce "${config.custom.meta.user}";
-      users.users."${config.custom.meta.user}".hashedPasswordFile = lib.mkForce null;
+      services.getty.autologinUser = lib.mkForce "${meta.user}";
+      users.users."${meta.user}".hashedPasswordFile = lib.mkForce null;
 
       system.stateVersion = "26.05"; # Did you read the comment?
     };

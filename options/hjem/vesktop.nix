@@ -15,10 +15,12 @@ in
   options.programs.vesktop = {
     settings = mkOption {
       type = json.type;
+      default = { };
     };
 
     vencord.settings = mkOption {
       type = json.type;
+      default = { };
     };
 
     enable = mkEnableOption "vesktop";

@@ -211,6 +211,13 @@
       "-c"
       "Neorg journal today"
     ];
+    "Super+E".spawn = [
+      "kitty"
+      "-e"
+      "nvim"
+      "-c"
+      "Neorg workspace life"
+    ];
     "Super+H".spawn = [
       "kitty"
       "-e"
