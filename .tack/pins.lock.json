@@ -76,9 +76,9 @@
     "type": "git",
     "url": "https://codeberg.org/BANanaD3V/niri-nix",
     "ref": "HEAD",
-    "rev": "d0e55a12ec2fc62524e3de621f77706a1854601b",
-    "narHash": "sha256-Sh2XpMoVod4BCJnDgL06XgHdxzxCCHJmdxE+GdQv2Ys=",
-    "lastModified": 1786233771
+    "rev": "2689293985c03837b4894766f7a481057dad7675",
+    "narHash": "sha256-R8LuXE9eS0uZXTxS9F6Maw+EBPFpM6fFKjRCHZqhXJ8=",
+    "lastModified": 1786406549
   },
   "nix-darwin": {
     "type": "github",
@@ -92,9 +92,9 @@
     "type": "github",
     "owner": "Infinidoge",
     "repo": "nix-minecraft",
-    "rev": "71e57519f7acdeadc062fa101dd704841a8072b4",
-    "narHash": "sha256-LrBZgQA3j50IGWGTH1GXvkv/kNuZA3k0vlBMvvzJvj4=",
-    "lastModified": 1786328466
+    "rev": "cacc8cd89550f0cbec7103f3db5e96d1a66c58e7",
+    "narHash": "sha256-FNGnUYud1D3BqE1JU2Uef+puLB2Rml7gKSdIGQOb550=",
+    "lastModified": 1786414302
   },
   "nixos-core": {
     "type": "github",
@@ -122,9 +122,9 @@
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1049422.f13ff45afd1b/nixexprs.tar.xz",
-    "rev": "f13ff45afd1bb73e640eaa08a7066dbed07e3238",
-    "narHash": "sha256-CgKDSHL6rqAAQkkvg1xaZDQXb77+4XW73iGcUMJ+2w0="
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1050399.279b4a8275f0/nixexprs.tar.xz",
+    "rev": "279b4a8275f032c566576b3f181fa0f27197f588",
+    "narHash": "sha256-qemNveuexlWhK0Qc6Y8o+gtSVTIj5xljzTAXQZxTHWA="
   },
   "noctalia": {
     "type": "github",
@@ -146,9 +146,9 @@
     "type": "github",
     "owner": "Mic92",
     "repo": "sops-nix",
-    "rev": "f1406619a3884cd5c47992a70b8b35c9c0fcb4c9",
-    "narHash": "sha256-aCWC8ngycU7OdJrU2+Je3qf+1a2ykuBvpPhZT/9tXMc=",
-    "lastModified": 1783174389
+    "rev": "d1337e05ba0a8e88a75d2c0e1595d82f3b3e2ac4",
+    "narHash": "sha256-G7qDAT98nywA4EFmJCwIRO5wKvDlBBN3BWpsOnjAto8=",
+    "lastModified": 1786375908
   },
   "systems": {
     "type": "github",
@@ -170,8 +170,8 @@
     "type": "git",
     "url": "https://tangled.org/tangled.org/core",
     "ref": "HEAD",
-    "rev": "72600e09bab5acdfb3252394870ed8f04f372c7d",
-    "narHash": "sha256-oYlJNYs9Jeo81eaMexSwwVvJutsGyeKwWlGtItnm/gI=",
-    "lastModified": 1786139879
+    "rev": "1b2a86c0465a2db029fb3d1bcfccf78f2e1bf3a6",
+    "narHash": "sha256-w5MICNYX5eRbU1R+gYts2jDHMoFHGu7cATaCoGirzgw=",
+    "lastModified": 1786351941
   }
 }

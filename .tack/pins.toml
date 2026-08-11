@@ -81,6 +81,7 @@ url = "gh:nix-community/NixOS-WSL"
 
 [inputs.noctalia]
 url = "gh:noctalia-dev/noctalia"
+exclude_follow  = ["nixpkgs"]
 
 [inputs.nixos-hardware]
 url = "gh:nixos/nixos-hardware"

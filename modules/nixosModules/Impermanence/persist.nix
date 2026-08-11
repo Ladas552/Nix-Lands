@@ -12,11 +12,7 @@
         cache.files = [ "/etc/machine-id" ]; # to have systemd journal in the same file
       };
       home = {
-        directories = [
-          ".librewolf"
-        ];
         cache = {
-          files = [ ".local/share/com.jeffser.Alpaca/alpaca.db" ];
           directories = [
             ".local/share/Trash"
             ".local/share/qalculate"
@@ -27,7 +23,6 @@
             ".local/state/nvf"
             ".local/share/nvf"
             ".config/libreoffice"
-            ".cache/librewolf"
             ".cache/keepassxc"
             ".config/keepassxc"
             ".config/qBittorrent"
