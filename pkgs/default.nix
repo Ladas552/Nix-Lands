@@ -20,6 +20,7 @@
   libqalculate = pkgs.callPackage ./qalc.nix { };
   # scripts
   gcp = pkgs.callPackage ./addcommitpush.nix { };
+  eval = pkgs.callPackage ./eval-stats.nix { };
   word-lookup = pkgs.callPackage ./word-lookup.nix { };
   Subtitlenator = pkgs.callPackage ./Subtitlenator.nix { };
   musnow = pkgs.callPackage ./musnow.nix { };

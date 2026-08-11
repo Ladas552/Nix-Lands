@@ -31,6 +31,7 @@
       javascript
       json
       julia
+      jq
       kdl
       kotlin
       luadoc
