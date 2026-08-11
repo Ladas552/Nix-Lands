@@ -41,7 +41,9 @@
     };
 
     # persist for Impermanence
-    custom.imp.root.directories = [ "/var/lib/tranquil-pds" ];
-
+    custom.imp.root.directories = [
+      "/var/lib/tranquil-pds"
+      "/var/lib/postgresql"
+    ];
   };
 }
