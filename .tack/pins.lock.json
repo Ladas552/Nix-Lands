@@ -72,6 +72,14 @@
     "narHash": "sha256-03+JxvzmfwRu+5JafM0DLbxgHttOQZkUtDWBmeUkN8Y=",
     "lastModified": 1769548169
   },
+  "mtv": {
+    "type": "github",
+    "owner": "fzakaria",
+    "repo": "nixpkgs-multiverse",
+    "rev": "d5598a8e81f7bc9c7292b1e999692f3560fac407",
+    "narHash": "sha256-1Dxdr/wvZYz2hBbDwdTbeGRRuRSGyFNeCbmxvrsMgIo=",
+    "lastModified": 1786424963
+  },
   "niri": {
     "type": "git",
     "url": "https://codeberg.org/BANanaD3V/niri-nix",

@@ -92,6 +92,9 @@ url = "gh:Infinidoge/nix-minecraft"
 [inputs.copyparty]
 url = "gh:9001/copyparty"
 
+[inputs.mtv]
+url = "gh:fzakaria/nixpkgs-multiverse"
+
 # idk how to run it as flakes
 [inputs.adifox]
 url = "gh:NotAShelf/adifox"
