@@ -5,10 +5,14 @@
     sops.secrets."mystuff/trJWT" = { };
     sops.secrets."mystuff/trDROP" = { };
     sops.secrets."mystuff/trKEY" = { };
+    sops.secrets."mystuff/trTelegramBotKey" = { };
+    sops.secrets."mystuff/trTelegramBotWebhook" = { };
     sops.templates."tranquil-pds-secrets".content = ''
       JWT_SECRET="${config.sops.placeholder."mystuff/trJWT"}"
       DPOP_SECRET="${config.sops.placeholder."mystuff/trDROP"}"
       MASTER_KEY="${config.sops.placeholder."mystuff/trKEY"}"
+      TELEGRAM_BOT_TOKEN="${config.sops.placeholder."mystuff/trTelegramBotKey"}"
+      TELEGRAM_WEBHOOK_SECRET="${config.sops.placeholder."mystuff/trTelegramBotWebhook"}"
     '';
 
     # Module
