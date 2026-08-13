@@ -1,1 +1,1 @@
-DIE
+DIE DIE DIE
