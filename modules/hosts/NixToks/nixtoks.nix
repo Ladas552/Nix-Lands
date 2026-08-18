@@ -12,7 +12,7 @@
       _module.args = {
         meta = {
           hostname = "NixToks";
-          configPath = "/persist/home/ladas552/Nix-Lands";
+          configPath = "/home/ladas552/Nix-Lands";
           user = "ladas552";
         };
       };

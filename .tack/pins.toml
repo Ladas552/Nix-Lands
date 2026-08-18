@@ -6,7 +6,7 @@
 gh = "github:{path}" # github
 cb = "git+https://codeberg.org/{path}" # codeberg
 td = "git+https://tangled.org/{path}" # tangled
-nixpkgs = "https://channels.nixos.org/{path}/nixexprs.tar.xz"
+nixpkgs = "https://channels.nixos.org/{path}/nixexprs.tar.zst"
 
 # all_follow: input name -> top-level pin it follows wherever it appears
 # opt out per-input with exclude_follow

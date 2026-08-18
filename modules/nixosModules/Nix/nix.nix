@@ -20,8 +20,6 @@
       # Nix options
       nix =
         let
-          flakes = lib.filterAttrs (_: input: lib.isType "flake" input) inputs;
-          nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakes;
         in
         {
           # Make builds run with low priority so my system stays responsive
@@ -34,14 +32,8 @@
           optimise.automatic = true;
           # disable channels completely
           channel.enable = false;
-          registry = lib.mapAttrs (_: flake: { inherit flake; }) (
-            removeAttrs inputs [
-              "__functor"
-              "adifox"
-              "adios"
-            ]
-          );
-          inherit nixPath;
+          registry.nixpkgs.flake = inputs.nixpkgs;
+          nixPath = [ "nixpkgs=flake:nixpkgs" ];
           settings = {
             # error on IFD, It errors on using modules like Stylix tho
             # right now it's true because I IFD a helium wrapper
@@ -53,7 +45,7 @@
               "nix-command"
               "flakes"
             ];
-            nix-path = nixPath;
+            nix-path = [ "nixpkgs=flake:nixpkgs" ];
             flake-registry = ""; # optional, ensures flakes are truly self-contained
             # some options
             lint-short-path-literals = "warn";
