@@ -40,27 +40,22 @@
           NixPort = mkSystem {
             inherit paths modules specialArgs;
             conditions = hasHost "laptop";
-            system = "x86_64-linux";
           };
           NixToks = mkSystem {
             inherit paths modules specialArgs;
             conditions = hasHost "server";
-            system = "x86_64-linux";
           };
           NixWool = mkSystem {
             inherit paths modules specialArgs;
             conditions = hasHost "vps";
-            system = "aarch64-linux";
           };
           NixwsL = mkSystem {
             inherit paths modules specialArgs;
             conditions = hasHost "wsl";
-            system = "x86_64-linux";
           };
           NixIso = mkSystem {
             inherit paths modules specialArgs;
             conditions = hasHost "iso";
-            system = "x86_64-linux";
           };
         };
       packages = eachSystem (pkgs: import ./pkgs { inherit inputs pkgs self; });
