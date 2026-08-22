@@ -1,6 +1,9 @@
 {
   hosts = [ "laptop" ];
-  config = {
+  config = { pkgs, ... }: {
+    environment.systemPackages = [
+      pkgs.gpu-screen-recorder
+    ];
     hj.niri.settings = {
       # autostart noctalia-shell
       spawn-at-startup = [

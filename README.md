@@ -17,8 +17,9 @@ github:Ladas552/Nix-Lands#app`, replace `app` with:
 
 ## Hosts
 
-- 2 NixOS hosts with Nvidia and Intel, and AMD APU on laptops. Both on ZFS and NixPort is using [Impermanence](https://github.com/nix-community/impermanence)
-- [NixOS-WSL](https://github.com/nix-community/NixOS-WSL) for Windows partition
+- NixPort is my amd laptop with [Impermanence](https://github.com/nix-community/impermanence) and ZFS setup
+- NixToks is my intel+nvidia laptop, converted into a server with ZFS setup
+- [NixwsL](https://github.com/nix-community/NixOS-WSL) for Windows partition
 - NixIso for my portable NixOS image
 - NixWool is my Hetzner cloud that runs [Tangled.sh](https://tangled.org/) knot
 

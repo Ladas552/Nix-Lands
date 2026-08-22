@@ -71,6 +71,7 @@
   layout = {
     gaps = 8;
     center-focused-column = "never";
+    always-center-single-column = true;
     default-column-width.proportion = 0.5;
     border.off = [ ];
     focus-ring = {

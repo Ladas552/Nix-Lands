@@ -35,12 +35,12 @@ widget_order = []
     [desktop_widgets.widget]
 
 [idle]
-behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+behavior_order = [ "screen-off", "lock-and-suspend", "lock" ]
 pre_action_fade_seconds = 4
 
     [idle.behavior.lock]
     action = "lock"
-    enabled = true
+    enabled = false
     timeout = 600.0
 
     [idle.behavior.lock-and-suspend]
@@ -60,7 +60,7 @@ address = "Astana"
 fingerprint = false
 
 [lockscreen_widgets]
-enabled = true
+enabled = false
 schema_version = 2
 widget_order = [ "lockscreen-login-box@eDP-1" ]
 
@@ -75,6 +75,8 @@ widget_order = [ "lockscreen-login-box@eDP-1" ]
     cx = 960.0
     cy = 1018.0
     output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -111,6 +113,11 @@ position_vertical = "top_right"
     volume_input = false
     wifi = false
 
+[plugin_settings."noctalia/screen_recorder"]
+copy_to_clipboard = true
+frame_rate = 30
+resolution = "1280x800"
+
 [plugins]
 enabled = [ "noctalia/screen_recorder", "noctalia/timer" ]
 
@@ -126,13 +133,18 @@ polkit_agent = true
 popup_shadows = false
 screen_time_enabled = true
 show_location = false
-telemetry_enabled = true
+telemetry_enabled = false
 
     [shell.animation]
     speed = 1.5000000223517418
 
+    [shell.keyboard_layout.custom_labels]
+    Canary = "CNR"
+    Kazakh = "KZ"
+
     [shell.launcher]
     auto_paste = "off"
+    fetch_exchange_rates = false
 
     [shell.mpris]
     blacklist = [ "Mozilla firefox" ]
@@ -204,13 +216,13 @@ directory = "/home/ladas552/Pictures/backgrounds"
     enabled = true
 
     [wallpaper.default]
-    path = "/home/ladas552/Pictures/backgrounds/Welcome.jpg"
+    path = "/home/ladas552/Pictures/backgrounds/wallhaven-45zdg5.jpg"
 
     [wallpaper.last]
-    path = "/home/ladas552/Pictures/backgrounds/Welcome.jpg"
+    path = "/home/ladas552/Pictures/backgrounds/wallhaven-45zdg5.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/ladas552/Pictures/backgrounds/Welcome.jpg"
+    path = "/home/ladas552/Pictures/backgrounds/wallhaven-45zdg5.jpg"
 
 [widget.audio_visualizer]
 bands = 30
@@ -232,11 +244,8 @@ color = "primary"
 
 [widget.keyboard_layout]
 color = "secondary"
-show_icon = false
-
-    [widget.keyboard_layout.custom_labels]
-    Canary = "CNR"
-    Kazakh = "KZ"
+hide_when_single_layout = true
+show_glyph = false
 
 [widget.launcher]
 color = "tertiary"
@@ -260,10 +269,13 @@ type = "noctalia/screen_recorder:recorder"
 icon_color = "error"
 
 [widget.taskbar]
+capsule_radius = 0
 group_by_workspace = true
 hide_empty_workspaces = true
 inactive_opacity = 0.69999999999999996
+show_active_indicator = false
 workspace_group_capsule = false
+workspace_label_placement = "centered"
 
 [widget.tray]
 drawer = true
