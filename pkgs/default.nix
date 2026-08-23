@@ -4,6 +4,13 @@
   self,
   ...
 }:
+let
+  adios-wrappers = import ./adios-wrappers.nix {
+    inherit pkgs;
+    adios = inputs.adios.adios;
+    adios-wrappers = inputs.adios-wrappers.wrapperModules;
+  };
+in
 {
   default = pkgs.writeShellScriptBin "hello" ''echo "Hello World"'';
   # editor wrappers
@@ -14,7 +21,6 @@
   helium = pkgs.callPackage ./helium.nix { inherit self; };
   canary = pkgs.callPackage ./canary.nix { inherit self; };
   # wrappers
-  firefox = pkgs.callPackage ./firefox.nix { inherit inputs; };
   thunderbird = pkgs.callPackage ./thunderbird.nix { inherit inputs; };
   fish = pkgs.callPackage ./fish.nix { };
   libqalculate = pkgs.callPackage ./qalc.nix { };
@@ -26,3 +32,4 @@
   musnow = pkgs.callPackage ./musnow.nix { };
   wpick = pkgs.callPackage ./wpick.nix { };
 }
+// adios-wrappers

@@ -55,13 +55,6 @@
       environment.variables = {
         BROWSER = "firefox";
         EDITOR = "nvim";
-        GITHUB_TOKEN = "$(cat ${config.sops.secrets."mystuff/github_token".path})";
-      };
-      # secrets
-      sops.secrets."mystuff/github_token" = {
-        neededForUsers = true;
-        owner = "ladas552";
-        mode = "4444";
       };
 
       # https://wiki.archlinux.org/title/Lenovo_ThinkPad_T14s_(AMD)_Gen_3#Display

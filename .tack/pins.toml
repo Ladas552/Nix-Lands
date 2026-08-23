@@ -20,6 +20,7 @@ flake-parts = "flake-parts"
 flake-compat = "flake-compat"
 flake-utils  = "flake-utils"
 nix-darwin   = "nix-darwin"
+adios = "adios"
 
 # [inputs.<name>] fields
 #   url             required, shorturl ok; ?rev=<sha> pins an exact commit
@@ -29,76 +30,53 @@ nix-darwin   = "nix-darwin"
 #   dir             subdir holding flake.nix
 #   submodules      fetch git submodules
 
+[inputs]
 # nixpkgs links
-[inputs.nixpkgs]
-url = "nixpkgs:nixos-unstable"
-# url = "gh:Nixos/nixpkgs/nixos-unstable"
+nixpkgs.url = "nixpkgs:nixos-unstable"
+# nixpkgs.url = "gh:Nixos/nixpkgs/nixos-unstable"
 
 # Hjem, another home-manager
-[inputs.hjem]
-url = "gh:feel-co/hjem"
+hjem.url = "gh:feel-co/hjem"
 
 # Modules for hjem
-[inputs.hjem-rum]
-url = "gh:snugnug/hjem-rum"
-
-[inputs.flake-parts]
-url = "gh:Ladas552/flake-parts"
+hjem-rum.url = "gh:snugnug/hjem-rum"
 
 # Neovim
-[inputs.nvf]
-url = "gh:notashelf/nvf"
+nvf.url = "gh:notashelf/nvf"
 
 # Niri
-[inputs.niri]
-url = "cb:BANanaD3V/niri-nix"
+niri.url = "cb:BANanaD3V/niri-nix"
 
 # Tanled, git hosting
-[inputs.tangled]
-url = "td:tangled.org/core"
+tangled.url = "td:tangled.org/core"
 
 # Boilerplate
-[inputs.systems]
-url = "gh:nix-systems/default-linux"
+systems.url = "gh:nix-systems/default-linux"
 
 # Highly experimental replacement to nixos stage scripts
-[inputs.nixos-core]
-url = "gh:manic-systems/nixos-core"
+nixos-core.url = "gh:manic-systems/nixos-core"
 
 # Alternative pinning
-[inputs.tack]
-url = "gh:manic-systems/tack"
+tack.url = "gh:manic-systems/tack"
 
 # Other NixOS modules
-[inputs.impermanence]
-url = "gh:nix-community/impermanence"
+impermanence.url = "gh:nix-community/impermanence"
 
-[inputs.sops-nix]
-url = "gh:Mic92/sops-nix"
+sops-nix.url = "gh:Mic92/sops-nix"
 
-[inputs.nixos-wsl]
-url = "gh:nix-community/NixOS-WSL"
+nixos-wsl.url = "gh:nix-community/NixOS-WSL"
 
-[inputs.noctalia]
-url = "gh:noctalia-dev/noctalia"
-exclude_follow  = ["nixpkgs"]
+noctalia = {url = "gh:noctalia-dev/noctalia", exclude_follow  = ["nixpkgs"]}
 
-[inputs.nixos-hardware]
-url = "gh:nixos/nixos-hardware"
+nixos-hardware.url = "gh:nixos/nixos-hardware"
 
-[inputs.nix-minecraft]
-url = "gh:Infinidoge/nix-minecraft"
+nix-minecraft.url = "gh:Infinidoge/nix-minecraft"
 
-[inputs.copyparty]
-url = "gh:9001/copyparty"
+copyparty.url = "gh:9001/copyparty"
 
-[inputs.mtv]
-url = "gh:fzakaria/nixpkgs-multiverse"
+mtv.url = "gh:fzakaria/nixpkgs-multiverse"
 
-# idk how to run it as flakes
-[inputs.adifox]
-url = "gh:NotAShelf/adifox"
-type = "fetch"
-[inputs.adios]
-url = "gh:adisbladis/adios"
-type = "fetch"
+# adios galore
+adios.url = "gh:llakala/lladios"
+
+adios-wrappers.url = "gh:llakala/adios-wrappers"
