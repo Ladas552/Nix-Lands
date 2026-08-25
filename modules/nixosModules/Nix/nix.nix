@@ -50,13 +50,13 @@
         };
         # use token to not get limited by github api
         # thanks @dotKaktus for the !include, so it isn't an environmental variable
-        extraOptions = "!include ${config.sops.secrets."mystuff/github_token".path}";
+        # extraOptions = "!include ${config.sops.secrets."mystuff/github_token".path}";
       };
-      # secrets
-      sops.secrets."mystuff/github_token" = {
-        neededForUsers = true;
-        mode = "440";
-      };
+      # # secrets
+      # sops.secrets."mystuff/github_token" = {
+      #   neededForUsers = true;
+      #   mode = "440";
+      # };
       # nixpkgs options
       nixpkgs.config.allowUnfree = true;
     };

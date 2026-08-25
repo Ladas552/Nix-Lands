@@ -350,7 +350,7 @@ _: {
       privacy.history.custom = true;
       privacy.purge_trackers.date_in_cookie_database = "0";
       privacy.query_stripping.enabled = true;
-      # privacy.query_stripping.enabled.pbmode= true;
+      "privacy.query_stripping.enabled.pbmode" = true;
       privacy.resistFingerprinting = false;
       privacy.sanitize.sanitizeOnShutdown = false;
       privacy.trackingprotection.allow_list.hasMigratedCategoryPrefs = true;
@@ -369,7 +369,7 @@ _: {
       sidebar.new-sidebar.has-used = true;
       sidebar.revamp = true;
       sidebar.verticalTabs = true;
-      # sidebar.verticalTabs.dragToPinPromo.dismissed= true;
+      "sidebar.verticalTabs.dragToPinPromo.dismissed" = true;
       sidebar.visibility = "expand-on-hover";
       signon.autofillForms = true;
       signon.firefoxRelay.feature = "disabled";
@@ -403,8 +403,8 @@ _: {
       browser.tabs.groups.smart.userEnabled = false;
       extensions.ml.enabled = false;
       sidebar.notification.badge.aichat = false;
-      # browser.ml.chat.page.footerBadge= false;
-      # browser.ml.chat.page.menuBadge= false;
+      "browser.ml.chat.page.footerBadge" = false;
+      "browser.ml.chat.page.menuBadge" = false;
       browser.ml.chat.menu = false;
       browser.ai.control.default = "blocked";
       browser.ai.control.linkPreviewKeyPoints = "blocked";

@@ -3,6 +3,10 @@
   config =
     { pkgs, ... }:
     {
+      environment.shellAliases = {
+        game-osu = "env XKB_DEFAULT_LAYOUT=canary gamescope --backend drm -g --force-grab-cursor -W 1920 -H 1200 osu!";
+      };
+
       environment.systemPackages = with pkgs; [
         # Launchers
         # bottles

@@ -27,7 +27,9 @@
           duf
           unimatrix
           wgetpaste
+          yazi
           self.packages.${pkgs.stdenv.hostPlatform.system}.gcp
+          self.packages.${pkgs.stdenv.hostPlatform.system}.eval
         ];
         shellAliases = {
           # Better app names

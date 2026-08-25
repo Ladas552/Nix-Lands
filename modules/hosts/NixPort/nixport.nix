@@ -3,7 +3,6 @@
   config =
     {
       pkgs,
-      config,
       self,
       inputs,
       ...
@@ -19,7 +18,7 @@
       # Standalone Packages
       environment.systemPackages = with pkgs; [
         # blender
-        libreoffice-fresh
+        libreoffice-stable
         shotcut
         imagemagick
         wl-clipboard
@@ -44,18 +43,6 @@
         nvfetcher
         inputs.tack.packages.${pkgs.stdenv.hostPlatform.system}.tack
       ];
-
-      environment.shellAliases = {
-        kssh = "kitten ssh"; # for kitty terminal
-        game-osu = "env XKB_DEFAULT_LAYOUT=canary gamescope --backend drm -g --force-grab-cursor -W 1920 -H 1200 osu!";
-        scan = "scanimage -d pixma:04A92759_0149U0000342 --resolution 600 --format=pdf -o";
-      };
-
-      # Environmental Variables
-      environment.variables = {
-        BROWSER = "firefox";
-        EDITOR = "nvim";
-      };
 
       # https://wiki.archlinux.org/title/Lenovo_ThinkPad_T14s_(AMD)_Gen_3#Display
       boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];

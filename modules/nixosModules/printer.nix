@@ -1,7 +1,7 @@
 # Enable CUPS to print documents.
 # Enable sane for scanner.
 {
-  enable = false;
+  enable = true;
   hosts = [ "laptop" ];
   config =
     { meta, pkgs, ... }:
@@ -15,6 +15,9 @@
         ];
       };
       hardware.sane.enable = true;
+      environment.shellAliases = {
+        scan = "scanimage -d pixma:04A92759_0149U0000342 --resolution 600 --format=pdf -o";
+      };
 
       users.users."${meta.user}".extraGroups = [
         "scanner"

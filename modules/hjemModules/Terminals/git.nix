@@ -26,6 +26,7 @@
         target
         .direnv
         *.pdf
+        *.qcow2
       '';
     };
   };

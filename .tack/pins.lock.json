@@ -19,9 +19,9 @@
     "type": "github",
     "owner": "9001",
     "repo": "copyparty",
-    "rev": "6115eb452d2c2bbdeef5d19098fac17db69ddaa8",
-    "narHash": "sha256-/YbaX3cVP54l6Ol8qgS/K8H+Hu8zgyOgUVDLTv70txE=",
-    "lastModified": 1787004344
+    "rev": "9de090265f8d063056320f41d984830839017a2f",
+    "narHash": "sha256-P48TOQdIbB0PKMn4FTk6X0utbf0LemNlJ+bFcSbveGA=",
+    "lastModified": 1787524125
   },
   "flake-compat": {
     "type": "git",
@@ -52,9 +52,9 @@
     "type": "github",
     "owner": "feel-co",
     "repo": "hjem",
-    "rev": "7cd7f1c567beaf5527781e0b51647a98acde54e6",
-    "narHash": "sha256-hMgbN6InoW+S5G/cqGrVwHUmOJcGIT/yUg1Xe6y7t8Q=",
-    "lastModified": 1787194407
+    "rev": "d248f0e4f7abd6e1f0eb9ace778dd7928481943e",
+    "narHash": "sha256-UrAlku7KST0DT+j1bdVGYI8tCz23PWL88uGMer3IZ2U=",
+    "lastModified": 1787500880
   },
   "hjem-rum": {
     "type": "github",
@@ -76,17 +76,17 @@
     "type": "github",
     "owner": "fzakaria",
     "repo": "nixpkgs-multiverse",
-    "rev": "83a703cda645262d46f27b10a5392baf15355ec4",
-    "narHash": "sha256-4qXD9govwRkbfP8CEYDqfDGFWEefCbBMc7/ZUMK4FS0=",
-    "lastModified": 1787432830
+    "rev": "148e54ded2e7c0df8e47e0ad3e30e53deea30544",
+    "narHash": "sha256-E6gPCXGOtPMBq1taY8NYaF5YkECcQRo/kQPD/5atfMM=",
+    "lastModified": 1787606971
   },
   "niri": {
     "type": "git",
     "url": "https://codeberg.org/BANanaD3V/niri-nix",
     "ref": "HEAD",
-    "rev": "ca504406e24da7fc2e2d1140d5b619d45a57b718",
-    "narHash": "sha256-KzTiQ4vCnBEGK/Z+M8GgygRchah+PvmOfcQNNrBXfik=",
-    "lastModified": 1787425425
+    "rev": "86f5f56ca993bcb2edfc810229fd41dc4c2ee428",
+    "narHash": "sha256-z20tMEUTFuFGTWZyklqpQ4IjrFZWRfiJEhXP8CSL/Ss=",
+    "lastModified": 1787616140
   },
   "nix-darwin": {
     "type": "github",
@@ -100,9 +100,9 @@
     "type": "github",
     "owner": "Infinidoge",
     "repo": "nix-minecraft",
-    "rev": "46663537786e4ca217ae17dbf5a84ce6fc6ff500",
-    "narHash": "sha256-/UyInkJ7vYUzyaMFjf7Vb6XmpgeU+/7DW7gZHY1tP40=",
-    "lastModified": 1787449749
+    "rev": "25b4dfcd9a7c1215d1647529326250a9cf871fa7",
+    "narHash": "sha256-N79fmlnKWnOxkXw0o8dyiB14DTNOoBHmGy+VpUbJ6Zw=",
+    "lastModified": 1787622081
   },
   "nixos-core": {
     "type": "github",
@@ -130,25 +130,25 @@
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1059570.2c423e03bbaf/nixexprs.tar.zst",
-    "rev": "2c423e03bbafcff28bfadc6781a4a8257f205cb5",
-    "narHash": "sha256-95aJfHyQTLWslCXFVNB0odgmVkpdmDezQwTg9mhqV1E="
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1060451.56c02bc00adc/nixexprs.tar.zst",
+    "rev": "56c02bc00adcf003215cc4bd996d6efaf4cff188",
+    "narHash": "sha256-FoOSoBG7tEvOlGRTpWnVdY506Ner4y7r7UYO3OGgmE8="
   },
   "noctalia": {
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "noctalia",
-    "rev": "d8ba5a01cac5ba8617bf262249829b4aa5945369",
-    "narHash": "sha256-tc6SVNlhzN/WPSY5SnZ0D9yHzviiicagpRoqDQJn19w=",
-    "lastModified": 1787444349
+    "rev": "e6846db9ab4e6e4c107c4c5072cde9223d6a58c5",
+    "narHash": "sha256-GYiCoMAaTD9TiprDbrNcuxeHNeiX5HVFyRf6iESl13A=",
+    "lastModified": 1787624990
   },
   "nvf": {
     "type": "github",
     "owner": "notashelf",
     "repo": "nvf",
-    "rev": "45ad22485d23bf131e3543eb7de16d0adf274e8b",
-    "narHash": "sha256-IwY4Dfd5xCnNo66Jx2CCyVRkIuZ9ub59v8+E6kVVlIY=",
-    "lastModified": 1787432068
+    "rev": "460dad9e777df4008309f1d731a47b299dc7b41e",
+    "narHash": "sha256-wS5a1tumQcmwamA4BpSvf2Idd/P/zOQNU1hY53EzfoM=",
+    "lastModified": 1787514376
   },
   "sops-nix": {
     "type": "github",
@@ -178,8 +178,8 @@
     "type": "git",
     "url": "https://tangled.org/tangled.org/core",
     "ref": "HEAD",
-    "rev": "c986c0b68d53812f891951ed1be57357ca881bce",
-    "narHash": "sha256-AX2GZGRmM1tiWP36ir9n+Bb721Ns9hn9aOGt31vwVdU=",
-    "lastModified": 1787460526
+    "rev": "e4eb96e908b57dcbc423a40ced3c82b469696ccc",
+    "narHash": "sha256-q2mfDGExF0KqabOXvZ4Ij7qhALvIuPjVn0kmMEeC0pE=",
+    "lastModified": 1787587472
   }
 }

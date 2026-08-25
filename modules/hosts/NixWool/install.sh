@@ -65,5 +65,5 @@ mkdir -p /mnt/persist/home/ladas552/.config/sops/age
 cp ./NixToks /mnt/persist/home/ladas552/.ssh/
 cp ./keys.txt /mnt/persist/home/ladas552/.config/sops/age/
 
-nixos-install --no-root-password --flake "github:Ladas552/Flake-Ocean#NixWool"
+nixos-install --no-root-password --flake "github:Ladas552/Nixl-Lands#NixWool"
 

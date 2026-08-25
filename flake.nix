@@ -57,6 +57,10 @@
             inherit paths modules specialArgs;
             conditions = hasHost "iso";
           };
+          NixTest = mkSystem {
+            inherit paths modules specialArgs;
+            conditions = hasHost "testing";
+          };
         };
       packages = eachSystem (pkgs: import ./pkgs { inherit inputs pkgs self; });
       formatter = eachSystem (pkgs: pkgs.nixfmt-tree);

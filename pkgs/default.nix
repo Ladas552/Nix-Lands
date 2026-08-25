@@ -21,8 +21,6 @@ in
   helium = pkgs.callPackage ./helium.nix { inherit self; };
   canary = pkgs.callPackage ./canary.nix { inherit self; };
   # wrappers
-  thunderbird = pkgs.callPackage ./thunderbird.nix { inherit inputs; };
-  fish = pkgs.callPackage ./fish.nix { };
   libqalculate = pkgs.callPackage ./qalc.nix { };
   # scripts
   gcp = pkgs.callPackage ./addcommitpush.nix { };

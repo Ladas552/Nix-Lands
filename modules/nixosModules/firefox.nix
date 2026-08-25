@@ -4,6 +4,7 @@
     environment.systemPackages = [
       self.packages.${pkgs.stdenv.hostPlatform.system}.firefox
     ];
+    environment.sessionVariables.BROWSER = "firefox";
 
     # persist for impermanence
     custom.imp.home.cache.directories = [
