@@ -1,7 +1,7 @@
 # Enable CUPS to print documents.
 # Enable sane for scanner.
 {
-  enable = true;
+  enable = false;
   hosts = [ "laptop" ];
   config =
     { meta, pkgs, ... }:

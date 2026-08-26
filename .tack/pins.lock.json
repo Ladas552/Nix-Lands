@@ -3,9 +3,9 @@
     "type": "github",
     "owner": "llakala",
     "repo": "lladios",
-    "rev": "aa2d5ed2055692299c2d82fc59307b8bc5181d75",
-    "narHash": "sha256-smtSkrgxJfeqBxq2ISpx4HUVNYa6HUbr9eVdWzRYwQo=",
-    "lastModified": 1787451089
+    "rev": "398192b3eb1e1fe66ffd64be8c11aee2f4bb5dac",
+    "narHash": "sha256-Onrzbqkt3Fk49NhZKj5JWC2wYdaWi06Nb2H83AKy0M4=",
+    "lastModified": 1787721221
   },
   "adios-wrappers": {
     "type": "github",
@@ -76,9 +76,9 @@
     "type": "github",
     "owner": "fzakaria",
     "repo": "nixpkgs-multiverse",
-    "rev": "148e54ded2e7c0df8e47e0ad3e30e53deea30544",
-    "narHash": "sha256-E6gPCXGOtPMBq1taY8NYaF5YkECcQRo/kQPD/5atfMM=",
-    "lastModified": 1787606971
+    "rev": "559db45ac446ba2f3ee5f07c1f5476c616ed02fc",
+    "narHash": "sha256-2Gr7w6j2KAoNrw+WALdeHFJjiaJ54b5F61eq+BOHmSw=",
+    "lastModified": 1787665882
   },
   "niri": {
     "type": "git",
@@ -100,9 +100,9 @@
     "type": "github",
     "owner": "Infinidoge",
     "repo": "nix-minecraft",
-    "rev": "25b4dfcd9a7c1215d1647529326250a9cf871fa7",
-    "narHash": "sha256-N79fmlnKWnOxkXw0o8dyiB14DTNOoBHmGy+VpUbJ6Zw=",
-    "lastModified": 1787622081
+    "rev": "e81f8786718bd697348f66ef7023d1ddc4e5a0b6",
+    "narHash": "sha256-Ovp8JorHAQbFNgenK0jTUnUU4tB7R9rS5Uao/L/dkg0=",
+    "lastModified": 1787708793
   },
   "nixos-core": {
     "type": "github",
@@ -138,9 +138,9 @@
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "noctalia",
-    "rev": "e6846db9ab4e6e4c107c4c5072cde9223d6a58c5",
-    "narHash": "sha256-GYiCoMAaTD9TiprDbrNcuxeHNeiX5HVFyRf6iESl13A=",
-    "lastModified": 1787624990
+    "rev": "b0958cf2885ca63bf46b62fbea8f582ffd3bb9e2",
+    "narHash": "sha256-oF+EMt+AUyVeNh7yQ75BishmxezgNMUcmxRc9foRJPI=",
+    "lastModified": 1787742524
   },
   "nvf": {
     "type": "github",
@@ -178,8 +178,8 @@
     "type": "git",
     "url": "https://tangled.org/tangled.org/core",
     "ref": "HEAD",
-    "rev": "e4eb96e908b57dcbc423a40ced3c82b469696ccc",
-    "narHash": "sha256-q2mfDGExF0KqabOXvZ4Ij7qhALvIuPjVn0kmMEeC0pE=",
-    "lastModified": 1787587472
+    "rev": "957c0e15fd47694683e7e03c24cdcb7240318225",
+    "narHash": "sha256-uOfhUvP893PrhsGXVjoM75p+xD75xvERIdv5IBwl0S0=",
+    "lastModified": 1787736473
   }
 }

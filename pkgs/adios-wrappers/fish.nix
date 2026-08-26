@@ -4,7 +4,12 @@ _: {
       { inputs }:
       let
         inherit (inputs.nixpkgs.lib) pipe getExe concatStringsSep;
-        inherit (inputs.nixpkgs.pkgs) fishPlugins direnv zoxide nix-direnv;
+        inherit (inputs.nixpkgs.pkgs)
+          fishPlugins
+          direnv
+          zoxide
+          nix-direnv
+          ;
       in
       # fish
       ''
@@ -56,13 +61,15 @@ _: {
         # zoxide integration
         ${getExe zoxide} init fish | source
       '';
-abbreviations.default = let 
-  c = expansion: {
-    setCursor = true;
-    inherit expansion;
-  };
-    in{
-      nix = {
+    abbreviations.default =
+      let
+        c = expansion: {
+          setCursor = true;
+          inherit expansion;
+        };
+      in
+      {
+        nix = {
           "bg" = c "build github:%";
           "bn" = c "build nixpkgs#%";
           "gb" = c "build github:%";
@@ -75,7 +82,7 @@ abbreviations.default = let
           "rn" = c "run nixpkgs#%";
           "sg" = c "shell github:%";
           "sn" = c "shell nixpkgs#%";
+        };
       };
-    };
   };
 }

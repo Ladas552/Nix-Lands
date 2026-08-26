@@ -22,7 +22,7 @@
       _module.args = {
         meta = {
           hostname = "NixIso";
-          configPath = "~/Flake-Ocean";
+          configPath = "~/Nix-Lands";
           user = "ladas552";
         };
       };

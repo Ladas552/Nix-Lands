@@ -1,8 +1,8 @@
 {
   config = {
-      environment.shellAliases = {
-        kssh = "kitten ssh"; # for kitty terminal
-      };
+    environment.shellAliases = {
+      kssh = "kitten ssh"; # for kitty terminal
+    };
     hj.rum.programs.kitty = {
       enable = true;
       settings = {
