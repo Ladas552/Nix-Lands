@@ -1,5 +1,5 @@
 {
-  hosts = [ "laptop" ];
+  hosts = [ "laptop" "iso"];
   config = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.gpu-screen-recorder

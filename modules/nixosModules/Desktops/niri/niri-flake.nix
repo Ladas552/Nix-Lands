@@ -1,5 +1,5 @@
 {
-  hosts = [ "laptop" ];
+  hosts = [ "laptop" "iso" ];
   config =
     {
       inputs,
@@ -38,6 +38,7 @@
         # inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.xwayland-satellite-unstable
         xwayland-satellite
         brightnessctl
+        wl-clipboard
         # xfce4-power-manager
         # self.packages.${pkgs.stdenv.hostPlatform.system}.rofi-powermenu
         # self.packages.${pkgs.stdenv.hostPlatform.system}.wpick

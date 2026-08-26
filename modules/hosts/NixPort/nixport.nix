@@ -21,7 +21,6 @@
         libreoffice-stable
         shotcut
         imagemagick
-        wl-clipboard
         ffmpeg
         # ((inputs.mtv.multiverse.x86_64-linux.at "24.11")."ffmpeg")
         # gst_all_1.gst-libav

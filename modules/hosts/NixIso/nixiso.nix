@@ -1,5 +1,7 @@
 # build the image with
 # nixos-rebuild build-image --image-variant iso --flake "github:Ladas552/Nix-Lands#NixIso"
+# or
+# nh os build-image --image-variant iso --hostname NixIso "github:Ladas552/Nix-Lands"
 {
   hosts = [ "iso" ];
   config =
@@ -28,14 +30,11 @@
       };
       # Standalone Packages
       environment.systemPackages = with pkgs; [
-        ungoogled-chromium
-        wl-clipboard
         qalc
         wget
         lshw
         telegram-desktop
         xarchiver
-        gparted
         # Get list of locales
         glibcLocales
       ];
@@ -48,11 +47,6 @@
         };
       };
 
-      # Environmental Variables
-      environment.variables = {
-        BROWSER = "ungoogled-chromium";
-      };
-
       nixpkgs.hostPlatform = "x86_64-linux";
       # SSH into an iso
       services.openssh.settings = {
@@ -60,8 +54,7 @@
         PasswordAuthentication = lib.mkForce true;
       };
 
-      # Enable networking
-      networking.networkmanager.enable = true;
+      # Enable networking, disable raw wpa
       networking.wireless.enable = lib.mkForce false;
 
       # Seg faults the iso build
@@ -73,9 +66,10 @@
         enable32Bit = true;
       };
 
+      # autologin into user
       services.getty.autologinUser = lib.mkForce "${meta.user}";
       users.users."${meta.user}".hashedPasswordFile = lib.mkForce null;
 
-      system.stateVersion = "26.05"; # Did you read the comment?
+      system.stateVersion = "26.11"; # Did you read the comment?
     };
 }
