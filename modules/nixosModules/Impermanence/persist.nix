@@ -9,7 +9,7 @@
           "/var/lib/iwd"
           "/var/lib/systemd/coredump"
         ];
-        cache.files = [ "/etc/machine-id" ]; # to have systemd journal in the same file
+        # cache.files = [ "/etc/machine-id" ]; # to have systemd journal in the same file
       };
       home = {
         cache = {

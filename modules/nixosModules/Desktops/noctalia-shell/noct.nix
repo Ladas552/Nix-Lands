@@ -1,5 +1,8 @@
 {
-  hosts = [ "laptop" "iso" ];
+  hosts = [
+    "laptop"
+    "iso"
+  ];
   config =
     { pkgs, inputs, ... }:
     let

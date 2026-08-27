@@ -51,7 +51,6 @@ let
     };
   };
 in
-
 {
   options.custom.imp = { inherit root home; };
 }

@@ -1,5 +1,8 @@
 {
-  hosts = [ "laptop" "iso" ];
+  hosts = [
+    "laptop"
+    "iso"
+  ];
   config = { self, pkgs, ... }: {
     environment.systemPackages = [
       self.packages.${pkgs.stdenv.hostPlatform.system}.firefox

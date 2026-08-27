@@ -1,5 +1,8 @@
 {
-  hosts = [ "laptop" "iso"];
+  hosts = [
+    "laptop"
+    "iso"
+  ];
   config = {
     # Configure keymap in X11
     services.xserver = {

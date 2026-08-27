@@ -28,7 +28,7 @@
       boot = {
         supportedFilesystems.zfs = true;
         zfs = {
-          forceImportRoot = false;
+          forceImportRoot = true;
           devNodes =
             if config.hardware.cpu.intel.updateMicrocode then "/dev/disk/by-id" else "/dev/disk/by-partuuid";
         };
