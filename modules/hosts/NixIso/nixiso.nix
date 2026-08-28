@@ -15,6 +15,26 @@
     }:
     let
       qalc = self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate;
+      # mount my drives
+      mount-zfs = pkgs.writeShellApplication {
+        name = "mount-zfs";
+
+        runtimeInputs = [
+          pkgs.zfs
+          pkgs.mount
+        ];
+        text = # bash
+          ''
+            zpool import zroot -f
+            mount -t zfs zroot/root /mnt
+            mount /dev/nvme0n1p1 /mnt/boot
+            mount -t zfs zroot/nix /mnt/nix
+            mount -t zfs zroot/tmp /mnt/tmp
+            mount -t zfs zroot/cache /mnt/cache
+            mount -t zfs zroot/persist /mnt/persist
+          '';
+      };
+
     in
     {
       imports = [
@@ -30,6 +50,7 @@
       };
       # Standalone Packages
       environment.systemPackages = with pkgs; [
+        mount-zfs
         qalc
         wget
         lshw
@@ -41,9 +62,9 @@
 
       environment = {
         shellAliases = {
-          wget-install = "${lib.getExe' pkgs.wget "wget"} https://raw.githubusercontent.com/Ladas552/Nix-Lands/refs/heads/master/docs/zfs.norg";
-          wget-impermanence = "${lib.getExe' pkgs.wget "wget"} https://raw.githubusercontent.com/Ladas552/Nix-Lands/refs/heads/master/docs/impermanence.norg";
-          git-install = "${lib.getExe' pkgs.git "git"} clone https://github.com/Ladas552/Nix-Lands.git";
+          wget-install = "wget https://raw.githubusercontent.com/Ladas552/Nix-Lands/refs/heads/master/docs/zfs.norg";
+          wget-impermanence = "wget https://raw.githubusercontent.com/Ladas552/Nix-Lands/refs/heads/master/docs/impermanence.norg";
+          git-install = "git clone https://github.com/Ladas552/Nix-Lands.git";
         };
       };
 

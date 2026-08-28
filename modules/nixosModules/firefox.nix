@@ -1,7 +1,6 @@
 {
   hosts = [
     "laptop"
-    "iso"
   ];
   config = { self, pkgs, ... }: {
     environment.systemPackages = [

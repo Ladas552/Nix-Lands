@@ -1,6 +1,5 @@
 {
-  enable = false;
-  hosts = [ "laptop" ];
+  hosts = [ "iso" ];
   config =
     { pkgs, self, ... }:
     {
