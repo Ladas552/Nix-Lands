@@ -8,7 +8,6 @@
       config,
       lib,
       meta,
-      inputs,
       ...
     }:
     let
@@ -16,7 +15,6 @@
     in
 
     {
-      imports = [ inputs.impermanence.nixosModules.impermanence ];
       # persist mount
       fileSystems."/persist" = {
         device = "zroot/persist";
@@ -55,9 +53,9 @@
       security.sudo.extraConfig = "Defaults lecture=never";
 
       # essential persists
-      environment.persistence = {
-        "/persist" = {
-          hideMounts = true;
+      system.nixos-core.persistence = {
+        enable = true;
+        stores."/persist" = {
           files = lib.unique cfg.root.files;
           directories = lib.unique (
             [
@@ -71,8 +69,7 @@
             directories = lib.unique cfg.home.directories;
           };
         };
-        "/cache" = {
-          hideMounts = true;
+        stores."/cache" = {
           files = lib.unique cfg.root.cache.files;
           directories = lib.unique cfg.root.cache.directories;
           users."${meta.user}" = {

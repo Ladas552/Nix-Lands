@@ -54,14 +54,12 @@ tangled.url = "td:tangled.org/core"
 systems.url = "gh:nix-systems/default-linux"
 
 # Highly experimental replacement to nixos stage scripts
-nixos-core.url = "gh:manic-systems/nixos-core"
+nixos-core.url = "gh:manic-systems/nixos-core/notashelf/push-kzsvuxrxwpuq"
 
 # Alternative pinning
 tack.url = "gh:manic-systems/tack"
 
 # Other NixOS modules
-impermanence.url = "gh:nix-community/impermanence"
-
 sops-nix.url = "gh:Mic92/sops-nix"
 
 nixos-wsl.url = "gh:nix-community/NixOS-WSL"
