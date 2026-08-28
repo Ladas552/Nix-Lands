@@ -106,11 +106,11 @@
       # Only allow SSH connection with Tailscale
       networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 22 ];
 
-      environment.persistence."/cache".directories = [
+      system.nixos-core.persistence.stores."/cache".directories = [
         {
-          directory = "/var/www";
+          target = "/var/www";
           mode = "0755";
-          user = "ladas552";
+          owner = "ladas552";
           group = "caddy";
         }
       ];
