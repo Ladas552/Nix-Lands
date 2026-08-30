@@ -23,6 +23,10 @@
       "thunar"
       "-d"
     ]
+    [
+      "kitty"
+      "--start-as=hidden"
+    ]
   ];
   # theme
   cursor = {
@@ -61,7 +65,7 @@
   # Environmental Variables
   environment = {
     DISPLAY = ":0";
-    TERMINAL = "kitty";
+    TERMINAL = "kitty --single-instance";
     __NV_PRIME_RENDER_OFFLOAD = "1";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     # make flameshot scale with 1.5 niri scale
@@ -200,13 +204,17 @@
   input.mod-key = "Super";
   binds = {
     # Apps
-    "Super+T".spawn = "kitty";
+    "Super+T".spawn = [
+      "kitty"
+      "--single-instance"
+    ];
     # "Super+E" .spawn ="emacs";
     "Super+M".spawn = [
       "neovide"
     ];
     "Super+N".spawn = [
       "kitty"
+      "--single-instance"
       "-e"
       "nvim"
       "-c"
@@ -214,6 +222,7 @@
     ];
     "Super+E".spawn = [
       "kitty"
+      "--single-instance"
       "-e"
       "nvim"
       "-c"
@@ -221,16 +230,19 @@
     ];
     "Super+H".spawn = [
       "kitty"
+      "--single-instance"
       "-e"
       "rmpc"
     ];
     "Super+F".spawn = [
       "kitty"
+      "--single-instance"
       "-e"
       "btop"
     ];
     "Super+B".spawn = [
       "kitty"
+      "--single-instance"
       "-e"
       "qalc"
     ];
