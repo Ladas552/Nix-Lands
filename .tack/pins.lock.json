@@ -11,9 +11,9 @@
     "type": "github",
     "owner": "llakala",
     "repo": "adios-wrappers",
-    "rev": "dcb7e1e7f15680f0c43f494d8f6003a078f39c07",
-    "narHash": "sha256-LI5dAeq+ABftSj4wknz3m/t7Wgh9hzcdF+5yqJhW/Iw=",
-    "lastModified": 1787409982
+    "rev": "1bcfcd62d9639c84019e567e9eede1eccf04f5aa",
+    "narHash": "sha256-LBFKi3Hr7VoLEIHqSmB/xAX/1qmUKqVuOYQ27U9BJE4=",
+    "lastModified": 1788028466
   },
   "copyparty": {
     "type": "github",
@@ -92,9 +92,9 @@
     "type": "github",
     "owner": "Infinidoge",
     "repo": "nix-minecraft",
-    "rev": "5495072f8178188498cb2a1b1fe167cfa9ea31e8",
-    "narHash": "sha256-MZXAF0a2SgJ2TnUpM9sSnGcRuenOHsCdESPokn3Qtbg=",
-    "lastModified": 1787914990
+    "rev": "937f9e55ca475eeb2e7f34128196283f5f2a5b61",
+    "narHash": "sha256-6fSQxen+mozPvoQzzjgQqDPRP4sDIYQj4AKOBVtgd6Y=",
+    "lastModified": 1787986091
   },
   "nixos-core": {
     "type": "github",
@@ -130,9 +130,9 @@
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "noctalia",
-    "rev": "e5941571aab9b0cdd75d29855e93164ab995ca46",
-    "narHash": "sha256-8tG/6g8W2hBg8Gtqd1j1sPr7IjXTHIDCZqeaod6f3aA=",
-    "lastModified": 1787918586
+    "rev": "29dab93fdf9091f83f9eec20a20e72e11fc4e6c4",
+    "narHash": "sha256-Qzdrf8phPKo31TTqVdDv6vVv9EwQRWnf5HPKUoDDdPM=",
+    "lastModified": 1788012673
   },
   "nvf": {
     "type": "github",
@@ -170,8 +170,8 @@
     "type": "git",
     "url": "https://tangled.org/tangled.org/core",
     "ref": "HEAD",
-    "rev": "b61aa17914a218636fbf6dc6ee13a47f0e360865",
-    "narHash": "sha256-RPuokyYA9jI+znpzLqRRBNJ/WZUky0/hEif5f3w/vvU=",
-    "lastModified": 1787923301
+    "rev": "f2f804f3cbeaf0a17201005e08650d323dd02ea8",
+    "narHash": "sha256-e2axhYJD7TVl5bP2teafmiTkq5nOWN7OM1sFjENRys0=",
+    "lastModified": 1788005101
   }
 }
