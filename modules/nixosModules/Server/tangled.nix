@@ -21,12 +21,37 @@
           knot = {
             enable = true;
             gitUser = "git";
-            repo.scanPath = "${cfg.stateDir}/repos";
+            openFirewall = false;
+            repo = {
+              mainBranch = "master";
+              scanPath = "${cfg.stateDir}/repos";
+              readme = [
+                "README.norg"
+                "readme.norg"
+              ]
+              ++ [
+                "README.md"
+                "readme.md"
+                "README"
+                "readme"
+                "README.markdown"
+                "readme.markdown"
+                "README.txt"
+                "readme.txt"
+                "README.rst"
+                "readme.rst"
+                "README.org"
+                "readme.org"
+                "README.asciidoc"
+                "readme.asciidoc"
+              ];
+            };
             server = {
               listenAddr = "0.0.0.0:3050";
               hostname = "knot.ladas552.me";
               internalListenAddr = "127.0.0.1:5444";
               owner = "did:plc:6ikdlkw64mrjygj6cea62kn4"; # @ladas552.me
+              secureMode = true;
             };
           };
           # My VPS is too weak for docker containers

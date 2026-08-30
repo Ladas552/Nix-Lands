@@ -52,18 +52,12 @@
       # sudo lectures about rules when using root
       security.sudo.extraConfig = "Defaults lecture=never";
 
-      # essential persists
+      # merge all persists into abstraction
       system.nixos-core.persistence = {
         enable = true;
         stores."/persist" = {
           files = lib.unique cfg.root.files;
-          directories = lib.unique (
-            [
-              "/var/log"
-              "/var/lib/nixos"
-            ]
-            ++ cfg.root.directories
-          );
+          directories = lib.unique cfg.root.directories;
           users."${meta.user}" = {
             files = lib.unique cfg.home.files;
             directories = lib.unique cfg.home.directories;

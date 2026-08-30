@@ -1,4 +1,5 @@
 # This file exists to not clutter other nixos module files with generic persists, like network manager. I will move all options below somewhere else before I finish impermanence setup
+# /var/lib/nixos is essential for nixos to function, don't loose it
 {
   config = {
     custom.imp = {
@@ -8,6 +9,8 @@
           "/var/lib/NetworkManager"
           "/var/lib/iwd"
           "/var/lib/systemd/coredump"
+          "/var/log"
+          "/var/lib/nixos"
         ];
         # cache.files = [ "/etc/machine-id" ]; # to have systemd journal in the same file
       };
