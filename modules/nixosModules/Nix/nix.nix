@@ -1,11 +1,6 @@
 {
   config =
-    {
-      pkgs,
-      inputs,
-      config,
-      ...
-    }:
+    {pkgs,inputs,...}:
     {
       # I don't use channels, and I don' care to setup nix-index
       programs.command-not-found.enable = false;

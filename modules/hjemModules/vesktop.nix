@@ -1,5 +1,5 @@
 {
-  hosts = [ "laptop" ];
+  hosts = ["pc" "laptop" ];
   config =
     { config, ... }:
     {

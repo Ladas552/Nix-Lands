@@ -1,5 +1,5 @@
 {
-  hosts = [ "laptop" ];
+  hosts = [ "pc" "laptop" ];
   config = {
     hj.rum.programs.chawan = {
       enable = true;

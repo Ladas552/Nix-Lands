@@ -3,7 +3,7 @@
 {
   config = {
     custom.imp = {
-      root = {
+      root .
         directories = [
           "/etc/NetworkManager"
           "/var/lib/NetworkManager"
@@ -12,8 +12,6 @@
           "/var/log"
           "/var/lib/nixos"
         ];
-        # cache.files = [ "/etc/machine-id" ]; # to have systemd journal in the same file
-      };
       home = {
         cache = {
           directories = [

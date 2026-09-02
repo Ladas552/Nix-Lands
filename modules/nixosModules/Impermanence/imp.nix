@@ -1,5 +1,7 @@
 {
   hosts = [
+    "vps"
+    "server"
     "laptop"
     "vps"
   ];
@@ -7,6 +9,7 @@
     {
       config,
       lib,
+    inputs,
       meta,
       ...
     }:
@@ -15,6 +18,12 @@
     in
 
     {
+# Highly experimental replacment to boot bash scripts with rust
+# I use impermanence from this module, if you want to use original Impremanence module check this blod post
+      # https://blog.ladas552.me/nix/Impermanence
+    imports = [ inputs.nixos-core.nixosModules.nixos-core ];
+    system.nixos-core.enable = true;
+
       # persist mount
       fileSystems."/persist" = {
         device = "zroot/persist";

@@ -1,5 +1,5 @@
 {
-  hosts = [ "laptop" ];
+  hosts = ["pc" "laptop" ];
   config = { self, pkgs, ... }: {
     environment.systemPackages = [
       self.packages.${pkgs.stdenv.hostPlatform.system}.thunderbird

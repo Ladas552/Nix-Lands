@@ -1,4 +1,13 @@
 {
+  # This host is archived, I am keeping it for sentimental reasons, rather than practical
+  # Don't try to evaluate it, it's most probably broken
+  # This was my old lenovo laptop, with m860 nvidia card, it was my primary desktop, laptop and then server for about 7 years.
+  # The best gift I could ask for in my school years
+  # Started playing osu in 130fps on it, started using linux on it, started home labbing on it
+  # all my hate for nvidia comes from this laptop
+  # all my love for linux started from this laptop
+  # rest in peace, your ram and ssd will live in my next hosts to come
+  enable = false;
   hosts = [ "server" ];
   config =
     {

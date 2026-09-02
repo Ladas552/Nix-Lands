@@ -1,5 +1,11 @@
+# hosts without gui also need kitty because of term-info package, I know, stupid
 {
-  hosts = [ "laptop" "vps" "server"];
+  hosts = [
+    "pc"
+    "laptop"
+    "vps"
+    "server"
+  ];
   config = { self, pkgs, ... }: {
     environment = {
       systemPackages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.kitty ];

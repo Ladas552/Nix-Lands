@@ -16,14 +16,12 @@
       '';
     };
     # Reverse proxy
-    services.caddy.virtualHosts = {
-      "minecraft.ladas552.me" = {
-        extraConfig = ''
-          handle {
-            reverse_proxy http://127.0.0.1:25565
-          }
-        '';
-      };
+    services.caddy.virtualHosts."minecraft.ladas552.me" = {
+      extraConfig = ''
+        handle {
+          reverse_proxy http://127.0.0.1:25565
+        }
+      '';
     };
   };
 }

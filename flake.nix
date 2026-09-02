@@ -37,11 +37,15 @@
           modules = [ ./options ];
         in
         {
+          NixOSu = mkSystem {
+            inherit paths modules specialArgs;
+            conditions = hasHost "pc";
+          };
           NixPort = mkSystem {
             inherit paths modules specialArgs;
             conditions = hasHost "laptop";
           };
-          NixToks = mkSystem {
+          NixBox = mkSystem {
             inherit paths modules specialArgs;
             conditions = hasHost "server";
           };

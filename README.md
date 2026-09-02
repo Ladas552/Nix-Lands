@@ -17,11 +17,14 @@ github:Ladas552/Nix-Lands#app`, replace `app` with:
 
 ## Hosts
 
-- NixPort is my amd laptop with [Impermanence](https://github.com/nix-community/impermanence) and ZFS setup
-- NixToks is my intel+nvidia laptop, converted into a server with ZFS setup
+- NixPort is my amd laptop
+- NixBox is my minipc with Pentium that I use as a server
+- NixOSu is my gaming pc, mostly for playing osu
 - [NixwsL](https://github.com/nix-community/NixOS-WSL) for Windows partition
 - NixIso for my portable NixOS image
 - NixWool is my Hetzner cloud that runs [Tangled.sh](https://tangled.org/) knot
+
+All the physical hosts run on tmpfs with Impermanence
 
 ## Modular
 My config modules are imported automatically, but only merges if the host variant is matching to the host I am building. This is accomplished by [nosh](https://codeberg.org/poacher/nosh), a simple lib to make modular configs without `mkIf` option hell. I [forked it](https://tangled.org/ladas552.me/nosh) to better suit my use case. The repo is also vendored in `/lib`

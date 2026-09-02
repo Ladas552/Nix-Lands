@@ -52,12 +52,7 @@
 
       services.sshguard.enable = true;
       # I chowned this directories `sudo chown -R ladas552:caddy /var/www`
-      users.users."${meta.user}".extraGroups = [ "caddy" ];
       services.caddy = {
-        enable = true;
-        globalConfig = ''
-          email me@ladas552.me
-        '';
         virtualHosts = {
           "blog.ladas552.me" = {
             extraConfig = ''

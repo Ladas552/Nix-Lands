@@ -1,5 +1,6 @@
 {
   hosts = [
+    "pc"
     "server"
     "wsl"
     "laptop"

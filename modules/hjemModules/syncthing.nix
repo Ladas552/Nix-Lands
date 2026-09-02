@@ -1,6 +1,7 @@
 {
   # homeBrew module
   hosts = [
+    "pc"
     "laptop"
     "server"
   ];
