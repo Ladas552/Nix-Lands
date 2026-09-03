@@ -27,7 +27,7 @@
           duf
           unimatrix
           wgetpaste
-          yazi
+          broot
           self.packages.${pkgs.stdenv.hostPlatform.system}.gcp
           self.packages.${pkgs.stdenv.hostPlatform.system}.eval
         ];
@@ -47,7 +47,6 @@
           yy = "nh os switch ${meta.configPath}";
           yyy = "nh os boot ${meta.configPath}";
           en = "cd ${meta.configPath} && nvim ./";
-          enn = "cd ${meta.configPath} && nvim ./modules/hosts/${meta.hostname}/imports.nix";
           eh = "cd ${meta.configPath} && nvim ./";
           # eh = "hx ${meta.configPath}";
           # en = "hx ${meta.configPath}";
@@ -61,11 +60,14 @@
           # Neorg
           j = ''nvim -c "Neorg journal today"'';
           # directories
-          mc = "yazi";
-          mcv = "yazi ~/Videos";
-          mcm = "yazi ~/Music";
-          mcc = "yazi ~/.config/";
-          mcp = "yazi ~/Pictures";
+          mc = "br";
+          mcv = "br ~/Videos";
+          mcm = "br ~/Music";
+          mcc = "br ~/.config/";
+          mcp = "br ~/Pictures";
+        };
+        variables = {
+          SHELL = "fish";
         };
       };
 

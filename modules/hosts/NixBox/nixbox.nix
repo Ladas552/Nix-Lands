@@ -1,7 +1,7 @@
 {
   hosts = [ "server" ];
   config =
-    { pkgs,meta,...}:
+    { pkgs, meta, ... }:
     {
       _module.args = {
         meta = {

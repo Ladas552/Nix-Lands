@@ -1,5 +1,8 @@
 {
-  hosts = ["pc" "laptop" ];
+  hosts = [
+    "pc"
+    "laptop"
+  ];
   config = {
     # Configure tablet
     hardware.opentabletdriver = {

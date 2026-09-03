@@ -3,15 +3,14 @@
 {
   config = {
     custom.imp = {
-      root .
-        directories = [
-          "/etc/NetworkManager"
-          "/var/lib/NetworkManager"
-          "/var/lib/iwd"
-          "/var/lib/systemd/coredump"
-          "/var/log"
-          "/var/lib/nixos"
-        ];
+      root.directories = [
+        "/etc/NetworkManager"
+        "/var/lib/NetworkManager"
+        "/var/lib/iwd"
+        "/var/lib/systemd/coredump"
+        "/var/log"
+        "/var/lib/nixos"
+      ];
       home = {
         cache = {
           directories = [

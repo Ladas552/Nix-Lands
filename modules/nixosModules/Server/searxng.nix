@@ -1,5 +1,5 @@
 {
-  hosts = [ "vps"];
+  hosts = [ "vps" ];
   config = {
     services.searx = {
       enable = true;
@@ -62,7 +62,7 @@
 
     # Reverse proxy
     services.caddy.virtualHosts."searxng.ladas552.me" = {
-      # useACMEHost = "ladas552.me";
+      useACMEHost = "ladas552.me";
       extraConfig = ''
         reverse_proxy localhost:3038
       '';

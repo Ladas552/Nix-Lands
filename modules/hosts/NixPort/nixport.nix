@@ -32,7 +32,6 @@
         lshw
         pamixer
         pwvucontrol
-        yazi
         qbittorrent
         telegram-desktop
         typst

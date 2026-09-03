@@ -1,6 +1,9 @@
 {
   # Store inline rmpc configs
-  hosts = ["pc" "laptop" ];
+  hosts = [
+    "pc"
+    "laptop"
+  ];
   config =
     { pkgs, ... }:
     {

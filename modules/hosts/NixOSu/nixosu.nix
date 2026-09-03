@@ -30,7 +30,6 @@
         keepassxc
         self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate
         pwvucontrol
-        yazi
         qbittorrent
         telegram-desktop
         typst

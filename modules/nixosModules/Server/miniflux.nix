@@ -40,9 +40,9 @@
       networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 8067 ];
 
       # idk what to persist for miniflux, probably postgress
-    # persist for Impermanence
-    custom.imp.root.directories = [
-      "/var/lib/postgresql"
-    ];
+      # persist for Impermanence
+      custom.imp.root.directories = [
+        "/var/lib/postgresql"
+      ];
     };
 }
