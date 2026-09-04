@@ -27,13 +27,15 @@
           duf
           unimatrix
           wgetpaste
-          broot
+          bonk
+          ripdrag
+          self.packages.${pkgs.stdenv.hostPlatform.system}.broot
           self.packages.${pkgs.stdenv.hostPlatform.system}.gcp
           self.packages.${pkgs.stdenv.hostPlatform.system}.eval
         ];
         shellAliases = {
           # Better app names
-          v = "nvim";
+          v = "nvim ./";
           # h = "hx";
           cd = "z";
           wiki = "wiki-tui";

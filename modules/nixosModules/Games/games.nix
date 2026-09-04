@@ -41,6 +41,7 @@
           ".local/share/openmw"
           ".local/share/osu"
           ".local/share/Terraria"
+          ".local/share/godot"
         ];
       };
     };
