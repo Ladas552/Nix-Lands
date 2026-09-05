@@ -1,9 +1,10 @@
 {
+  enable = false;
   hosts = [
     "pc"
     "server"
-    "wsl"
     "laptop"
+    "wsl"
     "iso"
   ];
   config = { self, pkgs, ... }: {

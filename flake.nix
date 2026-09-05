@@ -24,6 +24,9 @@
             import inputs.nixpkgs {
               inherit system;
               config.allowUnfree = true;
+              overlays = [
+                inputs.nvim.overlays.default
+              ];
             }
           )
         );

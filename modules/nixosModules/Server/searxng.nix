@@ -12,7 +12,7 @@
         };
         server = {
           port = 3038;
-          bind_address = "0.0.0.0";
+          bind_address = "localhost";
           public_instance = false;
           secret_key = "secrets";
         };

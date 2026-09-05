@@ -16,39 +16,40 @@
           user = "ladas552";
         };
       };
-      nix = {
-        distributedBuilds = true;
-        buildMachines = [
-          {
-            hostName = "NixToks";
-            sshUser = "ladas552";
-            protocol = "ssh-ng";
-            systems = [
-              "x86_64-linux"
-              "aarch64-linux"
-            ];
-            maxJobs = 16;
-            speedFactor = 6;
-            supportedFeatures = [
-              "big-parallel"
-              "kvm"
-              "nixos-test"
-            ];
-          }
-        ];
-      };
+      # remote build config. My new server is now a pentium, maybe I will enable this later for my pc. maybe
+      # nix = {
+      #   distributedBuilds = true;
+      #   buildMachines = [
+      #     {
+      #       hostName = "NixToks";
+      #       sshUser = "ladas552";
+      #       protocol = "ssh-ng";
+      #       systems = [
+      #         "x86_64-linux"
+      #         "aarch64-linux"
+      #       ];
+      #       maxJobs = 16;
+      #       speedFactor = 6;
+      #       supportedFeatures = [
+      #         "big-parallel"
+      #         "kvm"
+      #         "nixos-test"
+      #       ];
+      #     }
+      #   ];
+      # };
+      # Environmental Variables
+      # environment.variables = {
+      #   NIX_REMOTE = "daemon";
+      # };
+
       # Standalone Packages
-      environment.systemPackages = [
-        self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate
-      ];
+      # environment.systemPackages = [
+      #   self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate
+      # ];
 
       # it's a vps, it doesn't need wifi
       networking.networkmanager.enable = false;
-
-      # Environmental Variables
-      environment.variables = {
-        NIX_REMOTE = "daemon";
-      };
 
       services.sshguard.enable = true;
       # I chowned this directories `sudo chown -R ladas552:caddy /var/www`

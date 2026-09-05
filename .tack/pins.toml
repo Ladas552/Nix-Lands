@@ -80,3 +80,5 @@ adios.url = "gh:llakala/lladios"
 
 adios-wrappers.url = "gh:llakala/adios-wrappers"
 # adios-wrappers.url = "local:adios-wrappers"
+
+nvim.url = "gh:nix-community/neovim-nightly-overlay"
