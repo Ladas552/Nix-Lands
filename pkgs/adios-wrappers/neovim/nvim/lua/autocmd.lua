@@ -1,15 +1,17 @@
 local au = vim.api.nvim_create_autocmd
-
+-- Highligt yanked/pasted text
 au("TextYankPost", {
   callback = function()
-    vim.hl.on_yank({ higroup = "Visual", timeout = 300 })
+    vim.hl.hl_op({ higroup = "Visual", timeout = 300 })
   end,
 })
 
+-- follow relative path when switching file
 au("BufEnter", {
   command = "silent! lcd %:p:h",
 })
 
+-- Preserve last editing position
 au("BufReadPost", {
   callback = function()
     local mark = vim.fn.line("'\"")
@@ -19,19 +21,22 @@ au("BufReadPost", {
   end,
 })
 
-au("BufEnter", {
-  callback = function()
-    vim.opt.formatoptions:remove({ "c", "r", "o" })
-  end,
-})
+-- insert comment after `o`/ `O` and enter
+-- au("BufEnter", {
+--   callback = function()
+--     vim.opt.formatoptions:remove({ "c", "r", "o" })
+--   end,
+-- })
 
+-- quickly exit help pages
 au("FileType", {
-  pattern = { "help", "checkhealth" },
+  pattern = { "help", "checkhealth", "notify" },
   callback = function()
     vim.keymap.set("n", "q", "<cmd>close<cr>", { silent = true, buffer = true })
   end,
 })
 
+-- strip trailing whitespace on save
 au("BufWritePre", {
   callback = function()
     local save = vim.fn.winsaveview()
@@ -55,6 +60,7 @@ au("FileType", {
   end,
 })
 
+-- better looking special buffers
 local function disable_ui_settings()
   vim.opt_local.number = false
   vim.opt_local.relativenumber = false

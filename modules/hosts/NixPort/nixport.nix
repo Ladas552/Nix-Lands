@@ -22,6 +22,7 @@
         shotcut
         imagemagick
         ffmpeg
+        # inputs.mtv.multiverse.x86_64-linux.versions."nano"."9.0"
         # ((inputs.mtv.multiverse.x86_64-linux.at "24.11")."ffmpeg")
         # gst_all_1.gst-libav
         # hunspell
