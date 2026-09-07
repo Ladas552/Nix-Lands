@@ -1,6 +1,14 @@
 {
   config =
-    { pkgs, inputs, ... }:
+    {
+      pkgs,
+      inputs,
+      meta,
+      config,
+      lib,
+      self,
+      ...
+    }:
     {
       # I don't use channels, and I don' care to setup nix-index
       programs.command-not-found.enable = false;
@@ -47,12 +55,17 @@
         # thanks @dotKaktus for the !include, so it isn't an environmental variable
         # extraOptions = "!include ${config.sops.secrets."mystuff/github_token".path}";
       };
-      # # secrets
+      # secrets
       # sops.secrets."mystuff/github_token" = {
       #   neededForUsers = true;
       #   mode = "440";
+      #   owner = meta.user;
       # };
       # nixpkgs options
       nixpkgs.config.allowUnfree = true;
+
+      # thanks @iynaix
+      # make a symlink of flake within the generation (e.g. /run/current-system/src)
+      system.systemBuilderCommands = "ln -s ${self.sourceInfo.outPath} $out/src";
     };
 }
