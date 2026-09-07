@@ -1,10 +1,11 @@
 -- I'd like to dedicate this space for crediting people I stole config snippets from
 -- @NTBBloodbath/Alejandro most of the initial config was based on his config
 -- @llakala/Eman Resu some snippets for optimization
+-- @boltless.me/Seongmin Lee some cool neovim features and native autocomlete
 
 -- needs to be at the top before any modules get loaded
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = vim.keycode("<space>")
+vim.g.maplocalleader = vim.keycode("<leader><space>")
 
 vim.g.repo_root = vim.fs.root(0, ".git")
 
@@ -49,6 +50,10 @@ opt.undofile = true
 opt.backup = false
 opt.writebackup = false
 
+if vim.fn.executable("rg") ~= 0 then
+    vim.o.grepprg = "rg --vimgrep"
+end
+
 -- Folding via built-in Tree-sitter
 -- Falls back to manual folding on filetypes without a parser.
 opt.foldenable = false
@@ -79,6 +84,9 @@ opt.virtualedit = "block"
 opt.spelllang = "en_us"
 opt.spelloptions = "camel,noplainbuffer"
 opt.spellsuggest = "best,6"
+opt.icm = "split"
+-- autosave on exit
+opt.autowriteall = true
 -- share system clipboard
 -- According to Neovim example init, this helps performance
 vim.api.nvim_create_autocmd("UIEnter", {

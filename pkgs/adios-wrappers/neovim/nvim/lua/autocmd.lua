@@ -1,4 +1,8 @@
 local au = vim.api.nvim_create_autocmd
+local aug = function(group_name, clear)
+    clear = vim.F.if_nil(clear, true)
+    return vim.api.nvim_create_augroup(group_name, { clear = clear })
+end
 -- Highligt yanked/pasted text
 au("TextYankPost", {
   callback = function()
@@ -13,20 +17,28 @@ au("BufEnter", {
 
 -- Preserve last editing position
 au("BufReadPost", {
-  callback = function()
-    local mark = vim.fn.line("'\"")
-    if mark > 1 and mark <= vim.fn.line("$") then
-      vim.cmd("normal! g'\"")
-    end
-  end,
+    group = aug("last_loc"),
+    callback = function()
+        local mark = vim.api.nvim_buf_get_mark(0, '"')
+        local lcount = vim.api.nvim_buf_line_count(0)
+        if mark[1] > 0 and mark[1] <= lcount then
+            pcall(vim.api.nvim_win_set_cursor, 0, mark)
+        end
+    end,
 })
 
--- insert comment after `o`/ `O` and enter
--- au("BufEnter", {
---   callback = function()
---     vim.opt.formatoptions:remove({ "c", "r", "o" })
---   end,
--- })
+-- Auto create dir when saving a file, in case some intermediate directory does not exists
+au("BufWritePre", {
+    group = aug("auto_create_dir"),
+    callback = function(event)
+        if event.match:match("^%w%w+://") then
+            return
+        end
+        -- TODO: confirm to create parent directories
+        local file = vim.uv.fs_realpath(event.match) or event.match
+        vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
+    end,
+})
 
 -- quickly exit help pages
 au("FileType", {
@@ -34,6 +46,14 @@ au("FileType", {
   callback = function()
     vim.keymap.set("n", "q", "<cmd>close<cr>", { silent = true, buffer = true })
   end,
+})
+
+-- disable search highligt when entering command line
+au("CmdlineEnter", {
+    group = aug("auto_hlsearch"),
+    callback = vim.schedule_wrap(function()
+        vim.cmd.nohlsearch()
+    end),
 })
 
 -- strip trailing whitespace on save

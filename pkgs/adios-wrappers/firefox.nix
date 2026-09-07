@@ -448,5 +448,4 @@
       extraPrefsFiles =
         if options ? autoConfigFiles then map (file: "${file}") options.autoConfigFiles else null;
     });
-
 }
