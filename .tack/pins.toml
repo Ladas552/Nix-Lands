@@ -55,7 +55,7 @@ tangled.url = "td:tangled.org/core"
 systems.url = "gh:nix-systems/default-linux"
 
 # Highly experimental replacement to nixos stage scripts
-nixos-core.url = "gh:manic-systems/nixos-core/notashelf/push-kzsvuxrxwpuq"
+nixos-core.url = "gh:manic-systems/nixos-core/"
 
 # Alternative pinning
 tack.url = "gh:manic-systems/tack"

@@ -12,6 +12,7 @@
           user = "ladas552";
         };
       };
+      system.switch.enable = false;
       system.stateVersion = "26.11"; # Don't touch
       nixpkgs.hostPlatform = "x86_64-linux";
       users.users.ladas552 = {

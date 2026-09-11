@@ -51,6 +51,17 @@
       # thanks @saygo-png
       systemd.user.settings.Manager.DefaultTimeoutStopSec = "10s";
 
+      # disable nix-tools that aren't used in my hosts
+      system.tools = {
+        nixos-build-vms.enable = false;
+        nixos-enter.enable = false;
+        nixos-generate-config.enable = false;
+        nixos-install.enable = false;
+        nixos-option.enable = false;
+        nixos-rebuild.enable = false;
+        nixos-version.enable = false;
+      };
+
       # Set your time zone.
       time.timeZone = "Asia/Almaty";
 

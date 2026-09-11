@@ -90,7 +90,12 @@
       # autologin into user
       services.getty.autologinUser = lib.mkForce "${meta.user}";
       users.users."${meta.user}".hashedPasswordFile = lib.mkForce null;
-
+      system.switch.enable = false;
+      system.tools = {
+        nixos-generate-config.enable = lib.mkForce true;
+        nixos-enter.enable = lib.mkForce true;
+        nixos-install.enable = lib.mkForce true;
+      };
       system.stateVersion = "26.11"; # Did you read the comment?
     };
 }

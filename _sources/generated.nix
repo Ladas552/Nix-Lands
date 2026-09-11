@@ -44,10 +44,10 @@
   };
   helium = {
     pname = "helium";
-    version = "0.15.6.1";
+    version = "0.17.0.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.15.6.1/helium-0.15.6.1-x86_64_linux.tar.xz";
-      sha256 = "sha256-TVzi5ZWyvFsh6ovoBhU5DW0k3wlQ5/gUDD4+ykAQPTY=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.17.0.1/helium-0.17.0.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-UCOINeiJYlPUrxQqMDI1QRnB5vfnd5JsRTAZXHFP8/U=";
     };
   };
   neorg = {
@@ -97,5 +97,13 @@
       sha256 = "sha256-5qmbZbM0A5mZ5OxxeruNuS9o8FfJymIEHPnHwwxQ5FQ=";
     };
     date = "2026-03-23";
+  };
+  neovide = {
+    pname = "neovide";
+    version = "0.16.2";
+    src = fetchurl {
+      url = "https://github.com/neovide/neovide/releases/download/nightly/neovide-linux-x86_64.tar.gz";
+      sha256 = "sha256-isw6yogH5UauHkn7Y5Owt2i2fBMmedJb9Zs8GZgTJqk=";
+    };
   };
 }

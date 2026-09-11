@@ -1,8 +1,11 @@
-# helium
+# don't want to compile them
 [helium]
 src.github_tag = "imputnet/helium-linux"
 fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64_linux.tar.xz"
 
+[neovide]
+src.github_tag = "neovide/neovide"
+fetch.url = "https://github.com/neovide/neovide/releases/download/nightly/neovide-linux-x86_64.tar.gz"
 # neorg
 [neorg-interim-ls]
 src.git = "https://github.com/benlubas/neorg-interim-ls"
