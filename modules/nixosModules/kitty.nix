@@ -5,6 +5,7 @@
     "laptop"
     "vps"
     "server"
+    "iso"
   ];
   config = { self, pkgs, ... }: {
     environment = {

@@ -1,6 +1,6 @@
 {
   hosts = [
-    "vps"
+    "pc"
     "server"
     "laptop"
     "vps"

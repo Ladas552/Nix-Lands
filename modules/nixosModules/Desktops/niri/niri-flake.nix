@@ -39,8 +39,8 @@
       };
 
       environment.systemPackages = with pkgs; [
-        # inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.xwayland-satellite-unstable
-        xwayland-satellite
+        inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.xwayland-satellite-unstable
+        # xwayland-satellite
         brightnessctl
         wl-clipboard
         # xfce4-power-manager

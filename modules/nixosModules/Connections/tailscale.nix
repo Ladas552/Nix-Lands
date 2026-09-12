@@ -4,6 +4,7 @@
     "laptop"
     "server"
     "vps"
+    "iso"
   ];
   config =
     { config, ... }:
@@ -16,7 +17,7 @@
       services.tailscale = {
         enable = true;
         openFirewall = true;
-        # expires after 90 days
+        # expires after 90 days, dec 10
         authKeyFile = "${config.sops.secrets."mystuff/tailnet".path}";
         permitCertUid = "caddy";
         disableUpstreamLogging = true;
