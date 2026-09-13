@@ -73,6 +73,14 @@
 
     startPlugins = {
       type = types.attrsOf types.pathLike;
+      defaultFunc =
+        { inputs }:
+        let
+          inherit (inputs.nixpkgs.pkgs) vimPlugins;
+        in
+        {
+          inherit (vimPlugins) neogit oil-nvim;
+        };
       description = ''
         A attrset of plugins to add to the nvim config, and run at startup.
 

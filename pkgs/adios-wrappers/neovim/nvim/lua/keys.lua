@@ -33,20 +33,20 @@ end, { desc = "Toggle spelling" })
 kbd("n", "<leader>r", "<cmd>restart<cr>")
 
 -- Open the CWD
-kbd("n", "<leader>e", "<cmd>edit .<CR>", { desc = "Open directory explorer" })
+-- kbd("n", "<leader>e", "<cmd>edit .<CR>", { desc = "Open directory explorer" })
 
 -- Open the directory of the current file
-kbd("n", "<leader>E", function()
-  vim.cmd.edit(vim.fn.expand("%:p:h"))
-end, { desc = "Open current file's directory" })
+-- kbd("n", "<leader>E", function()
+--   vim.cmd.edit(vim.fn.expand("%:p:h"))
+-- end, { desc = "Open current file's directory" })
 
 -- open parent directory in nvim.dir
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "directory",
-  callback = function(ev)
-    kbd("n", "<leader>e", "<cmd>edit ..<CR>", { buffer = ev.buf })
-  end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "directory",
+--   callback = function(ev)
+--     kbd("n", "<leader>e", "<cmd>edit ..<CR>", { buffer = ev.buf })
+--   end,
+-- })
 
 -- navigate buffers
 kbd("n", "<leader>,", "<cmd>bprevious<cr>")

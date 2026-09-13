@@ -100,4 +100,5 @@ require("keys")
 require("autocmd")
 require("completion")
 require("lsp")
+require("plugins")
 

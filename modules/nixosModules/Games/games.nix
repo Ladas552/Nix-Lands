@@ -1,7 +1,6 @@
 {
   hosts = [
     "pc"
-    "laptop"
   ];
   config =
     { pkgs, ... }:
@@ -12,19 +11,21 @@
 
       environment.systemPackages = with pkgs; [
         # Launchers
-        # bottles
+        bottles
         # heroic
         prismlauncher
         # PC games
         osu-lazer-bin
-        # arx-libertatis
-        # stepmania
-        # openmw
-        # daggerfall-unity
-        # luanti
+        arx-libertatis
+        stepmania
+        openmw
+        daggerfall-unity
+        luanti
         # mindustry
-        # steam-run
+        steam-run
         antimatter-dimensions
+        # Utils
+        mangohud
       ];
       # persist games
       custom.imp.home = {

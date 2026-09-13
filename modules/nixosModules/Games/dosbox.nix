@@ -1,5 +1,5 @@
 {
-  hosts = [ "laptop" ];
+  hosts = [ "pc" ];
   config =
     { pkgs, ... }:
     {
