@@ -36,15 +36,23 @@
   };
   # Monitors
   output = [
+    # my 2880x1800 laptop
     {
       _args = [ "eDP-1" ];
       scale = 1.5;
     }
+    # any hdmi display I connect
     {
       _args = [ "HDMI-A-1" ];
       # scale = 2.0;
       scale = 1.0;
       mode = "1920x1080@60";
+    }
+    # my pc monitor
+    {
+      _args = [ "DP-1" ];
+      scale = 1.0;
+      mode = "1920x1080@239.998";
     }
   ];
   # Input Devices

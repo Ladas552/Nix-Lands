@@ -4,12 +4,11 @@
       type = types.listOf types.derivation;
       defaultFunc =
         { inputs }:
-        let
-          inherit (inputs.nixpkgs) pkgs;
-        in
+        with inputs.nixpkgs.pkgs;
         [
-          pkgs.keepassxc
-          pkgs.ff2mpv
+          keepassxc
+          ff2mpv
+          # gst_all_1.gstreamer
         ];
     };
     policies.default = {

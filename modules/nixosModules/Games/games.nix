@@ -6,7 +6,10 @@
     { pkgs, ... }:
     {
       environment.shellAliases = {
-        game-osu = "env XKB_DEFAULT_LAYOUT=canary gamescope --backend drm -g --force-grab-cursor -W 1920 -H 1200 osu!";
+        play-osu = "env XKB_DEFAULT_LAYOUT=canary,ru XKB_DEFAULT_OPTIONS=grp:caps_toggle gamescope -g -f --force-grab-cursor -W 1920 -H 1080 -r 240 osu!";
+        play-osu-drm = "env XKB_DEFAULT_LAYOUT=canary,ru XKB_DEFAULT_OPTIONS=grp:caps_toggle gamescope --backend drm -g --force-grab-cursor -W 1920 -H 1080 -r 240 osu!";
+        play-steam = "env XKB_DEFAULT_LAYOUT=us,ru XKB_DEFAULT_OPTIONS=grp:caps_toggle gamescope -e -f --force-grab-cursor -W 1920 -H 1080 -r 240 steam";
+        play-steam-drm = "env XKB_DEFAULT_LAYOUT=us,ru XKB_DEFAULT_OPTIONS=grp:caps_toggle gamescope --backend drm -g -e --force-grab-cursor -W 1920 -H 1080 -r 240 steam";
       };
 
       environment.systemPackages = with pkgs; [
@@ -24,6 +27,8 @@
         # mindustry
         steam-run
         antimatter-dimensions
+        # Emulators I am not putting on my laptop
+        shadps4-qtlauncher
         # Utils
         mangohud
       ];
@@ -39,10 +44,12 @@
           ".local/share/PrismLauncher"
           ".local/share/arx"
           ".local/share/bottles"
+          ".local/share/umu"
           ".local/share/openmw"
           ".local/share/osu"
           ".local/share/Terraria"
           ".local/share/godot"
+          ".local/share/shadPS4"
         ];
       };
     };
