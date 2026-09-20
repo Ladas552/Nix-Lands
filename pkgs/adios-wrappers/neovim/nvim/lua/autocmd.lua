@@ -1,6 +1,6 @@
 local au = vim.api.nvim_create_autocmd
 local aug = function(group_name, clear)
-    clear = vim.F.if_nil(clear, true)
+    clear = vim.nonnil(clear, true)
     return vim.api.nvim_create_augroup(group_name, { clear = clear })
 end
 -- Highligt yanked/pasted text

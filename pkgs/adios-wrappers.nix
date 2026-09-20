@@ -3,6 +3,7 @@
   pkgs,
   adios,
   adios-wrappers,
+  self,
 }:
 let
   root = {
@@ -17,6 +18,9 @@ let
     options = {
       "/nixpkgs" = {
         inherit pkgs;
+      };
+      "/self" = {
+        inherit self;
       };
     };
   };

@@ -6,7 +6,7 @@
 }:
 let
   adios-wrappers = import ./adios-wrappers.nix {
-    inherit pkgs;
+    inherit pkgs self;
     adios = inputs.adios.adios;
     adios-wrappers = inputs.adios-wrappers.wrapperModules;
   };

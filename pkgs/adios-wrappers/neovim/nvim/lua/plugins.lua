@@ -6,3 +6,4 @@ view_options = {show_hidden = true },
 });
 kbd("n", "<leader>g", "<cmd>Neogit<cr>")
 kbd("n", "<leader>e", "<cmd>Oil<cr>")
+kbd("n", "<leader>p", "<cmd>PasteImage<cr>")

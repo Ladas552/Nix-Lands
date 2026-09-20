@@ -18,6 +18,18 @@
     };
     date = "2025-02-16";
   };
+  canola = {
+    pname = "canola";
+    version = "608cd79544c3adc853d0400f1f540e4f2aa4c024";
+    src = fetchFromGitHub {
+      owner = "barrettruth";
+      repo = "canola.nvim";
+      rev = "608cd79544c3adc853d0400f1f540e4f2aa4c024";
+      fetchSubmodules = false;
+      sha256 = "sha256-eq575Ng+tGiOqRUwvoggypDCPOkVQNhHZ1Ot77REFRw=";
+    };
+    date = "2026-07-20";
+  };
   cyrillic = {
     pname = "cyrillic";
     version = "86186af29eed2af1a069f9e36140d116a2765c80";
@@ -44,10 +56,10 @@
   };
   helium = {
     pname = "helium";
-    version = "0.17.0.1";
+    version = "0.17.2.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.17.0.1/helium-0.17.0.1-x86_64_linux.tar.xz";
-      sha256 = "sha256-UCOINeiJYlPUrxQqMDI1QRnB5vfnd5JsRTAZXHFP8/U=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.17.2.1/helium-0.17.2.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-KmOd9U49BfQTz7tGIqTRpoWEsx2lp6r1juPNg8fD4pk=";
     };
   };
   neorg = {
@@ -103,7 +115,7 @@
     version = "0.16.2";
     src = fetchurl {
       url = "https://github.com/neovide/neovide/releases/download/nightly/neovide-linux-x86_64.tar.gz";
-      sha256 = "sha256-isw6yogH5UauHkn7Y5Owt2i2fBMmedJb9Zs8GZgTJqk=";
+      sha256 = "sha256-peF8XYrdaRpQD/lOltl4IZKnV8lCx/3/jwkLICW4690=";
     };
   };
 }

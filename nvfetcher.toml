@@ -33,6 +33,10 @@ fetch.github = "Zeioth/heirline-components.nvim"
 src.git = "https://github.com/nativerv/cyrillic.nvim"
 fetch.github = "nativerv/cyrillic.nvim"
 
+[canola]
+src.git = "https://github.com/barrettruth/canola.nvim"
+fetch.github = "barrettruth/canola.nvim"
+
 # canary keyboard layout
 [canary]
 src.git = "https://github.com/Apsu/Canary"

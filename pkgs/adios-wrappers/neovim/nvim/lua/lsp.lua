@@ -20,3 +20,35 @@ vim.diagnostic.config({
     },
   },
 })
+
+vim.lsp.config.nixd = {
+  cmd = {
+    "nixd",
+    "--inlay-hints=true",
+  },
+  -- vim.uv.cwd() is the equivalent of `single_file_mode` in lspconfig
+  ---@diagnostic disable-next-line undefined-field
+  root_markers = { "flake.nix", ".git", vim.uv.cwd() },
+  filetypes = { "nix" },
+  settings = {
+    nixd = {
+      nixpkgs = {
+        expr = "import <nixpkgs> { }",
+      },
+    },
+  },
+}
+vim.lsp.enable("nixd")
+
+vim.lsp.config.timymist = {
+  cmd = { "tinymist" },
+  root_markers = { "src.typ", ".git", vim.uv.cwd() },
+  filetypes = { "typ", "typst" },
+  settings = {
+    exportPdf = "onType",
+    outputPath = "$root/$name",
+    fontPaths = "./fonts",
+    formatterMode = "typstyle",
+  },
+}
+vim.lsp.enable("timymist")
