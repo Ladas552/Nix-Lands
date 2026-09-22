@@ -200,7 +200,6 @@
           "{6d85dea2-0fb4-4de3-9f8c-264bce9a2296}" = mkExtension "link-cleaner";
           "{c2c003ee-bd69-42a2-b0e9-6f34222cb046}" = mkExtension "auto-tab-discard";
           "simple-translate@sienori" = mkExtension "simple-translate";
-          "languagetool-webextension@languagetool.org" = mkExtension "languagetool";
           "keepassxc-browser@keepassxc.org" = mkExtension "keepassxc-browser";
           "idcac-pub@guus.ninja" = mkExtension "istilldontcareaboutcookies";
           "addon@darkreader.org" = mkExtension "darkreader";

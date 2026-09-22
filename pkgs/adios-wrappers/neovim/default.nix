@@ -1,7 +1,7 @@
 _: {
   inputs.self.from = { parent }: parent.self;
   options = {
-    initLuaFile.default = "/home/ladas552/Projects/my_repos/Nix-Lands/pkgs/adios-wrappers/neovim/nvim/init.lua";
+    initLuaFile.default = "/persist/home/ladas552/Projects/my_repos/Nix-Lands/pkgs/adios-wrappers/neovim/nvim/init.lua";
 
     extraPackages.defaultFunc = { inputs }: with inputs.nixpkgs.pkgs;
       [

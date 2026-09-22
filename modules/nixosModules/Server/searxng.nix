@@ -44,6 +44,7 @@
 
           remove = [
             "(.*\.)?redditmedia.com$"
+            "(.*\.)?userbenchmark.com$"
             "(.*\.)?facebook.com$"
             "(.*\.)?softonic.com$"
             "(.*\.)?nixos.wiki$"
