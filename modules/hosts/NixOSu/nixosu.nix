@@ -41,7 +41,7 @@
 
       # Radeon
       # Enable OpenGL and hardware accelerated graphics drivers
-      services.xserver.videoDrivers = [ "modesetting" ];
+      services.xserver.videoDrivers = [ "amdgpu" ];
 
       hardware.graphics = {
         enable = true;
@@ -49,6 +49,7 @@
         extraPackages = with pkgs; [
           libva-vdpau-driver
           vpl-gpu-rt
+          vkd3d-proton
         ];
       };
       # Enable rocm

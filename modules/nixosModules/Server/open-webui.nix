@@ -1,6 +1,7 @@
 {
+  # run ollama chat on my most powerful gpu, which is on my pc, rx6700xt
   enable = false;
-  hosts = [ "server" ];
+  hosts = [ "pc" ];
   config = {
     services.open-webui = {
       enable = true;
@@ -10,6 +11,7 @@
         ANONYMIZED_TELEMETRY = "False";
         DO_NOT_TRACK = "True";
         SCARF_NO_ANALYTICS = "True";
+        # assumes ollama runs locally
         OLLAMA_BASE_URL = "http://127.0.0.1:11434";
         # Disable authentication
         WEBUI_AUTH = "False";
@@ -17,7 +19,7 @@
     };
 
     # Reverse proxy
-    services.caddy.virtualHosts."open-webui.ladas552.me" = {
+    services.caddy.virtualHosts."llm.ladas552.me" = {
       useACMEHost = "ladas552.me";
       extraConfig = ''
         reverse_proxy localhost:1212

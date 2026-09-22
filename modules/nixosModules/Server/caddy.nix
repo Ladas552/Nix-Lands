@@ -2,6 +2,7 @@
   hosts = [
     "server"
     "vps"
+    "pc"
   ];
   config = { config, meta, ... }: {
     services.caddy = {

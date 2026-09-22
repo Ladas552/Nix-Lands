@@ -1,7 +1,6 @@
 {
-  # This module suppousetly works, but my nvidia gpu doesn't work with it. The Software rendering works tho
-  enable = false;
-  hosts = [ "server" ];
+  # remote desktop
+  hosts = [ "pc" ];
   config =
     { meta, ... }:
     {
