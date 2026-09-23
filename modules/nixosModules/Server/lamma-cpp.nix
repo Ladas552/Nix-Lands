@@ -1,5 +1,6 @@
 {
   # hosted on my most powerfull gpu, which is my pc's rx6700xt
+  enable = false;
   hosts = [ "pc" ];
   config =
     { pkgs, ... }:

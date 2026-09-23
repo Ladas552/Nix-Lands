@@ -10,7 +10,7 @@
         capSysAdmin = true;
       };
       # stolen from https://github.com/ap-1/nixcfg/blob/3c4fd18c58388d2954295e0f5466964e3ac4fb23/modules/pc/sunshine.nix
-      # Discovery
+      # Discovery, doesn't really work, I connect using tailscale
       services.avahi = {
         enable = true;
         nssmdns4 = true; # allows system to resolve .local addresses
@@ -21,7 +21,7 @@
         };
       };
 
-      # Input configuration
+      # Input configuration on wayland
       hardware.uinput.enable = true;
       services.udev.extraRules = ''
         KERNEL=="uinput", MODE="0660", GROUP="input", SYMLINK+="uinput"
@@ -33,19 +33,10 @@
         "render"
         "uinput"
       ];
-      # Virtual display
-      # https://discourse.nixos.org/t/nixos-sunshine-setup-using-a-virtual-screen/64857/4
-      boot.kernelParams = [ "video=eDP-1:1920x1080R@60D" ];
 
-      # hardware.display.edid.packages = [
-      #   (pkgs.runCommand "edid-custom" { } ''
-      #                       mkdir -p $out/lib/firmware/edid
-      #                       base64 -d > "$out/lib/firmware/edid/custom1.bin" <<'EOF'
-      #     EDID content
-      #           EOF
-      #   '')
-      # ];
-      # hardware.display.outputs."HDMI-A-1".edid = "custom1.bin";
-
+    # persist for Impermanence
+    custom.imp.home.cache.directories = [
+      ".config/sunshine"
+    ];
     };
 }

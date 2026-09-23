@@ -26,6 +26,7 @@
     [
       "kitty"
       "--start-as=hidden"
+      "--single-instance"
     ]
   ];
   # theme
