@@ -1,0 +1,315 @@
+[audio]
+sound_volume = 0.0
+
+[backdrop]
+enabled = true
+
+[bar.default]
+background_opacity = 0.58999998681247234
+center = [ "taskbar", "audio_visualizer" ]
+concave_edge_corners = false
+end = [ "tray", "notifications", "keyboard_layout", "battery", "network", "bluetooth", "volume", "clock" ]
+font_family = "JetBrainsMono NFM"
+margin_ends = 0
+position = "left"
+radius = 0
+scale = 1.2500000111758709
+shadow = false
+start = [ "control-center", "session", "launcher", "recorder", "bar", "media" ]
+thickness = 36
+widget_spacing = 8
+
+[calendar]
+
+[control_center.calendar]
+show_week_numbers = true
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[idle]
+behavior_order = [ "screen-off", "lock-and-suspend", "lock" ]
+pre_action_fade_seconds = 4
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = false
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 300.0
+
+[location]
+address = "Astana"
+
+[lockscreen]
+fingerprint = false
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "DP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 1018.0
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[osd]
+position = "top_right"
+position_vertical = "top_right"
+
+    [osd.kinds]
+    bluetooth = false
+    caffeine = false
+    dnd = false
+    keyboard_backlight = false
+    keyboard_layout = false
+    lock_keys = false
+    media = false
+    nightlight = false
+    power_profile = false
+    volume_input = false
+    wifi = false
+
+[plugin_settings."noctalia/screen_recorder"]
+copy_to_clipboard = true
+frame_rate = 30
+resolution = "1280x800"
+
+[plugins]
+enabled = [ "noctalia/screen_recorder", "noctalia/timer" ]
+
+[shell]
+clipboard_enabled = false
+clipboard_keep_from_closed_apps = false
+corner_radius_scale = 0.0
+font_family = "JetBrainsMono NFM"
+lang = "en"
+launch_apps_as_systemd_services = true
+password_style = "random"
+polkit_agent = true
+popup_shadows = false
+screen_time_enabled = true
+show_location = false
+telemetry_enabled = false
+
+    [shell.animation]
+    speed = 1.5000000223517418
+
+    [shell.keyboard_layout.custom_labels]
+    Canary = "CNR"
+    Kazakh = "KZ"
+
+    [shell.launcher]
+    auto_paste = "off"
+    fetch_exchange_rates = false
+
+    [shell.mpris]
+    blacklist = [ "Mozilla firefox" ]
+
+    [shell.panel]
+    list_item_background = true
+    open_near_click_control_center = true
+    session_placement = "floating"
+    session_position = "center"
+    shadow = false
+
+    [shell.screenshot]
+    copy_to_clipboard = false
+    freeze_screen = false
+    save_to_file = false
+
+    [[shell.session.actions]]
+    action = "lock"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 0.0
+    enabled = false
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "4"
+    variant = "destructive"
+
+    [shell.shadow]
+    alpha = 0.0
+
+[system.monitor]
+enabled = false
+
+[theme]
+builtin = "Catppuccin"
+
+    [theme.templates]
+    enable_builtin_templates = false
+    enable_community_templates = false
+
+[wallpaper]
+directory = "/home/ladas552/Pictures/backgrounds"
+
+    [wallpaper.automation]
+    enabled = true
+
+    [wallpaper.default]
+    path = "/home/ladas552/Pictures/backgrounds/wallhaven-45zdg5.jpg"
+
+    [wallpaper.last]
+    path = "/home/ladas552/Pictures/backgrounds/wallhaven-45zdg5.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/ladas552/Pictures/backgrounds/wallhaven-45zdg5.jpg"
+
+[widget.audio_visualizer]
+bands = 30
+width = 243
+
+[widget.bar]
+type = "noctalia/timer:bar"
+
+[widget.battery]
+hide_when_full = true
+
+[widget.clock]
+color = "primary"
+format = "{:%H --- :%M}"
+icon_color = "error"
+
+[widget.control-center]
+color = "primary"
+
+[widget.keyboard_layout]
+color = "secondary"
+hide_when_single_layout = true
+show_glyph = false
+
+[widget.launcher]
+color = "tertiary"
+glyph = "rocket"
+
+[widget.media]
+art_size = 96
+hide_when_no_media = true
+max_length = 242
+
+[widget.network]
+show_label = false
+
+[widget.notifications]
+hide_when_no_unread = true
+
+[widget.recorder]
+type = "noctalia/screen_recorder:recorder"
+
+[widget.session]
+icon_color = "error"
+
+[widget.taskbar]
+capsule_radius = 0
+group_by_workspace = true
+hide_empty_workspaces = true
+inactive_opacity = 0.69999999999999996
+show_active_indicator = false
+workspace_group_capsule = false
+workspace_label_placement = "centered"
+
+[widget.tray]
+drawer = true
+
+[widget.volume]
+mute_color = "primary"
+show_label = false
+
