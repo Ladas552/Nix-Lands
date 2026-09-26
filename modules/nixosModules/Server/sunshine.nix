@@ -34,9 +34,9 @@
         "uinput"
       ];
 
-    # persist for Impermanence
-    custom.imp.home.cache.directories = [
-      ".config/sunshine"
-    ];
+      # persist for Impermanence
+      custom.imp.home.cache.directories = [
+        ".config/sunshine"
+      ];
     };
 }

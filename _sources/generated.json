@@ -34,12 +34,12 @@
             "name": null,
             "owner": "barrettruth",
             "repo": "canola.nvim",
-            "rev": "ad85900a211387da8328555ad9df48c613491a32",
-            "sha256": "sha256-YZfSjZK5FMTGZKo42FBfU1FS14kTOZcs0JQlI9OqeuE=",
+            "rev": "8173bc716f29797ce0ad94359565a20e17a0b88c",
+            "sha256": "sha256-vozkwh5Cj2jnNqYUvjVazHxCCdxLPEHOM3qna/HPxE0=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "ad85900a211387da8328555ad9df48c613491a32"
+        "version": "8173bc716f29797ce0ad94359565a20e17a0b88c"
     },
     "cyrillic": {
         "cargoLock": null,
@@ -92,11 +92,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-KmOd9U49BfQTz7tGIqTRpoWEsx2lp6r1juPNg8fD4pk=",
+            "sha256": "sha256-n001I57qGLKQhGIhh0JlrCqGN63/lU32n973fWsVBCw=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.17.2.1/helium-0.17.2.1-x86_64_linux.tar.xz"
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.18.1.1/helium-0.18.1.1-x86_64_linux.tar.xz"
         },
-        "version": "0.17.2.1"
+        "version": "0.18.1.1"
     },
     "neorg": {
         "cargoLock": null,

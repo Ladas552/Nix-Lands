@@ -36,7 +36,6 @@
         xarchiver
         zotero
         nvfetcher
-        inputs.tack.packages.${pkgs.stdenv.hostPlatform.system}.tack
       ];
 
       # Radeon

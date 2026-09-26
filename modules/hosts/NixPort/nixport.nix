@@ -39,7 +39,6 @@
         xarchiver
         zotero
         nvfetcher
-        inputs.tack.packages.${pkgs.stdenv.hostPlatform.system}.tack
       ];
 
       # https://wiki.archlinux.org/title/Lenovo_ThinkPad_T14s_(AMD)_Gen_3#Display

@@ -93,6 +93,7 @@
         from = "#7700AE";
         to = "#0060FF";
         angle = 45;
+        "in" = "oklch longer hue";
       };
     };
     tab-indicator = {

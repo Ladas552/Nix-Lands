@@ -65,8 +65,6 @@ sops-nix.url = "gh:Mic92/sops-nix"
 
 nixos-wsl.url = "gh:nix-community/NixOS-WSL"
 
-noctalia = {url = "gh:noctalia-dev/noctalia", exclude_follow  = ["nixpkgs"]}
-
 nixos-hardware.url = "gh:nixos/nixos-hardware"
 
 nix-minecraft.url = "gh:Infinidoge/nix-minecraft"

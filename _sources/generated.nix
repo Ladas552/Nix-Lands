@@ -20,13 +20,13 @@
   };
   canola = {
     pname = "canola";
-    version = "ad85900a211387da8328555ad9df48c613491a32";
+    version = "8173bc716f29797ce0ad94359565a20e17a0b88c";
     src = fetchFromGitHub {
       owner = "barrettruth";
       repo = "canola.nvim";
-      rev = "ad85900a211387da8328555ad9df48c613491a32";
+      rev = "8173bc716f29797ce0ad94359565a20e17a0b88c";
       fetchSubmodules = false;
-      sha256 = "sha256-YZfSjZK5FMTGZKo42FBfU1FS14kTOZcs0JQlI9OqeuE=";
+      sha256 = "sha256-vozkwh5Cj2jnNqYUvjVazHxCCdxLPEHOM3qna/HPxE0=";
     };
     date = "2026-09-21";
   };
@@ -56,10 +56,10 @@
   };
   helium = {
     pname = "helium";
-    version = "0.17.2.1";
+    version = "0.18.1.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.17.2.1/helium-0.17.2.1-x86_64_linux.tar.xz";
-      sha256 = "sha256-KmOd9U49BfQTz7tGIqTRpoWEsx2lp6r1juPNg8fD4pk=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.18.1.1/helium-0.18.1.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-n001I57qGLKQhGIhh0JlrCqGN63/lU32n973fWsVBCw=";
     };
   };
   neorg = {
