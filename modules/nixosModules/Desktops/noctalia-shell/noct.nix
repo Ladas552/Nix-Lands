@@ -5,12 +5,30 @@
     "iso"
   ];
   config =
-    { pkgs, ... }:
+    {
+      pkgs,
+      lib,
+      self,
+      meta,
+      ...
+    }:
     {
       environment.systemPackages = [
-      pkgs.noctalia
+        # disable idle on host that don't need it
+        (self.packages.${pkgs.stdenv.hostPlatform.system}.noctalia {
+          extraSettings =
+            if (meta.hostname == "NixOSu") then
+              {
+                idle.behavior = lib.mkForce {
+                  lock.enabled = false;
+                  lock-and-suspend.enabled = false;
+                  screen-off.enabled = false;
+                };
+              }
+            else
+              {}:{};
+        })
       ];
-      hj.xdg.config.files."noctalia/noctalia.toml".source = ./noctalia.toml;
 
       # persist for Impermanence
       custom.imp.home.cache.directories = [
