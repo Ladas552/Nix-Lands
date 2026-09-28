@@ -1,11 +1,11 @@
 _: {
   inputs.self.from = { parent }: parent.self;
   options = {
-  initLuaContents.default = ''
+    initLuaContents.default = ''
       require("init")
     '';
 
-    devPlugins.default = [./nvim];
+    devPlugins.default = [ ./nvim ];
 
     extraPackages.defaultFunc = { inputs }: with inputs.nixpkgs.pkgs;
       [

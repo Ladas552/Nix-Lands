@@ -10,5 +10,7 @@
       settings = {
       };
     };
+    # report logs
+    services.upower.enable = true;
   };
 }

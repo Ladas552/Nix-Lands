@@ -17,8 +17,12 @@
       environment = {
         systemPackages = [
           (self.packages.${pkgs.stdenv.hostPlatform.system}.neovim {
-            devPlugins = if (meta.hostname == "NixOSu" || "NixPort") then ["${meta.configPath}/pkgs/adios-wrappers/neovim/nvim"] else [];
-            })
+            devPlugins =
+              if (meta.hostname == "NixOSu" || meta.hostname == "NixPort") then
+                [ "${meta.configPath}/pkgs/adios-wrappers/neovim/nvim" ]
+              else
+                [ ];
+          })
           pkgs.lua51Packages.lua
           pkgs.lua51Packages.luarocks
           pkgs.gnumake
