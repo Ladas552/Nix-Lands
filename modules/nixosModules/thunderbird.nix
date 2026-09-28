@@ -5,7 +5,7 @@
   ];
   config = { self, pkgs, ... }: {
     environment.systemPackages = [
-      self.packages.${pkgs.stdenv.hostPlatform.system}.thunderbird
+      self.packages.${pkgs.stdenv.hostPlatform.system}.thunderbird.drv
     ];
 
     # persist for Impermanence

@@ -16,7 +16,7 @@
     {
       environment = {
         systemPackages = [
-          self.packages.${pkgs.stdenv.hostPlatform.system}.neovim
+          self.packages.${pkgs.stdenv.hostPlatform.system}.neovim.drv
           pkgs.lua51Packages.lua
           pkgs.lua51Packages.luarocks
           pkgs.gnumake

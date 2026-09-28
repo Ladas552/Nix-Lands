@@ -5,7 +5,7 @@
   ];
   config = { self, pkgs, ... }: {
     environment.systemPackages = [
-      self.packages.${pkgs.stdenv.hostPlatform.system}.firefox
+      self.packages.${pkgs.stdenv.hostPlatform.system}.firefox.drv
     ];
     environment.sessionVariables.BROWSER = "firefox";
 

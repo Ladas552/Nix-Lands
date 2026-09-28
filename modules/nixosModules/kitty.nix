@@ -9,7 +9,7 @@
   ];
   config = { self, pkgs, ... }: {
     environment = {
-      systemPackages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.kitty ];
+      systemPackages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.kitty.drv ];
       shellAliases = {
         kssh = "kitten ssh"; # for kitty terminal
       };

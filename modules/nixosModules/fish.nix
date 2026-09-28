@@ -10,7 +10,7 @@
     {
       programs.fish = {
         enable = true;
-        package = self.packages.${pkgs.stdenv.hostPlatform.system}.fish;
+        package = self.packages.${pkgs.stdenv.hostPlatform.system}.fish.drv;
         shellAbbrs = config.environment.shellAliases;
       };
       environment = {
@@ -29,7 +29,7 @@
           wgetpaste
           bonk
           ripdrag
-          self.packages.${pkgs.stdenv.hostPlatform.system}.broot
+          self.packages.${pkgs.stdenv.hostPlatform.system}.broot.drv
           self.packages.${pkgs.stdenv.hostPlatform.system}.gcp
           self.packages.${pkgs.stdenv.hostPlatform.system}.eval
         ];

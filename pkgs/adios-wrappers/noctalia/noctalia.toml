@@ -33,25 +33,6 @@ enabled = false
 schema_version = 2
 widget_order = []
 
-[idle]
-behavior_order = [ "screen-off", "lock-and-suspend", "lock" ]
-pre_action_fade_seconds = 4
-
-    [idle.behavior.lock]
-    action = "lock"
-    enabled = false
-    timeout = 600.0
-
-    [idle.behavior.lock-and-suspend]
-    action = "lock_and_suspend"
-    enabled = true
-    timeout = 900.0
-
-    [idle.behavior.screen-off]
-    action = "screen_off"
-    enabled = true
-    timeout = 300.0
-
 [location]
 address = "Astana"
 
@@ -183,9 +164,6 @@ directory = "/home/ladas552/Pictures/backgrounds"
 [widget.audio_visualizer]
 bands = 30
 width = 243
-
-[widget.bar]
-type = "noctalia/timer:bar"
 
 [widget.battery]
 hide_when_full = true

@@ -26,4 +26,4 @@ let
   };
 in
 # call each wrapper with empty args to get its output
-builtins.mapAttrs (_: module: module { }) tree.modules
+builtins.mapAttrs (_: module: module // { drv = module { }; }) tree.modules

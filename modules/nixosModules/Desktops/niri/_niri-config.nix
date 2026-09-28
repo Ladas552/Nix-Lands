@@ -219,10 +219,10 @@
       "--single-instance"
     ];
     # "Super+E" .spawn ="emacs";
-    "Super+M".spawn = [
+    "Super+N".spawn = [
       "neovide"
     ];
-    "Super+N".spawn = [
+    "Super+J".spawn = [
       "kitty"
       "--single-instance"
       "-e"
@@ -238,26 +238,26 @@
       "-c"
       "Neorg workspace life"
     ];
-    "Super+H".spawn = [
+    "Super+M".spawn = [
       "kitty"
       "--single-instance"
       "-e"
       "rmpc"
     ];
-    "Super+F".spawn = [
+    "Super+H".spawn = [
       "kitty"
       "--single-instance"
       "-e"
       "btop"
     ];
-    "Super+B".spawn = [
+    "Super+G".spawn = [
       "kitty"
       "--single-instance"
       "-e"
       "qalc"
     ];
     # GUI apps
-    "Super+K".spawn = "thunar";
+    "Super+F".spawn = "thunar";
     "Super+L".spawn = "firefox";
     "Shift+Super+L".spawn-sh = "helium &";
     # MPD
@@ -282,7 +282,7 @@
       ];
       _props.allow-when-locked = true;
     };
-    "Shift+Alt+K" = {
+    "Shift+Alt+W" = {
       spawn = [
         "mpc"
         "volume"
