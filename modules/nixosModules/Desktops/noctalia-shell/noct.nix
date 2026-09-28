@@ -15,7 +15,7 @@
       environment.systemPackages = [
         # disable idle on host that don't need it
         (self.packages.${pkgs.stdenv.hostPlatform.system}.noctalia {
-          extraSettings.default =
+          extraSettings =
             let
               toggle = if (meta.hostname == "NixOSu") then "false" else "true";
             in
