@@ -20,15 +20,15 @@
   };
   canola = {
     pname = "canola";
-    version = "8173bc716f29797ce0ad94359565a20e17a0b88c";
+    version = "407c8949deafb39c5aa373bb06f9796c09e0635e";
     src = fetchFromGitHub {
       owner = "barrettruth";
       repo = "canola.nvim";
-      rev = "8173bc716f29797ce0ad94359565a20e17a0b88c";
+      rev = "407c8949deafb39c5aa373bb06f9796c09e0635e";
       fetchSubmodules = false;
-      sha256 = "sha256-vozkwh5Cj2jnNqYUvjVazHxCCdxLPEHOM3qna/HPxE0=";
+      sha256 = "sha256-cN0VAJ87F1Ru3HNzyJWOjmvVSlT4lX0x9oUxCNHhZQ4=";
     };
-    date = "2026-09-21";
+    date = "2026-09-26";
   };
   cyrillic = {
     pname = "cyrillic";

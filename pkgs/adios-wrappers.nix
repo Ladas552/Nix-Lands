@@ -26,4 +26,5 @@ let
   };
 in
 # call each wrapper with empty args to get its output
+# it differs from vanilla, so just package is `drv` while changing package in the module is { }
 builtins.mapAttrs (_: module: module // { drv = module { }; }) tree.modules

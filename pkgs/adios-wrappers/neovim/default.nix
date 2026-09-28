@@ -1,7 +1,11 @@
 _: {
   inputs.self.from = { parent }: parent.self;
   options = {
-    initLuaFile.default = "/persist/home/ladas552/Projects/my_repos/Nix-Lands/pkgs/adios-wrappers/neovim/nvim/init.lua";
+  initLuaContents.default = ''
+      require("init")
+    '';
+
+    devPlugins.default = [./nvim];
 
     extraPackages.defaultFunc = { inputs }: with inputs.nixpkgs.pkgs;
       [
@@ -26,6 +30,4 @@ _: {
     treesitterPackage.defaultFunc =
       { inputs }: inputs.nixpkgs.pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
   };
-
-  environment.XDG_CONFIG_HOME = "/home/ladas552/Projects/my_repos/Nix-Lands/pkgs/adios-wrappers/neovim/";
 }

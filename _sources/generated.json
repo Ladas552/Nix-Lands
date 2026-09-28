@@ -22,7 +22,7 @@
     },
     "canola": {
         "cargoLock": null,
-        "date": "2026-09-21",
+        "date": "2026-09-26",
         "extract": null,
         "name": "canola",
         "passthru": null,
@@ -34,12 +34,12 @@
             "name": null,
             "owner": "barrettruth",
             "repo": "canola.nvim",
-            "rev": "8173bc716f29797ce0ad94359565a20e17a0b88c",
-            "sha256": "sha256-vozkwh5Cj2jnNqYUvjVazHxCCdxLPEHOM3qna/HPxE0=",
+            "rev": "407c8949deafb39c5aa373bb06f9796c09e0635e",
+            "sha256": "sha256-cN0VAJ87F1Ru3HNzyJWOjmvVSlT4lX0x9oUxCNHhZQ4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "8173bc716f29797ce0ad94359565a20e17a0b88c"
+        "version": "407c8949deafb39c5aa373bb06f9796c09e0635e"
     },
     "cyrillic": {
         "cargoLock": null,
