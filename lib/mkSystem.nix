@@ -1,5 +1,5 @@
 # forked from https://codeberg.org/poacher/nosh
-# it's a small script to make hosts out of modulus
+# it's a small script to make hosts out of modules
 nixpkgs: pkgs:
 let
   inherit (pkgs.lib) concatMap hasSuffix hasPrefix;
@@ -41,7 +41,7 @@ nixosSystem {
           let
             module = import path;
           in
-          if (module.enable or true) && module ? config && conditions module then module.config else { }
+          if (module.enable or true) && module ? config && conditions module then  pkgs.lib.setDefaultModuleLocation (toString path) module.config  else { }
         )
         (
           # Expand any folder to all the files within it.
