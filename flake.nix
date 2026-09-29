@@ -34,40 +34,23 @@
     {
       nixosConfigurations =
         let
-          inherit (nosh.conditions) hasHost;
-          specialArgs = { inherit inputs self; };
-          paths = [ ./modules ];
-          modules = [ ./options ];
+          make =
+            x:
+            mkSystem {
+              specialArgs = { inherit inputs self; };
+              paths = [ ./modules ];
+              modules = [ ./options ];
+              conditions = nosh.conditions.hasHost x;
+            };
         in
         {
-          NixOSu = mkSystem {
-            inherit paths modules specialArgs;
-            conditions = hasHost "pc";
-          };
-          NixPort = mkSystem {
-            inherit paths modules specialArgs;
-            conditions = hasHost "laptop";
-          };
-          NixBox = mkSystem {
-            inherit paths modules specialArgs;
-            conditions = hasHost "server";
-          };
-          NixWool = mkSystem {
-            inherit paths modules specialArgs;
-            conditions = hasHost "vps";
-          };
-          NixwsL = mkSystem {
-            inherit paths modules specialArgs;
-            conditions = hasHost "wsl";
-          };
-          NixIso = mkSystem {
-            inherit paths modules specialArgs;
-            conditions = hasHost "iso";
-          };
-          NixTest = mkSystem {
-            inherit paths modules specialArgs;
-            conditions = hasHost "testing";
-          };
+          NixOSu = make "pc";
+          NixPort = make "laptop";
+          NixBox = make "server";
+          NixWool = make "vps";
+          NixwsL = make "wsl";
+          NixIso = make "iso";
+          NixTest = make "testing";
         };
       packages = eachSystem (pkgs: import ./pkgs { inherit inputs pkgs self; });
       formatter = eachSystem (pkgs: pkgs.nixfmt-tree);

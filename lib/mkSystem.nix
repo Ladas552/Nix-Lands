@@ -41,7 +41,10 @@ nixosSystem {
           let
             module = import path;
           in
-          if (module.enable or true) && module ? config && conditions module then  pkgs.lib.setDefaultModuleLocation (toString path) module.config  else { }
+          if (module.enable or true) && module ? config && conditions module then
+            pkgs.lib.setDefaultModuleLocation (toString path) module.config
+          else
+            { }
         )
         (
           # Expand any folder to all the files within it.
