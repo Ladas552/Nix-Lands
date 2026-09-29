@@ -25,9 +25,7 @@ in
   # scripts
   gcp = pkgs.callPackage ./addcommitpush.nix { };
   eval = pkgs.callPackage ./eval-stats.nix { };
-  word-lookup = pkgs.callPackage ./word-lookup.nix { };
   Subtitlenator = pkgs.callPackage ./Subtitlenator.nix { };
   musnow = pkgs.callPackage ./musnow.nix { };
-  wpick = pkgs.callPackage ./wpick.nix { };
 }
 // adios-wrappers

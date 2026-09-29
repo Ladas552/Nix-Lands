@@ -10,7 +10,7 @@ let
     modules = adios.lib.inject [
       (adios-wrappers // { thunderbird = adios-wrappers.firefox; })
       # https://github.com/llakala/adios-wrappers/blob/main/docs/guide.md#what-is-adioslibimportmodules
-      (adios.lib.importModules { directory = ./adios-wrappers; })
+      (adios.lib.importModules { directory = ../modules/adios-wrappers; })
     ];
   };
 

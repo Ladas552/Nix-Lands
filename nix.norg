@@ -97,29 +97,5 @@ I start to have a life other than computers so I kinda begin to forget what I di
     - user
       In NixOS, users are Mutual by default, so you can just `su` to change to root, and `passwd ladas552` to change password of user-Ladas552 when you can't login to the user.
 * TODOs
-** Adios
-    use mutators to have modular variables per host, from @itsyunaya on discord
-    @code markdown
-    you can define additional options like this
-    ```nix
-    # noctalia.nix
-    { types, ... }: {
-      options = {
-        settings.mutators = [ "/noctalia" ];
-        my-option.type = types.string;
-      };
-
-      mutations."/noctalia".settings = { options }: {
-        some-noctalia-option = options.my-option;
-      };
-    }
-    ```
-    and then when you add it to your packages you do something like
-    ```nix
-    systemPackages = [ (wrappers.noctalia { my-option = "test"; }) ]
-    ```
-    @end
-
-    ** Install script
-    FIX IT. AND UPDATE IT
-    The partitioning scheme there I no longev use, the iso works, but I'd like it to have secrets, copying tailscale key doesn't work btw, don't know why. Creating folders for secrets is a pain. I don't have neorg rn, so that is also something to consider.
+** nosh
+Migrate nosh to adios maybe, or anything that makes it more lazy

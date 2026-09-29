@@ -62,8 +62,7 @@
 
       environment = {
         shellAliases = {
-          wget-install = "wget https://raw.githubusercontent.com/Ladas552/Nix-Lands/refs/heads/master/docs/zfs.norg";
-          wget-impermanence = "wget https://raw.githubusercontent.com/Ladas552/Nix-Lands/refs/heads/master/docs/impermanence.norg";
+          wget-install = "wget https://raw.githubusercontent.com/Ladas552/Nix-Lands/refs/heads/master/install.sh";
           git-install = "git clone https://github.com/Ladas552/Nix-Lands.git";
         };
       };

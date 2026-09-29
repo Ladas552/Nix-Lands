@@ -3,5 +3,5 @@
 { pkgs, lib, ... }:
 pkgs.writeShellScriptBin "gcp" # bash
   ''
-    ${lib.meta.getExe' pkgs.git "git"} add --all && ${lib.meta.getExe' pkgs.git "git"} commit -m "$1" && ${lib.meta.getExe' pkgs.git "git"} push
+    ${lib.meta.getExe' pkgs.gitMinimal "git"} add --all && ${lib.meta.getExe' pkgs.gitMinimal "git"} commit -m "$1" && ${lib.meta.getExe' pkgs.gitMinimal "git"} push
   ''

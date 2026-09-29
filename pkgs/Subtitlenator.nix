@@ -1,12 +1,22 @@
 # Adds `ass` subtitle files to mkv files and creates subdirectory for copied mkv files. Subtitles aren't burned into mkv, just added to the pool. Nice if you don't have subtitle fuzzy find in your Media Player
+{ pkgs, ... }:
+let
+  inherit (pkgs)
+    writeShellApplication
+    coreutils
+    ;
+in
+writeShellApplication {
+  name = "Subtitlenator.sh";
+  runtimeInputs = [ coreutils ];
+  text = # bash
+    ''
+      mkdir Subbed_"$(basename "$PWD")"
 
-{ pkgs, lib, ... }:
-pkgs.writeShellScriptBin "Subtitlenator.sh" ''
-  ${lib.meta.getExe' pkgs.coreutils "mkdir"} Subbed_"$(${lib.meta.getExe' pkgs.coreutils "basename"} "$PWD")"
-
-  for i in *.mkv
-  do
-  file="$(${lib.meta.getExe' pkgs.coreutils "basename"} "$i" .mkv)"
-  (ffmpeg -i "$file.mkv" -i "$file.ass" -map 0 -map 1 -c copy Subbed_"$(${lib.meta.getExe' pkgs.coreutils "basename"} "$PWD")/$file.mkv")
-  done
-''
+      for i in *.mkv
+      do
+      file="$(basename "$i" .mkv)"
+      (ffmpeg -i "$file.mkv" -i "$file.ass" -map 0 -map 1 -c copy Subbed_"$(basename "$PWD")/$file.mkv")
+      done
+    '';
+}
