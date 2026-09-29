@@ -9,7 +9,7 @@ _: {
 
     extraPackages.defaultFunc = { inputs }: with inputs.nixpkgs.pkgs;
       [
-        tinymist
+        # tinymist
         nixd
       ];
 

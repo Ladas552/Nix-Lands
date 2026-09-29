@@ -14,9 +14,9 @@
       programs.command-not-found.enable = false;
       # Less building text
       documentation = {
-        enable = true;
+        enable = false;
         doc.enable = false;
-        man.enable = true;
+        man.enable = false;
         nixos.enable = false;
         dev.enable = false;
       };

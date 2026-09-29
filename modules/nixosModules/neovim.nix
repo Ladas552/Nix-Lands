@@ -9,6 +9,7 @@
   config =
     {
       self,
+      inputs,
       pkgs,
       meta,
       ...
@@ -17,6 +18,7 @@
       environment = {
         systemPackages = [
           (self.packages.${pkgs.stdenv.hostPlatform.system}.neovim {
+            package = inputs.nvim.packages.${pkgs.stdenv.hostPlatform.system}.default;
             devPlugins =
               if (meta.hostname == "NixOSu" || meta.hostname == "NixPort") then
                 [ "${meta.configPath}/modules/adios-wrappers/neovim/nvim" ]
