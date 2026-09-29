@@ -22,9 +22,6 @@
       };
       # Nix options
       nix = {
-        # Make builds run with low priority so my system stays responsive
-        daemonCPUSchedPolicy = "idle";
-        daemonIOSchedClass = "idle";
         # Better Error messages
         # package = pkgs.lixPackageSets.git.lix;
         package = pkgs.nixVersions.latest;
@@ -33,7 +30,6 @@
         # disable channels completely
         channel.enable = false;
         registry.nixpkgs.flake = inputs.nixpkgs;
-        nixPath = [ "nixpkgs=flake:nixpkgs" ];
         settings = {
           # error on IFD, It errors on using modules like Stylix tho
           # right now it's true because I IFD a helium wrapper

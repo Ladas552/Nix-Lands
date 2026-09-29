@@ -31,6 +31,8 @@ My config modules are imported automatically, but only merges if the host varian
 
 Depending on a host, I pass `meta` special arg that carry specific to this host information
 
+Also I can pass host dependent config to adios-wrappers with some setup. See `noct.nix` for example
+
 ## Docs
 I write comments on things, that might explain certain ways of doing things, or leave not working options in comments for people to find. This is to not look up one thing twice, and just look at the nix file itself.
 
