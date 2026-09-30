@@ -2,10 +2,7 @@
   hosts = [ "vps" ];
   config =
     {
-      pkgs,
       lib,
-      meta,
-      self,
       ...
     }:
     {

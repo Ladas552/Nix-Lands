@@ -13,7 +13,7 @@
     {
       config,
       pkgs,
-      self,
+      wrappers,
       meta,
       ...
     }:
@@ -30,7 +30,7 @@
         imagemagick
         ffmpeg
         gst_all_1.gst-libav
-        self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate
+        wrappers.libqalculate
         lshw
         nuspell
         python3

@@ -3,8 +3,8 @@
     "pc"
     "laptop"
   ];
-  config = { pkgs, self, ... }: {
-    environment.systemPackages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.zathura.drv ];
+  config = { wrappers, ... }: {
+    environment.systemPackages = [ wrappers.zathura.drv ];
     custom.imp.home.cache.directories = [
       ".local/share/zathura"
     ];

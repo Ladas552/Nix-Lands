@@ -1,12 +1,10 @@
 {
   lib,
   pkgs,
-  myself,
+  sources,
   ...
 }:
 let
-  # nvfetcher pins
-  sources = pkgs.callPackage "${myself}/_sources/generated.nix" { };
   # Neorg Plugins
   lib-neorg_query = pkgs.rustPlatform.buildRustPackage {
     src = sources.neorg-query.src;

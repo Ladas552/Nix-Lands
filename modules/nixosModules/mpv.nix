@@ -4,11 +4,11 @@
     "laptop"
   ];
   config =
-    { pkgs, self, ... }:
+    { pkgs, wrappers, ... }:
     {
       environment.systemPackages = [
         pkgs.ff2mpv
-        self.packages.${pkgs.stdenv.hostPlatform.system}.mpv.drv
+        wrappers.mpv.drv
       ];
     };
 }

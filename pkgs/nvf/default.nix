@@ -7,14 +7,14 @@
 {
   pkgs,
   inputs,
-  self,
+  sources,
   ...
 }:
 (inputs.nvf.lib.neovimConfiguration {
   inherit pkgs;
   extraSpecialArgs = {
     # https://github.com/NotAShelf/nvf/issues/993#issuecomment-3127396900
-    myself = self;
+    inherit sources;
   };
   modules = [
     # neovim options

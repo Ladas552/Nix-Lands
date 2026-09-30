@@ -99,3 +99,7 @@ I start to have a life other than computers so I kinda begin to forget what I di
 * TODOs
 ** nosh
 Migrate nosh to adios maybe, or anything that makes it more lazy
+** unflake
+non flake commands now work, but I still need to fix backwards compatibility. as of now systems isn't passed to packages and nvfetcher, so flakes can't eval the config.
+Also I need to change eval script to not use flakes by default
+Also need to add more aliases, nix-path is also using flake registry, which is kinda strangly works, but I need to test

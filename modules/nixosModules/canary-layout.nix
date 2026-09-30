@@ -6,21 +6,17 @@
   ];
   config =
     {
-      pkgs,
       lib,
-      self,
+      wrappers,
       ...
     }:
-    let
-      canary = self.packages.${pkgs.stdenv.hostPlatform.system}.canary;
-    in
     {
       console.useXkbConfig = true;
       services.xserver = {
         xkb = {
           layout = lib.mkForce "canary,kz";
           extraLayouts.canary = {
-            symbolsFile = canary + "/share/X11/xkb/symbols/canary";
+            symbolsFile = wrappers.canary + "/share/X11/xkb/symbols/canary";
             description = "Canary keyboard layout";
             languages = [ "eng" ];
           };

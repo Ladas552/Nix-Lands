@@ -5,15 +5,15 @@
   ];
   config =
     {
+      wrappers,
       config,
       pkgs,
-      self,
       ...
     }:
     {
       environment.systemPackages = with pkgs; [
         mpc
-        self.packages.${pkgs.stdenv.hostPlatform.system}.musnow
+        wrappers.musnow
       ];
 
       hj = {

@@ -1,9 +1,9 @@
 {
   hosts = [ "iso" ];
   config =
-    { pkgs, self, ... }:
+    { wrappers, ... }:
     {
-      environment.systemPackages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.helium ];
+      environment.systemPackages = [ wrappers.helium ];
 
       custom.imp.home.cache.directories = [
         ".cache/net.imput.helium"

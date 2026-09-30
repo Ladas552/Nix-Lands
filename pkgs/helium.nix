@@ -2,12 +2,10 @@
 # https://github.com/weegs710/AnomalOS/blob/f23a7019a53a8952d253d43defb1281712dccdbd/modules/shareables/wrapped-helium.nix
 {
   pkgs,
-  self,
+  sources,
   ...
 }:
 let
-
-  source = (pkgs.callPackage "${self}/_sources/generated.nix" { }).helium;
 
   extensionPolicy = pkgs.writeText "policy.json" (
     builtins.toJSON {
@@ -32,7 +30,7 @@ let
 
   # Tarball allows more control than AppImage
   heliumPkg = pkgs.stdenv.mkDerivation rec {
-    inherit (source) pname version src;
+    inherit (sources.helium) pname version src;
 
     nativeBuildInputs = with pkgs; [
       makeWrapper

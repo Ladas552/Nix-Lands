@@ -3,14 +3,14 @@
     {
       pkgs,
       config,
+      wrappers,
       meta,
-      self,
       ...
     }:
     {
       programs.fish = {
         enable = true;
-        package = self.packages.${pkgs.stdenv.hostPlatform.system}.fish.drv;
+        package = wrappers.fish.drv;
         shellAbbrs = config.environment.shellAliases;
       };
       environment = {
@@ -29,9 +29,9 @@
           wgetpaste
           bonk
           ripdrag
-          self.packages.${pkgs.stdenv.hostPlatform.system}.broot.drv
-          self.packages.${pkgs.stdenv.hostPlatform.system}.gcp
-          self.packages.${pkgs.stdenv.hostPlatform.system}.eval
+          wrappers.broot.drv
+          wrappers.gcp
+          wrappers.eval
         ];
         shellAliases = {
           # Better app names
@@ -46,8 +46,11 @@
           # fastfetch = "fastfetch | ${lib.getExe pkgs.lolcat}";
           # Nix mantainense
           clean = "nh clean all";
-          yy = "nh os switch ${meta.configPath}";
-          yyy = "nh os boot ${meta.configPath}";
+          # yy = "nh os switch ${meta.configPath}";
+          # yyy = "nh os boot ${meta.configPath}";
+          yy = "nh os switch -t -f ${meta.configPath} nixosConfigurations.${meta.hostname}";
+          yyy = "nh os boot -t -f ${meta.configPath} nixosConfigurations.${meta.hostname}";
+          yy-flake = "nh os switch ${meta.configPath}";
           en = "cd ${meta.configPath} && nvim ./";
           eh = "cd ${meta.configPath} && nvim ./";
           # eh = "hx ${meta.configPath}";

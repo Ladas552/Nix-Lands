@@ -3,7 +3,7 @@
   config =
     {
       pkgs,
-      self,
+      wrappers,
       inputs,
       ...
     }:
@@ -28,7 +28,7 @@
         # hunspellDicts.en-us-large
         # hunspellDicts.ru-ru
         keepassxc
-        self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate
+        wrappers.libqalculate
         pwvucontrol
         qbittorrent
         telegram-desktop

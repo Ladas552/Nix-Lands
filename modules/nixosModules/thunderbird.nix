@@ -3,9 +3,9 @@
     "pc"
     "laptop"
   ];
-  config = { self, pkgs, ... }: {
+  config = { wrappers, ... }: {
     environment.systemPackages = [
-      self.packages.${pkgs.stdenv.hostPlatform.system}.thunderbird.drv
+      wrappers.thunderbird.drv
     ];
 
     # persist for Impermanence

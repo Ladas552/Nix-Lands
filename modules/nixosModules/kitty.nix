@@ -7,9 +7,9 @@
     "server"
     "iso"
   ];
-  config = { self, pkgs, ... }: {
+  config = { wrappers, ... }: {
     environment = {
-      systemPackages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.kitty.drv ];
+      systemPackages = [ wrappers.kitty.drv ];
       shellAliases = {
         kssh = "kitten ssh"; # for kitty terminal
       };

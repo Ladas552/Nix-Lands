@@ -7,8 +7,8 @@
     "wsl"
     "iso"
   ];
-  config = { self, pkgs, ... }: {
-    environment.systemPackages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.nvf ];
+  config = { wrappers, ... }: {
+    environment.systemPackages = [ wrappers.nvf ];
     environment.sessionVariables.EDITOR = "nvim";
   };
 }

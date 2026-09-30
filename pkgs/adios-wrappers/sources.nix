@@ -1,9 +1,9 @@
 { types, ... }:
 {
   options = {
-    self = {
+    sources = {
       type = types.attrs;
-      defaultFunc = { options }: options.self;
+      defaultFunc = { options }: options.sources;
     };
   };
 }

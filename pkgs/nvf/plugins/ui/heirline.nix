@@ -1,11 +1,9 @@
-{ pkgs, myself, ... }:
+{ pkgs, sources, ... }:
 let
   # nvfetcher pins
-  sources = pkgs.callPackage "${myself}/_sources/generated.nix" { };
   heirline-components = pkgs.vimUtils.buildVimPlugin {
-    name = "heirline-components.nvim";
     doCheck = false;
-    src = sources.heirline-components.src;
+    inherit (sources.heirline-components) src pname version;
   };
 
 in

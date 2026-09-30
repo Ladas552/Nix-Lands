@@ -9,12 +9,11 @@
       modulesPath,
       lib,
       pkgs,
-      self,
+      wrappers,
       meta,
       ...
     }:
     let
-      qalc = self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate;
       # mount my drives
       mount-zfs = pkgs.writeShellApplication {
         name = "mount-zfs";
@@ -51,7 +50,7 @@
       # Standalone Packages
       environment.systemPackages = with pkgs; [
         mount-zfs
-        qalc
+        wrappers.libqalculate
         wget
         lshw
         telegram-desktop

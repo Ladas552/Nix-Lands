@@ -3,9 +3,9 @@
     "pc"
     "laptop"
   ];
-  config = { self, pkgs, ... }: {
+  config = { wrappers, ... }: {
     environment.systemPackages = [
-      self.packages.${pkgs.stdenv.hostPlatform.system}.firefox.drv
+      wrappers.firefox.drv
     ];
     environment.sessionVariables.BROWSER = "firefox";
 

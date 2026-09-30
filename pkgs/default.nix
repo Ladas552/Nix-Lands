@@ -1,12 +1,12 @@
 {
   inputs,
   pkgs,
-  self,
+  sources,
   ...
 }:
 let
   adios-wrappers = import ./adios-wrappers.nix {
-    inherit pkgs self;
+    inherit pkgs sources;
     adios = inputs.adios.adios;
     adios-wrappers = inputs.adios-wrappers.wrapperModules;
   };
@@ -14,12 +14,12 @@ in
 {
   default = pkgs.writeShellScriptBin "hello" ''echo "Hello World"'';
   # editor wrappers
-  nvf = pkgs.callPackage ./nvf { inherit inputs self; };
+  nvf = pkgs.callPackage ./nvf { inherit inputs sources; };
   kakoune = pkgs.callPackage ./kakoune { };
   emacs = pkgs.callPackage ./emacs { };
   # packages
-  helium = pkgs.callPackage ./helium.nix { inherit self; };
-  canary = pkgs.callPackage ./canary.nix { inherit self; };
+  helium = pkgs.callPackage ./helium.nix { inherit sources; };
+  canary = pkgs.callPackage ./canary.nix { inherit sources; };
   # wrappers
   libqalculate = pkgs.callPackage ./qalc.nix { };
   # scripts

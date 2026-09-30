@@ -6,7 +6,7 @@
       pkgs,
       lib,
       inputs,
-      self,
+      wrappers,
       ...
     }:
     {
@@ -23,7 +23,7 @@
 
       # Standalone Packages
       environment.systemPackages = with pkgs; [
-        self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate
+        wrappers.libqalculate
         typst
       ];
 

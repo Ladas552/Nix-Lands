@@ -1,5 +1,5 @@
 _: {
-  inputs.self.from = { parent }: parent.self;
+  inputs.sources.from = { parent }: parent.sources;
   options = {
     initLuaContents.default = ''
       require("init")
@@ -16,10 +16,8 @@ _: {
     startPlugins.defaultFunc =
       { inputs }:
       let
-        sources = inputs.nixpkgs.pkgs.callPackage "${inputs.self.self}/_sources/generated.nix" { };
         canola = inputs.nixpkgs.pkgs.vimUtils.buildVimPlugin {
-          name = "canola";
-          src = sources.canola.src;
+        inherit (inputs.sources.sources.canola) src pname version;
         };
       in
       {

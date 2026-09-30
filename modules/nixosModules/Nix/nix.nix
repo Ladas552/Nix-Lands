@@ -6,7 +6,7 @@
       meta,
       config,
       lib,
-      self,
+      # self,
       ...
     }:
     {
@@ -62,6 +62,6 @@
 
       # thanks @iynaix
       # make a symlink of flake within the generation (e.g. /run/current-system/src)
-      system.systemBuilderCommands = "ln -s ${self.sourceInfo.outPath} $out/src";
+      # system.systemBuilderCommands = "ln -s ${self.sourceInfo.outPath} $out/src";
     };
 }

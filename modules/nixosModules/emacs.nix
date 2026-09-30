@@ -1,10 +1,10 @@
 {
   enable = false;
   hosts = [ "laptop" ];
-  config = { self, pkgs, ... }: {
+  config = { wrappers, ... }: {
     services.emacs = {
       enable = true;
-      package = self.packages.${pkgs.stdenv.hostPlatform.system}.emacs;
+      package = wrappers.emacs;
     };
   };
 }

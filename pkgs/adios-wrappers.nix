@@ -3,14 +3,14 @@
   pkgs,
   adios,
   adios-wrappers,
-  self,
+  sources,
 }:
 let
   root = {
     modules = adios.lib.inject [
       (adios-wrappers // { thunderbird = adios-wrappers.firefox; })
       # https://github.com/llakala/adios-wrappers/blob/main/docs/guide.md#what-is-adioslibimportmodules
-      (adios.lib.importModules { directory = ../modules/adios-wrappers; })
+      (adios.lib.importModules { directory = ./adios-wrappers; })
     ];
   };
 
@@ -19,8 +19,8 @@ let
       "/nixpkgs" = {
         inherit pkgs;
       };
-      "/self" = {
-        inherit self;
+      "/sources" = {
+        inherit sources;
       };
     };
   };
