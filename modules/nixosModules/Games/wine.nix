@@ -1,7 +1,6 @@
 {
   enable = false;
-  hosts = [ "laptop" ];
-  config =
+  games =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [

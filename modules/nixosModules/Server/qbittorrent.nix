@@ -1,6 +1,5 @@
 {
-  hosts = [ "server" ];
-  config =
+  private =
     { pkgs, ... }:
     {
       # module

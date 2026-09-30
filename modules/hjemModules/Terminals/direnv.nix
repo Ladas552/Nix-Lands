@@ -1,5 +1,5 @@
 {
-  config =
+  edit =
     { meta, ... }:
     {
       hj.rum.programs.direnv = {

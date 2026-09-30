@@ -1,5 +1,5 @@
 {
-  config = {
+  all = {
     # Open ports in the firewall.
     networking.firewall.allowedTCPPorts = [
       3030

@@ -1,9 +1,5 @@
 {
-  hosts = [
-    "pc"
-    "laptop"
-  ];
-  config = { self, pkgs, ... }: {
+  workstation = { self, pkgs, ... }: {
     environment.systemPackages = [
       self.packages.${pkgs.stdenv.hostPlatform.system}.thunderbird.drv
     ];

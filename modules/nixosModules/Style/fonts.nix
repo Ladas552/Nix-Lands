@@ -1,10 +1,5 @@
 {
-  hosts = [
-    "pc"
-    "laptop"
-    "iso"
-  ];
-  config =
+  gui =
     { pkgs, ... }:
     {
       # stolen from saygo

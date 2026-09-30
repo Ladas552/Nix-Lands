@@ -1,6 +1,5 @@
 {
-  hosts = [ "laptop" ];
-  config =
+  NixPort =
     {
       pkgs,
       self,
@@ -56,7 +55,6 @@
         ];
       };
       # Enable rocm
-      nixpkgs.config.rocmSupport = true;
       hardware.amdgpu = {
         opencl.enable = true;
         initrd.enable = true;

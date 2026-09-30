@@ -1,9 +1,5 @@
 {
-  hosts = [
-    "pc"
-    "laptop"
-  ];
-  config =
+  workstation =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [

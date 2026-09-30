@@ -1,6 +1,5 @@
 {
-  hosts = [ "vps" ];
-  config =
+  NixWool =
     {
       lib,
       modulesPath,

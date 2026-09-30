@@ -2,7 +2,7 @@
 
 {
   enable = false;
-  config =
+  all =
     { pkgs, ... }:
     {
       programs.nix-ld.enable = true;

@@ -1,7 +1,6 @@
 {
   enable = false;
-  hosts = [ "laptop" ];
-  config =
+  virtualisation =
     { pkgs, meta, ... }:
     {
       # Wayroid

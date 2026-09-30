@@ -1,10 +1,6 @@
 {
   enable = false;
-  hosts = [
-    "laptop"
-    "server"
-  ];
-  config = {
+  powermanagment = {
     powerManagement.enable = true;
     services.tlp = {
       pd.enable = true;

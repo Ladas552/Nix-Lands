@@ -1,5 +1,5 @@
 {
-  config =
+  all =
     {
       pkgs,
       inputs,
@@ -57,8 +57,6 @@
       #   mode = "440";
       #   owner = meta.user;
       # };
-      # nixpkgs options
-      nixpkgs.config.allowUnfree = true;
 
       # thanks @iynaix
       # make a symlink of flake within the generation (e.g. /run/current-system/src)

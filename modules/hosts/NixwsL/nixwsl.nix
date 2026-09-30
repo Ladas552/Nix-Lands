@@ -1,6 +1,5 @@
 {
-  hosts = [ "wsl" ];
-  config =
+  NixwsL =
     {
       meta,
       pkgs,

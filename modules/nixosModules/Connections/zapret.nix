@@ -1,8 +1,7 @@
 # because fuck my country ig
 {
   enable = false;
-  hosts = [ "laptop" ];
-  config = {
+  workstation = {
     services.zapret = {
       enable = true;
       whitelist = [

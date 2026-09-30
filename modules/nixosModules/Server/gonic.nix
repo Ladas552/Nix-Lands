@@ -1,6 +1,5 @@
 {
-  hosts = [ "server" ];
-  config = {
+  private = {
     # music database service, to then connect with Symfonium
     services.gonic = {
       enable = true;

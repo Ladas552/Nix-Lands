@@ -2,8 +2,7 @@
 # stolen from @SapphoSys https://github.com/SapphoSys/flake/blob/1d8ef92b389c467a83403cbaf7681352d7a53434/services/bluesky-pds/default.nix
 {
   enable = false;
-  hosts = [ "vps" ];
-  config =
+  public =
     { lib, config, ... }:
     {
       # secrets

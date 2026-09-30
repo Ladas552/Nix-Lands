@@ -1,9 +1,5 @@
 {
-  hosts = [
-    "pc"
-    "laptop"
-  ];
-  config = {
+  gui = {
     hj.rum.programs.imv = {
       enable = true;
       settings = {

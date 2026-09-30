@@ -1,6 +1,5 @@
 {
-  hosts = [ "laptop" ];
-  config =
+  pocket =
     { pkgs, ... }:
     {
       environment.systemPackages = [ pkgs.moonlight-qt ];

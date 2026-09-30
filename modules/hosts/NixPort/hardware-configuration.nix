@@ -1,6 +1,5 @@
 {
-  hosts = [ "laptop" ];
-  config =
+  NixPort =
     {
       lib,
       modulesPath,

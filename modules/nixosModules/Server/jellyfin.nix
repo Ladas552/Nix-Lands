@@ -1,6 +1,5 @@
 {
-  hosts = [ "server" ];
-  config = {
+  private = {
     services.jellyfin = {
       enable = true;
       group = "media";

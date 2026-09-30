@@ -1,5 +1,5 @@
 {
-  config =
+  all =
     { pkgs, ... }:
     {
       hj.rum.programs.fastfetch = {

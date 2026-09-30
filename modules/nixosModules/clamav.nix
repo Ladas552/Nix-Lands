@@ -1,7 +1,6 @@
 {
   enable = false;
-  hosts = [ ];
-  config = {
+  hardware = {
     # antivirus? Idk sounds cool. Don't need it on desktop tho
     services.clamav = {
       scanner = {

@@ -1,10 +1,6 @@
 {
   enable = false;
-  hosts = [
-    "laptop"
-    "server"
-  ];
-  config =
+  edit =
     { config, ... }:
     {
       hj.rum.programs.helix.settings = {

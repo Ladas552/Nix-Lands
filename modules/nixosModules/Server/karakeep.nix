@@ -1,6 +1,5 @@
 {
-  hosts = [ "server" ];
-  config =
+  private =
     { lib, pkgs, ... }:
     {
       services.karakeep = {

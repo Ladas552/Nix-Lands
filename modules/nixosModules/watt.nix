@@ -1,9 +1,5 @@
 {
-  hosts = [
-    "laptop"
-    "server"
-  ];
-  config = {
+  powermanagment = {
     powerManagement.enable = true;
     services.watt = {
       enable = true;

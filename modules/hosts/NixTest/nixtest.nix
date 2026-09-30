@@ -1,6 +1,5 @@
 {
-  hosts = [ "testing" ];
-  config =
+  NixTest =
     { lib, ... }:
     {
       # host for testing random modules in isolated environment

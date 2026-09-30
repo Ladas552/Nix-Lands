@@ -1,10 +1,5 @@
 {
-  hosts = [
-    "pc"
-    "laptop"
-    "iso"
-  ];
-  config = { pkgs, ... }: {
+  noctalia = { pkgs, ... }: {
     environment.systemPackages = [
       pkgs.gpu-screen-recorder
     ];

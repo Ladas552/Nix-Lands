@@ -1,6 +1,5 @@
 {
-  hosts = [ "pc" ];
-  config =
+  NixOSu =
     {
       lib,
       modulesPath,

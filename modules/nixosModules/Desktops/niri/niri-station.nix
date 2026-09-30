@@ -1,9 +1,6 @@
 # niri config for stationary machines, such as my pc
 {
-  hosts = [
-    "pc"
-  ];
-  config = {
+  NixOSu = {
     hj.niri.settings = {
       spawn-at-startup = [
         [ "vesktop" ]

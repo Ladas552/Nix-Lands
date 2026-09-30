@@ -1,6 +1,5 @@
 {
-  hosts = [ "server" ];
-  config = {
+  private = {
     # This is propogated for all of my tailscale by making my server a nameserver of the whole network. https://tailscale.com/docs/solutions/block-ads-all-devices-anywhere-using-raspberry-pi
     # I won't use it for creating domain names, just for blocking ads
     # because self signing certs is a manual process that's annoying

@@ -3,7 +3,7 @@ let
   sources = pkgs.callPackage "${self}/_sources/generated.nix" { };
 in
 pkgs.stdenvNoCC.mkDerivation {
-  inherit (sources.canary)src version pname;
+  inherit (sources.canary) src version pname;
   installPhase = ''
     runHook preInstall
 

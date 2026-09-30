@@ -1,10 +1,6 @@
 {
   enable = false;
-  hosts = [
-    "laptop"
-    "server"
-  ];
-  config =
+  edit =
     { pkgs, ... }:
     {
       environment.systemPackages = [ pkgs.clang-tools ];

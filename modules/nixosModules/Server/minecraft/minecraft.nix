@@ -1,6 +1,5 @@
 {
-  hosts = [ "server" ];
-  config =
+  private =
     { pkgs, inputs, ... }:
     let
       # https://docs.papermc.io/paper/aikars-flags/

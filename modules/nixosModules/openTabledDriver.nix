@@ -1,9 +1,5 @@
 {
-  hosts = [
-    "pc"
-    "laptop"
-  ];
-  config = {
+  workstation = {
     # Configure tablet
     hardware.opentabletdriver = {
       enable = true;

@@ -1,9 +1,5 @@
 {
-  hosts = [
-    "laptop"
-    "iso"
-  ];
-  config = {
+  pocket = {
     networking.networkmanager.enable = true;
   };
 }

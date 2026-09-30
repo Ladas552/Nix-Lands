@@ -3,8 +3,7 @@
 # or
 # nh os build-image --image-variant iso --hostname NixIso "github:Ladas552/Nix-Lands"
 {
-  hosts = [ "iso" ];
-  config =
+  NixIso =
     {
       modulesPath,
       lib,

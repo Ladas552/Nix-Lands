@@ -1,9 +1,5 @@
 {
-  hosts = [
-    "pc"
-    "laptop"
-  ];
-  config =
+  workstation =
     { pkgs, ... }:
     let
       videos = "~/Videos";

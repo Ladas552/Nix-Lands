@@ -1,6 +1,5 @@
 {
-  hosts = [ "vps" ];
-  config = { config, ... }: {
+  public = { config, ... }: {
     # secrets
     sops.secrets."mystuff/trJWT" = { };
     sops.secrets."mystuff/trDROP" = { };

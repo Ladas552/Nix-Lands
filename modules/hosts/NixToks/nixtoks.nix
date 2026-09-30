@@ -8,8 +8,7 @@
   # all my love for linux started from this laptop
   # rest in peace, your ram and ssd will live in my next hosts to come
   enable = false;
-  hosts = [ "server" ];
-  config =
+  private =
     {
       config,
       pkgs,

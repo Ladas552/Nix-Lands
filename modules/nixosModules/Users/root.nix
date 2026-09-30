@@ -1,5 +1,5 @@
 {
-  config =
+  all =
     { config, ... }:
     {
       # setup immutable users for impermanence

@@ -1,6 +1,5 @@
 {
-  hosts = [ "vps" ];
-  config =
+  public =
     { config, inputs, ... }:
     let
       cfg = config.services.tangled.knot;

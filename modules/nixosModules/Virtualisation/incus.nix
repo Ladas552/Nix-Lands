@@ -4,8 +4,7 @@
 # So it will stay here, not used
 {
   enable = false;
-  hosts = [ "laptop" ];
-  config =
+  virtualisation =
     { pkgs, meta, ... }:
     {
       # outputs error without this

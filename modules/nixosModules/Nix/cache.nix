@@ -1,5 +1,5 @@
 {
-  config =
+  all =
     { meta, ... }:
     {
       # Cache

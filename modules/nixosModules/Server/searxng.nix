@@ -1,6 +1,5 @@
 {
-  hosts = [ "vps" ];
-  config = {
+  public = {
     services.searx = {
       enable = true;
       settings = {

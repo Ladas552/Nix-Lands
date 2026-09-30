@@ -1,7 +1,7 @@
 # This file exists to not clutter other nixos module files with generic persists, like network manager. I will move all options below somewhere else before I finish impermanence setup
 # /var/lib/nixos is essential for nixos to function, don't loose it
 {
-  config = {
+  all = {
     custom.imp = {
       root.directories = [
         "/etc/NetworkManager"

@@ -1,11 +1,5 @@
 {
-  hosts = [
-    "pc"
-    "laptop"
-    "server"
-    "vps"
-  ];
-  config =
+  hardware =
     {
       meta,
       config,

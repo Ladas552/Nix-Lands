@@ -1,7 +1,6 @@
 {
   enable = false;
-  hosts = [ "laptop" ];
-  config = {
+  gui = {
     hj.rum.programs.foot = {
       enable = true;
       # Need to make a systemD service for foot client
