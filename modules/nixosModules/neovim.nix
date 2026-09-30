@@ -21,7 +21,7 @@
             package = inputs.nvim.packages.${pkgs.stdenv.hostPlatform.system}.default;
             devPlugins =
               if (meta.hostname == "NixOSu" || meta.hostname == "NixPort") then
-                [ "${meta.configPath}/modules/adios-wrappers/neovim/nvim" ]
+                [ "${meta.configPath}/pkgs/adios-wrappers/neovim/nvim" ]
               else
                 [ ];
           })

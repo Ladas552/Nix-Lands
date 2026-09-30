@@ -18,8 +18,7 @@ _: {
       let
         sources = inputs.nixpkgs.pkgs.callPackage "${inputs.self.self}/_sources/generated.nix" { };
         canola = inputs.nixpkgs.pkgs.vimUtils.buildVimPlugin {
-          name = "canola";
-          src = sources.canola.src;
+          inherit (sources.canola) src pname version;
         };
       in
       {
