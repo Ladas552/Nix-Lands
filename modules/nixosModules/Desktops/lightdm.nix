@@ -1,6 +1,7 @@
 {
   enable = false;
-  gui =
+  hosts = [ "laptop" ];
+  config =
     { pkgs, ... }:
     {
       services = {

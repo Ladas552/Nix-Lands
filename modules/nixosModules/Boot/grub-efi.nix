@@ -1,6 +1,6 @@
 {
   enable = false;
-  all = {
+  config = {
     # GRUB Bootloader
     boot = {
       initrd.systemd.enable = true;

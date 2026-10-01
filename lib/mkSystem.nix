@@ -1,0 +1,54 @@
+# forked from https://codeberg.org/poacher/nosh
+# it's a small script to make hosts out of modules
+nixpkgs: pkgs:
+let
+  inherit (pkgs.lib) concatMap hasSuffix hasPrefix;
+  inherit (builtins) attrNames readDir;
+  listNixFilesRecursive =
+    folder:
+    let
+      contents = readDir folder;
+    in
+    concatMap (
+      filename:
+      let
+        type = contents.${filename};
+      in
+      if type == "regular" && hasSuffix ".nix" filename && !hasPrefix "_" filename then
+        [ (folder + "/${filename}") ]
+      else if type == "directory" then
+        listNixFilesRecursive (folder + "/${filename}")
+      else
+        [ ]
+    ) (attrNames contents);
+in
+{
+  conditions ? _: true,
+  paths ? [ ],
+  modules ? [ ],
+  eval ? import "${nixpkgs}/nixos/lib/eval-config.nix",
+  pkgs ? import <nixpkgs> { },
+  specialArgs ? { },
+}:
+eval {
+  inherit specialArgs;
+  modules =
+   [nixpkgs.nixosModules.readOnlyPkgs {nixpkgs.pkgs = pkgs;}]++
+    modules
+    ++
+      map
+        (
+          path:
+          let
+            module = import path;
+          in
+          if (module.enable or true) && module ? config && conditions module then
+            pkgs.lib.setDefaultModuleLocation (toString path) module.config
+          else
+            { }
+        )
+        (
+          # Expand any folder to all the files within it.
+          concatMap listNixFilesRecursive paths
+        );
+}

@@ -1,6 +1,7 @@
 {
   enable = false;
-  edit = {
+  hosts = [ "laptop" ];
+  config = {
     hj.rum.programs.zed = {
       enable = true;
       settings = {

@@ -1,5 +1,9 @@
 {
-  gui = {
+  hosts = [
+    "laptop"
+    "iso"
+  ];
+  config = {
     services.libinput = {
       enable = true;
       touchpad = {

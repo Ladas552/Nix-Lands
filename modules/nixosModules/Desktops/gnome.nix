@@ -1,6 +1,7 @@
 {
   enable = false;
-  gnome =
+  hosts = [ "laptop" ];
+  config =
     { pkgs }:
     {
       # enable DE and most of gnome services

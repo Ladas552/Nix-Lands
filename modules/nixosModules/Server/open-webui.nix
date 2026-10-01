@@ -1,7 +1,8 @@
 {
   # run ollama chat on my most powerful gpu, which is on my pc, rx6700xt
   enable = false;
-  llm = {
+  hosts = [ "pc" ];
+  config = {
     services.open-webui = {
       enable = true;
       port = 1212;

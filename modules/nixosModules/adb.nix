@@ -1,6 +1,7 @@
 {
   enable = false;
-  workstation =
+  hosts = [ "laptop" ];
+  config =
     { pkgs, ... }:
     {
       environment.systemPackages = [ pkgs.android-tools ];

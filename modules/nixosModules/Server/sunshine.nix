@@ -1,6 +1,7 @@
 {
   # remote desktop
-  games =
+  hosts = [ "pc" ];
+  config =
     { meta, ... }:
     {
       services.sunshine = {

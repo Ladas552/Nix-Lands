@@ -1,5 +1,9 @@
 {
-  workstation =
+  hosts = [
+    "pc"
+    "laptop"
+  ];
+  config =
     { meta, ... }:
     {
       # module that makes nuphy.io site work for my nuphy AIRv3

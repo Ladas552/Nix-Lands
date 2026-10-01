@@ -1,5 +1,10 @@
 {
-  niri =
+  hosts = [
+    "pc"
+    "laptop"
+    "iso"
+  ];
+  config =
     {
       inputs,
       pkgs,

@@ -8,7 +8,8 @@
   # all my love for linux started from this laptop
   # rest in peace, your ram and ssd will live in my next hosts to come
   enable = false;
-  private =
+  hosts = [ "server" ];
+  config =
     {
       config,
       pkgs,
@@ -92,7 +93,7 @@
         };
       };
       # Enable cuda. Needs building
-      nixpkgs.config.cudaSupport = true;
+      # nixpkgs.config.cudaSupport = true;
       # Environmental variable for Wayland and stuff
       environment.variables = {
         __NV_PRIME_RENDER_OFFLOAD = 1;

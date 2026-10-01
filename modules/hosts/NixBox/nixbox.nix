@@ -1,5 +1,6 @@
 {
-  NixBox =
+  hosts = [ "server" ];
+  config =
     { pkgs, meta, ... }:
     {
       _module.args = {

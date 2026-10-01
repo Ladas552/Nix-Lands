@@ -1,5 +1,10 @@
 {
-  noctalia =
+  hosts = [
+    "pc"
+    "laptop"
+    "iso"
+  ];
+  config =
     {
       pkgs,
       self,

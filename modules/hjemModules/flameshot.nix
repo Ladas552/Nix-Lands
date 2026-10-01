@@ -1,7 +1,7 @@
 {
   enable = false;
-
-  gui =
+  hosts = [ "laptop" ];
+  config =
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [

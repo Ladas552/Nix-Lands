@@ -1,6 +1,7 @@
 {
   enable = false;
-  gui =
+  hosts = [ "laptop" ];
+  config =
     { config, meta, ... }:
     {
       hj.rum.programs.ghostty = {

@@ -1,5 +1,6 @@
 {
-  private =
+  hosts = [ "server" ];
+  config =
     { config, pkgs, ... }:
     {
       # secrets

@@ -1,5 +1,6 @@
 {
-  NixIso =
+  hosts = [ "iso" ];
+  config =
     { pkgs, self, ... }:
     {
       environment.systemPackages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.helium ];

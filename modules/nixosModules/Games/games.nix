@@ -1,5 +1,8 @@
 {
-  games =
+  hosts = [
+    "pc"
+  ];
+  config =
     { pkgs, ... }:
     {
       environment.shellAliases = {

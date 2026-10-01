@@ -3,7 +3,8 @@
   # special defined scripts and keybinds will be in there
   # scaling doesn't work btw
   enable = false;
-  cage =
+  hosts = [ "laptop" ];
+  config =
     {
       pkgs,
       lib,

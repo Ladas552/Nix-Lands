@@ -1,5 +1,6 @@
 {
-  private = {
+  hosts = [ "server" ];
+  config = {
     # module
     services.immich = {
       enable = true;

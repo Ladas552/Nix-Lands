@@ -3,7 +3,8 @@
 # to /etc/nixos/configuration.nix instead.
 {
   enable = false;
-  private =
+  hosts = [ "server" ];
+  config =
     {
       lib,
       modulesPath,

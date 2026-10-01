@@ -1,6 +1,10 @@
 {
   # Store inline rmpc configs
-  workstation =
+  hosts = [
+    "pc"
+    "laptop"
+  ];
+  config =
     { pkgs, ... }:
     {
       environment.systemPackages = [
@@ -221,7 +225,7 @@
                                           content: [
                                               (kind: Property(Song(Title)), style: (fg: "yellow", modifiers: "Bold"),
                                                   default: (kind: Text("No Song"), style: (fg: "white", modifiers: "Bold"))),
-                                          ],
+                                          ], 
                                           align: Left,
                                           scroll_speed: 1
                                       ))

@@ -1,6 +1,7 @@
 {
   enable = false;
-  budgie = {
+  hosts = [ "laptop" ];
+  config = {
     services.desktopManager.budgie.enable = true;
   };
 }

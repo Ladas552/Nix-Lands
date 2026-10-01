@@ -1,6 +1,11 @@
 {
   enable = false;
-  hardware =
+  hosts = [
+    "laptop"
+    "server"
+    "vps"
+  ];
+  config =
     { config, ... }:
     {
       # secrets

@@ -1,5 +1,12 @@
 {
-  all =
+  hosts = [
+    "pc"
+    "laptop"
+    "server"
+    "vps"
+    "iso"
+  ];
+  config =
     { config, ... }:
     {
       # secrets

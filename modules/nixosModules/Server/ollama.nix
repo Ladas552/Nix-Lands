@@ -1,7 +1,8 @@
 {
   # hosted on my most powerfull gpu, which is my pc's rx6700xt
   enable = false;
-  llm =
+  hosts = [ "pc" ];
+  config =
     { pkgs, ... }:
     {
       services.ollama = {

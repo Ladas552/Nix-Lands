@@ -1,5 +1,9 @@
 {
-  workstation =
+  hosts = [
+    "pc"
+    "laptop"
+  ];
+  config =
     {
       config,
       pkgs,

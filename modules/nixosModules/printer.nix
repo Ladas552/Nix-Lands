@@ -2,7 +2,8 @@
 # Enable sane for scanner.
 {
   enable = false;
-  workstation =
+  hosts = [ "laptop" ];
+  config =
     { meta, pkgs, ... }:
     {
       services.printing = {

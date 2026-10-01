@@ -1,6 +1,7 @@
 {
   enable = false;
-  private = {
+  hosts = [ "server" ];
+  config = {
     # proxy cache across all systems on the network
     services.ncps = {
       enable = true;

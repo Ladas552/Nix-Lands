@@ -1,6 +1,7 @@
 {
   enable = false;
-  virtualisation = {
+  hosts = [ "laptop" ];
+  config = {
     virtualisation.waydroid.enable = true;
 
     # persist for Impermanence

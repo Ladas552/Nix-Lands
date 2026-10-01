@@ -1,5 +1,6 @@
 {
-  public = {
+  hosts = [ "vps" ];
+  config = {
     services.nginx = {
       enable = true;
       streamConfig = ''

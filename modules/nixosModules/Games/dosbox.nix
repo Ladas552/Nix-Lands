@@ -1,5 +1,6 @@
 {
-  games =
+  hosts = [ "pc" ];
+  config =
     { pkgs, ... }:
     {
       environment.systemPackages = [ pkgs.dosbox ];

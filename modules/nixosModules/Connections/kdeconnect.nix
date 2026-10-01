@@ -1,6 +1,7 @@
 {
   enable = false;
-  workstation = {
+  hosts = [ "laptop" ];
+  config = {
     programs.kdeconnect.enable = true;
   };
 }

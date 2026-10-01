@@ -1,6 +1,7 @@
 {
   enable = false;
-  cosmic = {
+  hosts = [ "laptop" ];
+  config = {
     services.desktopManager.cosmic.enable = true;
     services.displayManager.cosmic-greeter.enable = true;
 

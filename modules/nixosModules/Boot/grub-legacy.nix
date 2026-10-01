@@ -1,6 +1,6 @@
 {
   enable = false;
-  all = {
+  config = {
     # GRUB Bootloader for legacy (no efi, msdos table) systems
     boot = {
       initrd.systemd.enable = true;

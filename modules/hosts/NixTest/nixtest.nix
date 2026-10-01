@@ -1,5 +1,6 @@
 {
-  NixTest =
+  hosts = [ "testing" ];
+  config =
     { lib, ... }:
     {
       # host for testing random modules in isolated environment
@@ -13,7 +14,6 @@
       };
       system.switch.enable = false;
       system.stateVersion = "26.11"; # Don't touch
-      nixpkgs.hostPlatform = "x86_64-linux";
       users.users.ladas552 = {
         # password is pass
         hashedPasswordFile = lib.mkForce null;

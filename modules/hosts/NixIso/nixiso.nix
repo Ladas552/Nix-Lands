@@ -3,7 +3,8 @@
 # or
 # nh os build-image --image-variant iso --hostname NixIso "github:Ladas552/Nix-Lands"
 {
-  NixIso =
+  hosts = [ "iso" ];
+  config =
     {
       modulesPath,
       lib,
@@ -66,7 +67,6 @@
         };
       };
 
-      nixpkgs.hostPlatform = "x86_64-linux";
       # SSH into an iso
       services.openssh.settings = {
         PermitRootLogin = lib.mkForce "yes";

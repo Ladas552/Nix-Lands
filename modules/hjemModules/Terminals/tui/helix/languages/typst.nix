@@ -1,6 +1,10 @@
 {
   enable = false;
-  edit =
+  hosts = [
+    "laptop"
+    "server"
+  ];
+  config =
     { pkgs, ... }:
     {
       environment.systemPackages = [

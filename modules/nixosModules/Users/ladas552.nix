@@ -1,5 +1,5 @@
 {
-  all =
+  config =
     { config, ... }:
     {
       users.users.ladas552 = {

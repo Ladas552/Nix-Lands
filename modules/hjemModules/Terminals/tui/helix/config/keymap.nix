@@ -1,6 +1,10 @@
 {
   enable = false;
-  edit = {
+  hosts = [
+    "laptop"
+    "server"
+  ];
+  config = {
     hj.rum.programs.helix.settings.keys = {
       select = {
         "C-c" = "toggle_block_comments";

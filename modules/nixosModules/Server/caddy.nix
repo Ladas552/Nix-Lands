@@ -1,5 +1,10 @@
 {
-  selfhost = { config, meta, ... }: {
+  hosts = [
+    "server"
+    "vps"
+    "pc"
+  ];
+  config = { config, meta, ... }: {
     services.caddy = {
       enable = true;
       globalConfig = ''

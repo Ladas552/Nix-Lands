@@ -1,5 +1,5 @@
 {
-  all =
+  config =
     { lib, pkgs, ... }:
     {
       # SSH connections

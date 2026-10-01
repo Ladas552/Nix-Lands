@@ -1,5 +1,9 @@
 {
-  workstation =
+  hosts = [
+    "pc"
+    "laptop"
+  ];
+  config =
     { pkgs, ... }:
     {
       hj.rum.programs.obs-studio = {

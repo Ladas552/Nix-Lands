@@ -142,14 +142,6 @@
     "narHash": "sha256-K07ZsFAD1psW9EwfHTdYg7HSjZQ7IJjlZ7/P0hFf6Kc=",
     "lastModified": 1790640164
   },
-  "prism": {
-    "type": "git",
-    "url": "https://tangled.org/poacher.dev/prism",
-    "ref": "HEAD",
-    "rev": "4ed2b1a1ac9001b954d7f2fd8e20f828426481b7",
-    "narHash": "sha256-629owYfjm7OUk9K1c88sYeC/xpijxm3dxWUSN3a8zOA=",
-    "lastModified": 1790791508
-  },
   "sops-nix": {
     "type": "github",
     "owner": "Mic92",

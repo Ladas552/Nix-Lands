@@ -80,6 +80,3 @@ adios-wrappers.url = "gh:llakala/adios-wrappers"
 # adios-wrappers.url = "local:adios-wrappers"
 
 nvim.url = "gh:nix-community/neovim-nightly-overlay"
-
-# lib to build hosts
-prism.url = "td:poacher.dev/prism"

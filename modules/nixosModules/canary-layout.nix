@@ -1,5 +1,10 @@
 {
-  gui =
+  hosts = [
+    "pc"
+    "laptop"
+    "iso"
+  ];
+  config =
     {
       pkgs,
       lib,

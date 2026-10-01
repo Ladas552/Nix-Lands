@@ -1,5 +1,10 @@
 {
-  all = {
+  hosts = [
+    "pc"
+    "laptop"
+    "iso"
+  ];
+  config = {
     # Configure keymap in X11
     services.xserver = {
       xkb.layout = "us,kz";

@@ -5,8 +5,9 @@
     { self, ... }:
     let
       # Use inputs from tack, instead of flake inputs
-      inputs = (import ./.tack) {
-      };
+      inputs = (import ./.tack) { };
+      nosh = import ./lib { nixpkgs = inputs.nixpkgs; };
+      mkSystem = nosh.mkSystem inputs.nixpkgs;
 
       systems = inputs.nixpkgs.lib.systems.flakeExposed;
 
@@ -26,125 +27,43 @@
         );
     in
     {
-      nixosConfigurations = inputs.prism.lib.mkSystems {
-        specialArgs = { inherit inputs self; };
-        pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
-        mkSystem = inputs.nixpkgs.lib.nixosSystem;
-        modules = inputs.prism.lib.recursivelyImport [ ./modules ];
-        extraModules = [ ./options ];
-        tags =
-          self: with self; {
-            inherit (inputs.prism.lib.presets) all these;
-            # pc
-            NixOSu.parents = [
-              all
-              games
-              noctalia
-              workstation
-              virtualisation
-              llm
-            ];
-            # laptop
-            NixPort.parents = [
-              all
-              noctalia
-              workstation
-              powermanagment
-              pocket
-            ];
-            # server
-            NixBox.parents = [
-              all
-              edit
-              linux
-              private
-              powermanagment
-            ];
-            # vps
-            NixWool.parents = [
-              all
-              arm
-              public
-            ];
-            # wsl
-            NixwsL.parents = [
-              all
-              edit
-              linux
-              vm
-            ];
-            # iso
-            NixIso.parents = [
-              all
-              noctalia
-              gui
-              linux
-              pocket
-              powermanagment
-            ];
-            # testing
-            NixTest.parents = [
-              all
-              linux
-              vm
-            ];
-
-            # tags for system architecture
-            linux-rocm.pkgs = import inputs.nixpkgs {
-              system = "x86_64-linux";
-              config = {
-                allowUnfree = true;
-                rocmSupport = true;
+      nixosConfigurations =
+        let
+          make =
+            {
+              host,
+              system ? "x86_64-linux",
+              rocm ? false,
+              cuda ? false,
+              eval ? inputs.nixpkgs.lib.nixosSystem,
+            }:
+            mkSystem {
+              specialArgs = { inherit inputs self; };
+              paths = [ ./modules ];
+              modules = [ ./options ];
+              conditions = nosh.conditions.hasHost host;
+              pkgs = import inputs.nixpkgs {
+                inherit system;
+                config = {
+                  allowUnfree = true;
+                  rocmSupport = rocm;
+                  cudaSupport = cuda;
+                };
               };
+              inherit eval;
             };
-            linux.pkgs = import inputs.nixpkgs {
-              system = "x86_64-linux";
-              config.allowUnfree = true;
-            };
-            arm.pkgs = import inputs.nixpkgs {
-              system = "aarch64-linux";
-              config.allowUnfree = true;
-            };
-            # general tags
-            edit = { };
-            games = { };
-            gui = { };
-            hardware = { };
-            llm = { };
-            local = { };
-            pocket = { };
-            powermanagment = { };
-            virtualisation = { };
-            vm = { };
-            # desktop environments
-            budgie = { };
-            cage = { };
-            cagebreak = { };
-            cosmic = { };
-            gnome = { };
-            niri = { };
-            xfce = { };
-            # specific tags
-            noctalia.parents = [
-              niri
-              gui
-            ];
-            private.parents = [
-              selfhost
-              local
-            ];
-            public.parents = [ selfhost ];
-            selfhost.parents = [ hardware ];
-            workstation.parents = [
-              hardware
-              linux-rocm
-              local
-              edit
-            ];
-          };
-      };
+        in
+        {
+          NixOSu = make { host = "pc"; rocm = true;};
+          NixPort = make {host = "laptop"; rocm = true;};
+          NixBox = make {host = "server";};
+          NixWool = make {host = "vps"; systems = "aarch64-linux";};
+          NixwsL = make {host = "wsl";};
+          NixIso = make {host = "iso";};
+          NixTest = make {host = "testing";};
+        };
       packages = eachSystem (pkgs: import ./pkgs { inherit inputs pkgs self; });
       formatter = eachSystem (pkgs: pkgs.nixfmt-tree);
-      templates = ./templates;
+      templates = import ./templates;
     };
 }

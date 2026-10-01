@@ -1,6 +1,7 @@
 {
   enable = false;
-  xfce =
+  hosts = [ "laptop" ];
+  config =
     { pkgs, lib, ... }:
     {
       services.xserver = {

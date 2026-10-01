@@ -3,7 +3,8 @@
   # To create user, enable registration with plain text token, rebuild, register,        disable registration, and rebuild. All without commiting changes to git.
   # Stupid system, but what can you do.
   enable = false;
-  private = {
+  hosts = [ "server" ];
+  config = {
     services.matrix-conduit = {
       enable = true;
       settings.global = {

@@ -1,5 +1,12 @@
 {
-  edit =
+  hosts = [
+    "pc"
+    "server"
+    "wsl"
+    "laptop"
+    "iso"
+  ];
+  config =
     {
       self,
       inputs,

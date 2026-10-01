@@ -1,6 +1,7 @@
 {
   enable = false;
-  public =
+  hosts = [ "vps" ];
+  config =
     { config, ... }:
     {
       services = {
