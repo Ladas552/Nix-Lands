@@ -49,14 +49,10 @@
         };
         # use token to not get limited by github api
         # thanks @dotKaktus for the !include, so it isn't an environmental variable
-        # extraOptions = "!include ${config.sops.secrets."mystuff/github_token".path}";
+        # extraOptions = "!include ${config.secrets."github_token".path}";
       };
       # secrets
-      # sops.secrets."mystuff/github_token" = {
-      #   neededForUsers = true;
-      #   mode = "440";
-      #   owner = meta.user;
-      # };
+      # secrets."github_token".neededForUsers = true;
 
       # thanks @iynaix
       # make a symlink of flake within the generation (e.g. /run/current-system/src)

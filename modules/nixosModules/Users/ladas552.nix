@@ -10,7 +10,7 @@
           "wheel"
         ];
         initialPassword = "pass";
-        hashedPasswordFile = config.sops.secrets."mystuff/host_pwd".path;
+        hashedPasswordFile = config.secrets."host_pwd".path;
         openssh.authorizedKeys.keys = [
           "ssh-ed25520 AAAAC3NzaC1lZDI1NTE5AAAAIPiFWLpIrKZ1+8PPSegYpNrRaPlE4t7iVUnHucvWQJJx ladas552@NixPort"
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPiFWLpIrKZ1+8PPSegYpNrRaPlE4t7iVUnHucvWQJJx ladas552@NixToks-2024-06-25"

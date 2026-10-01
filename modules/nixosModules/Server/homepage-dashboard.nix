@@ -4,9 +4,9 @@
     { config, ... }:
     {
       # secrets
-      sops.secrets."mystuff/technitium-api" = { };
-      sops.templates."homepage-vars".content = ''
-        HOMEPAGE_VAR_TECHNITIUM="${config.sops.placeholder."mystuff/technitium-api"}"
+      secrets."technitium-api" = { };
+      security.nix-secrets.templates."homepage-vars".content = ''
+        HOMEPAGE_VAR_TECHNITIUM="${config.secrets."technitium-api"}"
       '';
 
       # Reverse proxy
@@ -22,7 +22,7 @@
         enable = true;
         allowedHosts = "hub.ladas552.me";
         environmentFiles = [
-          config.sops.templates."homepage-vars".path
+          config.security.nix-secrets.templates."homepage-vars".path
         ];
         settings = { };
         widgets = [

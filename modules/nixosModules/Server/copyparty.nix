@@ -4,10 +4,9 @@
     { config, inputs, ... }:
     {
       # secrets
-      sops.secrets."mystuff/copypartyl" = {
+      secrets."copypartyl" = {
         owner = "copyparty";
         group = "media";
-        restartUnits = [ "copyparty.service" ];
       };
 
       # import module
@@ -22,7 +21,7 @@
           i = "0.0.0.0";
           p = 3210;
         };
-        accounts.admin.passwordFile = config.sops.secrets."mystuff/copypartyl".path;
+        accounts.admin.passwordFile = config.secrets."copypartyl".path;
         volumes = {
           "/" = {
             path = "/srv/media/copyparty";

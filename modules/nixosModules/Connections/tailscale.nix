@@ -10,15 +10,14 @@
     { config, ... }:
     {
       # secrets
-      sops.secrets."mystuff/tailnet".neededForUsers = true;
-      sops.secrets."mystuff/tailnet" = { };
+      secrets."tailnet".neededForUsers = true;
 
       # module
       services.tailscale = {
         enable = true;
         openFirewall = true;
         # expires after 90 days, dec 10
-        authKeyFile = "${config.sops.secrets."mystuff/tailnet".path}";
+        authKeyFile = "${config.secrets."tailnet".path}";
         permitCertUid = "caddy";
         disableUpstreamLogging = true;
       };

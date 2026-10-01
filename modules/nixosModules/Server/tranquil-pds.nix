@@ -2,17 +2,17 @@
   hosts = [ "vps" ];
   config = { config, ... }: {
     # secrets
-    sops.secrets."mystuff/trJWT" = { };
-    sops.secrets."mystuff/trDROP" = { };
-    sops.secrets."mystuff/trKEY" = { };
-    sops.secrets."mystuff/trTelegramBotKey" = { };
-    sops.secrets."mystuff/trTelegramBotWebhook" = { };
-    sops.templates."tranquil-pds-secrets".content = ''
-      JWT_SECRET="${config.sops.placeholder."mystuff/trJWT"}"
-      DPOP_SECRET="${config.sops.placeholder."mystuff/trDROP"}"
-      MASTER_KEY="${config.sops.placeholder."mystuff/trKEY"}"
-      TELEGRAM_BOT_TOKEN="${config.sops.placeholder."mystuff/trTelegramBotKey"}"
-      TELEGRAM_WEBHOOK_SECRET="${config.sops.placeholder."mystuff/trTelegramBotWebhook"}"
+    secrets."trJWT" = { };
+    secrets."trDROP" = { };
+    secrets."trKEY" = { };
+    secrets."trTelegramBotKey" = { };
+    secrets."trTelegramBotWebhook" = { };
+    security.nix-secrets.templates."tranquil-pds-secrets".content = ''
+      JWT_SECRET="${config.secrets."trJWT"}"
+      DPOP_SECRET="${config.secrets."trDROP"}"
+      MASTER_KEY="${config.secrets."trKEY"}"
+      TELEGRAM_BOT_TOKEN="${config.secrets."trTelegramBotKey"}"
+      TELEGRAM_WEBHOOK_SECRET="${config.secrets."trTelegramBotWebhook"}"
     '';
 
     # Module
@@ -31,7 +31,7 @@
         };
       };
       environmentFiles = [
-        config.sops.templates."tranquil-pds-secrets".path
+        config.security.nix-secrets.templates."tranquil-pds-secrets".path
       ];
     };
 

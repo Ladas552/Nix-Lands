@@ -75,10 +75,10 @@ I start to have a life other than computers so I kinda begin to forget what I di
    @end
 
 ** Sops and secrets
-   Defined in `modules/secrets`, uses the ssh key from my host to decrypt secrets automatically.
-   Can be used as a file, like `${config.sops.secrets."secret"}` and as a string, with `"$(cat ${config.sops.secrets."secret".path})"`
+   Defined in `./secrets`, uses the ssh key from my host to decrypt secrets automatically.
+   Can be used as a file, like `${config.secrets."secret"}` and as a string, with `"$(cat ${config.secrets."secret".path})"`
 
-   Change secrets with `sops edit`, creating the keys as per documentation on `sops-nix` repository.
+   Change secrets with `nix-secrets edit name`. https://nix-secrets.unnamed.systems/
 
 ** ZFS
    I use ZFS as a file system, it provides me with snapshots and compression via zstd. You can't install zfs in calimaries, so need to use nixos iso and configure drive with a {:./docs/zfs.norg:}[script], after that it is simple `nixos-install --flake "github:Ladas552/Nixos-Is-Unbreakable#Host` and setting up a root password at the end

@@ -9,17 +9,15 @@
     { config, ... }:
     {
       # secrets
-      sops.secrets."mystuff/zero_net_id".neededForUsers = true;
-      sops.secrets."mystuff/zero_net_id" = { };
+      secrets."zero_net_id".neededForUsers = true;
 
-      sops.secrets."mystuff/zero_net_nixtoks".neededForUsers = true;
-      sops.secrets."mystuff/zero_net_nixtoks" = { };
+      secrets."zero_net_nixtoks".neededForUsers = true;
 
       # module
       services.zerotierone = {
         enable = true;
         joinNetworks = [
-          "$(cat ${config.sops.secrets."mystuff/zero_net_id".path})"
+          "$(cat ${config.secrets."zero_net_id".path})"
         ];
         localConf = {
           settings = {

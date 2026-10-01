@@ -45,14 +45,14 @@
           enable = true;
           ip = "100.90.144.20";
           authOnce = true;
-          authPasswordFile = config.sops.secrets."mystuff/microsocks".path;
+          authPasswordFile = config.secrets."microsocks".path;
           authUsername = "ladas552";
           port = 1080;
         };
       };
 
       # secrets
-      sops.secrets."mystuff/microsocks" = {
+      secrets."microsocks" = {
         owner = "microsocks";
         group = "microsocks";
       };

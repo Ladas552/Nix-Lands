@@ -7,13 +7,13 @@
     { lib, config, ... }:
     {
       # secrets
-      sops.secrets."mystuff/bluesky-pdsJWT" = { };
-      sops.secrets."mystuff/bluesky-pdsADMIN" = { };
-      sops.secrets."mystuff/bluesky-pdsKEY" = { };
-      sops.templates."bluesky-pds-secrets".content = ''
-        PDS_JWT_SECRET="${config.sops.placeholder."mystuff/bluesky-pdsJWT"}"
-        PDS_ADMIN_PASSWORD="${config.sops.placeholder."mystuff/bluesky-pdsADMIN"}"
-        PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX="${config.sops.placeholder."mystuff/bluesky-pdsKEY"}"
+      secrets."bluesky-pdsJWT" = { };
+      secrets."bluesky-pdsADMIN" = { };
+      secrets."bluesky-pdsKEY" = { };
+      security.nix-secrets.templates."bluesky-pds-secrets".content = ''
+        PDS_JWT_SECRET="${config.secrets."bluesky-pdsJWT"}"
+        PDS_ADMIN_PASSWORD="${config.secrets."bluesky-pdsADMIN"}"
+        PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX="${config.secrets."bluesky-pdsKEY"}"
       '';
 
       # module
@@ -33,7 +33,7 @@
           ];
         };
         environmentFiles = [
-          config.sops.templates."bluesky-pds-secrets".path
+          config.security.nix-secrets.templates."bluesky-pds-secrets".path
         ];
       };
 

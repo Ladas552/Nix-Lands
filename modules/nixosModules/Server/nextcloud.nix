@@ -4,8 +4,7 @@
     { config, pkgs, ... }:
     {
       # secrets
-      sops.secrets."mystuff/nextcloud".neededForUsers = true;
-      sops.secrets."mystuff/nextcloud" = { };
+      secrets."nextcloud".neededForUsers = true;
       # Only allow Tailscale
       networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 8080 ];
 
@@ -57,7 +56,7 @@
           dbhost = "/run/postgresql";
           dbname = "nextcloud";
           adminuser = "ladas552";
-          adminpassFile = config.sops.secrets."mystuff/nextcloud".path;
+          adminpassFile = config.secrets."nextcloud".path;
         };
       };
 

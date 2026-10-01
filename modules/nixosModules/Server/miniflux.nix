@@ -4,17 +4,17 @@
     { config, ... }:
     {
       # secrets
-      sops.secrets."mystuff/minifluxl" = { };
-      sops.secrets."mystuff/minifluxp" = { };
-      sops.templates."miniflux-admin-credentials".content = ''
-        ADMIN_USERNAME="${config.sops.placeholder."mystuff/minifluxl"}"
-        ADMIN_PASSWORD="${config.sops.placeholder."mystuff/minifluxp"}"
+      secrets."minifluxl" = { };
+      secrets."minifluxp" = { };
+      security.nix-secrets.templates."miniflux-admin-credentials".content = ''
+        ADMIN_USERNAME="${config.secrets."minifluxl"}"
+        ADMIN_PASSWORD="${config.secrets."minifluxp"}"
       '';
 
       # module
       services.miniflux = {
         enable = true;
-        adminCredentialsFile = "${config.sops.templates."miniflux-admin-credentials".path}";
+        adminCredentialsFile = "${config.security.nix-secrets.templates."miniflux-admin-credentials".path}";
         config = {
           LISTEN_ADDR = "localhost:8067";
           CREATE_ADMIN = true;

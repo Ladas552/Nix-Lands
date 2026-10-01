@@ -32,23 +32,24 @@ in
 }:
 eval {
   inherit specialArgs;
-  modules =
-   [nixpkgs.nixosModules.readOnlyPkgs {nixpkgs.pkgs = pkgs;}]++
-    modules
-    ++
-      map
-        (
-          path:
-          let
-            module = import path;
-          in
-          if (module.enable or true) && module ? config && conditions module then
-            pkgs.lib.setDefaultModuleLocation (toString path) module.config
-          else
-            { }
-        )
-        (
-          # Expand any folder to all the files within it.
-          concatMap listNixFilesRecursive paths
-        );
+  modules = [
+    { nixpkgs.pkgs = pkgs; }
+  ]
+  ++ modules
+  ++
+    map
+      (
+        path:
+        let
+          module = import path;
+        in
+        if (module.enable or true) && module ? config && conditions module then
+          pkgs.lib.setDefaultModuleLocation (toString path) module.config
+        else
+          { }
+      )
+      (
+        # Expand any folder to all the files within it.
+        concatMap listNixFilesRecursive paths
+      );
 }

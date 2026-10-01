@@ -142,13 +142,13 @@
     "narHash": "sha256-K07ZsFAD1psW9EwfHTdYg7HSjZQ7IJjlZ7/P0hFf6Kc=",
     "lastModified": 1790640164
   },
-  "sops-nix": {
+  "secrets": {
     "type": "github",
-    "owner": "Mic92",
-    "repo": "sops-nix",
-    "rev": "5efb5a6f4f5ab192817d28557dd4d650fa14d866",
-    "narHash": "sha256-rs9meAYxW3zzrh43yaW7htrqCD+X9+pupDPHN86fumI=",
-    "lastModified": 1790498116
+    "owner": "unnamed-systems",
+    "repo": "nix-secrets",
+    "rev": "151f264a22b595802647db8fac09a2dbd6cb202c",
+    "narHash": "sha256-rxClV4z02Ev/bk0/FpdT5h9Oq4/o16RA7e6LRl1/QtU=",
+    "lastModified": 1788356805
   },
   "systems": {
     "type": "github",

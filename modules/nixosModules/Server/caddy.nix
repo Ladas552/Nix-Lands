@@ -2,7 +2,6 @@
   hosts = [
     "server"
     "vps"
-    "pc"
   ];
   config = { config, meta, ... }: {
     services.caddy = {
@@ -24,15 +23,15 @@
         dnsResolver = "1.1.1.1:53";
         dnsPropagationCheck = true;
         group = config.services.caddy.group;
-        environmentFile = config.sops.templates."cloudflare-creds".path;
+        environmentFile = config.security.nix-secrets.templates."cloudflare-creds".path;
       };
     };
     # secrets
-    sops.secrets."mystuff/cf-api" = { };
-    sops.secrets."mystuff/cf-email" = { };
-    sops.templates."cloudflare-creds".content = ''
-      CF_DNS_API_TOKEN="${config.sops.placeholder."mystuff/cf-api"}"
-      CF_API_EMAIL="${config.sops.placeholder."mystuff/cf-email"}"
+    secrets."cf-api" = { };
+    secrets."cf-email" = { };
+    security.nix-secrets.templates."cloudflare-creds".content = ''
+      CF_DNS_API_TOKEN="${config.secrets."cf-api"}"
+      CF_API_EMAIL="${config.secrets."cf-email"}"
     '';
 
     # Open firewall ports

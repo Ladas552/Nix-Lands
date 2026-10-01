@@ -4,12 +4,11 @@
     { config, ... }:
     {
       # secrets
-      sops.secrets."mystuff/kavita".neededForUsers = true;
-      sops.secrets."mystuff/kavita" = { };
+      secrets."kavita".neededForUsers = true;
       # module
       services.kavita = {
         enable = true;
-        tokenKeyFile = config.sops.secrets."mystuff/kavita".path;
+        tokenKeyFile = config.secrets."kavita".path;
       };
       # Only allow Tailscale
       networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 5000 ];

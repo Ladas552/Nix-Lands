@@ -61,7 +61,7 @@ nixos-core.url = "gh:manic-systems/nixos-core/"
 tack.url = "gh:manic-systems/tack"
 
 # Other NixOS modules
-sops-nix.url = "gh:Mic92/sops-nix"
+secrets.url = "gh:unnamed-systems/nix-secrets"
 
 nixos-wsl.url = "gh:nix-community/NixOS-WSL"
 
