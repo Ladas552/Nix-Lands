@@ -20,8 +20,12 @@
     };
 
     # persist for Impermanence
-    custom.imp.root.directories = [
-      "/var/lib/technitium-dns-server"
+    system.nixos-core.persistence.stores."/persist".directories = [
+      {
+        target = "/var/lib/private/technitium-dns-server";
+        owner = "nobody";
+        group = "nogroup";
+      }
     ];
   };
 }

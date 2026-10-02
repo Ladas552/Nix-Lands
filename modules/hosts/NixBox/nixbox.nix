@@ -61,6 +61,7 @@
       #   device = "zroot/media";
       #   fsType = "zfs";
       # };
+      custom.imp.home.directories = [ "NixLands" ];
     };
 
 }
