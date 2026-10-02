@@ -27,7 +27,7 @@
 
       services.postgresql = {
         enable = true;
-        package = pkgs.postgresql_16;
+        package = pkgs.postgresql_18;
         ensureDatabases = [ "nextcloud" ];
         ensureUsers = [
           {
@@ -45,7 +45,7 @@
 
       services.nextcloud = {
         enable = true;
-        package = pkgs.nextcloud34;
+        package = pkgs.nextcloud35;
         configureRedis = true;
         maxUploadSize = "50G";
         hostName = "nextcloud.ladas552.me";
