@@ -44,7 +44,7 @@
       _module.args = {
         meta = {
           hostname = "NixIso";
-          configPath = "~/Nix-Lands";
+          configPath = "/home/ladas552/Nix-Lands";
           user = "ladas552";
         };
       };

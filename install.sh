@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 # Install script for zfs + tmpfs setup, run with sudo
 set -euo pipefail
+# idiot
+read -rp "DID YOU GENERATE HARDWARE FILE? DUMBASS" confirm
+if [[ $confirm =~ ^[Yy]$ ]]; then
+  echo "Proceeding..."
+else
+  echo "Aborted."
+  exit 1
+fi
 # find a way to put keys for secrets into respective directories yourself
 # My way is to `sudo passwd` a new root password and `ssh root@ip` into the vps
 # Then just `scp ./keys.txt root@ip:/root`
@@ -18,10 +26,12 @@ sgdisk -n3:0:0 -t3:BF01 -c3:"ZROOT" /dev/nvme0n1
 # Format the boot partition
 mkfs.vfat -n NIXBOOT -F32 /dev/nvme0n1p1
 
+echo "Swap..."
 # Swap
 mkswap -L SWAP /dev/nvme0n1p2
 swapon /dev/nvme0n1p2
 
+echo "zpool creation..."
 # Create the pool on the drive, use reasonable settings
 zpool create -f \
   -o ashift=12 \
@@ -35,6 +45,7 @@ zpool create -f \
   -O mountpoint=none \
   zroot "/dev/nvme0n1p3"
 
+echo "mounting..."
 # "Creating /", as this is an impermanence setup we don't actually need `/root`, but otherwise the whole system build will be on the usb flash drive and I don't have enough space for that. So we just create this temporary and remove it once we are booted into an actual system.
 zfs create -o mountpoint=legacy zroot/root
 mount -t zfs zroot/root /mnt
@@ -49,10 +60,12 @@ for zvol in "tmp" "nix" "cache" "persist"; do
   mount -t zfs zroot/$zvol /mnt/$zvol
 done
 
+echo "transfering secrets..."
 mkdir -p /mnt/persist/home/ladas552/.ssh
 mkdir -p /mnt/persist/home/ladas552/.config/sops/age
 cp ./NixToks /mnt/persist/home/ladas552/.ssh/
 cp ./keys.txt /mnt/persist/home/ladas552/.config/sops/age/
 
+echo "installing..."
 nixos-install --no-root-password --flake "github:Ladas552/Nix-Lands#NixBox"
 

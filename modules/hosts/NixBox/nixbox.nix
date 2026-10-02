@@ -6,7 +6,7 @@
       _module.args = {
         meta = {
           hostname = "NixBox";
-          configPath = "/home/ladas552/Nix-Lands";
+          configPath = "/persist/home/ladas552/Projects/my_repos/Nix-Lands";
           user = "ladas552";
         };
       };
@@ -52,15 +52,15 @@
 
       ##### ZFS MOUNT POINTS
       ##### Because I have additional drive for NixToks
-      fileSystems."/mnt/zmedia" = {
-        device = "zmedia/files";
-        fsType = "zfs";
-      };
+      # fileSystems."/mnt/zmedia" = {
+      #   device = "zmedia/files";
+      #   fsType = "zfs";
+      # };
       # media files for torrents and stuff on main drive
-      fileSystems."/srv/media" = {
-        device = "zroot/media";
-        fsType = "zfs";
-      };
+      # fileSystems."/srv/media" = {
+      #   device = "zroot/media";
+      #   fsType = "zfs";
+      # };
     };
 
 }
