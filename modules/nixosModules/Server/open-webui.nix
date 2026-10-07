@@ -31,5 +31,13 @@
 
     # persist for Impermanence
     custom.imp.root.cache.directories = [ "/var/lib/open-webui" ];
+    # persist for Impermanence
+    system.nixos-core.persistence.stores."/cache".directories = [
+      {
+        target = "/var/lib/private/open-webui";
+        owner = "nobody";
+        group = "nogroup";
+      }
+    ];
   };
 }

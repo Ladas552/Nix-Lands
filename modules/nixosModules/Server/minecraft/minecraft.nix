@@ -1,4 +1,5 @@
 {
+  enable = false;
   hosts = [ "server" ];
   config =
     { pkgs, inputs, ... }:
@@ -114,6 +115,7 @@
       networking.firewall.interfaces.tailscale0.allowedUDPPorts = [ 25565 ];
 
       # persist for Impermanence
-      custom.imp.root.directories = [ "/srv/minecraft" ];
+      # no need for Impermanence, as my server lives on another drive
+      # but by default, it's in `/srv/minecraft`
     };
 }

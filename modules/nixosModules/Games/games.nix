@@ -36,20 +36,27 @@
       custom.imp.home = {
         directories = [
           "Games"
+          ".config/Antimatter Dimensions"
+          ".config/StardewValley"
           ".config/arx"
           ".config/openmw"
           ".config/unity3d"
-          ".config/Antimatter Dimensions"
           ".local/share/Mindustry"
           ".local/share/PrismLauncher"
+          ".local/share/Terraria"
           ".local/share/arx"
           ".local/share/bottles"
-          ".local/share/umu"
+          ".local/share/godot"
           ".local/share/openmw"
           ".local/share/osu"
-          ".local/share/Terraria"
-          ".local/share/godot"
           ".local/share/shadPS4"
+          ".local/share/umu"
+          ".local/share/Celeste"
+          ".local/share/Overgrowth"
+          ".local/share/SuperMeatBoy"
+          ".local/share/HotlineMiami"
+          ".local/share/binding of isaac afterbirth+"
+          ".local/share/binding of isaac afterbirth+ mods"
         ];
       };
     };

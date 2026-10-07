@@ -6,18 +6,16 @@
       _module.args = {
         meta = {
           hostname = "NixBox";
-          configPath = "/persist/home/ladas552/Projects/my_repos/Nix-Lands";
+          configPath = "/persist/home/ladas552/Nix-Lands";
           user = "ladas552";
         };
       };
       # Standalone Packages
       environment.systemPackages = with pkgs; [
+        # minecraft server admin console
         rcon-cli
         sqlite
       ];
-
-      # Build machine for NixWool
-      # boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
       # Enable OpenGL and hardware accelerated graphics drivers
 
@@ -45,23 +43,66 @@
       ## It disabled usb after some time of incativity, so not usable on desktop
       powerManagement.powertop.enable = true;
 
-      # Define a user account. Check Impermanence Module for user password
-      users.users."${meta.user}".extraGroups = [ "media" ];
-      ## Stuff to make server operatable
+      # I save all media under the same group so they all can be shared acros different services
       users.groups."media" = { };
+      users.users."${meta.user}".extraGroups = [ "media" ];
 
-      ##### ZFS MOUNT POINTS
-      ##### Because I have additional drive for NixToks
-      # fileSystems."/mnt/zmedia" = {
-      #   device = "zmedia/files";
-      #   fsType = "zfs";
-      # };
-      # media files for torrents and stuff on main drive
-      # fileSystems."/srv/media" = {
-      #   device = "zroot/media";
-      #   fsType = "zfs";
-      # };
-      custom.imp.home.directories = [ "NixLands" ];
+      # media files for torrents and stuff on sata ssd
+      fileSystems."/srv" = {
+        device = "zmedia/media";
+        fsType = "zfs";
+      };
+
+      networking.useDHCP = false;
+      networking.interfaces."enp1s0".useDHCP = true;
+      networking.interfaces."enp2s0".ipv4.addresses = [
+        {
+          address = "192.168.10.1";
+          prefixLength = 24;
+        }
+      ];
+
+      # Routing + NAT
+      networking.nat = {
+        enable = true;
+        externalInterface = "enp1s0";
+        internalInterfaces = [ "enp2s0" ];
+      };
+
+      # Firewall: nothing open on WAN, DHCP/DNS/SSH open on LAN only
+      networking.firewall = {
+        enable = true;
+        interfaces."enp2s0" = {
+          allowedUDPPorts = [
+            53
+            67
+          ];
+          allowedTCPPorts = [
+            53
+            22
+          ];
+        };
+      };
+
+      # DHCP + DNS for the PC
+      services.dnsmasq = {
+        enable = true;
+        settings = {
+          interface = "enp2s0";
+          bind-interfaces = true;
+          dhcp-range = "192.168.10.100,192.168.10.200,12h";
+          server = [
+            "1.1.1.1"
+            "9.9.9.9"
+          ];
+        };
+      };
+
+      # for iperf3 -s
+      networking.firewall.allowedTCPPorts = [ 5201 ];
+
+# persist the config directory
+      custom.imp.home.directories = [ "Nix-Lands" ];
     };
 
 }

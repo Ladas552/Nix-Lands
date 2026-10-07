@@ -39,5 +39,10 @@
       80
       443
     ];
+
+    # persist for Impermanence
+    custom.imp.root.directories = [
+      "/var/lib/acme"
+    ];
   };
 }

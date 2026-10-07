@@ -1,4 +1,5 @@
 {
+  enable = false;
   hosts = [ "server" ];
   config = {
     # music database service, to then connect with Symfonium

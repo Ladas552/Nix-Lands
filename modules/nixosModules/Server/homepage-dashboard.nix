@@ -31,14 +31,14 @@
               cpu = true;
               cputemp = true;
               uptime = true;
-              disk = "/";
+              disk = "/persist";
               memory = true;
             };
           }
           {
             resources = {
-              label = "HDD";
-              disk = "/mnt/zmedia";
+              label = "SSD";
+              disk = "/srv";
             };
           }
           {
@@ -54,24 +54,24 @@
           # https://git.notthebe.ee/notthebee/nix-config/src/commit/925e20601015772b4c3048361c07b92b8f0d3f33/modules/homelab/services/homepage/default.nix
           {
             "Media" = [
-              {
-                "Jellyfin" = {
-                  description = "Watch";
-                  href = "https://jellyfin.ladas552.me";
-                };
-              }
-              {
-                "Gonic" = {
-                  description = "My Sonic boom serivce";
-                  href = "https://gonic.ladas552.me";
-                };
-              }
-              {
-                "Kavita" = {
-                  description = "Books";
-                  href = "https://kavita.ladas552.me";
-                };
-              }
+              # {
+              #   "Jellyfin" = {
+              #     description = "Watch";
+              #     href = "https://jellyfin.ladas552.me";
+              #   };
+              # }
+              # {
+              #   "Gonic" = {
+              #     description = "My Sonic boom serivce";
+              #     href = "https://gonic.ladas552.me";
+              #   };
+              # }
+              # {
+              #   "Kavita" = {
+              #     description = "Books";
+              #     href = "https://kavita.ladas552.me";
+              #   };
+              # }
               {
                 "Miniflux" = {
                   description = "RSS feed";
@@ -88,12 +88,12 @@
                   href = "https://copyparty.ladas552.me";
                 };
               }
-              {
-                "Immich" = {
-                  description = "Photos";
-                  href = "https://immich.ladas552.me";
-                };
-              }
+              # {
+              #   "Immich" = {
+              #     description = "Photos";
+              #     href = "https://immich.ladas552.me";
+              #   };
+              # }
               {
                 "Karakeep" = {
                   description = "Bookmark manager";

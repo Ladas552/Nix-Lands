@@ -22,7 +22,7 @@
       services.openssh = {
         enable = true;
         ports = [ 22 ];
-        openFirewall = true;
+        openFirewall = false;
         startWhenNeeded = true;
         settings = {
           # Password because I can't connect my Tablet for some reason
@@ -37,6 +37,9 @@
           }}";
         };
       };
+
+      # Only allow SSH connection with Tailscale
+      networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 22 ];
 
       # persist for Impermanence
       custom.imp = {

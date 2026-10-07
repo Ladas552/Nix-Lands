@@ -69,6 +69,7 @@
 
       # SSH into an iso
       services.openssh.settings = {
+        openFirewall = lib.mkForce true;
         PermitRootLogin = lib.mkForce "yes";
         PasswordAuthentication = lib.mkForce true;
       };

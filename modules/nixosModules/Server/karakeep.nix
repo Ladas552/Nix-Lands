@@ -31,7 +31,23 @@
       custom.imp.root.directories = [
         "/var/lib/karakeep"
         "/var/cache/karakeep"
-        "/var/lib/meilisearch"
+      ];
+      system.nixos-core.persistence.stores."/cache".directories = [
+        {
+          target = "/var/lib/private/karakeep-browser";
+          owner = "nobody";
+          group = "nogroup";
+        }
+        {
+          target = "/var/cache/private/karakeep-browser";
+          owner = "nobody";
+          group = "nogroup";
+        }
+        {
+          target = "/var/lib/private/meilisearch";
+          owner = "nobody";
+          group = "nogroup";
+        }
       ];
     };
 }

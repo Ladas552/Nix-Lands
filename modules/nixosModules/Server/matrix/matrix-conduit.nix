@@ -23,6 +23,12 @@
     networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 6161 ];
 
     # persist for Impermanence
-    custom.imp.root.directories = [ "/var/lib/matrix-conduit" ];
+    system.nixos-core.persistence.stores."/persist".directories = [
+      {
+        target = "/var/lib/private/matrix-conduit";
+        owner = "nobody";
+        group = "nogroup";
+      }
+    ];
   };
 }

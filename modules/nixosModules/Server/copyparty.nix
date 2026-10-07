@@ -24,16 +24,17 @@
         accounts.admin.passwordFile = config.secrets."copypartyl".path;
         volumes = {
           "/" = {
-            path = "/srv/media/copyparty";
+            path = "/srv/copyparty";
             access.A = "admin";
           };
           "/media" = {
             path = "/srv/media";
             access.A = "admin";
           };
-          "/docs" = {
-            path = "/home/ladas552/Documents";
+          "/public" = {
+            path = "/srv/public";
             access.A = "admin";
+            access.r = "*";
           };
         };
       };
