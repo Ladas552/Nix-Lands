@@ -4,7 +4,7 @@
     "laptop"
   ];
   config =
-    { pkgs, ... }:
+    { pkgs, inputs, ... }:
     {
       environment.systemPackages = with pkgs; [
         raze
@@ -13,7 +13,8 @@
         blastem
         mgba
         # snes9x-gtk
-        punes
+        # punes
+        inputs.mtv.multiverse.x86_64-linux.versions."punes"."0.110"
         melonds
         # doesn't work       retroarchFull
         # too complex and need a special controller      mame

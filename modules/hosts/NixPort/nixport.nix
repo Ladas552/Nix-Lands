@@ -31,6 +31,7 @@
         keepassxc
         self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate
         lshw
+        inputs.mtv.multiverse.x86_64-linux.versions."zotero"."10.0.0"
         pamixer
         pwvucontrol
         qbittorrent

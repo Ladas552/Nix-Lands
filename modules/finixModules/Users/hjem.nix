@@ -1,12 +1,5 @@
 {
-  hosts = [
-    "wsl"
-    "laptop"
-    "vps"
-    "pc"
-    "iso"
-    "testing"
-  ];
+  hosts = [ "finix" ];
   config =
     {
       lib,
@@ -16,7 +9,7 @@
     }:
     {
       imports = [
-        inputs.hjem.nixosModules.default
+        inputs.hjem.finixModules.default
         (lib.mkAliasOptionModule [ "hj" ] [ "hjem" "users" "${meta.user}" ])
       ];
       hjem = {

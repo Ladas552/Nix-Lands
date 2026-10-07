@@ -1,12 +1,5 @@
 {
-  hosts = [
-    "wsl"
-    "laptop"
-    "vps"
-    "pc"
-    "iso"
-    "testing"
-  ];
+  hosts = [ "finix" ];
   config =
     {
       meta,
@@ -17,7 +10,7 @@
     }:
     {
       imports = [
-        inputs.secrets.nixosModules.default
+        inputs.secrets.fenixModules.default
         (lib.mkAliasOptionModule [ "secrets" ] [ "security" "nix-secrets" "secrets" ])
       ];
       environment.systemPackages = [

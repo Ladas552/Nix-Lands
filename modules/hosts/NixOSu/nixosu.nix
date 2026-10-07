@@ -34,7 +34,7 @@
         telegram-desktop
         typst
         xarchiver
-        zotero
+        inputs.mtv.multiverse.x86_64-linux.versions."zotero"."10.0.0"
         nvfetcher
       ];
 

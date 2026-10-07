@@ -101,7 +101,7 @@
       # for iperf3 -s
       networking.firewall.allowedTCPPorts = [ 5201 ];
 
-# persist the config directory
+      # persist the config directory
       custom.imp.home.directories = [ "Nix-Lands" ];
     };
 
