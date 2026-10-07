@@ -1,4 +1,4 @@
-{ types, ... }:
+{promise, types, ... }:
 {
   inputs = {
     mkWrapper.from = { parent }: parent.mkWrapper;
@@ -49,7 +49,7 @@
 
     package = {
       type = types.derivation;
-      defaultFunc = { inputs }: inputs.nixpkgs.pkgs.broot;
+      default = promise ( { inputs }: inputs.nixpkgs.pkgs.broot);
       description = "The Broot package to be wrapped.";
     };
   };
@@ -62,7 +62,7 @@
       set --prepend fish_complete_path "${options.package}/share/fish/vendor_completions.d"
     '';
 
-  impl =
+  result = promise (
     { options, inputs }:
     let
       inherit (inputs.nixpkgs.pkgs) formats;
@@ -90,6 +90,6 @@
       environment = {
         BROOT_CONFIG_DIR = "$out/broot";
       };
-    };
+    });
 
 }

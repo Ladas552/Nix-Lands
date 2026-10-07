@@ -1,4 +1,4 @@
-_: {
+{promise,...}: {
   options = {
     settings.default = {
       profile = "gpu-hq";
@@ -32,7 +32,7 @@ _: {
       #   };
       # };
     };
-    scripts.defaultFunc =
+    scripts.default = promise (
       { inputs }:
       let
         inherit (inputs.nixpkgs.pkgs) mpvScripts;
@@ -45,7 +45,7 @@ _: {
         quality-menu
         memo
         autoload
-      ];
+      ]);
     keybinds.default = {
       "[" = "add speed -0.25";
       "]" = "add speed 0.25";

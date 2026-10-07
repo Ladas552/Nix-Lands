@@ -1,4 +1,4 @@
-{ types, ... }:
+{ types, promise, ... }:
 {
   options = {
     settings.default = fromTOML (builtins.readFile ./noctalia.toml);
@@ -8,7 +8,7 @@
     };
   };
 
-  impl =
+  result = promise (
     { options, inputs }:
     let
       generator = inputs.nixpkgs.pkgs.formats.toml { };
@@ -26,5 +26,5 @@
       environment = {
         NOCTALIA_CONFIG_HOME = "$out";
       };
-    };
+    });
 }

@@ -1,4 +1,4 @@
-_: {
+{promise,...}: {
   inputs.self.from = { parent }: parent.self;
   options = {
     initLuaContents.default = ''
@@ -7,13 +7,13 @@ _: {
 
     devPlugins.default = [ ./nvim ];
 
-    extraPackages.defaultFunc = { inputs }: with inputs.nixpkgs.pkgs;
+    extraPackages.default = promise( { inputs }: with inputs.nixpkgs.pkgs;
       [
         # tinymist
         nixd
-      ];
+      ]);
 
-    startPlugins.defaultFunc =
+    startPlugins.default = promise (
       { inputs }:
       let
         sources = inputs.nixpkgs.pkgs.callPackage "${inputs.self.self}/_sources/generated.nix" { };
@@ -24,9 +24,9 @@ _: {
       {
         inherit (inputs.nixpkgs.pkgs.vimPlugins) neogit img-clip-nvim;
         inherit canola;
-      };
+      });
 
-    treesitterPackage.defaultFunc =
-      { inputs }: inputs.nixpkgs.pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
+    treesitterPackage.default = promise (
+      { inputs }: inputs.nixpkgs.pkgs.vimPlugins.nvim-treesitter.withAllGrammars);
   };
 }

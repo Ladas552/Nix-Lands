@@ -1,6 +1,6 @@
-_: {
+{promise,...}: {
   options = {
-    interactiveShellInit.defaultFunc =
+    interactiveShellInit.default = promise (
       { inputs }:
       let
         inherit (inputs.nixpkgs.lib) pipe getExe concatStringsSep;
@@ -60,7 +60,7 @@ _: {
 
         # zoxide integration
         ${getExe zoxide} init fish | source
-      '';
+      '');
     abbreviations.default =
       let
         c = expansion: {

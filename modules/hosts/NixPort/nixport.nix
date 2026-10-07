@@ -38,7 +38,6 @@
         telegram-desktop
         typst
         xarchiver
-        zotero
         nvfetcher
       ];
 

@@ -1,15 +1,15 @@
-{ types, ... }: {
+{ types, promise, ... }: {
   options = {
     nativeMessagingHosts = {
       type = types.listOf types.derivation;
-      defaultFunc =
+      default = promise (
         { inputs }:
         with inputs.nixpkgs.pkgs;
         [
           keepassxc
           ff2mpv
           # gst_all_1.gstreamer
-        ];
+        ]);
     };
     policies.default = {
       # will create a folder with the bookmarks
@@ -427,7 +427,7 @@
     };
   };
 
-  impl =
+  result = promise (
     { options, inputs }:
     let
       inherit (inputs.nixpkgs.pkgs) wrapFirefox;
@@ -445,5 +445,5 @@
         if options ? policiesFiles then map (file: "${file}") options.policiesFiles else null;
       extraPrefsFiles =
         if options ? autoConfigFiles then map (file: "${file}") options.autoConfigFiles else null;
-    });
+    }));
 }

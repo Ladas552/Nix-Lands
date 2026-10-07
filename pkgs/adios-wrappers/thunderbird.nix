@@ -1,8 +1,8 @@
 # this module doesn't exist in adios-wrappers.
 # but I reuse the firefox module as thunderbird module with injects
-_: {
+{promise,...}: {
   options = {
-    package.defaultFunc = { inputs }: inputs.nixpkgs.pkgs.thunderbird-latest-unwrapped;
+    package.default = promise ( { inputs }: inputs.nixpkgs.pkgs.thunderbird-latest-unwrapped);
     policies.default.Preferences = {
       app.donation.eoy.version.viewed = 999;
       browser.aboutConfig.showWarning = false;

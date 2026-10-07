@@ -12,7 +12,7 @@
       _module.args = {
         meta = {
           hostname = "NixWool";
-          configPath = "git+https://tangled.org/ladas552.me/Nix-Lands?rev=";
+          configPath = "/persist/home/ladas552/Nix-Lands";
           user = "ladas552";
         };
       };

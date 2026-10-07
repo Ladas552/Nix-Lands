@@ -65,7 +65,7 @@
           NixBox = make { host = "server"; };
           NixWool = make {
             host = "vps";
-            systems = "aarch64-linux";
+            system = "aarch64-linux";
           };
           NixwsL = make { host = "wsl"; };
           NixIso = make { host = "iso"; };
