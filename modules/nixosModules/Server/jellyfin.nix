@@ -1,5 +1,4 @@
 {
-  enable = false;
   hosts = [ "server" ];
   config = {
     services.jellyfin = {

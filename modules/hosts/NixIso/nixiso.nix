@@ -97,17 +97,6 @@
       };
       system.stateVersion = "26.11"; # Did you read the comment?
 
-      # advertise iso locally
-      services.avahi = {
-        enable = true;
-        nssmdns4 = true; # allows system to resolve .local addresses
-        publish = {
-          enable = true;
-          userServices = true;
-          addresses = true; # broadcasts this machine's IP
-        };
-      };
-
       networking.firewall.allowedUDPPorts = [ 5353 ];
 
     };

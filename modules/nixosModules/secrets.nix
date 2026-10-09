@@ -3,6 +3,7 @@
     "wsl"
     "laptop"
     "vps"
+    "server"
     "pc"
     "iso"
     "testing"

@@ -54,12 +54,12 @@
           # https://git.notthebe.ee/notthebee/nix-config/src/commit/925e20601015772b4c3048361c07b92b8f0d3f33/modules/homelab/services/homepage/default.nix
           {
             "Media" = [
-              # {
-              #   "Jellyfin" = {
-              #     description = "Watch";
-              #     href = "https://jellyfin.ladas552.me";
-              #   };
-              # }
+              {
+                "Jellyfin" = {
+                  description = "Watch";
+                  href = "https://jellyfin.ladas552.me";
+                };
+              }
               # {
               #   "Gonic" = {
               #     description = "My Sonic boom serivce";

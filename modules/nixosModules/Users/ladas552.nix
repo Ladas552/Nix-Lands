@@ -2,6 +2,7 @@
   hosts = [
     "wsl"
     "laptop"
+    "server"
     "vps"
     "pc"
     "iso"

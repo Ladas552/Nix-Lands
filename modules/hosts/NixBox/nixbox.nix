@@ -53,7 +53,6 @@
         fsType = "zfs";
       };
 
-      networking.useDHCP = false;
       networking.interfaces."enp1s0".useDHCP = true;
       networking.interfaces."enp2s0".ipv4.addresses = [
         {
@@ -71,7 +70,6 @@
 
       # Firewall: nothing open on WAN, DHCP/DNS/SSH open on LAN only
       networking.firewall = {
-        enable = true;
         interfaces."enp2s0" = {
           allowedUDPPorts = [
             53
