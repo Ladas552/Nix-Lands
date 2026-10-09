@@ -1,32 +1,14 @@
 {
   "$declared": {
-    "adios": "github:llakala/lladios",
-    "adios-wrappers": "github:llakala/adios-wrappers",
-    "copyparty": "github:9001/copyparty",
-    "finix": "github:finix-community/finix",
-    "hjem": "github:feel-co/hjem",
-    "hjem-rum": "github:snugnug/hjem-rum",
-    "mtv": "github:fzakaria/nixpkgs-multiverse",
-    "niri": "git+https://codeberg.org/BANanaD3V/niri-nix",
-    "nix-minecraft": "github:Infinidoge/nix-minecraft",
-    "nixos-core": "github:manic-systems/nixos-core/",
-    "nixos-hardware": "github:nixos/nixos-hardware",
-    "nixos-wsl": "github:nix-community/NixOS-WSL",
-    "nixpkgs": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst",
-    "nvf": "github:notashelf/nvf",
-    "nvim": "github:nix-community/neovim-nightly-overlay",
-    "secrets": "github:unnamed-systems/nix-secrets",
-    "systems": "github:nix-systems/default-linux",
-    "tack": "github:manic-systems/tack",
-    "tangled": "git+https://tangled.org/tangled.org/core"
+    "helium": "https://github.com/imputnet/helium-linux/releases/download/{tag}/helium-{tag}-x86_64_linux.tar.xz"
   },
   "adios": {
     "type": "github",
     "owner": "llakala",
     "repo": "lladios",
-    "rev": "4a5e900239bc2248cd7620954090df5b4fe52b4b",
-    "narHash": "sha256-GhUB1h01JtCY9xgqFXch5TDTQMwNqryJuwJa+9A8zBI=",
-    "lastModified": 1790988501
+    "rev": "3ee1b4f934e0773bab2c7ede86839592076ab200",
+    "narHash": "sha256-7GE/8CyJ9bQQHQcfvacW65myyt0AIJ9JiJ1552DsgRc=",
+    "lastModified": 1791516370
   },
   "adios-wrappers": {
     "type": "github",
@@ -40,9 +22,9 @@
     "type": "github",
     "owner": "9001",
     "repo": "copyparty",
-    "rev": "1a87dc32187557e2ddacfb1ee424425a601b8588",
-    "narHash": "sha256-2WLkEy/+OJvNJW1c5VV7BMDQdQmn0i0wlJVFFwxuB0E=",
-    "lastModified": 1791247494
+    "rev": "0dc1cb329120743ca85599ba3fba24849f137677",
+    "narHash": "sha256-2yRQ87dNTVr1kauBR6PTlfw7hnm90MAL0ObpA05xOTU=",
+    "lastModified": 1791505570
   },
   "finix": {
     "type": "github",
@@ -77,6 +59,13 @@
     "narHash": "sha256-U02riOqrKKzwjsxc/400XnElV+UtPUQWpANPlyazjH0=",
     "lastModified": 1678901627
   },
+  "helium": {
+    "type": "fixed",
+    "url": "https://github.com/imputnet/helium-linux/releases/download/0.19.2.1/helium-0.19.2.1-x86_64_linux.tar.xz",
+    "sha256": "sha256-cHzzGeOj0qoGHKFddUh3vRi4sokghzjIKfywhzvH7Ns=",
+    "unpack": "tarball",
+    "tag": "0.19.2.1"
+  },
   "hjem": {
     "type": "github",
     "owner": "feel-co",
@@ -97,9 +86,9 @@
     "type": "github",
     "owner": "fzakaria",
     "repo": "nixpkgs-multiverse",
-    "rev": "7230b933e50976f75ea67106492e292d5b175a7a",
-    "narHash": "sha256-OmafbpB1S79iAUabENnNfVdblBc99U/Ep0weJyNhxwM=",
-    "lastModified": 1791393535
+    "rev": "555490a0100ea823302d845e07a75c493e07c973",
+    "narHash": "sha256-+sFUL2Vykuk65yb5MxL2H3ykoJnZF9274v9GncvgO8s=",
+    "lastModified": 1791482513
   },
   "niri": {
     "type": "git",
@@ -121,9 +110,9 @@
     "type": "github",
     "owner": "Infinidoge",
     "repo": "nix-minecraft",
-    "rev": "21c8cd17e4ea0d842a9d63e311a634deda381689",
-    "narHash": "sha256-8K8/PTKQoBiC9xIop4/QtL4w3zx/xmqgJl6oQoAN3r8=",
-    "lastModified": 1791351229
+    "rev": "050eea3013518e9dba524230456687ff19783af9",
+    "narHash": "sha256-6WumjDtfjsgt6eG37ZEOBBZy+YF8p87YXAjhlj49zHQ=",
+    "lastModified": 1791524776
   },
   "nixos-core": {
     "type": "github",
@@ -151,25 +140,25 @@
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1086391.151fa4e8ddfd/nixexprs.tar.zst",
-    "rev": "151fa4e8ddfdd8dd25d945ad94ed54a13de9f6e4",
-    "narHash": "sha256-MFBjw66d4h06MvpW6lIl7RwarLteD0sk859CncGwb1Q="
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1087755.e7439b6b14ad/nixexprs.tar.zst",
+    "rev": "e7439b6b14ad3cc35d05608ebca9bce01a25f5f8",
+    "narHash": "sha256-gRZ/s8WQJ2CsXdhcDVQH34qxuL0MuMCOs3aBiK1Prsw="
   },
   "nvf": {
     "type": "github",
     "owner": "notashelf",
     "repo": "nvf",
-    "rev": "b5a8011df7e743d5bd992d25983d548f99e9ff83",
-    "narHash": "sha256-GBC/HfZM1Bh5dM/B0csBr8YoVGk3DTmCF/Qx646kThE=",
-    "lastModified": 1791215772
+    "rev": "01d245e20e19c9e283fce3b0db8719c2a6bba5f5",
+    "narHash": "sha256-9rIjqnq43mKaiUCv0DBe8H0HFZQue0fADosuJxemoaU=",
+    "lastModified": 1791488733
   },
   "nvim": {
     "type": "github",
     "owner": "nix-community",
     "repo": "neovim-nightly-overlay",
-    "rev": "c5c3b7c1d404e636995d72749f7e720f5b47bf39",
-    "narHash": "sha256-2c7pg1LLBK1WIb2yzLQeTwtKBUjgA8ZLs5ydW/FomJI=",
-    "lastModified": 1791331368
+    "rev": "42252f1d108c3e2051539162e1fb79e76f645af3",
+    "narHash": "sha256-J2lxNdGQN/0HtxJN7hImgcKFUFkIT+/VIZLlgdnR2TY=",
+    "lastModified": 1791417820
   },
   "secrets": {
     "type": "github",

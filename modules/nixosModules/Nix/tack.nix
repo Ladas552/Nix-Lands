@@ -2,6 +2,7 @@
   hosts = [
     "pc"
     "laptop"
+    "server"
   ];
   config = { inputs, pkgs, ... }: {
     programs.tack = {

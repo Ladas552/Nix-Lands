@@ -45,23 +45,11 @@ hjem-rum.url = "gh:snugnug/hjem-rum"
 # finix host
 finix.url = "gh:finix-community/finix"
 
-# Neovim
-nvf.url = "gh:notashelf/nvf"
-
-# Niri
-niri.url = "cb:BANanaD3V/niri-nix"
-
 # Tanled, git hosting
 tangled.url = "td:tangled.org/core"
 
 # Boilerplate
 systems.url = "gh:nix-systems/default-linux"
-
-# Highly experimental replacement to nixos stage scripts
-nixos-core.url = "gh:manic-systems/nixos-core/"
-
-# Alternative pinning
-tack.url = "gh:manic-systems/tack"
 
 # Other NixOS modules
 secrets.url = "gh:unnamed-systems/nix-secrets"
@@ -74,7 +62,14 @@ nix-minecraft.url = "gh:Infinidoge/nix-minecraft"
 
 copyparty.url = "gh:9001/copyparty"
 
-mtv.url = "gh:fzakaria/nixpkgs-multiverse"
+## wrap neovim in nix config
+nvf.url = "gh:notashelf/nvf"
+
+## Niri module and config
+niri.url = "cb:BANanaD3V/niri-nix"
+
+## Highly experimental replacement to nixos stage scripts
+nixos-core.url = "gh:manic-systems/nixos-core/"
 
 # adios galore
 adios.url = "gh:llakala/lladios"
@@ -82,4 +77,16 @@ adios.url = "gh:llakala/lladios"
 adios-wrappers.url = "gh:llakala/adios-wrappers"
 # adios-wrappers.url = "local:adios-wrappers"
 
+# package inputs
+## Alternative pinning
+tack.url = "gh:manic-systems/tack"
+
 nvim.url = "gh:nix-community/neovim-nightly-overlay"
+
+mtv.url = "gh:fzakaria/nixpkgs-multiverse"
+
+# sources for plugins and packages
+[inputs.helium]
+url = "https://github.com/imputnet/helium-linux/releases/download/{tag}/helium-{tag}-x86_64_linux.tar.xz"
+type = "fixed"
+tag = "{version}"
