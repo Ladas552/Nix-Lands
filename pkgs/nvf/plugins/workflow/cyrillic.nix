@@ -1,10 +1,8 @@
-{ pkgs, myself, ... }:
+{ pkgs, inputs, ... }:
 let
-  # nvfetcher pins
-  sources = pkgs.callPackage "${myself}/_sources/generated.nix" { };
   cyrillic = pkgs.vimUtils.buildVimPlugin {
     name = "cyrillic";
-    src = sources.cyrillic.src;
+    src = inputs.cyrillic;
   };
 in
 {

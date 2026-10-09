@@ -3,7 +3,7 @@
   pkgs,
   adios,
   adios-wrappers,
-  self,
+  inputs,
 }:
 let
   root = {
@@ -19,8 +19,8 @@ let
       "/nixpkgs" = {
         inherit pkgs;
       };
-      "/self" = {
-        inherit self;
+      "/tack" = {
+        tack = inputs;
       };
     };
   };

@@ -1,5 +1,5 @@
 {promise,...}: {
-  inputs.self.from = { parent }: parent.self;
+  inputs.tack.from = { parent }: parent.tack;
   options = {
     initLuaContents.default = ''
       require("init")
@@ -16,9 +16,9 @@
     startPlugins.default = promise (
       { inputs }:
       let
-        sources = inputs.nixpkgs.pkgs.callPackage "${inputs.self.self}/_sources/generated.nix" { };
         canola = inputs.nixpkgs.pkgs.vimUtils.buildVimPlugin {
-          inherit (sources.canola) src pname version;
+          src = inputs.tack.canola;
+          name = "canola";
         };
       in
       {

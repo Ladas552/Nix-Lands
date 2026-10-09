@@ -40,22 +40,6 @@ Also, I have [Norg document](./nix.norg), containing notes and TODO for the conf
 
 I also write some [blog posts about Nix](https://nix.ladas552.me/), feel free to check it out
 
-## Nvfetcher
-
-I also have inputs in `./_sources/`, they are generated with `nvfetcher` after editing the `./nvfetcher.toml` file. Instead of `nix flake update`, I update them with `nix run nixpkgs#nvfetcher`.
-
-To use them, use inputs from it:
-
-```nix
-sources = pkgs.callPackage "${self}/_sources/generated.nix" { };
-```
-
-Then with `sources.<input-name>.src` you can skip manual fetching for neovim plugins for example.
-
-Also nvfetcher can be used to fetch nixos modules. Even if I don't do this currently
-
-[Check out a blog post about it](https://nix.ladas552.me/posts/Nvfetcher/)
-
 ## tack
 Instead of using flake.nix to fetch files, I use [tack](https://github.com/manic-systems/tack). Basically makes flake inputs lazy without breaking flake interface.
 

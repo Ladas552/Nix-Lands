@@ -85,8 +85,45 @@ nvim.url = "gh:nix-community/neovim-nightly-overlay"
 
 mtv.url = "gh:fzakaria/nixpkgs-multiverse"
 
+helium.url = "gh:amaanq/helium-flake"
+
 # sources for plugins and packages
-[inputs.helium]
-url = "https://github.com/imputnet/helium-linux/releases/download/{tag}/helium-{tag}-x86_64_linux.tar.xz"
+[inputs.neovide]
+url = "https://github.com/neovide/neovide/releases/download/nightly/neovide-linux-x86_64.tar.gz"
 type = "fixed"
-tag = "{version}"
+
+# neorg
+[inputs.neorg]
+url = "gh:nvim-neorg/neorg"
+type = "fetch"
+
+[inputs.neorg-interim-ls]
+url = "gh:benlubas/neorg-interim-ls"
+type = "fetch"
+
+[inputs.neorg-conceal-wrap]
+url = "gh:benlubas/neorg-conceal-wrap"
+type = "fetch"
+
+[inputs.neorg-query]
+url = "gh:benlubas/neorg-query"
+type = "fetch"
+
+# neovim plugins
+[inputs.heirline-components]
+url = "gh:Zeioth/heirline-components.nvim"
+type = "fetch"
+
+[inputs.cyrillic]
+url = "gh:nativerv/cyrillic.nvim"
+type = "fetch"
+
+[inputs.canola]
+url = "gh:barrettruth/canola.nvim"
+type = "fetch"
+
+# canary keyboard layout
+[inputs.canary]
+url = "gh:Apsu/Canary"
+type = "fetch"
+
