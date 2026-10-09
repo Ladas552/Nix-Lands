@@ -1,4 +1,5 @@
 {
+  enable = false;
   hosts = [ "server" ];
   config = {
     # This is propogated for all of my tailscale by making my server a nameserver of the whole network. https://tailscale.com/docs/solutions/block-ads-all-devices-anywhere-using-raspberry-pi

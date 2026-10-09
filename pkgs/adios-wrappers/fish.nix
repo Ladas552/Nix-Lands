@@ -1,4 +1,4 @@
-{promise,...}: {
+{ promise, ... }: {
   options = {
     interactiveShellInit.default = promise (
       { inputs }:
@@ -60,7 +60,8 @@
 
         # zoxide integration
         ${getExe zoxide} init fish | source
-      '');
+      ''
+    );
     abbreviations.default =
       let
         c = expansion: {

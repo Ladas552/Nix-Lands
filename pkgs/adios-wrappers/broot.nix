@@ -1,4 +1,4 @@
-{promise, types, ... }:
+{ promise, types, ... }:
 {
   inputs = {
     mkWrapper.from = { parent }: parent.mkWrapper;
@@ -49,7 +49,7 @@
 
     package = {
       type = types.derivation;
-      default = promise ( { inputs }: inputs.nixpkgs.pkgs.broot);
+      default = promise ({ inputs }: inputs.nixpkgs.pkgs.broot);
       description = "The Broot package to be wrapped.";
     };
   };
@@ -90,6 +90,7 @@
       environment = {
         BROOT_CONFIG_DIR = "$out/broot";
       };
-    });
+    }
+  );
 
 }

@@ -3,6 +3,13 @@
   pkgs,
   ...
 }:
+let
+  adios-wrappers = import ./adios-wrappers.nix {
+    inherit pkgs inputs;
+    adios = inputs.adios.adios;
+    adios-wrappers = inputs.adios-wrappers.wrapperModules;
+  };
+in
 {
   default = pkgs.writeShellScriptBin "hello" ''echo "Hello World"'';
   # editor wrappers
@@ -18,9 +25,5 @@
   eval = pkgs.callPackage ./eval-stats.nix { };
   Subtitlenator = pkgs.callPackage ./Subtitlenator.nix { };
   musnow = pkgs.callPackage ./musnow.nix { };
-  adios-wrappers = import ./adios-wrappers.nix {
-    inherit pkgs inputs;
-    adios = inputs.adios.adios;
-    adios-wrappers = inputs.adios-wrappers.wrapperModules;
-  };
 }
+// adios-wrappers

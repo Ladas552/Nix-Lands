@@ -1,4 +1,4 @@
-{promise,...}: {
+{ promise, ... }: {
   options = {
     settings.default = {
       profile = "gpu-hq";
@@ -45,7 +45,8 @@
         quality-menu
         memo
         autoload
-      ]);
+      ]
+    );
     keybinds.default = {
       "[" = "add speed -0.25";
       "]" = "add speed 0.25";

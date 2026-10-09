@@ -26,5 +26,6 @@
       environment = {
         NOCTALIA_CONFIG_HOME = "$out";
       };
-    });
+    }
+  );
 }
