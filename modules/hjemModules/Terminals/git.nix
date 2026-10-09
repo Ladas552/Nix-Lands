@@ -1,7 +1,8 @@
 {
-  config = {
+  config = { pkgs, ... }: {
     hj.rum.programs.git = {
       enable = true;
+      package = pkgs.gitMinimal;
       # TODO no gh and openpgp integration like home-manager does, for now
       settings = {
         user = {

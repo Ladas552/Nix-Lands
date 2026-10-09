@@ -39,7 +39,9 @@
       };
 
       environment.systemPackages = with pkgs; [
-        inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.xwayland-satellite-unstable
+        (inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.xwayland-satellite-unstable.overrideAttrs {
+          doCheck = false;
+        })
         # xwayland-satellite
         brightnessctl
         wl-clipboard

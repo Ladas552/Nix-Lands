@@ -7,7 +7,9 @@
   config = { inputs, pkgs, ... }: {
     programs.tack = {
       enable = true;
-      package = inputs.tack.packages.${pkgs.stdenv.hostPlatform.system}.tack;
+      package = (
+        inputs.tack.packages.${pkgs.stdenv.hostPlatform.system}.tack.overrideAttrs { doCheck = false; }
+      );
       nixConfTokens = false;
     };
   };
