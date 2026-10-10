@@ -1,17 +1,14 @@
-{ types, promise, ... }: {
+{ promise, ... }: {
   options = {
-    nativeMessagingHosts = {
-      type = types.listOf types.derivation;
-      default = promise (
-        { inputs }:
-        with inputs.nixpkgs.pkgs;
-        [
-          keepassxc
-          ff2mpv
-          # gst_all_1.gstreamer
-        ]
-      );
-    };
+    nativeMessagingHosts.default = promise (
+      { inputs }:
+      with inputs.nixpkgs.pkgs;
+      [
+        keepassxc
+        ff2mpv
+        # gst_all_1.gstreamer
+      ]
+    );
     policies.default = {
       # will create a folder with the bookmarks
       ManagedBookmarks =
@@ -427,25 +424,4 @@
       };
     };
   };
-
-  result = promise (
-    { options, inputs }:
-    let
-      inherit (inputs.nixpkgs.pkgs) wrapFirefox;
-      inherit (builtins) filter attrNames;
-      filterNullAttrs = set: removeAttrs set (filter (name: isNull set.${name}) (attrNames set));
-    in
-    assert !(options ? policies && options ? policiesFiles);
-    wrapFirefox options.package (filterNullAttrs {
-      nativeMessagingHosts = options.nativeMessagingHosts or null;
-      extraPolicies = options.policies or null;
-      # From my testing, these options need to be coerced to store paths.
-      # If you know of a workaround to allow impure paths to be used here,
-      # please make a PR!
-      extraPoliciesFiles =
-        if options ? policiesFiles then map (file: "${file}") options.policiesFiles else null;
-      extraPrefsFiles =
-        if options ? autoConfigFiles then map (file: "${file}") options.autoConfigFiles else null;
-    })
-  );
 }

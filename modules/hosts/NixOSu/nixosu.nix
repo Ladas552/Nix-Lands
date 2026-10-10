@@ -41,15 +41,19 @@
       # Enable OpenGL and hardware accelerated graphics drivers
       services.xserver.videoDrivers = [ "amdgpu" ];
 
+      # latest mesa
+      nix.settings = {
+        extra-substituters = [ "https://nyx-cache.chaotic.cx/" ];
+        extra-trusted-public-keys = [ "nyx-cache.chaotic.cx:dJxTrgMC3V3cFfyIiBQDQorG6k1LsqurH/srpMSq7qk=" ];
+      };
+
       hardware.graphics = {
         enable = true;
+        package = inputs.nyx.packages.${pkgs.stdenv.hostPlatform.system}.mesa_git;
         enable32Bit = true;
-        extraPackages = with pkgs; [
-          libva-vdpau-driver
-          vpl-gpu-rt
-          vkd3d-proton
-        ];
+        package32 = inputs.nyx.packages.${pkgs.stdenv.hostPlatform.system}.mesa32_git;
       };
+
       # Enable rocm
       # nixpkgs.config.rocmSupport = true;
       hardware.amdgpu = {

@@ -87,6 +87,8 @@ mtv.url = "gh:fzakaria/nixpkgs-multiverse"
 
 helium.url = "gh:amaanq/helium-flake"
 
+nyx = {url = "gh:chaotic-cx/nyx/nyxpkgs-unstable", exclude_follow = ["nixpkgs"]}
+
 # sources for plugins and packages
 [inputs.neovide]
 url = "https://github.com/neovide/neovide/releases/download/nightly/neovide-linux-x86_64.tar.gz"

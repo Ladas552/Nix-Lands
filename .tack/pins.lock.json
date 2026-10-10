@@ -8,7 +8,7 @@
     "cyrillic": "github:nativerv/cyrillic.nvim",
     "finix": "github:finix-community/finix",
     "heirline-components": "github:Zeioth/heirline-components.nvim",
-    "helium": "https://github.com/imputnet/helium-linux/releases/download/{tag}/helium-{tag}-x86_64_linux.tar.xz",
+    "helium": "github:amaanq/helium-flake",
     "hjem": "github:feel-co/hjem",
     "hjem-rum": "github:snugnug/hjem-rum",
     "mtv": "github:fzakaria/nixpkgs-multiverse",
@@ -25,6 +25,7 @@
     "nixpkgs": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst",
     "nvf": "github:notashelf/nvf",
     "nvim": "github:nix-community/neovim-nightly-overlay",
+    "nyx": "github:chaotic-cx/nyx/nyxpkgs-unstable",
     "secrets": "github:unnamed-systems/nix-secrets",
     "systems": "github:nix-systems/default-linux",
     "tack": "github:manic-systems/tack",
@@ -42,9 +43,9 @@
     "type": "github",
     "owner": "llakala",
     "repo": "adios-wrappers",
-    "rev": "abe795a8fd256fc191e0b15d6257c2c683769f7a",
-    "narHash": "sha256-CUY95ViByDUisbAEOsi0IpRJu53bup1WpMIaNPxuUt8=",
-    "lastModified": 1791301382
+    "rev": "a4b6dd25c41976f3476530cc0b489fc1be643ee3",
+    "narHash": "sha256-Ho9zU7HxG/BaX7oBXCDribQlywWwdplit/tR90F/1dI=",
+    "lastModified": 1791577098
   },
   "canary": {
     "type": "github",
@@ -120,11 +121,12 @@
     "lastModified": 1772033241
   },
   "helium": {
-    "type": "fixed",
-    "url": "https://github.com/imputnet/helium-linux/releases/download/0.19.2.1/helium-0.19.2.1-x86_64_linux.tar.xz",
-    "sha256": "sha256-cHzzGeOj0qoGHKFddUh3vRi4sokghzjIKfywhzvH7Ns=",
-    "unpack": "tarball",
-    "tag": "0.19.2.1"
+    "type": "github",
+    "owner": "amaanq",
+    "repo": "helium-flake",
+    "rev": "3cb65fa7c6458510307f22643995c7b087425572",
+    "narHash": "sha256-g/gDcjq6YxAdb12M+lAMJh4tByhkRd96rbDM1W5s1LQ=",
+    "lastModified": 1791547762
   },
   "hjem": {
     "type": "github",
@@ -208,9 +210,9 @@
     "type": "github",
     "owner": "Infinidoge",
     "repo": "nix-minecraft",
-    "rev": "050eea3013518e9dba524230456687ff19783af9",
-    "narHash": "sha256-6WumjDtfjsgt6eG37ZEOBBZy+YF8p87YXAjhlj49zHQ=",
-    "lastModified": 1791524776
+    "rev": "2b3de3195966ba80499063064dca608c805cb34a",
+    "narHash": "sha256-rsNrfGjPl6gZ9xLA4JuxErUuzXG3i0eVEPt7R+g2/es=",
+    "lastModified": 1791610153
   },
   "nixos-core": {
     "type": "github",
@@ -246,9 +248,9 @@
     "type": "github",
     "owner": "notashelf",
     "repo": "nvf",
-    "rev": "01d245e20e19c9e283fce3b0db8719c2a6bba5f5",
-    "narHash": "sha256-9rIjqnq43mKaiUCv0DBe8H0HFZQue0fADosuJxemoaU=",
-    "lastModified": 1791488733
+    "rev": "9723961413fcd7268f73e27c0277a6da307bbce7",
+    "narHash": "sha256-lKqmYifuU1gWhtmcgalvsk62zitc71fPX6wx9f6VX24=",
+    "lastModified": 1791602170
   },
   "nvim": {
     "type": "github",
@@ -257,6 +259,14 @@
     "rev": "42252f1d108c3e2051539162e1fb79e76f645af3",
     "narHash": "sha256-J2lxNdGQN/0HtxJN7hImgcKFUFkIT+/VIZLlgdnR2TY=",
     "lastModified": 1791417820
+  },
+  "nyx": {
+    "type": "github",
+    "owner": "chaotic-cx",
+    "repo": "nyx",
+    "rev": "5b1a1364bce19e302980daaf5ad2223cad2b6a05",
+    "narHash": "sha256-muL3eqlbA0rYHM0WyGbeNYuSEh6gywqbkKfonTuZ4Ko=",
+    "lastModified": 1791549176
   },
   "secrets": {
     "type": "github",
@@ -278,9 +288,9 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "4a8b68df58488b311840eb0244c75b4857871789",
-    "narHash": "sha256-ST/08SMwfjtXeP/+72GJYVFkO2xT6PDU5ofh9Gh9IJ8=",
-    "lastModified": 1791058919
+    "rev": "8e5cd8697a97148805212369213e709edfa695b0",
+    "narHash": "sha256-nboUXMtXi2Gen4Hk/QvcBadejGqPq3v/53qaNcOVlr0=",
+    "lastModified": 1791609304
   },
   "tangled": {
     "type": "git",
