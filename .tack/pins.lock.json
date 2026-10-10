@@ -248,9 +248,9 @@
     "type": "github",
     "owner": "notashelf",
     "repo": "nvf",
-    "rev": "9723961413fcd7268f73e27c0277a6da307bbce7",
-    "narHash": "sha256-lKqmYifuU1gWhtmcgalvsk62zitc71fPX6wx9f6VX24=",
-    "lastModified": 1791602170
+    "rev": "19992540d372466340ededda0c065a3a0a962fd6",
+    "narHash": "sha256-cxmegj6Tg0xYk8A2icSl3v1+SeVDj+bESU2BnCqERPE=",
+    "lastModified": 1791651540
   },
   "nvim": {
     "type": "github",
@@ -264,9 +264,9 @@
     "type": "github",
     "owner": "chaotic-cx",
     "repo": "nyx",
-    "rev": "5b1a1364bce19e302980daaf5ad2223cad2b6a05",
-    "narHash": "sha256-muL3eqlbA0rYHM0WyGbeNYuSEh6gywqbkKfonTuZ4Ko=",
-    "lastModified": 1791549176
+    "rev": "f502c4c2da3c59de8b183167ceb6c27e40ed7246",
+    "narHash": "sha256-EtTvA0mlUCcAPzMnV916uscFZJwvO8j6gRsy16zoYs8=",
+    "lastModified": 1791618331
   },
   "secrets": {
     "type": "github",
@@ -288,16 +288,16 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "8e5cd8697a97148805212369213e709edfa695b0",
-    "narHash": "sha256-nboUXMtXi2Gen4Hk/QvcBadejGqPq3v/53qaNcOVlr0=",
-    "lastModified": 1791609304
+    "rev": "5957ec0bd3df490a06dab467337152ae75977585",
+    "narHash": "sha256-dkuO01AoiMwzwY5DtEPDRyQYKjD3RRPZ8evLLYfEeY4=",
+    "lastModified": 1791612427
   },
   "tangled": {
     "type": "git",
     "url": "https://tangled.org/tangled.org/core",
     "ref": "HEAD",
-    "rev": "6fb3f5ea4cec7eaf0c9dae274cf1fa09ff4ea198",
-    "narHash": "sha256-1rXQZNOAiE2XIafFnj5Y+GJeSV5dbGsm5o4/ABI5kzY=",
-    "lastModified": 1791205739
+    "rev": "e0ef7981da82fe1516cbdc2992b3023f4b2ca717",
+    "narHash": "sha256-hCirSRtMMhhDvaQKI8ep1bR17ARJFNDJlgOjH1ZRS14=",
+    "lastModified": 1791659366
   }
 }

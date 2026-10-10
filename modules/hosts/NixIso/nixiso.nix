@@ -37,10 +37,8 @@
 
     in
     {
-      imports = [
-        # base for iso
-        (modulesPath + "/installer/cd-dvd/installation-cd-base.nix")
-      ];
+      # base for iso
+      image.modules.base = (modulesPath + "/installer/cd-dvd/installation-cd-base.nix");
       _module.args = {
         meta = {
           hostname = "NixIso";
@@ -68,10 +66,12 @@
       };
 
       # SSH into an iso
-      services.openssh.settings = {
+      services.openssh = {
         openFirewall = lib.mkForce true;
-        PermitRootLogin = lib.mkForce "yes";
-        PasswordAuthentication = lib.mkForce true;
+        settings = {
+          PermitRootLogin = lib.mkForce "yes";
+          PasswordAuthentication = lib.mkForce true;
+        };
       };
 
       # Enable networking, disable raw wpa
