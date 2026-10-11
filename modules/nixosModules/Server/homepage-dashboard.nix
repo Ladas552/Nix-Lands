@@ -4,10 +4,10 @@
     { config, ... }:
     {
       # secrets
-      secrets."technitium-api" = { };
-      security.nix-secrets.templates."homepage-vars".content = ''
-        HOMEPAGE_VAR_TECHNITIUM="${config.secrets."technitium-api"}"
-      '';
+      # secrets."technitium-api" = { };
+      # security.nix-secrets.templates."homepage-vars".content = ''
+      #   HOMEPAGE_VAR_TECHNITIUM="${config.secrets."technitium-api"}"
+      # '';
 
       # Reverse proxy
       services.caddy.virtualHosts."hub.ladas552.me" = {
@@ -21,9 +21,9 @@
       services.homepage-dashboard = {
         enable = true;
         allowedHosts = "hub.ladas552.me";
-        environmentFiles = [
-          config.security.nix-secrets.templates."homepage-vars".path
-        ];
+        # environmentFiles = [
+        #   config.security.nix-secrets.templates."homepage-vars".path
+        # ];
         settings = { };
         widgets = [
           {
@@ -94,10 +94,16 @@
               #     href = "https://immich.ladas552.me";
               #   };
               # }
+              # {
+              #   "Karakeep" = {
+              #     description = "Bookmark manager";
+              #     href = "https://karakeep.ladas552.me";
+              #   };
+              # }
               {
-                "Karakeep" = {
+                "Linkding" = {
                   description = "Bookmark manager";
-                  href = "https://karakeep.ladas552.me";
+                  href = "https://linkding.ladas552.me";
                 };
               }
               {
@@ -122,18 +128,18 @@
                   href = "https://searxng.ladas552.me";
                 };
               }
-              {
-                "Technitium" = {
-                  icon = "https://dns.ladas552.me/img/logo.png";
-                  description = "DNS";
-                  href = "https://dns.ladas552.me";
-                  widget = {
-                    type = "technitium";
-                    url = "https://dns.ladas552.me";
-                    key = "{{HOMEPAGE_VAR_TECHNITIUM}}";
-                  };
-                };
-              }
+              # {
+              #   "Technitium" = {
+              #     icon = "https://dns.ladas552.me/img/logo.png";
+              #     description = "DNS";
+              #     href = "https://dns.ladas552.me";
+              #     widget = {
+              #       type = "technitium";
+              #       url = "https://dns.ladas552.me";
+              #       key = "{{HOMEPAGE_VAR_TECHNITIUM}}";
+              #     };
+              #   };
+              # }
               # {
               #   "ncps" = {
               #     description = "Proxy cache for local nixos network";
