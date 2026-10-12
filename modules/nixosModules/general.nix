@@ -9,10 +9,8 @@
     {
       # Define hostname.
       networking.hostName = "${meta.hostname}";
-      # Generate machine-id declaratively. thanks https://radicle.network/nodes/iris.radicle.network/rad%3Az2kvqNajUjvwF2M22CnL5NXUThaUY/tree/modules/core/environment/machine-id.nix
-      environment.etc.machine-id.text =
-        lib.strings.substring 0 32 (lib.hashString "sha256" meta.hostname) + "\n";
-      systemd.suppressedSystemUnits = [ "systemd-machine-id-commit.service" ];
+      # use machine_id from firmware, not from /etc, thanks @misterkartoffel
+      boot.kernelParams = [ "systemd.machine_id=firmware" ];
       # Set kernel
       boot.kernelPackages = lib.mkDefault pkgs.linuxKernel.packages.linux_xanmod;
       # boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
