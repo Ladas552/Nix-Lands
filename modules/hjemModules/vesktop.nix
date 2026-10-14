@@ -4,9 +4,10 @@
     "laptop"
   ];
   config =
-    { config, ... }:
+    { config, meta, ... }:
     {
       hj = {
+        services.arrpc.enable = meta.hostname == "NixOSu";
         # Enable if discord is pressent on the system
         services.mpd-discord-rpc = {
           enable = config.hj.services.arrpc.enable;
@@ -21,7 +22,6 @@
           };
         };
 
-        services.arrpc.enable = false;
         programs.vesktop = {
           enable = true;
           settings = {

@@ -4,14 +4,14 @@
     "laptop"
   ];
   config =
-    { lib, meta, ... }:
+    { meta, ... }:
     {
       hj.rum.programs.neovide = {
         enable = true;
         settings = {
           vsync = false;
           srgb = true;
-          wsl = lib.mkIf (meta.hostname == "NixwsL") true;
+          wsl = meta.hostname == "NixwsL";
           font = {
             size = 13;
             normal = "JetBrainsMono Nerd Font Mono";

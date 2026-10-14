@@ -40,6 +40,9 @@
         xarchiver
       ];
 
+      # finger print reader
+      services.fprintd.enable = true;
+
       # https://wiki.archlinux.org/title/Lenovo_ThinkPad_T14s_(AMD)_Gen_3#Display
       boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
       # Radeon
@@ -69,18 +72,21 @@
       system.stateVersion = "24.11"; # Did you read the comment?
 
       # persist my home on nixport to not interfere with server's /home
-      custom.imp.home.directories = [
-        "Share"
-        "Pictures"
-        "Projects"
-        "Desktop"
-        "Downloads"
-        "Documents"
-        "Videos"
-        "Music"
-        ".zotero"
-        "Zotero"
-        ".config/chromium"
-      ];
+      custom.imp = {
+        root.directories = [ "/var/lib/fprint" ];
+        home.directories = [
+          "Share"
+          "Pictures"
+          "Projects"
+          "Desktop"
+          "Downloads"
+          "Documents"
+          "Videos"
+          "Music"
+          ".zotero"
+          "Zotero"
+          ".config/chromium"
+        ];
+      };
     };
 }
