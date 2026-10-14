@@ -22,7 +22,7 @@
       boot.kernelModules = [ "kvm-intel" ];
       boot.extraModulePackages = [ ];
       swapDevices = [ { label = "SWAP"; } ];
-      networking.useDHCP = false;
+      networking.useDHCP = true;
       hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     };
 }
