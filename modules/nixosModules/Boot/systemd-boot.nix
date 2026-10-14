@@ -1,4 +1,12 @@
 {
+  hosts = [
+    "laptop"
+    "vps"
+    "server"
+    "pc"
+    "iso"
+    "testing"
+  ];
   config =
     {
       lib,
