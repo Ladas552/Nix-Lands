@@ -53,24 +53,28 @@
         fsType = "zfs";
       };
 
+      # connect other eth ports into 1 interface
       networking.bridges.br0.interfaces = [
         "enp2s0"
         "enp3s0"
         "enp4s0"
       ];
+      # route all traffic for br0 under static addresses
       networking.interfaces.br0.ipv4.addresses = [
         {
-          address = "192.168.10.1";
+          address = "192.168.20.1"; # kazaktelecom uses 192.168.10.1, don't ask
           prefixLength = 24;
         }
       ];
 
+      # let eth1 share network with bridge
       networking.nat = {
         enable = true;
         externalInterface = "enp1s0";
         internalInterfaces = [ "br0" ];
       };
 
+      # open ports for dns and nat
       networking.firewall.interfaces."br0" = {
         allowedUDPPorts = [
           67
@@ -78,18 +82,24 @@
         ];
         allowedTCPPorts = [ 53 ];
       };
-
+      # configure dhcp and use server's dns for any connected pc
       services.dnsmasq = {
         enable = true;
         settings = {
           interface = "br0";
           bind-interfaces = true;
-          dhcp-range = "192.168.10.100,192.168.10.200,12h";
-          dhcp-option = "option:dns-server,1.1.1.1,9.9.9.9";
+          dhcp-range = "192.168.20.100,192.168.20.200,12h";
+          dhcp-option = "option:dns-server,192.168.20.1";
+          # Upstream DNS servers
+          no-resolv = true;
           server = [
             "1.1.1.1"
             "9.9.9.9"
           ];
+          # DNS caching
+          cache-size = 1000;
+          # Don't forward simple hostnames to upstream DNS
+          domain-needed = true;
         };
       };
 
