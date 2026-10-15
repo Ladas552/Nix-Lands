@@ -7,6 +7,11 @@
 
     devPlugins.default = [ ./nvim ];
 
+    extraLuaPackages.default = ps: [
+      ps.lua-utils-nvim
+      ps.pathlib-nvim
+    ];
+
     extraPackages.default = promise (
       { inputs }: with inputs.nixpkgs.pkgs;
       [
@@ -24,7 +29,7 @@
         };
       in
       {
-        inherit (inputs.nixpkgs.pkgs.vimPlugins) neogit img-clip-nvim;
+        inherit (inputs.nixpkgs.pkgs.vimPlugins) neogit img-clip-nvim neorg which-key-nvim nvim-nio;
         inherit canola;
       }
     );

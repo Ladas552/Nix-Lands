@@ -12,7 +12,7 @@
 (inputs.nvf.lib.neovimConfiguration {
   inherit pkgs;
   extraSpecialArgs = {
-    inherit inputs;
+    tack = inputs;
   };
   modules = [
     # neovim options

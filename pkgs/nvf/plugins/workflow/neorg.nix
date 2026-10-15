@@ -1,13 +1,13 @@
 {
   lib,
   pkgs,
-  inputs,
+  tack,
   ...
 }:
 let
   # Neorg Plugins
   lib-neorg_query = pkgs.rustPlatform.buildRustPackage {
-    src = inputs.neorg-query;
+    src = tack.neorg-query;
     name = "neorg_query";
     # change this to cargoLock somehow
     cargoHash = "sha256-Kj4KOGdgLh8HYDUqg17AvRKLAcEKI71ASF/jPj95l0w=";
@@ -16,7 +16,7 @@ let
   };
   neorg-query = pkgs.vimUtils.buildVimPlugin {
     name = "neorg-query";
-    src = inputs.neorg-query;
+    src = tack.neorg-query;
     preInstall =
       let
         ext = pkgs.stdenv.hostPlatform.extensions.sharedLibrary;
@@ -34,7 +34,7 @@ let
   };
   neorg-interim-ls = pkgs.vimUtils.buildVimPlugin {
     name = "neorg-interim-ls";
-    src = inputs.neorg-interim-ls;
+    src = tack.neorg-interim-ls;
     nvimSkipModules = [
       # skip checks
       "neorg.modules.external.lsp-completion.module"
@@ -44,7 +44,7 @@ let
   };
   neorg-conceal-wrap = pkgs.vimUtils.buildVimPlugin {
     name = "neorg-conceal-wrap";
-    src = inputs.neorg-conceal-wrap;
+    src = tack.neorg-conceal-wrap;
     nvimSkipModules = [
       # skip checks
       "neorg.modules.external.conceal-wrap.module"
@@ -52,7 +52,7 @@ let
   };
   neorg = pkgs.vimUtils.buildVimPlugin {
     name = "neorg";
-    src = inputs.neorg;
+    src = tack.neorg;
   };
 in
 {

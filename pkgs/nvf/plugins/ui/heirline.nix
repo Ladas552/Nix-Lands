@@ -1,9 +1,9 @@
-{ pkgs, inputs, ... }:
+{ pkgs, tack, ... }:
 let
   heirline-components = pkgs.vimUtils.buildVimPlugin {
     name = "heirline-components.nvim";
     doCheck = false;
-    src = inputs.heirline-components;
+    src = tack.heirline-components;
   };
 
 in

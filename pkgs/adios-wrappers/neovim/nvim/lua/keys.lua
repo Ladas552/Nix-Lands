@@ -1,8 +1,8 @@
 local kbd = vim.keymap.set
 
-kbd("n", "<C-z>", "<Nop>")     -- don't accidentally suspend
-kbd("n", ";", ":")             -- fast command-line mode
-kbd("n", "<esc>", "<C-l>", {remap = true}) -- clear buffer from cursors
+kbd("n", "<C-z>", "<Nop>") -- don't accidentally suspend
+kbd("n", ";", ":") -- fast command-line mode
+kbd("n", "<esc>", "<C-l>", { remap = true }) -- clear buffer from cursors
 kbd({ "n", "x" }, "<Space>", "<Nop>") -- leader doesn't move cursor
 kbd("n", "<C-S-w>", "<cmd>qa!<cr>") -- quit with the same command as kitty
 
@@ -27,7 +27,7 @@ kbd("n", "<A-Left>", "<cmd>vertical resize +2<cr>")
 kbd("n", "<A-Right>", "<cmd>vertical resize -2<cr>")
 
 kbd("n", "<leader>ts", function()
-  vim.o.spell = not vim.o.spell
+	vim.o.spell = not vim.o.spell
 end, { desc = "Toggle spelling" })
 
 kbd("n", "<leader>r", "<cmd>restart<cr>")

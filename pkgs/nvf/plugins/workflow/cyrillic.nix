@@ -1,8 +1,8 @@
-{ pkgs, inputs, ... }:
+{ pkgs, tack, ... }:
 let
   cyrillic = pkgs.vimUtils.buildVimPlugin {
     name = "cyrillic";
-    src = inputs.cyrillic;
+    src = tack.cyrillic;
   };
 in
 {

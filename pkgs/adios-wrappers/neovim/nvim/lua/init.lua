@@ -5,7 +5,7 @@
 
 -- needs to be at the top before any modules get loaded
 vim.g.mapleader = vim.keycode("<space>")
-vim.g.maplocalleader = vim.keycode("<leader><space>")
+vim.g.maplocalleader = vim.keycode(",")
 
 vim.g.repo_root = vim.fs.root(0, ".git")
 
@@ -16,17 +16,27 @@ vim.loader.enable()
 vim.opt.rtp:prepend(vim.fn.expand("~/Projects/my_repos/Nix-Lands/pkgs/adios-wrappers/neovim/nvim"))
 -- Disable unused built-in plugins (matches upstream config's intent)
 local disabled_builtins = {
-  "netrwPlugin", "tarPlugin", "zipPlugin", "gzip", "tar", "zip",
-  "getscript", "getscriptPlugin", "vimball", "vimballPlugin",
-  "2html_plugin", "logipat", "rrhelper",
+	"netrwPlugin",
+	"tarPlugin",
+	"zipPlugin",
+	"gzip",
+	"tar",
+	"zip",
+	"getscript",
+	"getscriptPlugin",
+	"vimball",
+	"vimballPlugin",
+	"2html_plugin",
+	"logipat",
+	"rrhelper",
 }
 for _, name in ipairs(disabled_builtins) do
-  vim.g["loaded_" .. name] = 1
+	vim.g["loaded_" .. name] = 1
 end
 
 -- Disable providers we don't use (perl/node/ruby not needed for a plugin-free setup)
 for _, provider in ipairs({ "perl", "node", "ruby" }) do
-  vim.g["loaded_" .. provider .. "_provider"] = 0
+	vim.g["loaded_" .. provider .. "_provider"] = 0
 end
 
 vim.g.c_syntax_for_h = true
@@ -51,7 +61,7 @@ opt.backup = false
 opt.writebackup = false
 
 if vim.fn.executable("rg") ~= 0 then
-    vim.o.grepprg = "rg --vimgrep"
+	vim.o.grepprg = "rg --vimgrep"
 end
 
 -- Folding via built-in Tree-sitter
@@ -62,19 +72,14 @@ opt.foldlevelstart = 99
 opt.foldmethod = "expr"
 opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 -- Buffer / editing
-opt.breakindent = true
-opt.linebreak = true
-opt.wrap = true
-opt.smartcase = true
-opt.ignorecase = true
-opt.copyindent = true
+opt.copyindent = false
 opt.smartindent = true
-opt.preserveindent = true
+opt.preserveindent = false
+opt.autoindent = true
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.expandtab = true
-opt.autoindent = true
 opt.conceallevel = 2
 opt.splitright = true
 opt.splitbelow = true
@@ -85,14 +90,21 @@ opt.spelllang = "en_us"
 opt.spelloptions = "camel,noplainbuffer"
 opt.spellsuggest = "best,6"
 opt.icm = "split"
+-- search
+opt.smartcase = true
+opt.ignorecase = true
+-- softwrap
+opt.breakindent = true
+opt.linebreak = true
+opt.wrap = true
 -- autosave on exit
 opt.autowriteall = true
 -- share system clipboard
 -- According to Neovim example init, this helps performance
 vim.api.nvim_create_autocmd("UIEnter", {
-  callback = function()
-    vim.o.clipboard = "unnamedplus"
-  end,
+	callback = function()
+		vim.o.clipboard = "unnamedplus"
+	end,
 })
 -- modules in lua directory for modular config
 require("ui")
@@ -101,4 +113,3 @@ require("autocmd")
 require("completion")
 require("lsp")
 require("plugins")
-
