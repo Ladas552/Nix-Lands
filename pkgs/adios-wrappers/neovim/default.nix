@@ -29,7 +29,13 @@
         };
       in
       {
-        inherit (inputs.nixpkgs.pkgs.vimPlugins) neogit img-clip-nvim neorg which-key-nvim nvim-nio;
+        inherit (inputs.nixpkgs.pkgs.vimPlugins)
+          neogit
+          img-clip-nvim
+          neorg
+          which-key-nvim
+          nvim-nio
+          ;
         inherit canola;
       }
     );

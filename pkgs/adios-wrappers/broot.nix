@@ -62,15 +62,14 @@
       set --prepend fish_complete_path "${options.package}/share/fish/vendor_completions.d"
     '';
 
-  result = promise (
+  inputs.mkWrapper.options = promise (
     { options, inputs }:
     let
       inherit (inputs.nixpkgs.pkgs) formats;
       inherit (builtins) listToAttrs;
       generator = formats.toml { };
     in
-    assert !(options ? settings && options ? configFile);
-    inputs.mkWrapper {
+    {
       inherit (options) package;
       symlinks = {
         "$out/broot/conf.toml" =
@@ -92,5 +91,7 @@
       };
     }
   );
+
+  result = promise ({ results }: results.mkWrapper);
 
 }

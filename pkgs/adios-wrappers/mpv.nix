@@ -34,10 +34,7 @@
     };
     scripts.default = promise (
       { inputs }:
-      let
-        inherit (inputs.nixpkgs.pkgs) mpvScripts;
-      in
-      with mpvScripts;
+      with inputs.nixpkgs.pkgs.mpvScripts;
       [
         sponsorblock-minimal
         reload
