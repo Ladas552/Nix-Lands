@@ -15,13 +15,12 @@ require("neorg").setup({
 		["core.defaults"] = { ["config"] = { ["disable"] = {} }, ["enable"] = true },
 		["core.dirman"] = {
 			["config"] = {
-				["default_workspace"] = "general",
+				["default_workspace"] = "life",
 				["workspaces"] = {
 					["archive"] = "~/Documents/Norg/Archive",
-					["general"] = "~/Documents/Norg",
 					["journal"] = "~/Documents/Norg/Journal",
-					["life"] = "~/Documents/Norg/Life",
-					["work"] = "~/Documents/Norg/Study",
+					["life"] = "~/Documents/Norg",
+					["study"] = "~/Documents/Norg/Study",
 				},
 			},
 		},
@@ -33,9 +32,10 @@ require("neorg").setup({
 
 			["workspace"] = "journal",
 		} },
-		["core.keybinds"] = { ["config"] = { ["default_keybinds"] = true, ["neorg_leader"] = "<Leader><Leader>" } },
+		["core.keybinds"] = { ["config"] = { ["default_keybinds"] = true, ["neorg_leader"] = "," } },
 		["core.summary"] = {},
     ["core.qol.toc"] = { config = { close_after_use = true } },
 		["core.tangle"] = { ["config"] = { ["report_on_empty"] = true, ["tangle_on_write"] = false } },
 	},
 })
+

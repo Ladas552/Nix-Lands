@@ -1,4 +1,9 @@
 [audio]
+enable_notification_sounds = false
+enable_power_sounds = false
+enable_screenshot_sounds = false
+enable_sounds = false
+enable_volume_sounds = false
 sound_volume = 0.0
 
 [backdrop]
@@ -37,7 +42,7 @@ widget_order = []
 address = "Astana"
 
 [lockscreen]
-fingerprint = false
+fingerprint = true
 
 [lockscreen_widgets]
 enabled = false
@@ -77,8 +82,8 @@ launch_apps_as_systemd_services = true
 password_style = "random"
 polkit_agent = true
 popup_shadows = false
-setup_wizard_enabled = false
 screen_time_enabled = false
+setup_wizard_enabled = false
 show_location = false
 telemetry_enabled = false
 
@@ -91,7 +96,9 @@ telemetry_enabled = false
 
     [shell.launcher]
     auto_paste = "off"
+    categories = false
     fetch_exchange_rates = false
+    layout = "simple"
 
     [shell.mpris]
     blacklist = [ "Mozilla firefox" ]

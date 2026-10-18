@@ -70,10 +70,6 @@
           NixwsL = make { host = "wsl"; };
           NixIso = make { host = "iso"; };
           NixTest = make { host = "testing"; };
-          FinixOSu = make {
-            host = "finix";
-            eval = inputs.finix.lib.finixSystem;
-          };
         };
       packages = eachSystem (pkgs: import ./pkgs { inherit inputs pkgs self; });
       formatter = eachSystem (pkgs: pkgs.nixfmt-tree);

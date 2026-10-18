@@ -1,13 +1,4 @@
 {
-  hosts = [
-    "wsl"
-    "laptop"
-    "server"
-    "vps"
-    "pc"
-    "iso"
-    "testing"
-  ];
   config =
     { config, ... }:
     {

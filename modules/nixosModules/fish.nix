@@ -61,6 +61,7 @@
           gpu = "git push";
           # Neorg
           j = ''nvim -c "Neorg journal today"'';
+          note = ''nvim -c "Neorg index"'';
           # directories
           mc = "br";
           mcv = "br ~/Videos";

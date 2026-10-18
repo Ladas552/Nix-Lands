@@ -27,6 +27,10 @@
           src = inputs.tack.tack.canola;
           name = "canola";
         };
+        norg-diagram = inputs.nixpkgs.pkgs.vimUtils.buildVimPlugin {
+          src = inputs.tack.tack.norg-diagram;
+          name = "norg-diagram";
+        };
       in
       {
         inherit (inputs.nixpkgs.pkgs.vimPlugins)
@@ -36,7 +40,7 @@
           which-key-nvim
           nvim-nio
           ;
-        inherit canola;
+        inherit canola norg-diagram;
       }
     );
 

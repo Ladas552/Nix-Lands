@@ -32,6 +32,7 @@
           pkgs.gnumake
           pkgs.tree-sitter
           pkgs.unzip
+          self.packages.${pkgs.stdenv.hostPlatform.system}.mermaid-ascii
         ];
         sessionVariables.EDITOR = "nvim";
 

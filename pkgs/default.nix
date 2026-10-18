@@ -25,5 +25,6 @@ in
   eval = pkgs.callPackage ./eval-stats.nix { };
   Subtitlenator = pkgs.callPackage ./Subtitlenator.nix { };
   musnow = pkgs.callPackage ./musnow.nix { };
+  mermaid-ascii = pkgs.callPackage ./mermaid-ascii.nix { };
 }
 // adios-wrappers

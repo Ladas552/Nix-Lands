@@ -3,7 +3,6 @@
     "pc"
     "laptop"
     "iso"
-    "finix"
   ];
   config =
     { pkgs, ... }:

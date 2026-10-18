@@ -111,6 +111,10 @@ type = "fetch"
 url = "gh:benlubas/neorg-query"
 type = "fetch"
 
+[inputs.norg-diagram]
+url = "gh:DuckTapeMan35/norg-diagram.nvim"
+type = "fetch"
+
 # neovim plugins
 [inputs.heirline-components]
 url = "gh:Zeioth/heirline-components.nvim"

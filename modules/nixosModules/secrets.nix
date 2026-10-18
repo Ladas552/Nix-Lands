@@ -1,13 +1,4 @@
 {
-  hosts = [
-    "wsl"
-    "laptop"
-    "vps"
-    "server"
-    "pc"
-    "iso"
-    "testing"
-  ];
   config =
     {
       meta,
