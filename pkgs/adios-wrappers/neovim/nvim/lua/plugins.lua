@@ -5,6 +5,15 @@ require("oil").setup({
 	view_options = { show_hidden = true },
 })
 require("which-key").setup()
+require("neogit").setup({
+	graph_style = "kitty",
+	commit_editor = {
+		kind = "tab",
+		show_staged_diff = true,
+		staged_diff_split_kind = "split",
+		spell_check = true,
+	},
+})
 kbd("n", "<leader>g", "<cmd>Neogit<cr>")
 kbd("n", "<leader>e", "<cmd>Oil<cr>")
 kbd("n", "<leader>p", "<cmd>PasteImage<cr>")
@@ -34,8 +43,7 @@ require("neorg").setup({
 		} },
 		["core.keybinds"] = { ["config"] = { ["default_keybinds"] = true, ["neorg_leader"] = "," } },
 		["core.summary"] = {},
-    ["core.qol.toc"] = { config = { close_after_use = true } },
+		["core.qol.toc"] = { config = { close_after_use = true } },
 		["core.tangle"] = { ["config"] = { ["report_on_empty"] = true, ["tangle_on_write"] = false } },
 	},
 })
-
