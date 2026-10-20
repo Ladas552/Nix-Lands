@@ -39,10 +39,10 @@
       };
 
       environment.systemPackages = with pkgs; [
-        (inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.xwayland-satellite-unstable.overrideAttrs {
-          doCheck = false;
-        })
-        # xwayland-satellite
+        # (inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.xwayland-satellite-unstable.overrideAttrs {
+        #   doCheck = false;
+        # })
+        xwayland-satellite
         brightnessctl
         wl-clipboard
         # xfce4-power-manager

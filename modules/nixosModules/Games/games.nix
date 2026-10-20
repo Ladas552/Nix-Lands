@@ -14,7 +14,7 @@
 
       environment.systemPackages = with pkgs; [
         # Launchers
-        bottles
+        # bottles # broken as of 20.10.2026
         # heroic
         prismlauncher
         # PC games

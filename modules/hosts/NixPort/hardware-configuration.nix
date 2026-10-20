@@ -9,7 +9,8 @@
     }:
     {
       imports = [
-        inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
+        # broken as of 20.10.2026
+        # inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
         (modulesPath + "/installer/scan/not-detected.nix")
       ];
 
