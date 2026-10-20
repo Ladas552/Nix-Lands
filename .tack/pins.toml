@@ -62,6 +62,10 @@ nix-minecraft.url = "gh:Infinidoge/nix-minecraft"
 
 copyparty.url = "gh:9001/copyparty"
 
+ncro.url = "gh:manic-systems/ncro"
+
+circus = {url = "gh:manic-systems/circus", exclude_follow = ["nixpkgs", "crane"]}
+
 ## wrap neovim in nix config
 nvf.url = "gh:notashelf/nvf"
 

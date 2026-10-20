@@ -59,7 +59,7 @@ Code is hosted in two repositories for your and my convenience:
 # Credits
 I take a lot of things from the internet and different configs too. So I credit people in comments to snippets that I stole.
 
-If you want to check every person that I stole things from, go to my [List of configs](https://github.com/stars/Ladas552/lists/nix-flakes)
+If you want to check every person that I stole things from, go to my [List of configs](https://github.com/stars/Ladas552/lists/nix-flakes) or the [same List but for tangled](https://tangled.org/ladas552.me?tab=starred)
 
 Also for that [one guy](https://codeberg.org/Dich0tomy/snowstorm) who switched to codeberg
 

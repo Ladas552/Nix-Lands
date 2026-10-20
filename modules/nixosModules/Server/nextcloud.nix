@@ -25,9 +25,8 @@
         };
       };
 
+      # ensure postgresql has needed user
       services.postgresql = {
-        enable = true;
-        package = pkgs.postgresql_18;
         ensureDatabases = [ "nextcloud" ];
         ensureUsers = [
           {

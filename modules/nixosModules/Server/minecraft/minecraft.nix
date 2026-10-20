@@ -17,6 +17,7 @@
       services.minecraft-servers = {
         enable = true;
         eula = true;
+        dataDir = "/var/lib/minecraft";
         servers.paper = {
           enable = true;
           package = pkgs.paperServers.paper-1_21_11;
@@ -115,7 +116,8 @@
       networking.firewall.interfaces.tailscale0.allowedUDPPorts = [ 25565 ];
 
       # persist for Impermanence
-      # no need for Impermanence, as my server lives on another drive
-      # but by default, it's in `/srv/minecraft`
+      custom.imp.root.directories = [
+        "/var/lib/minecraft"
+      ];
     };
 }

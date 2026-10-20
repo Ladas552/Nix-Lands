@@ -68,6 +68,9 @@
           mcm = "br ~/Music";
           mcc = "br ~/.config/";
           mcp = "br ~/Pictures";
+          # systemctl
+          reboot = "systemctl reboot";
+          poweroff = "systemctl poweroff";
         };
         variables = {
           SHELL = "fish";

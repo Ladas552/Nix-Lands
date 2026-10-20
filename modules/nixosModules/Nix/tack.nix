@@ -5,13 +5,7 @@
     "server"
   ];
   config =
-    {
-      inputs,
-      pkgs,
-      config,
-      meta,
-      ...
-    }:
+    { inputs, pkgs, ... }:
     {
       programs.tack = {
         enable = true;
@@ -20,11 +14,5 @@
         );
         nixConfTokens = true;
       };
-      secrets."github_token" = {
-        neededForUsers = true;
-        owner = meta.user;
-        mode = "4444";
-      };
-      environment.variables.GITHUB_TOKEN = "$(cat ${config.secrets."github_token".path})";
     };
 }
