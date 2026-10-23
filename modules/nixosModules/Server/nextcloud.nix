@@ -1,4 +1,5 @@
 {
+  enable = false;
   hosts = [ "server" ];
   config =
     { config, pkgs, ... }:
@@ -54,8 +55,10 @@
           dbuser = "nextcloud";
           dbhost = "/run/postgresql";
           dbname = "nextcloud";
-          adminuser = "ladas552";
-          adminpassFile = config.secrets."nextcloud".path;
+          # create admin with nextcloud-occ user:add ladas552 && nextcloud-occ group:adduser admin ladas552
+          # options below don't work
+          # adminuser = "ladas552";
+          # adminpassFile = config.secrets."nextcloud".path;
         };
       };
 

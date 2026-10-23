@@ -13,7 +13,9 @@
         (lib.mkAliasOptionModule [ "secrets" ] [ "security" "nix-secrets" "secrets" ])
       ];
       environment.systemPackages = [
-        inputs.secrets.packages.${pkgs.stdenv.hostPlatform.system}.nix-secrets
+        (inputs.secrets.packages.${pkgs.stdenv.hostPlatform.system}.nix-secrets.overrideAttrs {
+          doCheck = false;
+        })
       ];
       security.nix-secrets = {
         enable = true;

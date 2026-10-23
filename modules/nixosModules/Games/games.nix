@@ -14,19 +14,19 @@
 
       environment.systemPackages = with pkgs; [
         # Launchers
-        # bottles # broken as of 20.10.2026
+        lutris
         # heroic
         prismlauncher
         # PC games
         osu-lazer-bin
-        arx-libertatis
-        stepmania
+        # arx-libertatis
+        # stepmania
         openmw
         daggerfall-unity
-        luanti
+        # luanti
         # mindustry
         steam-run
-        antimatter-dimensions
+        # antimatter-dimensions
         # Emulators I am not putting on my laptop
         shadps4-qtlauncher
         # Utils
@@ -45,12 +45,13 @@
           ".local/share/PrismLauncher"
           ".local/share/Terraria"
           ".local/share/arx"
-          ".local/share/bottles"
+          # ".local/share/bottles"
           ".local/share/godot"
           ".local/share/openmw"
           ".local/share/osu"
           ".local/share/shadPS4"
           ".local/share/umu"
+          ".local/share/lutris"
           ".local/share/Celeste"
           ".local/share/Overgrowth"
           ".local/share/SuperMeatBoy"

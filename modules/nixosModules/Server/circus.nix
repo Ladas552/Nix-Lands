@@ -26,8 +26,6 @@
             host = "127.0.0.1";
             port = 3001;
             force_secure_cookies = true;
-            rate_limit_rps = 100;
-            rate_limit_burst = 20;
           };
           evaluator = {
             poll_interval = 300;
