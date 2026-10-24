@@ -12,10 +12,10 @@
       enable = true;
       openFirewall = true;
       nssmdns4 = true; # allows system to resolve .local addresses
-      publish = {
-        enable = true;
-        userServices = true; # broadcasts services
-        addresses = true; # broadcasts this machine's IP
+      settings.publish = {
+        "disable-user-service-publishing" = false; # broadcasts services
+        "disable-publishing" = false; # broadcasts this machine's IP
+        "publish-addresses" = true;
       };
     };
   };

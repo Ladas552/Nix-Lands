@@ -49,13 +49,58 @@
             brand_name = "Ladas552";
             brand_subtitle = "The Biggest Clown";
           };
+          # define where builds happen and remote build using github actions
+          queue_runner = {
+            workers = 0;
+            rpc = {
+              bind = "0.0.0.0:8443";
+              # use certs for tls, you already have to enable and setup acme to get this certs in this location
+              tls = {
+                cert_file = "/var/lib/acme/ladas552.me/fullchain.pem";
+                key_file = "/var/lib/acme/ladas552.me/key.pem";
+                require_client_cert = false;
+              };
+              cache_substituter = "https://circus.ladas552.me/nix-cache";
+              cache_public_key = "circus.ladas552.me-1:Zs4de2JNShhtJhjJTorpuEb+CLjth/xn8e9uNM1XBy4=";
+              # so I can connect to gha runner and use workflows
+              oidc = {
+                issuer = "https://token.actions.githubusercontent.com";
+                audiences = [ "circus-agent" ];
+                allowed_repositories = [ "ladas552/circus-agent" ];
+                allowed_subject_prefixes = [
+                  "repo:ladas552/circus-agent:ref:refs/heads/master"
+                ];
+                allowed_workflow_refs = [
+                  "ladas552/circus-agent/.github/workflows/circus-builder.yml@refs/heads/master"
+                ];
+              };
+            };
+            # setup gha runner
+            ephemeral_pools =
+              let
+                pool = system: {
+                  name = "gha-${system}";
+                  allowed_build_repositories = [ "ladas552/circus-agent" ];
+                  systems = [ "${system}" ];
+                  max_inflight = 4;
+                  github_actions = {
+                    workflow_repository = "ladas552/circus-agent";
+                    workflow = "circus-builder.yml";
+                    ref_name = "master";
+                    token_file = "${config.secrets.circus-agent-github.path}";
+                    runner_url = "circus+tls://circus-agent.ladas552.me";
+                    oidc_audience = "circus-agent";
+                    agent_binary_url = "https://circus.ladas552.me/artifacts/circus-agent-${system}";
+                  };
+                };
+              in
+              map pool ["x86_64-linux" "aarch64-linux"];
+          };
           # declare repos and jobs to build, can be done from webui too
           declarative.projects = [
             {
               name = "Nix-Lands";
               repository_url = "https://tangled.org/ladas552.me/Nix-Lands";
-              cache_enabled = true;
-              cache_url = "https://ci.example.org/projects/Nix-Lands/nix-cache/";
               jobsets = [
                 {
                   name = "NixPort";
@@ -72,6 +117,11 @@
                   nix_expression = ".#nixosConfigurations.NixBox.config.system.build.toplevel";
                   only_build_latest = true;
                 }
+                {
+                  name = "NixWool";
+                  nix_expression = ".#nixosConfigurations.NixWool.config.system.build.toplevel";
+                  only_build_latest = true;
+                }
               ];
             }
           ];
@@ -80,18 +130,21 @@
 
       # Reverse proxy
       services.caddy.virtualHosts."circus.ladas552.me" = {
-        useACMEHost = "ladas552.me";
-        extraConfig = ''
-          reverse_proxy localhost:3001
-        '';
-      };
+          useACMEHost = "ladas552.me";
+          extraConfig = ''
+            reverse_proxy localhost:3001
+          '';
+        };
 
-      # Only allow Tailscale
+      # Only allow WebUI over Tailscale
       networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 3001 ];
+      # make RPC bind for github actions
+      networking.firewall.allowedTCPPorts = [ 8443 ];
 
       # secrets
       secrets."circus".owner = "circus";
       secrets."circus-api".owner = "circus";
+      secrets."circus-agent-github".owner = "circus";
 
       # persist for Impermanence
       system.nixos-core.persistence.stores."/cache".directories = [
