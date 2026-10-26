@@ -2,13 +2,11 @@
   hosts = [ "vps" ];
   config =
     { config, inputs, ... }:
-    let
-      cfg = config.services.tangled.knot;
-    in
     {
       imports = [
         # git
-        inputs.tangled.nixosModules.knot
+        # inputs.tangled.nixosModules.knot # old knot
+        inputs.tangled.nixosModules.knot-rs
         # UI
         # inputs.tangled.nixosModules.appview
         # CI
@@ -18,40 +16,21 @@
       # module
       services = {
         tangled = {
-          knot = {
+          knot-rs = {
             enable = true;
-            gitUser = "git";
             openFirewall = false;
-            repo = {
-              mainBranch = "master";
-              scanPath = "${cfg.stateDir}/repos";
-              readme = [
-                "README.norg"
-                "readme.norg"
-              ]
-              ++ [
-                "README.md"
-                "readme.md"
-                "README"
-                "readme"
-                "README.markdown"
-                "readme.markdown"
-                "README.txt"
-                "readme.txt"
-                "README.rst"
-                "readme.rst"
-                "README.org"
-                "readme.org"
-                "README.asciidoc"
-                "readme.asciidoc"
-              ];
-            };
-            server = {
-              listenAddr = "0.0.0.0:3050";
-              hostname = "knot.ladas552.me";
-              internalListenAddr = "127.0.0.1:5444";
-              owner = "did:plc:6ikdlkw64mrjygj6cea62kn4"; # @ladas552.me
-              secureMode = true;
+            environmentFile = config.secrets.tangled-knot-master-key.path;
+            settings = {
+              server = {
+                hostname = "knot.ladas552.me";
+                listen_addr = "0.0.0.0:3050";
+                internal_listen_addr = "127.0.0.1:5444";
+                admins = [ "did:plc:6ikdlkw64mrjygj6cea62kn4" ]; # @ladas552.me
+                ssh_host_key_file = config.secrets.tangled-knot-ssh.path;
+              };
+              repo.default_branch = "master";
+              atproto.plc_directory = "https://plc.directory";
+              messages.fetch.motd = "You are so crazy for using this shit";
             };
           };
           # My VPS is too weak for docker containers
@@ -85,10 +64,14 @@
         '';
       };
 
+      # secrets
+      secrets."tangled-knot-ssh".owner = "knot";
+      secrets."tangled-knot-master-key".owner = "knot";
+
       # persist for Impermanence
       custom.imp.root = {
         directories = [
-          "/home/git"
+          "/var/lib/knot"
         ];
         cache.directories = [
           # "/var/lib/containers"
