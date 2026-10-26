@@ -35,7 +35,7 @@
             enabled = true;
             max_age_days = 7;
           };
-          # can be accessed via ncro or ncps
+          # can be accessed via ncro or ncps or directly
           cache = {
             enabled = true;
             cache_url = "https://circus.ladas552.me/nix-cache/";
@@ -54,8 +54,6 @@
             {
               name = "Nix-Lands";
               repository_url = "https://tangled.org/ladas552.me/Nix-Lands";
-              cache_enabled = true;
-              cache_url = "https://ci.example.org/projects/Nix-Lands/nix-cache/";
               jobsets = [
                 {
                   name = "NixPort";
@@ -86,7 +84,7 @@
         '';
       };
 
-      # Only allow Tailscale
+      # Only allow WebUI over Tailscale
       networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 3001 ];
 
       # secrets

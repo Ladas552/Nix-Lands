@@ -81,6 +81,9 @@
       # No
       system.stateVersion = "26.05"; # Did you read the comment?
 
+      environment.shellAliases.yy = lib.mkForce "nh os switch git+https://tangled.org/ladas552.me/Nix-Lands?rev=";
+      environment.shellAliases.yyy = lib.mkForce "nh os boot git+https://tangled.org/ladas552.me/Nix-Lands?rev=";
+
       #  It's a 2 vCPU server
       nix.settings = {
         cores = lib.mkForce 1;
