@@ -38,6 +38,7 @@
         telegram-desktop
         typst
         xarchiver
+        element-desktop
       ];
 
       # finger print reader

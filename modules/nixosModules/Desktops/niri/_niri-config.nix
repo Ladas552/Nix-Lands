@@ -171,8 +171,7 @@
       _children = [
         { match._props.app-id = "firefox"; }
         { match._props.app-id = "thunderbird"; }
-        { match._props.app-id = "vesktop"; }
-        { match._props.app-id = "legcord"; }
+        { match._props.app-id = "element-desktop"; }
       ];
       open-maximized-to-edges = true;
       default-column-width.proportion = 1.0;

@@ -1,4 +1,5 @@
 {
+  enable = false;
   hosts = [
     "pc"
     "laptop"
