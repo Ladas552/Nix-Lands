@@ -218,9 +218,6 @@
       "--single-instance"
     ];
     # "Super+E" .spawn ="emacs";
-    "Super+N".spawn = [
-      "neovide"
-    ];
     "Super+J".spawn = [
       "kitty"
       "--single-instance"
