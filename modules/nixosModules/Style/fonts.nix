@@ -18,7 +18,7 @@
           };
           antialias = true;
           hinting = {
-            enable = true;
+            enable = false;
             style = "full";
             autohint = false;
           };

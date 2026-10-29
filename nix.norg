@@ -97,5 +97,10 @@ I start to have a life other than computers so I kinda begin to forget what I di
     - user
       In NixOS, users are Mutual by default, so you can just `su` to change to root, and `passwd ladas552` to change password of user-Ladas552 when you can't login to the user.
 * TODOs
-** nosh
-Migrate nosh to adios maybe, or anything that makes it more lazy
+** https://github.com/schizofox/schizofox
+   I want to wrap a package with adifox and use it without an overlay, but it seems I can't really do that, as using the wrapSchizofox package is not exposed as a package, but as a file, making it so much harder to mantain.
+
+   I think one way to make the setup work is to fork schizofox and make a PR that is un flake-parts it.
+
+** New Year cleaning
+   Should clear out some modules, I think most of the stuff I will be doing is wrapping packages.
