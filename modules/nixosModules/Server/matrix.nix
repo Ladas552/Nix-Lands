@@ -41,6 +41,8 @@
           "matrix.org"
         ];
         trusted_servers = [
+          "kami.boo"
+          "amaanq.com"
           "codestorm.net"
           "starstruck.systems"
           "unredacted.org"
