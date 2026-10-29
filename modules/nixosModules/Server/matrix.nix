@@ -68,7 +68,7 @@
     # persist for Impermanence
     system.nixos-core.persistence.stores."/persist".directories = [
       {
-        target = "/var/lib/private/matrix-tuwunel";
+        target = "/var/lib/private/tuwunel";
         owner = "nobody";
         group = "nogroup";
       }
