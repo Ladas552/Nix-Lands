@@ -28,9 +28,11 @@
                 admins = [ "did:plc:6ikdlkw64mrjygj6cea62kn4" ]; # @ladas552.me
                 ssh_host_key_file = config.secrets.tangled-knot-ssh.path;
               };
+              git.object_format = "sha1";
               repo.default_branch = "master";
               atproto.plc_directory = "https://plc.directory";
               messages.fetch.motd = "You are so crazy for using this shit";
+              xrpc.trusted_proxy_header = "x-forwarded-for";
             };
           };
           # My VPS is too weak for docker containers
