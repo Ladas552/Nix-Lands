@@ -175,9 +175,9 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "ncro",
-    "rev": "b732a9c09cfe1f7028a70d353e5e1b6612588d0a",
-    "narHash": "sha256-3rJWYcO5vbNIpCUQaBHnNOoWTEf4uGaXNH3+eL5SVJc=",
-    "lastModified": 1793025239
+    "rev": "9f231aef9cb9e1ce8d892a69d3b8be2d33497967",
+    "narHash": "sha256-ON8IV/K+GAEeVQi2+KfP5IQS3hzfptF40ggcF3Nz9jE=",
+    "lastModified": 1793328236
   },
   "neorg": {
     "type": "github",
@@ -292,9 +292,9 @@
     "type": "github",
     "owner": "nix-community",
     "repo": "neovim-nightly-overlay",
-    "rev": "ba23f158ca2b55e9606647bbca3b3ee633479624",
-    "narHash": "sha256-vGVJU5XzYKbvoNP/7z9AgoTn7/IKv1VvWn1p3VKJ9Ug=",
-    "lastModified": 1793232177
+    "rev": "d65ec12f9139f36ae2d9dbefadfcfe053f4934b6",
+    "narHash": "sha256-J7KKQwZpQwiy4AjJbOp88B4TR4kVRf4b+lDjvG9j1vQ=",
+    "lastModified": 1793318551
   },
   "nyx": {
     "type": "github",
@@ -340,8 +340,8 @@
     "type": "git",
     "url": "https://tangled.org/tangled.org/core",
     "ref": "HEAD",
-    "rev": "8f17258eb0e46906719900cca2dfde570db0a350",
-    "narHash": "sha256-UJYo+2ogTvO4lLA0kkpgGPV8mpKrE8odfvbMBWYhq8s=",
-    "lastModified": 1793291972
+    "rev": "db269aa5886dbc98c42010fd9d15f5e60a341f65",
+    "narHash": "sha256-ls623ueJwU4y9PCarSpvZ4DxkBPcOBelpu1rCulUd9c=",
+    "lastModified": 1793322901
   }
 }

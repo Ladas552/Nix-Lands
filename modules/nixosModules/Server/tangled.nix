@@ -23,7 +23,7 @@
         tangled = {
           knot-rs = {
             enable = true;
-            openFirewall = false;
+            openFirewall = true;
             environmentFile = config.secrets.tangled-knot-master-key.path;
             settings = {
               server = {
@@ -48,11 +48,8 @@
                   "100.85.212.58"
                   "100.107.219.63"
                   "100.119.233.79"
+                  "100.90.144.20"
                 ];
-              };
-              tls = {
-                acme_enabled = true;
-                acme_contact = "me@ladas552.me";
               };
             };
           };
