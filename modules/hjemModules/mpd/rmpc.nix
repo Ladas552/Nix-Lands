@@ -1,7 +1,6 @@
 {
   # Store inline rmpc configs
   hosts = [
-    "pc"
     "laptop"
   ];
   config =
@@ -225,7 +224,7 @@
                                           content: [
                                               (kind: Property(Song(Title)), style: (fg: "yellow", modifiers: "Bold"),
                                                   default: (kind: Text("No Song"), style: (fg: "white", modifiers: "Bold"))),
-                                          ], 
+                                          ],
                                           align: Left,
                                           scroll_speed: 1
                                       ))

@@ -103,8 +103,11 @@
       ];
 
       # Only allow SSH connection with Tailscale
-      networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 2222 22 ];
-      services.openssh.ports = lib.mkForce [2222];
+      networking.firewall.interfaces.tailscale0.allowedTCPPorts = [
+        2222
+        22
+      ];
+      services.openssh.ports = lib.mkForce [ 2222 ];
 
       system.nixos-core.persistence.stores."/cache".directories = [
         {

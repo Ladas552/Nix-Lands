@@ -71,6 +71,10 @@
           # systemctl
           reboot = "systemctl reboot";
           poweroff = "systemctl poweroff";
+          # ssh
+          wool = ''kitten ssh 100.90.144.20 -p 2222 -t "fish"'';
+          box = ''kitten ssh 100.107.219.63 -t "fish"'';
+
         };
         variables = {
           SHELL = "fish";

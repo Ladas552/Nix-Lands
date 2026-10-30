@@ -1,6 +1,6 @@
 {
   config = {
-    # got direct support from developers, appose to HM version
+    # mantained by nh devs
     programs.nh.enable = true;
   };
 }

@@ -13,6 +13,7 @@
     }:
     {
       environment.systemPackages = [
+        pkgs.gpu-screen-recorder
         # disable idle on host that don't need it
         (self.packages.${pkgs.stdenv.hostPlatform.system}.noctalia {
           extraSettings =

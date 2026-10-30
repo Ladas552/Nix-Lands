@@ -58,5 +58,10 @@
       # thanks @iynaix
       # make a symlink of flake within the generation (e.g. /run/current-system/src)
       system.systemBuilderCommands = "ln -s ${self.sourceInfo.outPath} $out/src";
+
+      custom.imp.home.cache.directories = [
+        ".cache/nix"
+        ".cache/nix-index"
+      ];
     };
 }

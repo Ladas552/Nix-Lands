@@ -40,5 +40,9 @@
           vn = "nvim ${meta.configPath}/pkgs/adios-wrappers/neovim/nvim";
         };
       };
+      custom.imp.home.cache.directories = [
+        ".local/share/nvim"
+        ".local/state/nvim"
+      ];
     };
 }

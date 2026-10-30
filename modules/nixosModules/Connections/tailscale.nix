@@ -25,6 +25,6 @@
       # networking.firewall.checkReversePath = "loose";
 
       # persist for Impermanence
-      custom.imp.root.directories = [ "/var/lib/tailscale/" ];
+      custom.imp.root.directories = [ "/var/lib/tailscale" ];
     };
 }

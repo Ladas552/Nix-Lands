@@ -1,6 +1,5 @@
 {
-  enable = false;
-  hosts = [ "laptop" ];
+  hosts = [ "pc" ];
   config =
     { pkgs, ... }:
     {
@@ -9,6 +8,5 @@
         winePackages.stagingFull
         winetricks
       ];
-
     };
 }

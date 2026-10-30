@@ -4,9 +4,6 @@
   config = {
     custom.imp = {
       root.directories = [
-        "/etc/NetworkManager"
-        "/var/lib/NetworkManager"
-        "/var/lib/iwd"
         "/var/lib/systemd/coredump"
         "/var/log"
         "/var/lib/nixos"
@@ -17,18 +14,12 @@
             ".local/share/Trash"
             ".local/share/qalculate"
             ".local/share/TelegramDesktop"
-            ".local/share/nvim"
-            ".local/state/nvim"
-            ".local/state/nvf"
-            ".local/share/nvf"
             ".config/libreoffice"
             ".cache/keepassxc"
             ".config/keepassxc"
             ".config/qBittorrent"
             ".config/Element"
             ".local/share/qBittorrent"
-            ".cache/nix"
-            ".cache/nix-index"
           ];
         };
       };

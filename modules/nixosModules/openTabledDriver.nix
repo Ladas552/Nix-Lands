@@ -1,7 +1,6 @@
 {
   hosts = [
     "pc"
-    "laptop"
   ];
   config = {
     # Configure tablet

@@ -16,14 +16,12 @@
     in
     {
       console.useXkbConfig = true;
-      services.xserver = {
-        xkb = {
-          layout = lib.mkForce "canary,kz";
-          extraLayouts.canary = {
-            symbolsFile = canary + "/share/X11/xkb/symbols/canary";
-            description = "Canary keyboard layout";
-            languages = [ "eng" ];
-          };
+      services.xserver.xkb = {
+        layout = lib.mkForce "canary,kz";
+        extraLayouts.canary = {
+          symbolsFile = canary + "/share/X11/xkb/symbols/canary";
+          description = "Canary keyboard layout";
+          languages = [ "eng" ];
         };
       };
 
@@ -41,7 +39,6 @@
             control = {
               # change https://github.com/Apsu/Canary keys when holding Ctrl
               ";" = "C-p";
-              a = "C-;";
               b = "C-g";
               c = "C-a";
               d = "C-c";

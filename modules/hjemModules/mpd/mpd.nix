@@ -1,6 +1,5 @@
 {
   hosts = [
-    "pc"
     "laptop"
   ];
   config =
