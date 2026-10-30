@@ -23,8 +23,9 @@
         tangled = {
           knot-rs = {
             enable = true;
-            openFirewall = true;
+            openFirewall = false;
             environmentFile = config.secrets.tangled-knot-master-key.path;
+            user = "git";
             settings = {
               server = {
                 hostname = "knot.ladas552.me";
@@ -32,11 +33,14 @@
                 internal_listen_addr = "127.0.0.1:5444";
                 admins = [ "did:plc:6ikdlkw64mrjygj6cea62kn4" ]; # @ladas552.me
                 ssh_host_key_file = config.secrets.tangled-knot-ssh.path;
+                # switch the openssh default port for this
+                ssh_listen_addr = "[::]:22";
               };
               contact.email = "me@ladas552.me";
               git.object_format = "sha1";
               repo.default_branch = "master";
               atproto.plc_directory = "https://plc.directory";
+              lfs.store_path = "${config.services.tangled.knot-rs.stateDir}/lfs";
               messages.fetch.motd = "You are so crazy for using this shit";
               homepage.path = pkgs.writeText "index.html" ''
                 <h1>You do not belong here</h1>
