@@ -78,9 +78,9 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "circus",
-    "rev": "4449f9fff5202e2e447f20ff7906ddd87d8a5f0f",
-    "narHash": "sha256-iQN82/0muAv4Pdm8shcZklkZAGYw1GB9p+SAQLZydbw=",
-    "lastModified": 1793150993
+    "rev": "90e6328cad33a463bba74dc046be09848a4ae868",
+    "narHash": "sha256-w5sdalq2PbuCrCaglUXJsvQkfjvZPYiDgdYZVlyTDsk=",
+    "lastModified": 1793402889
   },
   "copyparty": {
     "type": "github",
@@ -102,9 +102,9 @@
     "type": "github",
     "owner": "finix-community",
     "repo": "finix",
-    "rev": "0ad3b1b30f3aa82da5f747c8fb6104159ebdd38b",
-    "narHash": "sha256-8y1TF7wR2AJZlO/y4OWgsFX3AwpZdDk1KLLRl24RSVc=",
-    "lastModified": 1792880696
+    "rev": "9e64e44ad1f7161ce9684500f986d93f8274d0e3",
+    "narHash": "sha256-2vhYeYjqVvVxQISyvBwJdOe/WvAQiwjsrmOqIQXDBTU=",
+    "lastModified": 1793394529
   },
   "flake-compat": {
     "type": "git",
@@ -143,9 +143,9 @@
     "type": "github",
     "owner": "amaanq",
     "repo": "helium-flake",
-    "rev": "09df8bc7ef6954ba7049a3abe77f286dd0f5cd92",
-    "narHash": "sha256-yEuj4OvPpuZQZfmWHLEEk+LQIQlOOTjtvuqcCOVCtA8=",
-    "lastModified": 1793341034
+    "rev": "01339298dd9165e961a6975e35364eb49fe929e8",
+    "narHash": "sha256-jVx5cGTxU862QnrWyQrz1nkc4NHF81ZRpicjQ9JEX4o=",
+    "lastModified": 1793407847
   },
   "hjem": {
     "type": "github",
@@ -167,9 +167,9 @@
     "type": "github",
     "owner": "fzakaria",
     "repo": "nixpkgs-multiverse",
-    "rev": "8c6c586bdbcbef036fcb5838b173af6ce6b0ab03",
-    "narHash": "sha256-LrmP77kg/iG2ImBew1qtvWeybi6Xq0iXX6ryM2vwgdc=",
-    "lastModified": 1793225784
+    "rev": "91a87309e42fe53bc6ce5c0b78ea8bede172cd34",
+    "narHash": "sha256-OXx8ENB9bfKcRLq5szQ6rlr4T1dIV4OCCvxF5x7RE0o=",
+    "lastModified": 1793420076
   },
   "ncro": {
     "type": "github",
@@ -237,25 +237,25 @@
     "type": "github",
     "owner": "Infinidoge",
     "repo": "nix-minecraft",
-    "rev": "f71d4e9de99e640898e6fe9c61cfd11ee0420697",
-    "narHash": "sha256-yg7ZakPsZOsx1RPNslOSHoHyqPVudzm0OdmxhLs7+OE=",
-    "lastModified": 1793337890
+    "rev": "dbdac5f0805ef57bc3d1978288114a796f8d98ea",
+    "narHash": "sha256-2KycYby9DrXo3W3kUaqfKRxN0GKhuNTSM1u/VW+GaVA=",
+    "lastModified": 1793423372
   },
   "nixos-core": {
     "type": "github",
     "owner": "manic-systems",
     "repo": "nixos-core",
-    "rev": "13d9c52c1ea8275e5c5b99878f96a8435bebad9f",
-    "narHash": "sha256-zWTz3A7cZyjCV8a9z/d20cDborKQgt+2YfDLIsnZkVQ=",
-    "lastModified": 1792822547
+    "rev": "f6d88810c1b082568d195c0c025b34b7bb7a3a61",
+    "narHash": "sha256-ge22NAvGv5CzsamFUGMHUtpf46H4A4U9iOQDQicNCxY=",
+    "lastModified": 1793420539
   },
   "nixos-hardware": {
     "type": "github",
     "owner": "nixos",
     "repo": "nixos-hardware",
-    "rev": "b6754c901c21478fd8450d62101e712b2a4f0d75",
-    "narHash": "sha256-jGFe4xdrCw6xpgH2zgKwslACyt/NGuPwGILPEMFxmcQ=",
-    "lastModified": 1793236063
+    "rev": "04c6b94fa104bc23650983a4513aea196794d321",
+    "narHash": "sha256-/Zs18x+IW4LuVH0rKxra0WPRgsk0DQsi0Bwkf8sOC5c=",
+    "lastModified": 1793355509
   },
   "nixos-wsl": {
     "type": "github",
@@ -292,17 +292,17 @@
     "type": "github",
     "owner": "nix-community",
     "repo": "neovim-nightly-overlay",
-    "rev": "d65ec12f9139f36ae2d9dbefadfcfe053f4934b6",
-    "narHash": "sha256-J7KKQwZpQwiy4AjJbOp88B4TR4kVRf4b+lDjvG9j1vQ=",
-    "lastModified": 1793318551
+    "rev": "e0c4f44fb8f605513fad74376d2a431948802407",
+    "narHash": "sha256-viltrcfqiQCLftI9IrdmMM5xqTdVR5hTdIoXL4xCYc4=",
+    "lastModified": 1793404991
   },
   "nyx": {
     "type": "github",
     "owner": "chaotic-cx",
     "repo": "nyx",
-    "rev": "c486ed9fdd227134c4047ab3e18a3cadbae33912",
-    "narHash": "sha256-P40QZOKQ3+K08LTKVpDW8PzcLCfACgMPVUY1b4tGtSk=",
-    "lastModified": 1793269630
+    "rev": "78974344de6830f2265380bef9e9149196b80e5e",
+    "narHash": "sha256-775PSwTXEf/vLE9wipoPFRAaLDxJjCqwoS5YgAhj+cM=",
+    "lastModified": 1793406773
   },
   "schizofox": {
     "type": "github",
@@ -332,16 +332,16 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "7bdcafa671ae4557ebc9f98127d4ecb28967e272",
-    "narHash": "sha256-5AWJ6OgkGQ88PhKk+axnRFaLjjHCVFyy5efSwo8aoYg=",
-    "lastModified": 1793346738
+    "rev": "ae4e10ee310a169ebeca050fd3a4d778f5f4e008",
+    "narHash": "sha256-lIjyz0oblEd74AfJviLzijEgefoE10CbrCqk4fAJycY=",
+    "lastModified": 1793365221
   },
   "tangled": {
     "type": "git",
     "url": "https://tangled.org/tangled.org/core",
     "ref": "HEAD",
-    "rev": "2096d06d938e680297adeadd71b8320c9f3491d4",
-    "narHash": "sha256-5Q5bJvpE/eB0FJirmsL7YXXN+FXjtrQmXaOXJ3f1rEQ=",
-    "lastModified": 1793354951
+    "rev": "d484fa26d9bc55b10a101d84e864f7c9d72b949c",
+    "narHash": "sha256-Rr55fFmKluRWSBsU10sVQ0vTkxWfyHVbyb+0H07L8HA=",
+    "lastModified": 1793429833
   }
 }

@@ -169,7 +169,7 @@
     }
     {
       _children = [
-        { match._props.app-id = "firefox"; }
+        { match._props.app-id = "helium"; }
         { match._props.app-id = "thunderbird"; }
         { match._props.app-id = "element-desktop"; }
       ];
@@ -254,7 +254,7 @@
     ];
     # GUI apps
     "Super+F".spawn = "thunar";
-    "Super+L".spawn = "firefox";
+    "Super+L".spawn-sh = "helium &";
     "Shift+Super+L".spawn-sh = "helium &";
     # MPD
     "Shift+Alt+P" = {
