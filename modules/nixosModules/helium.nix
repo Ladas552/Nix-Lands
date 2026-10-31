@@ -1,5 +1,9 @@
 {
-  hosts = [ "iso" "pc" "laptop"];
+  hosts = [
+    "iso"
+    "pc"
+    "laptop"
+  ];
   config =
     { pkgs, inputs, ... }:
     {
