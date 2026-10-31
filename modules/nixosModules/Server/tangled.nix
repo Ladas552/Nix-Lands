@@ -7,6 +7,8 @@
       inputs,
       ...
     }:
+    # if you get errors like `gave up on this repository repo=`, stop the knot-rs service and run this
+    # echo '{"repo":"THE-FAILING-DID","foster":"https://knot2.mock.tangled.org","triggered_at":'$(date +%s)',"consecutive_failures":0}' | sudo tee $d/tangled.handover.json >/dev/null
     {
       imports = [
         # git
@@ -23,7 +25,7 @@
         tangled = {
           knot-rs = {
             enable = true;
-            openFirewall = false;
+            openFirewall = true;
             environmentFile = config.secrets.tangled-knot-master-key.path;
             user = "git";
             settings = {
@@ -39,7 +41,11 @@
               contact.email = "me@ladas552.me";
               git.object_format = "sha1";
               repo.default_branch = "master";
-              atproto.plc_directory = "https://plc.directory";
+              atproto = {
+                plc_directory = "https://plc.directory";
+                # needed for some reason that might be fixed soon
+                repo_signing_keys = "${config.services.tangled.knot-rs.stateDir}/repo-signing-keys.json";
+              };
               lfs.store_path = "${config.services.tangled.knot-rs.stateDir}/lfs";
               messages.fetch.motd = "You are so crazy for using this shit";
               homepage.path = pkgs.writeText "index.html" ''
@@ -91,7 +97,7 @@
       };
 
       # secrets
-      secrets."tangled-knot-ssh".owner = "knot";
+      secrets."tangled-knot-ssh".owner = "git";
       secrets."tangled-knot-master-key" = { };
       secrets."tangled-spindle-key".owner = "spindle";
 

@@ -92,6 +92,7 @@
 
       # I don't have firewall enabled, firewall is managed by hetzner, but just to be sure I added these ports
       networking.firewall.allowedTCPPorts = [
+        22 # not actual ssh port, it's for pushing my tangled knot
         80
         443
         3000
@@ -105,7 +106,6 @@
       # Only allow SSH connection with Tailscale
       networking.firewall.interfaces.tailscale0.allowedTCPPorts = [
         2222
-        22
       ];
       services.openssh.ports = lib.mkForce [ 2222 ];
 
