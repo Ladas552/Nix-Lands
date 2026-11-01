@@ -1,5 +1,4 @@
 {
-  enable = false;
   hosts = [ "server" ];
   config =
     { pkgs, inputs, ... }:
@@ -10,10 +9,7 @@
     {
       # module
       imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
-      nixpkgs.overlays = [
-        inputs.nix-minecraft.overlay
-      ];
-
+      # my pkgs are read-only so I import the overlay in the flake.nix
       services.minecraft-servers = {
         enable = true;
         eula = true;

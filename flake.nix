@@ -36,6 +36,7 @@
               rocm ? false,
               cuda ? false,
               eval ? inputs.nixpkgs.lib.nixosSystem,
+              overlays ? [ ],
             }:
             mkSystem {
               specialArgs = { inherit inputs self; };
@@ -49,6 +50,7 @@
                   rocmSupport = rocm;
                   cudaSupport = cuda;
                 };
+                inherit overlays;
               };
               inherit eval;
             };
@@ -62,7 +64,10 @@
             host = "laptop";
             rocm = true;
           };
-          NixBox = make { host = "server"; };
+          NixBox = make {
+            host = "server";
+            overlays = [ inputs.nix-minecraft.overlay ];
+          };
           NixWool = make {
             host = "vps";
             system = "aarch64-linux";
