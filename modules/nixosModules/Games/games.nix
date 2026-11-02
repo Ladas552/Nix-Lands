@@ -6,10 +6,10 @@
     { pkgs, ... }:
     {
       environment.shellAliases = {
-        play-osu = "env XKB_DEFAULT_LAYOUT=canary,ru XKB_DEFAULT_OPTIONS=grp:caps_toggle obs-gamecapture gamescope -g -f --force-grab-cursor -W 1920 -H 1080 -r 240 osu!";
-        play-osu-drm = "env XKB_DEFAULT_LAYOUT=canary,ru XKB_DEFAULT_OPTIONS=grp:caps_toggle obs-gamecapture gamescope --backend drm -g --force-grab-cursor -W 1920 -H 1080 -r 240 osu!";
-        play-steam = "env XKB_DEFAULT_LAYOUT=us,ru XKB_DEFAULT_OPTIONS=grp:caps_toggle obs-gamecapture gamescope -e -f --force-grab-cursor -W 1920 -H 1080 -r 240 steam";
-        play-steam-drm = "env XKB_DEFAULT_LAYOUT=us,ru XKB_DEFAULT_OPTIONS=grp:caps_toggle obs-gamecapture gamescope --backend drm -g -e --force-grab-cursor -W 1920 -H 1080 -r 240 steam";
+        play-osu = "env XKB_DEFAULT_LAYOUT=canary,ru obs-gamecapture gamescope -g -f osu!";
+        play-osu-drm = "env XKB_DEFAULT_LAYOUT=canary,ru obs-gamecapture gamescope --backend drm -g osu!";
+        play-steam = "obs-gamecapture gamescope -e -f steam";
+        play-steam-drm = "obs-gamecapture gamescope --backend drm -g -e steam";
       };
 
       environment.systemPackages = with pkgs; [

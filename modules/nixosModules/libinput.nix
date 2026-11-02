@@ -15,6 +15,7 @@
       };
       mouse = {
         middleEmulation = false;
+        accel_profile = "flat";
       };
     };
   };
