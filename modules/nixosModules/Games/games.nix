@@ -14,7 +14,7 @@
 
       environment.systemPackages = with pkgs; [
         # Launchers
-        lutris
+        # lutris
         # heroic
         prismlauncher
         # PC games
@@ -51,7 +51,7 @@
           ".local/share/osu"
           ".local/share/shadPS4"
           ".local/share/umu"
-          ".local/share/lutris"
+          # ".local/share/lutris"
           ".local/share/Celeste"
           ".local/share/Overgrowth"
           ".local/share/SuperMeatBoy"

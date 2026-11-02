@@ -39,6 +39,7 @@
             control = {
               # change https://github.com/Apsu/Canary keys when holding Ctrl
               ";" = "C-p";
+              a = "C-;";
               b = "C-g";
               c = "C-a";
               d = "C-c";

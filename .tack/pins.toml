@@ -66,14 +66,13 @@ ncro.url = "gh:manic-systems/ncro"
 
 circus = {url = "gh:manic-systems/circus", exclude_follow = ["nixpkgs", "crane"]}
 
+umbriel.url = "gh:noctalia-dev/umbriel"
+
 ## wrap neovim in nix config
 nvf.url = "gh:notashelf/nvf"
 
-## Niri module and config
-niri.url = "cb:BANanaD3V/niri-nix"
-
 ## Highly experimental replacement to nixos stage scripts
-nixos-core.url = "gh:manic-systems/nixos-core/"
+nixos-core.url = "gh:manic-systems/nixos-core/fix-systemd-initrd"
 
 # adios galore
 adios.url = "gh:llakala/lladios"

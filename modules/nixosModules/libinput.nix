@@ -9,7 +9,7 @@
       touchpad = {
         tapping = true;
         naturalScrolling = true;
-        scrollMethod = "edge";
+        scrollMethod = "two_finger";
         disableWhileTyping = false;
         clickMethod = "buttonareas";
       };

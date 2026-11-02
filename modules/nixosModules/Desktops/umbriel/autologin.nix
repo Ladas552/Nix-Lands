@@ -15,7 +15,7 @@
           # initial session for autologin
           # https://wiki.archlinux.org/title/Greetd#Enabling_autologin
           initial_session = {
-            command = "niri-session";
+            command = "sh -c 'systemctl --user import-environment; exec systemctl --user start --wait umbriel.service'";
             user = "${meta.user}";
           };
           default_session = initial_session;

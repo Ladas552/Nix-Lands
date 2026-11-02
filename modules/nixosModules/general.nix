@@ -78,20 +78,6 @@
         LC_TIME = "ru_RU.UTF-8";
       };
 
-      # fun
-      boot.initrd.stage1Greeting = "MANKIND IS DEAD";
-      boot.stage2Greeting = "BLOOD IS FUEL";
-      system.activationScripts = {
-        ultrakill = {
-          text = # sh
-            ''
-              echo
-              echo -e "\e[1;32mHELL IS FULL\e[0m"
-              echo
-            '';
-        };
-      };
-
       # persist for Impermanence
       custom.imp.home.cache.files = [ ".local/share/nix/repl-history" ];
     };

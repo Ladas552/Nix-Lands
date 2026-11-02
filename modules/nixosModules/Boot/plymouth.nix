@@ -12,7 +12,6 @@
         "plymouth.use-simpledrm"
       ];
       consoleLogLevel = 0;
-      initrd.verbose = false;
       #eyecandy on boot, my boot is too fast tho
       plymouth = {
         enable = true;
