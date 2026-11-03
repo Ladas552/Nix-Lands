@@ -66,6 +66,15 @@
             middle_click_paste = true;
             client_window_drag = false;
             window_drag_toggle = "floating";
+            # docs say it can look at libinput config, but doesn't seem to work on nixos
+            touchpad = {
+              tap = true;
+              natural_scroll = true;
+              scroll_method = "two_finger";
+              disable_while_typing = false;
+              click_method = "button_areas";
+            };
+            mouse.accel_profile = "flat";
             tablet.enabled = false;
             touch.enabled = false;
             cursor.hide_timeout_ms = 10000;
@@ -108,6 +117,7 @@
                   "DARK SOULS II"
                   "osu!"
                 ];
+                content_type = "game";
               };
               default_fullscreen = true;
               default_scrolling_extent = 1.0;
@@ -119,6 +129,14 @@
             {
               match.app_id = "mpv";
               shadow = false;
+            }
+            {
+              match.app_id = "^dev\\.noctalia\\.UmbrielSharePicker$";
+              default_floating = true;
+              default_floating_size_px = {
+                width = 250;
+                height = 512;
+              };
             }
             {
               match.is_cast_target = true;
@@ -243,6 +261,11 @@
               action = "spawn brightnessctl set 10%-";
               allow_when_locked = true;
             };
+
+            # Screenshot
+            "Print" = "spawn noctalia msg screenshot-region";
+            "Shift+Print" = " spawn noctalia msg screenshot-fullscreen";
+            "Alt+Print" = "spawn noctalia msg screenshot-window";
 
             # Knob binds
 

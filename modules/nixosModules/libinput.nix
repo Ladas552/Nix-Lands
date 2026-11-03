@@ -1,5 +1,6 @@
 {
   hosts = [
+    "pc"
     "laptop"
     "iso"
   ];
@@ -15,7 +16,7 @@
       };
       mouse = {
         middleEmulation = false;
-        accel_profile = "flat";
+        accelProfile = "flat";
       };
     };
   };

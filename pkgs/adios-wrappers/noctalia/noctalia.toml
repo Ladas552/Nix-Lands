@@ -111,9 +111,13 @@ telemetry_enabled = false
     shadow = false
 
     [shell.screenshot]
-    copy_to_clipboard = false
-    freeze_screen = false
-    save_to_file = false
+    annotate = true
+    copy_on_close = true
+    copy_to_clipboard = true
+    directory = "/home/ladas552/Pictures/screenshots"
+    freeze_screen = true
+    remember_last_region = true
+    save_to_file = true
 
     [[shell.session.actions]]
     action = "lock"

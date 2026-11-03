@@ -20,6 +20,7 @@
             ".config/qBittorrent"
             ".config/Element"
             ".local/share/qBittorrent"
+            ".local/share/flatpak"
           ];
         };
       };
