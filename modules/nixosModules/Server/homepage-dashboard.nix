@@ -60,12 +60,12 @@
                   href = "https://jellyfin.ladas552.me";
                 };
               }
-              # {
-              #   "Gonic" = {
-              #     description = "My Sonic boom serivce";
-              #     href = "https://gonic.ladas552.me";
-              #   };
-              # }
+              {
+                "Navidrome" = {
+                  description = "Music via Sonic boom serivce";
+                  href = "https://navidrome.ladas552.me";
+                };
+              }
               # {
               #   "Kavita" = {
               #     description = "Books";
@@ -94,22 +94,10 @@
               #     href = "https://immich.ladas552.me";
               #   };
               # }
-              # {
-              #   "Karakeep" = {
-              #     description = "Bookmark manager";
-              #     href = "https://karakeep.ladas552.me";
-              #   };
-              # }
               {
                 "Linkding" = {
                   description = "Bookmark manager";
                   href = "https://linkding.ladas552.me";
-                };
-              }
-              {
-                "NextCloud" = {
-                  description = "Drive";
-                  href = "https://nextcloud.ladas552.me";
                 };
               }
               {

@@ -165,7 +165,7 @@
           workspace = [
             {
               index = 3;
-              layout.mode = "master";
+              layout.mode = "dwindle";
             }
             {
               index = 4;
