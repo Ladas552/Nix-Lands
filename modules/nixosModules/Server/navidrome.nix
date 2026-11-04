@@ -2,6 +2,7 @@
   hosts = [ "server" ];
   config = {
     # music database service, to then connect with Symfonium
+    # creates admin account imperitivly, so don't open it publicly the first run
     services.navidrome = {
       enable = true;
       group = "media";

@@ -74,7 +74,8 @@
           # ssh
           wool = ''kitten ssh 100.90.144.20 -p 2222 -t "fish"'';
           box = ''kitten ssh 100.107.219.63 -t "fish"'';
-
+          # I am indiciseve man
+          coin = "shuf -n1 -e heads tails";
         };
         variables = {
           SHELL = "fish";

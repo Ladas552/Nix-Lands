@@ -48,6 +48,29 @@
 
       #  IF GPT is right, it allows for torrents to download in readable state, But I am not sure, and I will check it later. But it just works now. 8th of August 2025
       systemd.services.qbittorrent.serviceConfig.UMask = "002"; # Sets UMask for the qbittorrent service
+      # another GPT thing to set categories path declarativly
+      systemd.tmpfiles.settings."10-qbt-categories"."/var/lib/qBittorrent/qBittorrent/config/categories.json"."C+" =
+        {
+          user = "qbittorrent";
+          group = "qbittorrent";
+          mode = "0755";
+          argument = toString (
+            pkgs.writeText "categories.json" (
+              builtins.toJSON {
+                # music
+                music_anime.save_path = "/srv/media/Music/Anime";
+                music_games.save_path = "/srv/media/Music/Games";
+                music_normal.save_path = "/srv/media/Music/IRLPeople";
+                # video
+                anime.save_path = "/srv/media/Videos/Anime";
+                movies.save_path = "/srv/media/Videos/Movies";
+                tv.save_path = "/srv/media/Videos/TV";
+                # miscellaneous
+                books.save_path = "/srv/media/Books/unsorted";
+              }
+            )
+          );
+        };
 
       # Reverse proxy
       services.caddy.virtualHosts."qbittorrent.ladas552.me" = {
