@@ -73,7 +73,22 @@
             '';
           };
           "ladas552.me" = {
-            extraConfig = ''respond "Blog: https://blog.ladas552.me Nix-Docs: https://nix.ladas552.me Git-Hosting: https://tangled.org/did:plc:6ikdlkw64mrjygj6cea62kn4 GitHub: https://github.com/Ladas552"'';
+            extraConfig = ''
+            header Content-Type text/html
+            respond <<HTML
+            <html>
+              <head>
+                <title>Domain of Ladas552</title></head>
+                <body>
+                  <ul>
+                    <li><a href="https://blog.ladas552.me">Blog</a></li>
+                    <li><a href="https://nix.ladas552.me">Nix-Docs</a></li>
+                    <li><a href="https://tangled.org/did:plc:6ikdlkw64mrjygj6cea62kn4">Git-Hosting</a></li>
+                    <li><a href="https://github.com/Ladas552">GitHub</a></li>
+                  </ul>
+                </body>
+              </html>
+            HTML 200'';
           };
         };
       };
