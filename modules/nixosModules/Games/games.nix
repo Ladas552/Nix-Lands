@@ -31,6 +31,7 @@
         shadps4-qtlauncher
         # Utils
         mangohud
+        theclicker # autoclicker, 21 for my mouse, but just find the mouse name
       ];
       # persist games
       custom.imp.home = {

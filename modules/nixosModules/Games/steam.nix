@@ -29,6 +29,7 @@
           "-r 240"
         ];
         enableWsi = true;
+        # without this gamescope lags
         capSysNice = true;
       };
       hardware.steam-hardware.enable = true;
