@@ -8,7 +8,11 @@
     {
       environment.systemPackages = [
         pkgs.R
-        pkgs.rstudio
+        (pkgs.rstudioWrapper.override {
+          packages = [
+            pkgs.rPackages.tidyverse
+          ];
+        })
       ];
       # persist for Impermanence
       custom.imp.home.cache.directories = [
