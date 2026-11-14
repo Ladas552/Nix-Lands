@@ -64,7 +64,7 @@ copyparty.url = "gh:9001/copyparty"
 
 ncro.url = "gh:manic-systems/ncro"
 
-circus = {url = "gh:manic-systems/circus", exclude_follow = ["nixpkgs", "crane"]}
+circus.url = "gh:manic-systems/circus"
 
 umbriel.url = "gh:noctalia-dev/umbriel"
 
@@ -72,7 +72,7 @@ umbriel.url = "gh:noctalia-dev/umbriel"
 nvf.url = "gh:notashelf/nvf"
 
 ## Highly experimental replacement to nixos stage scripts
-nixos-core.url = "gh:manic-systems/nixos-core/fix-systemd-initrd"
+nixos-core.url = "gh:manic-systems/nixos-core"
 
 # adios galore
 adios.url = "gh:llakala/lladios"
