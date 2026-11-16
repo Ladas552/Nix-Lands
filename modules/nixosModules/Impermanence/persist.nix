@@ -15,7 +15,7 @@
             ".local/share/qalculate"
             ".local/share/TelegramDesktop"
             ".config/libreoffice"
-            ".cache/keepassxc"
+            ".local/state/keepassxc"
             ".config/keepassxc"
             ".config/qBittorrent"
             ".config/Element"
