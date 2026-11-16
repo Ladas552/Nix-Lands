@@ -78,7 +78,7 @@
             tablet.enabled = false;
             touch.enabled = false;
             cursor.hide_timeout_ms = 10000;
-            focus.follows_mouse = false;
+            focus.follows_mouse = "off";
           };
           # Looks
           appearance = {
