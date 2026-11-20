@@ -42,9 +42,6 @@ hjem.url = "gh:feel-co/hjem"
 # Modules for hjem
 hjem-rum.url = "gh:snugnug/hjem-rum"
 
-# finix host
-finix.url = "gh:finix-community/finix"
-
 # Tanled, git hosting
 tangled.url = "td:tangled.org/core"
 
