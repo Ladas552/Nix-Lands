@@ -1,0 +1,122 @@
+# outputs
+output DP-1 pos 0 0 res 1920x1080 rate 240
+output HDMI-A-1 pos 1920 0 res 1920x1080 rate 60
+# scale doesn't work, so I just set the resolution lower
+output eDP-1 pos 0 0 res 1920x1200 rate 90
+
+workspaces 9
+
+# input
+input type:pointer accel_profile flat
+input type:touchpad click_method button_areas
+input type:touchpad dwt disabled
+input type:touchpad natural_scroll enabled
+input type:touchpad scroll_method two_finger
+input type:touchpad tap enabled
+input type:touch events disabled
+input type:tablet_tool events disabled
+cursor enable
+
+# autostart
+exec brightnessctl set 37%
+exec thunar -d
+exec kitty --start-as=hidden --single-instance
+exec kitty --single-instance -e nvim -c 'Neorg journal today'
+
+# focus
+definekey top L-c prev
+definekey top L-r next
+definekey top L-Left focusleft
+definekey top L-Right focusright
+definekey top L-Up focusup
+definekey top L-Down focusdown
+definekey top L-Tab focus
+
+# move (exchange)
+definekey top L-S-c exchangeleft
+definekey top L-S-Left exchangeleft
+definekey top L-S-r exchangeright
+definekey top L-S-Right exchangeright
+definekey top L-S-Up exchangeup
+definekey top L-S-Down exchangedown
+
+# splits / layout
+definekey top L-comma hsplit
+definekey top L-period vsplit
+definekey top L-p only
+
+# resize
+definekey top C-A-Left resizeleft
+definekey top C-A-Right resizeright
+definekey top C-A-Up resizeup
+definekey top C-A-Down resizedown
+
+# windows
+definekey top L-w close
+definekey top L-A-w quit
+
+# workspaces
+definekey top L-1 workspace 1
+definekey top L-2 workspace 2
+definekey top L-3 workspace 3
+definekey top L-4 workspace 4
+definekey top L-5 workspace 5
+definekey top L-6 workspace 6
+definekey top L-7 workspace 7
+definekey top L-8 workspace 8
+definekey top L-9 workspace 9
+# L-S bindings don't work for some reason
+definekey top L-S-1 movetoworkspace 1
+definekey top L-S-2 movetoworkspace 2
+definekey top L-S-3 movetoworkspace 3
+definekey top L-S-4 movetoworkspace 4
+definekey top L-S-5 movetoworkspace 5
+definekey top L-S-6 movetoworkspace 6
+definekey top L-S-7 movetoworkspace 7
+definekey top L-S-8 movetoworkspace 8
+definekey top L-S-9 movetoworkspace 9
+
+# screens
+definekey top L-C-Page_Down movetonextscreen
+definekey top L-C-Page_Up movetoprevscreen
+
+# launchers
+definekey top L-t exec kitty --single-instance
+definekey top L-e exec kitty --single-instance -e nvim -c 'Neorg workspace life'
+definekey top L-j exec kitty --single-instance -e nvim -c 'Neorg journal today'
+definekey top L-f exec thunar
+definekey top L-g exec kitty --single-instance -e qalc
+definekey top L-h exec kitty --single-instance -e btop
+definekey top L-m exec kitty --single-instance -e rmpc
+definekey top L-l exec helium
+definekey top L-space exec fuzzel
+
+# screenshots
+definekey top Print exec wayfreeze --after-freeze-cmd 'grim -g "$(slurp)" - | tee ~/Pictures/screenshots/$(date +%F_%T).png | wl-copy; killall wayfreeze'
+definekey top S-Print exec grim - | tee ~/Pictures/screenshots/$(date +%F_%T).png | wl-copy
+
+# mpd
+definekey top S-A-b exec mpc prev
+definekey top S-A-n exec mpc next
+definekey top S-A-p exec mpc toggle
+definekey top S-A-l exec mpc volume +5
+definekey top S-A-w exec mpc volume -5
+definekey top S-A-XF86AudioLowerVolume exec mpc prev
+definekey top S-A-XF86AudioRaiseVolume exec mpc next
+definekey top S-A-XF86AudioMute exec mpc shuffle
+definekey top S-A-d exec musnow.sh
+
+# hardware keys
+definekey top XF86AudioMute exec pamixer -t
+definekey top XF86AudioRaiseVolume exec pamixer -i 2
+definekey top XF86AudioLowerVolume exec pamixer -d 2
+definekey top XF86MonBrightnessUp exec brightnessctl set 10%+
+definekey top XF86MonBrightnessDown exec brightnessctl set 10%-
+
+# TTY
+definekey top XF86Switch_VT_1 switchvt 1
+definekey top XF86Switch_VT_2 switchvt 2
+definekey top XF86Switch_VT_3 switchvt 3
+definekey top XF86Switch_VT_4 switchvt 4
+definekey top XF86Switch_VT_5 switchvt 5
+definekey top XF86Switch_VT_6 switchvt 6
