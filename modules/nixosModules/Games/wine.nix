@@ -4,9 +4,13 @@
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [
-        # wine
         winePackages.stagingFull
         winetricks
+      ];
+      custom.imp.home.cache.directories = [
+        ".wine"
+        ".local/share/wineprefixes"
+        ".cache/winetricks"
       ];
     };
 }

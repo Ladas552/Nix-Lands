@@ -46,7 +46,6 @@
           ".local/share/PrismLauncher"
           ".local/share/Terraria"
           ".local/share/arx"
-          # ".local/share/bottles"
           ".local/share/godot"
           ".local/share/openmw"
           ".local/share/osu"

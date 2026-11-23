@@ -17,6 +17,8 @@ require("neogit").setup({
 kbd("n", "<leader>g", "<cmd>Neogit<cr>")
 kbd("n", "<leader>e", "<cmd>Oil<cr>")
 kbd("n", "<leader>p", "<cmd>PasteImage<cr>")
+kbd("n", "<leader>ns", "<cmd>Neorg workspace study<cr>")
+kbd("n", "<leader>nl", "<cmd>Neorg workspace life<cr>")
 
 require("neorg").setup({
 	load = {

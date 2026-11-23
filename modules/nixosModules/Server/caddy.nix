@@ -21,7 +21,8 @@
         extraDomainNames = [ "*.ladas552.me" ];
         dnsProvider = "cloudflare";
         dnsResolver = "1.1.1.1:53";
-        dnsPropagationCheck = true;
+        dnsAuthoritativePropagationCheck = true;
+        dnsRecursivePropagationCheck = true;
         group = config.services.caddy.group;
         environmentFile = config.security.nix-secrets.templates."cloudflare-creds".path;
       };
