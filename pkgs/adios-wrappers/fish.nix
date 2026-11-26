@@ -70,20 +70,20 @@
         };
       in
       {
-        nix = {
-          "bg" = c "build github:%";
-          "bn" = c "build nixpkgs#%";
-          "gb" = c "build github:%";
-          "gr" = c "run github:%";
-          "gs" = c "shell github:%";
-          "nb" = c "build nixpkgs#%";
-          "nr" = c "run nixpkgs#%";
-          "ns" = c "shell nixpkgs#%";
-          "rg" = c "run github:%";
-          "rn" = c "run nixpkgs#%";
-          "sg" = c "shell github:%";
-          "sn" = c "shell nixpkgs#%";
-        };
+        nix = [
+          { "bg" = c "build github:%"; }
+          { "bn" = c "build nixpkgs#%"; }
+          { "gb" = c "build github:%"; }
+          { "gr" = c "run github:%"; }
+          { "gs" = c "shell github:%"; }
+          { "nb" = c "build nixpkgs#%"; }
+          { "nr" = c "run nixpkgs#%"; }
+          { "ns" = c "shell nixpkgs#%"; }
+          { "rg" = c "run github:%"; }
+          { "rn" = c "run nixpkgs#%"; }
+          { "sg" = c "shell github:%"; }
+          { "sn" = c "shell nixpkgs#%"; }
+        ];
       };
   };
 }

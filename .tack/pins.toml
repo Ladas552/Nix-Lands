@@ -75,6 +75,7 @@ nixos-core.url = "gh:manic-systems/nixos-core"
 adios.url = "gh:llakala/lladios"
 
 adios-wrappers.url = "gh:llakala/adios-wrappers"
+# adios-wrappers.url = "gh:ladas552/adios-wrappers"
 # adios-wrappers.url = "local:adios-wrappers"
 
 # package inputs

@@ -45,9 +45,10 @@
     "type": "github",
     "owner": "llakala",
     "repo": "adios-wrappers",
-    "rev": "ba0c2f85184f9e8938a1aff58790576a40855729",
-    "narHash": "sha256-5gPIXkobZKB3x3bj5x73SWjMfi9HYQ/StD5c2Sr/f/4=",
-    "lastModified": 1795140951
+    "rev": "609586bf4cd3db77ddf489421e49bc34d803ba51",
+    "narHash": "sha256-mBvlxhB8ZXE4Gl9To+7q5cHEh9oAVCphmK6DKu7T2G8=",
+    "lastModified": 1795675887,
+    "public": true
   },
   "canary": {
     "type": "github",
@@ -92,14 +93,6 @@
     "rev": "86186af29eed2af1a069f9e36140d116a2765c80",
     "narHash": "sha256-B2NjvaKJbkih8HLgFAYVqmTuSKAj7XrCBPVoVpYCXXE=",
     "lastModified": 1688700870
-  },
-  "finix": {
-    "type": "github",
-    "owner": "finix-community",
-    "repo": "finix",
-    "rev": "6fac8aad0b8d806e97bfe28bedf81a86c70b50ed",
-    "narHash": "sha256-2kEyZSM4ujwxtKP5F7o8OEP4cm+VDSqDRkIu0cXlku0=",
-    "lastModified": 1794665663
   },
   "flake-compat": {
     "type": "git",

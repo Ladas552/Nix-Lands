@@ -8,6 +8,7 @@
     {
       inputs,
       pkgs,
+      self,
       ...
     }:
     {
@@ -16,6 +17,7 @@
       ];
       programs.umbriel.enable = true;
       environment.systemPackages = with pkgs; [
+        self.packages.${pkgs.stdenv.hostPlatform.system}.fuzzel.drv
         brightnessctl
         wl-clipboard
         xwayland
@@ -175,7 +177,7 @@
 
           keybinds = {
             # noctalia
-            "Mod+Space" = "spawn noctalia msg panel-toggle launcher";
+            "Mod+Space" = "spawn fuzzel";
             "Mod+V" = "spawn noctalia msg panel-toggle session";
             "Mod+D" = "spawn noctalia msg bar-toggle";
             "Mod+W".action = "window-close";
