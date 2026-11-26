@@ -29,7 +29,7 @@
           };
           evaluator = {
             poll_interval = 300;
-            restrict_eval = true;
+            restrict_eval = false; # started to bother me a little
           };
           gc = {
             enabled = true;
